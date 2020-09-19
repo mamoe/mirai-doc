@@ -1,0 +1,22 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MessageSelectBuilderUnit.timeout - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.event</a>&nbsp;/&nbsp;<a href="index.html">MessageSelectBuilderUnit</a>&nbsp;/&nbsp;<a href="./timeout.html">timeout</a><br/>
+<br/>
+<h1>timeout</h1>
+<a name="net.mamoe.mirai.event.MessageSelectBuilderUnit$timeout(kotlin.Long, kotlin.coroutines.SuspendFunction0((net.mamoe.mirai.event.MessageSelectBuilderUnit.R)))"></a>
+<code><span class="keyword">fun </span><span class="identifier">timeout</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.event.MessageSelectBuilderUnit$timeout(kotlin.Long, kotlin.coroutines.SuspendFunction0((net.mamoe.mirai.event.MessageSelectBuilderUnit.R)))/timeoutMillis">timeoutMillis</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.event.MessageSelectBuilderUnit$timeout(kotlin.Long, kotlin.coroutines.SuspendFunction0((net.mamoe.mirai.event.MessageSelectBuilderUnit.R)))/block">block</span><span class="symbol">:</span>&nbsp;<span class="keyword">suspend </span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">R</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>限制本次 select 的最长等待时间, 当超时后执行 <a href="timeout.html#net.mamoe.mirai.event.MessageSelectBuilderUnit$timeout(kotlin.Long, kotlin.coroutines.SuspendFunction0((net.mamoe.mirai.event.MessageSelectBuilderUnit.R)))/block">block</a> 以完成 select</p>
+<a name="net.mamoe.mirai.event.MessageSelectBuilderUnit$timeout(kotlin.Long)"></a>
+<code><span class="keyword">fun </span><span class="identifier">timeout</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.event.MessageSelectBuilderUnit$timeout(kotlin.Long)/timeoutMillis">timeoutMillis</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-message-selection-timeout-checker/index.html"><span class="identifier">MessageSelectionTimeoutChecker</span></a></code>
+<p>返回一个限制本次 select 的最长等待时间的 <a href="#">Deferred</a></p>
+<p><strong>See Also</strong><br/>
+<p><a href="invoke.html">invoke</a></p>
+<p><a href="reply.html">reply</a></p>
+</p>
+</BODY>
+</HTML>

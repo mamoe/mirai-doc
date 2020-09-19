@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BotGroupPermissionChangeEvent - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.event.events</a>&nbsp;/&nbsp;<a href="./index.html">BotGroupPermissionChangeEvent</a><br/>
+<br/>
+<h1>BotGroupPermissionChangeEvent</h1>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">BotGroupPermissionChangeEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-bot-passive-event.html"><span class="identifier">BotPassiveEvent</span></a><span class="symbol">, </span><a href="../-group-event/index.html"><span class="identifier">GroupEvent</span></a><span class="symbol">, </span><span class="identifier">Packet</span><span class="symbol">, </span><a href="../../net.mamoe.mirai.event/-abstract-event/index.html"><span class="identifier">AbstractEvent</span></a></code>
+<p>Bot 在群里的权限被改变. 操作人一定是群主</p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="group.html">group</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">group</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.contact/-group/index.html"><span class="identifier">Group</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="new.html">new</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">new</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.contact/-member-permission/index.html"><span class="identifier">MemberPermission</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="origin.html">origin</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">origin</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.contact/-member-permission/index.html"><span class="identifier">MemberPermission</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../../net.mamoe.mirai.event/__broadcast-java.html">__broadcastJava</a></h4>
+</td>
+<td>
+<p>在 Java 广播一个事件的唯一途径.</p>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">E</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.event/-event/index.html"><span class="identifier">Event</span></a><span class="symbol">&gt;</span> <span class="identifier">E</span><span class="symbol">.</span><span class="identifier">__broadcastJava</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">E</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../../net.mamoe.mirai.event/broadcast.html">broadcast</a></h4>
+</td>
+<td>
+<p>广播一个事件的唯一途径.</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">E</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.event/-event/index.html"><span class="identifier">Event</span></a><span class="symbol">&gt;</span> <span class="identifier">E</span><span class="symbol">.</span><span class="identifier">broadcast</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">E</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ByteBuffer.allocate - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">java.nio</a>&nbsp;/&nbsp;<a href="index.html">ByteBuffer</a>&nbsp;/&nbsp;<a href="./allocate.html">allocate</a><br/>
+<br/>
+<h1>allocate</h1>
+<a name="java.nio.ByteBuffer.Companion$allocate(kotlin.Int)"></a>
+<code><span class="identifier">@JvmStatic</span> <span class="keyword">fun </span><span class="identifier">allocate</span><span class="symbol">(</span><span class="identifier" id="java.nio.ByteBuffer.Companion$allocate(kotlin.Int)/capacity">capacity</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html"><span class="identifier">ByteBuffer</span></a></code>
+<p>Allocates a new byte buffer.</p>
+<p>The new buffer's position will be zero, its limit will be its
+capacity, its mark will be undefined, each of its elements will be
+initialized to zero, and its byte order will be</p>
+<p><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteOrder.html#BIG_ENDIAN">BIG_ENDIAN</a>.</p>
+<p>It will have a <a href="#">backing array</a>, and its
+<a href="#">array offset</a> will be zero.</p>
+<h3>Parameters</h3>
+<p><a name="capacity"></a>
+<code>capacity</code> - The new buffer's capacity, in bytes</p>
+<h3>Exceptions</h3>
+<p><a name="IllegalArgumentException"></a>
+<code>IllegalArgumentException</code> - If the <code>capacity</code> is a negative integer</p>
+<p><strong>Return</strong><br/>
+The new byte buffer</p>
+</BODY>
+</HTML>

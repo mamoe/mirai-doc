@@ -1,0 +1,23 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MessageSource.id - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.message.data</a>&nbsp;/&nbsp;<a href="index.html">MessageSource</a>&nbsp;/&nbsp;<a href="./id.html">id</a><br/>
+<br/>
+<h1>id</h1>
+<a name="net.mamoe.mirai.message.data.MessageSource$id"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">id</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>消息 id (序列号). 在获取失败时 (概率很低) 为 <code>-1</code>.</p>
+<h4>值域</h4>
+<p>值的范围约为 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-short/index.html">UShort</a> 的范围.</p>
+<h4>顺序</h4>
+<p>群消息的 id 由服务器维护. 好友消息的 id 由 mirai 维护.
+此 id 不一定从 0 开始.</p>
+<ul><li>在同一个群的消息中此值随每条消息递增 1, 但此行为由服务器决定, mirai 不保证自增顺序.</li>
+<li>在好友消息中无法保证每次都递增 1. 也可能会产生大幅跳过的情况.</li>
+</ul>
+</BODY>
+</HTML>

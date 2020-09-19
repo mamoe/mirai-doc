@@ -1,0 +1,20 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>LoginSolver.onSolvePicCaptcha - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.utils</a>&nbsp;/&nbsp;<a href="index.html">LoginSolver</a>&nbsp;/&nbsp;<a href="./on-solve-pic-captcha.html">onSolvePicCaptcha</a><br/>
+<br/>
+<h1>onSolvePicCaptcha</h1>
+<a name="net.mamoe.mirai.utils.LoginSolver$onSolvePicCaptcha(net.mamoe.mirai.Bot, kotlin.ByteArray)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">onSolvePicCaptcha</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.LoginSolver$onSolvePicCaptcha(net.mamoe.mirai.Bot, kotlin.ByteArray)/bot">bot</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai/-bot/index.html"><span class="identifier">Bot</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils.LoginSolver$onSolvePicCaptcha(net.mamoe.mirai.Bot, kotlin.ByteArray)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span></code>
+<p>处理图片验证码.
+返回 null 以表示无法处理验证码, 将会刷新验证码或重试登录.
+抛出一个 <a href="../../net.mamoe.mirai.network/-login-failed-exception/index.html">LoginFailedException</a> 以正常地终止登录, 抛出任意其他 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-exception/index.html">Exception</a> 将视为异常终止</p>
+<h3>Exceptions</h3>
+<p><a name="LoginFailedException"></a>
+<code>LoginFailedException</code> - </p>
+</BODY>
+</HTML>

@@ -1,0 +1,170 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BotConfigurationBase - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.utils</a>&nbsp;/&nbsp;<a href="./index.html">BotConfigurationBase</a><br/>
+<br/>
+<h1>BotConfigurationBase</h1>
+<code><span class="identifier">@SinceMirai</span><span class="symbol">(</span>"1.1.0"<span class="symbol">)</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">BotConfigurationBase</span></code>
+<h3>Annotations</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-configuration-dsl/index.html">ConfigurationDsl</a></h4>
+</td>
+<td>
+<p>标注一个配置 DSL 函数</p>
+<code><span class="keyword">annotation</span> <span class="keyword">class </span><span class="identifier">ConfigurationDsl</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="bot-logger-supplier.html">botLoggerSupplier</a></h4>
+</td>
+<td>
+<p>日志记录器</p>
+<code><span class="keyword">var </span><span class="identifier">botLoggerSupplier</span><span class="symbol">: </span><span class="symbol">(</span><a href="../../net.mamoe.mirai/-bot/index.html"><span class="identifier">Bot</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="../-mirai-logger/index.html"><span class="identifier">MiraiLogger</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="file-cache-strategy.html">fileCacheStrategy</a></h4>
+</td>
+<td>
+<p>缓存策略</p>
+<code><span class="keyword">var </span><span class="identifier">fileCacheStrategy</span><span class="symbol">: </span><a href="../-file-cache-strategy/index.html"><span class="identifier">FileCacheStrategy</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="first-reconnect-delay-millis.html">firstReconnectDelayMillis</a></h4>
+</td>
+<td>
+<p>心跳失败后的第一次重连前的等待时间.</p>
+<code><span class="keyword">var </span><span class="identifier">firstReconnectDelayMillis</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="heartbeat-period-millis.html">heartbeatPeriodMillis</a></h4>
+</td>
+<td>
+<p>心跳周期. 过长会导致被服务器断开连接.</p>
+<code><span class="keyword">var </span><span class="identifier">heartbeatPeriodMillis</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="heartbeat-timeout-millis.html">heartbeatTimeoutMillis</a></h4>
+</td>
+<td>
+<p>每次心跳时等待结果的时间.
+一旦心跳超时, 整个网络服务将会重启 (将消耗约 1s). 除正在进行的任务 (如图片上传) 会被中断外, 事件和插件均不受影响.</p>
+<code><span class="keyword">var </span><span class="identifier">heartbeatTimeoutMillis</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="json.html">json</a></h4>
+</td>
+<td>
+<p>Json 序列化器, 使用 'kotlinx.serialization'</p>
+<code><span class="keyword">var </span><span class="identifier">json</span><span class="symbol">: </span><span class="identifier">Json</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="login-solver.html">loginSolver</a></h4>
+</td>
+<td>
+<p>验证码处理器</p>
+<code><span class="keyword">var </span><span class="identifier">loginSolver</span><span class="symbol">: </span><a href="../-login-solver/index.html"><span class="identifier">LoginSolver</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="network-logger-supplier.html">networkLoggerSupplier</a></h4>
+</td>
+<td>
+<p>网络层日志构造器</p>
+<code><span class="keyword">var </span><span class="identifier">networkLoggerSupplier</span><span class="symbol">: </span><span class="symbol">(</span><a href="../../net.mamoe.mirai/-bot/index.html"><span class="identifier">Bot</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="../-mirai-logger/index.html"><span class="identifier">MiraiLogger</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="parent-coroutine-context.html">parentCoroutineContext</a></h4>
+</td>
+<td>
+<p>父 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.coroutines/-coroutine-context/index.html">CoroutineContext</a>. <a href="../../net.mamoe.mirai/-bot/index.html">Bot</a> 创建后会使用 <a href="#">SupervisorJob</a> 覆盖其 <a href="#">Job</a>, 但会将这个 <a href="#">Job</a> 作为父 <a href="#">Job</a></p>
+<code><span class="keyword">var </span><span class="identifier">parentCoroutineContext</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.coroutines/-coroutine-context/index.html"><span class="identifier">CoroutineContext</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="protocol.html">protocol</a></h4>
+</td>
+<td>
+<p>使用协议类型</p>
+<code><span class="keyword">var </span><span class="identifier">protocol</span><span class="symbol">: </span><span class="identifier">MiraiProtocol</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="reconnection-retry-times.html">reconnectionRetryTimes</a></h4>
+</td>
+<td>
+<p>最多尝试多少次重连</p>
+<code><span class="keyword">var </span><span class="identifier">reconnectionRetryTimes</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="reconnect-period-millis.html">reconnectPeriodMillis</a></h4>
+</td>
+<td>
+<p>重连失败后, 继续尝试的每次等待时间</p>
+<code><span class="keyword">var </span><span class="identifier">reconnectPeriodMillis</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="inherit-coroutine-context.html">inheritCoroutineContext</a></h4>
+</td>
+<td>
+<p>使用当前协程的 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.coroutines/coroutine-context.html">coroutineContext</a> 作为 <a href="parent-coroutine-context.html">parentCoroutineContext</a>.</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">inheritCoroutineContext</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="no-bot-log.html">noBotLog</a></h4>
+</td>
+<td>
+<p>不显示 <a href="../../net.mamoe.mirai/-bot/index.html">Bot</a> 日志. 不推荐.</p>
+<code><span class="keyword">fun </span><span class="identifier">noBotLog</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="no-network-log.html">noNetworkLog</a></h4>
+</td>
+<td>
+<p>不显示网络日志. 不推荐.</p>
+<code><span class="keyword">fun </span><span class="identifier">noNetworkLog</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../-bot-configuration/index.html">BotConfiguration</a></h4>
+</td>
+<td>
+<p><a href="../../net.mamoe.mirai/-bot/index.html">Bot</a> 配置.</p>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">BotConfiguration</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BotConfigurationBase</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

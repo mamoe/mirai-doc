@@ -1,0 +1,87 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ByteBuffer.get - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">java.nio</a>&nbsp;/&nbsp;<a href="index.html">ByteBuffer</a>&nbsp;/&nbsp;<a href="./get.html">get</a><br/>
+<br/>
+<h1>get</h1>
+<a name="java.nio.ByteBuffer$get()"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/index.html"><span class="identifier">Byte</span></a></code>
+<p>Relative <em>get</em> method.  Reads the byte at this buffer's
+current position, and then increments the position.</p>
+<h3>Exceptions</h3>
+<p><a name="BufferUnderflowException"></a>
+<code>BufferUnderflowException</code> - If the buffer's current position is not smaller than its limit</p>
+<p><strong>Return</strong><br/>
+The byte at the buffer's current position</p>
+<a name="java.nio.ByteBuffer$get(kotlin.Int)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">operator</span> <span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="java.nio.ByteBuffer$get(kotlin.Int)/index">index</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/index.html"><span class="identifier">Byte</span></a></code>
+<p>Absolute <em>get</em> method.  Reads the byte at the given
+index.</p>
+<h3>Parameters</h3>
+<p><a name="index"></a>
+<code>index</code> - The index from which the byte will be read</p>
+<h3>Exceptions</h3>
+<p><a name="IndexOutOfBoundsException"></a>
+<code>IndexOutOfBoundsException</code> - If <code>index</code> is negative
+or not smaller than the buffer's limit</p>
+<p><strong>Return</strong><br/>
+The byte at the given index</p>
+<a name="java.nio.ByteBuffer$get(kotlin.ByteArray, kotlin.Int, kotlin.Int)"></a>
+<code><span class="keyword">open</span> <span class="keyword">operator</span> <span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="java.nio.ByteBuffer$get(kotlin.ByteArray, kotlin.Int, kotlin.Int)/dst">dst</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">, </span><span class="identifier" id="java.nio.ByteBuffer$get(kotlin.ByteArray, kotlin.Int, kotlin.Int)/offset">offset</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="java.nio.ByteBuffer$get(kotlin.ByteArray, kotlin.Int, kotlin.Int)/length">length</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html"><span class="identifier">ByteBuffer</span></a></code>
+<p>Relative bulk <em>get</em> method.</p>
+<p>This method transfers bytes from this buffer into the given
+destination array.  If there are fewer bytes remaining in the
+buffer than are required to satisfy the request, that is, if
+<code>length</code>&nbsp;<code>&gt;</code>&nbsp;<code>remaining()</code>, then no
+bytes are transferred and a <a href="https://docs.oracle.com/javase/6/docs/api/java/nio/BufferUnderflowException.html">BufferUnderflowException</a> is
+thrown.</p>
+<p>Otherwise, this method copies <code>length</code> bytes from this
+buffer into the given array, starting at the current position of this
+buffer and at the given offset in the array.  The position of this
+buffer is then incremented by <code>length</code>.</p>
+<p>In other words, an invocation of this method of the form
+<code>src.get(dst,&amp;nbsp;off,&amp;nbsp;len)</code> has exactly the same effect as
+the loop</p>
+<p>except that it first checks that there are sufficient bytes in
+this buffer and it is potentially much more efficient.</p>
+<h3>Parameters</h3>
+<p><a name="dst"></a>
+<code>dst</code> - The array into which bytes are to be written</p>
+<p><a name="offset"></a>
+<code>offset</code> - The offset within the array of the first byte to be
+written; must be non-negative and no larger than
+<code>dst.length</code></p>
+<p><a name="length"></a>
+<code>length</code> - The maximum number of bytes to be written to the given
+array; must be non-negative and no larger than
+<code>dst.length - offset</code></p>
+<h3>Exceptions</h3>
+<p><a name="BufferUnderflowException"></a>
+<code>BufferUnderflowException</code> - If there are fewer than <code>length</code> bytes
+remaining in this buffer</p>
+<p><a name="IndexOutOfBoundsException"></a>
+<code>IndexOutOfBoundsException</code> - If the preconditions on the <code>offset</code> and <code>length</code>
+parameters do not hold</p>
+<p><strong>Return</strong><br/>
+This buffer</p>
+<a name="java.nio.ByteBuffer$get(kotlin.ByteArray)"></a>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="java.nio.ByteBuffer$get(kotlin.ByteArray)/dst">dst</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html"><span class="identifier">ByteBuffer</span></a></code>
+<p>Relative bulk <em>get</em> method.</p>
+<p>This method transfers bytes from this buffer into the given
+destination array.  An invocation of this method of the form
+<code>src.get(a)</code> behaves in exactly the same way as the invocation</p>
+<h3>Parameters</h3>
+<p><a name="dst"></a>
+<code>dst</code> - The destination array</p>
+<h3>Exceptions</h3>
+<p><a name="BufferUnderflowException"></a>
+<code>BufferUnderflowException</code> - If there are fewer than <code>length</code> bytes
+remaining in this buffer</p>
+<p><strong>Return</strong><br/>
+This buffer</p>
+</BODY>
+</HTML>

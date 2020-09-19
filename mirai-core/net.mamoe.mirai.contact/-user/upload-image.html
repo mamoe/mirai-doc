@@ -1,0 +1,25 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>User.uploadImage - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.contact</a>&nbsp;/&nbsp;<a href="index.html">User</a>&nbsp;/&nbsp;<a href="./upload-image.html">uploadImage</a><br/>
+<br/>
+<h1>uploadImage</h1>
+<a name="net.mamoe.mirai.contact.User$uploadImage(net.mamoe.mirai.utils.ExternalImage)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">uploadImage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.contact.User$uploadImage(net.mamoe.mirai.utils.ExternalImage)/image">image</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.utils/-external-image/index.html"><span class="identifier">ExternalImage</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.message.data/-image/index.html"><span class="identifier">Image</span></a></code>
+<p>上传一个图片以备发送.</p>
+<h3>Exceptions</h3>
+<p><a name="EventCancelledException"></a>
+<code>EventCancelledException</code> - 当发送消息事件被取消</p>
+<p><a name="OverFileSizeMaxException"></a>
+<code>OverFileSizeMaxException</code> - 当图片文件过大而被服务器拒绝上传时. (最大大小约为 20 MB)</p>
+<p><strong>See Also</strong><br/>
+<p><a href="../../net.mamoe.mirai.message.data/-image/index.html">Image</a></p>
+<p><a href="../../net.mamoe.mirai.event.events/-before-image-upload-event/index.html">BeforeImageUploadEvent</a></p>
+<p><a href="../../net.mamoe.mirai.event.events/-image-upload-event/index.html">ImageUploadEvent</a></p>
+</p>
+</BODY>
+</HTML>

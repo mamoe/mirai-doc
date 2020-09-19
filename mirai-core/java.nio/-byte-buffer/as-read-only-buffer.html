@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ByteBuffer.asReadOnlyBuffer - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">java.nio</a>&nbsp;/&nbsp;<a href="index.html">ByteBuffer</a>&nbsp;/&nbsp;<a href="./as-read-only-buffer.html">asReadOnlyBuffer</a><br/>
+<br/>
+<h1>asReadOnlyBuffer</h1>
+<a name="java.nio.ByteBuffer$asReadOnlyBuffer()"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">asReadOnlyBuffer</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html"><span class="identifier">ByteBuffer</span></a><span class="symbol">?</span></code>
+<p>Creates a new, read-only byte buffer that shares this buffer's
+content.</p>
+<p>The content of the new buffer will be that of this buffer.  Changes
+to this buffer's content will be visible in the new buffer; the new
+buffer itself, however, will be read-only and will not allow the shared
+content to be modified.  The two buffers' position, limit, and mark
+values will be independent.</p>
+<p>The new buffer's capacity, limit, position,</p>
+<p>and mark values will be identical to those of this buffer, and its byte
+order will be <a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteOrder.html#BIG_ENDIAN">BIG_ENDIAN</a>.</p>
+<p>If this buffer is itself read-only then this method behaves in
+exactly the same way as the <a href="#">duplicate</a> method.</p>
+<p><strong>Return</strong><br/>
+The new, read-only byte buffer</p>
+</BODY>
+</HTML>

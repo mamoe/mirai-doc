@@ -1,0 +1,33 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Buffer.array - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">java.nio</a>&nbsp;/&nbsp;<a href="index.html">Buffer</a>&nbsp;/&nbsp;<a href="./array.html">array</a><br/>
+<br/>
+<h1>array</h1>
+<a name="java.nio.Buffer$array()"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">array</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a></code>
+<p>Returns the array that backs this
+buffer&nbsp;&nbsp;<em>(optional operation)</em>.</p>
+<p>This method is intended to allow array-backed buffers to be
+passed to native code more efficiently. Concrete subclasses
+provide more strongly-typed return values for this method.</p>
+<p>Modifications to this buffer's content will cause the returned
+array's content to be modified, and vice versa.</p>
+<p>Invoke the <a href="#">hasArray</a> method before invoking this
+method in order to ensure that this buffer has an accessible backing
+array.</p>
+<h3>Exceptions</h3>
+<p><a name="ReadOnlyBufferException"></a>
+<code>ReadOnlyBufferException</code> - If this buffer is backed by an array but is read-only</p>
+<p><a name="UnsupportedOperationException"></a>
+<code>UnsupportedOperationException</code> - If this buffer is not backed by an accessible array</p>
+<p><strong>Return</strong><br/>
+The array that backs this buffer</p>
+<p><strong>Since</strong><br/>
+1.6</p>
+</BODY>
+</HTML>

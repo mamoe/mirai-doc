@@ -1,0 +1,19 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BotConfiguration.redirectBotLogToDirectory - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.utils</a>&nbsp;/&nbsp;<a href="index.html">BotConfiguration</a>&nbsp;/&nbsp;<a href="./redirect-bot-log-to-directory.html">redirectBotLogToDirectory</a><br/>
+<br/>
+<h1>redirectBotLogToDirectory</h1>
+<a name="net.mamoe.mirai.utils.BotConfiguration$redirectBotLogToDirectory(java.io.File, kotlin.Long, kotlin.Function1((net.mamoe.mirai.Bot, kotlin.String)))"></a>
+<code><span class="identifier">@JvmOverloads</span> <span class="identifier">@SinceMirai</span><span class="symbol">(</span>"1.1.0"<span class="symbol">)</span> <span class="keyword">fun </span><span class="identifier">redirectBotLogToDirectory</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.BotConfiguration$redirectBotLogToDirectory(java.io.File, kotlin.Long, kotlin.Function1((net.mamoe.mirai.Bot, kotlin.String)))/dir">dir</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/File.html"><span class="identifier">File</span></a>&nbsp;<span class="symbol">=</span>&nbsp;File("logs")<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils.BotConfiguration$redirectBotLogToDirectory(java.io.File, kotlin.Long, kotlin.Function1((net.mamoe.mirai.Bot, kotlin.String)))/retain">retain</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a>&nbsp;<span class="symbol">=</span>&nbsp;1.weeksToMillis<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils.BotConfiguration$redirectBotLogToDirectory(java.io.File, kotlin.Long, kotlin.Function1((net.mamoe.mirai.Bot, kotlin.String)))/identity">identity</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">bot</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai/-bot/index.html"><span class="identifier">Bot</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a>&nbsp;<span class="symbol">=</span>&nbsp;{ "Net ${it.id}" }<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>重定向 <a href="../-bot-configuration-base/bot-logger-supplier.html">Bot 日志</a> 到指定目录. 若目录不存在将会自动创建 (<a href="https://docs.oracle.com/javase/6/docs/api/java/io/File.html#mkdirs()">File.mkdirs</a>)</p>
+<p><strong>See Also</strong><br/>
+<p><a href="../-directory-logger/index.html">DirectoryLogger</a></p>
+<p><a href="redirect-bot-log-to-file.html">redirectBotLogToFile</a></p>
+</p>
+</BODY>
+</HTML>

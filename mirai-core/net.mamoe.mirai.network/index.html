@@ -1,0 +1,81 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>net.mamoe.mirai.network - mirai-core</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="./index.html">net.mamoe.mirai.network</a><br/>
+<br/>
+<h2>Package net.mamoe.mirai.network</h2>
+<h3>Exceptions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-custom-login-failed-exception/index.html">CustomLoginFailedException</a></h4>
+</td>
+<td>
+<p>非 mirai 实现的异常</p>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">CustomLoginFailedException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-login-failed-exception/index.html"><span class="identifier">LoginFailedException</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-force-offline-exception/index.html">ForceOfflineException</a></h4>
+</td>
+<td>
+<p>当 <a href="../net.mamoe.mirai/-bot/index.html">Bot</a> 被迫下线时抛出, 作为 <a href="#">Job.cancel</a> 的 <code>cause</code></p>
+<code><span class="keyword">class </span><span class="identifier">ForceOfflineException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">CancellationException</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-login-failed-exception/index.html">LoginFailedException</a></h4>
+</td>
+<td>
+<p>在 <a href="../net.mamoe.mirai/-bot/login.html">登录</a> 失败时抛出, 可正常地中断登录过程.</p>
+<code><span class="keyword">sealed</span> <span class="keyword">class </span><span class="identifier">LoginFailedException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-runtime-exception/index.html"><span class="identifier">RuntimeException</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-no-server-available-exception/index.html">NoServerAvailableException</a></h4>
+</td>
+<td>
+<p>无可用服务器</p>
+<code><span class="keyword">class </span><span class="identifier">NoServerAvailableException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-login-failed-exception/index.html"><span class="identifier">LoginFailedException</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-no-standard-input-for-captcha-exception/index.html">NoStandardInputForCaptchaException</a></h4>
+</td>
+<td>
+<p>无标准输入或 Kotlin 不支持此输入.</p>
+<code><span class="keyword">class </span><span class="identifier">NoStandardInputForCaptchaException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-login-failed-exception/index.html"><span class="identifier">LoginFailedException</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-retry-later-exception/index.html">RetryLaterException</a></h4>
+</td>
+<td>
+<p>服务器要求稍后重试</p>
+<code><span class="keyword">class </span><span class="identifier">RetryLaterException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-login-failed-exception/index.html"><span class="identifier">LoginFailedException</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-unsupported-s-m-s-login-exception/index.html">UnsupportedSMSLoginException</a></h4>
+</td>
+<td>
+<p>需要短信验证时抛出. mirai 目前还不支持短信验证.</p>
+<code><span class="keyword">class </span><span class="identifier">UnsupportedSMSLoginException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-login-failed-exception/index.html"><span class="identifier">LoginFailedException</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-wrong-password-exception/index.html">WrongPasswordException</a></h4>
+</td>
+<td>
+<p>密码输入错误 (有时候也会是其他错误, 如 <code>"当前上网环境异常，请更换网络环境或在常用设备上登录或稍后再试。"</code>)</p>
+<code><span class="keyword">class </span><span class="identifier">WrongPasswordException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-login-failed-exception/index.html"><span class="identifier">LoginFailedException</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

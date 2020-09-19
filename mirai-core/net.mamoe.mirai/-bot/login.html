@@ -1,0 +1,23 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Bot.login - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai</a>&nbsp;/&nbsp;<a href="index.html">Bot</a>&nbsp;/&nbsp;<a href="./login.html">login</a><br/>
+<br/>
+<h1>login</h1>
+<a name="net.mamoe.mirai.Bot$login()"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">login</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>登录, 或重新登录.
+这个函数总是关闭一切现有网路任务 (但不会关闭其他任务), 然后重新登录并重新缓存好友列表和群列表.</p>
+<p>一般情况下不需要重新登录. Mirai 能够自动处理掉线情况.</p>
+<h3>Exceptions</h3>
+<p><a name="LoginFailedException"></a>
+<code>LoginFailedException</code> - 正常登录失败时抛出</p>
+<p><strong>See Also</strong><br/>
+<p><a href="../also-login.html">alsoLogin</a></p>
+</p>
+</BODY>
+</HTML>

@@ -1,0 +1,31 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Buffer.arrayOffset - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">java.nio</a>&nbsp;/&nbsp;<a href="index.html">Buffer</a>&nbsp;/&nbsp;<a href="./array-offset.html">arrayOffset</a><br/>
+<br/>
+<h1>arrayOffset</h1>
+<a name="java.nio.Buffer$arrayOffset()"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">arrayOffset</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>Returns the offset within this buffer's backing array of the first
+element of the buffer&nbsp;&nbsp;<em>(optional operation)</em>.</p>
+<p>If this buffer is backed by an array then buffer position <em>p</em>
+corresponds to array index <em>p</em>&nbsp;+&nbsp;<code>arrayOffset()</code>.</p>
+<p>Invoke the <a href="#">hasArray</a> method before invoking this
+method in order to ensure that this buffer has an accessible backing
+array.</p>
+<h3>Exceptions</h3>
+<p><a name="ReadOnlyBufferException"></a>
+<code>ReadOnlyBufferException</code> - If this buffer is backed by an array but is read-only</p>
+<p><a name="UnsupportedOperationException"></a>
+<code>UnsupportedOperationException</code> - If this buffer is not backed by an accessible array</p>
+<p><strong>Return</strong><br/>
+The offset within this buffer's array
+of the first element of the buffer</p>
+<p><strong>Since</strong><br/>
+1.6</p>
+</BODY>
+</HTML>

@@ -1,0 +1,245 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Group - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.contact</a>&nbsp;/&nbsp;<a href="./index.html">Group</a><br/>
+<br/>
+<h1>Group</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">Group</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">, </span><span class="identifier">CoroutineScope</span></code>
+<p>群.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<p>群.</p>
+<code><span class="identifier">Group</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="avatar-url.html">avatarUrl</a></h4>
+</td>
+<td>
+<p>群头像下载链接.</p>
+<code><span class="keyword">val </span><span class="identifier">avatarUrl</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="bot-as-member.html">botAsMember</a></h4>
+</td>
+<td>
+<p><a href="../../net.mamoe.mirai/-bot/index.html">Bot</a> 在群内的 <a href="../-member/index.html">Member</a> 实例</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">botAsMember</span><span class="symbol">: </span><a href="../-member/index.html"><span class="identifier">Member</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="bot-mute-remaining.html">botMuteRemaining</a></h4>
+</td>
+<td>
+<p>机器人被禁言还剩余多少秒</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">botMuteRemaining</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="bot-permission.html">botPermission</a></h4>
+</td>
+<td>
+<p>机器人在这个群里的权限</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">botPermission</span><span class="symbol">: </span><a href="../-member-permission/index.html"><span class="identifier">MemberPermission</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="id.html">id</a></h4>
+</td>
+<td>
+<p>同为 groupCode, 用户看到的群号码.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">id</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="members.html">members</a></h4>
+</td>
+<td>
+<p>群成员列表, 不含机器人自己, 含群主.
+在 <a href="./index.html">Group</a> 实例创建的时候查询一次. 并与事件同步事件更新</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">members</span><span class="symbol">: </span><a href="../-contact-list/index.html"><span class="identifier">ContactList</span></a><span class="symbol">&lt;</span><a href="../-member/index.html"><span class="identifier">Member</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="name.html">name</a></h4>
+</td>
+<td>
+<p>群名称.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">var </span><span class="identifier">name</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="owner.html">owner</a></h4>
+</td>
+<td>
+<p>群主.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">owner</span><span class="symbol">: </span><a href="../-member/index.html"><span class="identifier">Member</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="settings.html">settings</a></h4>
+</td>
+<td>
+<p>群设置</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">settings</span><span class="symbol">: </span><a href="../-group-settings/index.html"><span class="identifier">GroupSettings</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="__quit-blocking-for-java__.html">__quitBlockingForJava__</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">__quitBlockingForJava__</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="contains.html">contains</a></h4>
+</td>
+<td>
+<p>检查此 id 的群成员是否存在
+当 <a href="contains.html#net.mamoe.mirai.contact.Group$contains(kotlin.Long)/id">id</a> 为 <a href="../../net.mamoe.mirai/-bot/id.html">Bot.id</a> 时返回 <code>true</code></p>
+<code><span class="keyword">abstract</span> <span class="keyword">operator</span> <span class="keyword">fun </span><span class="identifier">contains</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.contact.Group$contains(kotlin.Long)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get.html">get</a></h4>
+</td>
+<td>
+<p>获取群成员实例. 不存在时抛出 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-no-such-element-exception/index.html">kotlin.NoSuchElementException</a>
+当 <a href="get.html#net.mamoe.mirai.contact.Group$get(kotlin.Long)/id">id</a> 为 <a href="../../net.mamoe.mirai/-bot/id.html">Bot.id</a> 时返回 <a href="bot-as-member.html">botAsMember</a></p>
+<code><span class="keyword">abstract</span> <span class="keyword">operator</span> <span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.contact.Group$get(kotlin.Long)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-member/index.html"><span class="identifier">Member</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-or-null.html">getOrNull</a></h4>
+</td>
+<td>
+<p>获取群成员实例, 不存在则 null
+当 <a href="get-or-null.html#net.mamoe.mirai.contact.Group$getOrNull(kotlin.Long)/id">id</a> 为 <a href="../../net.mamoe.mirai/-bot/id.html">Bot.id</a> 时返回 <a href="bot-as-member.html">botAsMember</a></p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOrNull</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.contact.Group$getOrNull(kotlin.Long)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-member/index.html"><span class="identifier">Member</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="new-member.html">newMember</a></h4>
+</td>
+<td>
+<p>构造一个 <a href="../-member/index.html">Member</a>.
+非特殊情况请不要使用这个函数. 优先使用 <a href="get.html">get</a>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">newMember</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.contact.Group$newMember(net.mamoe.mirai.data.MemberInfo)/memberInfo">memberInfo</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.data/-member-info/index.html"><span class="identifier">MemberInfo</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-member/index.html"><span class="identifier">Member</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="quit.html">quit</a></h4>
+</td>
+<td>
+<p>让机器人退出这个群.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">quit</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="send-message.html">sendMessage</a></h4>
+</td>
+<td>
+<p>向这个对象发送消息.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">sendMessage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.contact.Group$sendMessage(net.mamoe.mirai.message.data.Message)/message">message</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.message.data/-message/index.html"><span class="identifier">Message</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.message/-message-receipt/index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><a href="./index.html"><span class="identifier">Group</span></a><span class="symbol">&gt;</span></code><code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">sendMessage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.contact.Group$sendMessage(kotlin.String)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.message/-message-receipt/index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><a href="./index.html"><span class="identifier">Group</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="upload-image.html">uploadImage</a></h4>
+</td>
+<td>
+<p>上传一个图片以备发送.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">uploadImage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.contact.Group$uploadImage(net.mamoe.mirai.utils.ExternalImage)/image">image</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.utils/-external-image/index.html"><span class="identifier">ExternalImage</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.message.data/-image/index.html"><span class="identifier">Image</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../is-bot-muted.html">isBotMuted</a></h4>
+</td>
+<td>
+<p>返回机器人是否正在被禁言</p>
+<code><span class="keyword">val </span><a href="./index.html"><span class="identifier">Group</span></a><span class="symbol">.</span><span class="identifier">isBotMuted</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../check-bot-permission.html">checkBotPermission</a></h4>
+</td>
+<td>
+<p>要求 <a href="../../net.mamoe.mirai/-bot/index.html">Bot</a> 在这个群里的权限至少为 <a href="../check-bot-permission.html#net.mamoe.mirai.contact$checkBotPermission(net.mamoe.mirai.contact.Group, net.mamoe.mirai.contact.MemberPermission, kotlin.Function0((kotlin.String)))/required">required</a>, 否则抛出异常 <a href="../-permission-denied-exception/index.html">PermissionDeniedException</a></p>
+<code><span class="keyword">fun </span><a href="./index.html"><span class="identifier">Group</span></a><span class="symbol">.</span><span class="identifier">checkBotPermission</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.contact$checkBotPermission(net.mamoe.mirai.contact.Group, net.mamoe.mirai.contact.MemberPermission, kotlin.Function0((kotlin.String)))/required">required</span><span class="symbol">:</span>&nbsp;<a href="../-member-permission/index.html"><span class="identifier">MemberPermission</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.contact$checkBotPermission(net.mamoe.mirai.contact.Group, net.mamoe.mirai.contact.MemberPermission, kotlin.Function0((kotlin.String)))/lazyMessage">lazyMessage</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a>&nbsp;<span class="symbol">=</span>&nbsp;{
+        "Permission denied: required $required, got actual $botPermission for $bot in group $id"
+    }<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../recall.html">recall</a></h4>
+</td>
+<td>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><a href="../-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">.</span><span class="identifier">recall</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.contact$recall(net.mamoe.mirai.contact.Contact, net.mamoe.mirai.message.data.MessageChain)/source">source</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.message.data/-message-chain/index.html"><span class="identifier">MessageChain</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><a href="../-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">.</span><span class="identifier">recall</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.contact$recall(net.mamoe.mirai.contact.Contact, net.mamoe.mirai.message.data.MessageSource)/source">source</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.message.data/-message-source/index.html"><span class="identifier">MessageSource</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../../net.mamoe.mirai.message/send-image.html">sendImage</a></h4>
+</td>
+<td>
+<p>在 <a href="#">Dispatchers.IO</a> 中将图片发送到指定联系人. 不会保存临时文件</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">C</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">&gt;</span> <span class="identifier">C</span><span class="symbol">.</span><span class="identifier">sendImage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$sendImage(net.mamoe.mirai.message.sendImage.C, java.awt.image.BufferedImage)/bufferedImage">bufferedImage</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/awt/image/BufferedImage.html"><span class="identifier">BufferedImage</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.message/-message-receipt/index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">C</span><span class="symbol">&gt;</span></code>
+<p>在 <a href="#">Dispatchers.IO</a> 中读取 <a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html">InputStream</a> 到临时文件并将其作为图片发送到指定联系人</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">C</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">&gt;</span> <span class="identifier">C</span><span class="symbol">.</span><span class="identifier">sendImage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$sendImage(net.mamoe.mirai.message.sendImage.C, java.io.InputStream)/imageStream">imageStream</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html"><span class="identifier">InputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.message/-message-receipt/index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">C</span><span class="symbol">&gt;</span></code>
+<p>在 <a href="#">Dispatchers.IO</a> 中将文件作为图片发送到指定联系人</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">C</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">&gt;</span> <span class="identifier">C</span><span class="symbol">.</span><span class="identifier">sendImage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$sendImage(net.mamoe.mirai.message.sendImage.C, java.io.File)/file">file</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.message/-message-receipt/index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">C</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../../net.mamoe.mirai.utils/send-image.html">sendImage</a></h4>
+</td>
+<td>
+<p>将图片作为单独的消息发送给 <a href="../../net.mamoe.mirai.utils/send-image/-this-.html">this</a></p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">C</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">&gt;</span> <span class="identifier">C</span><span class="symbol">.</span><span class="identifier">sendImage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$sendImage(net.mamoe.mirai.utils.sendImage.C, net.mamoe.mirai.utils.ExternalImage)/image">image</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.utils/-external-image/index.html"><span class="identifier">ExternalImage</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.message/-message-receipt/index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">C</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../../net.mamoe.mirai.message/upload-image.html">uploadImage</a></h4>
+</td>
+<td>
+<p>在 <a href="#">Dispatchers.IO</a> 中将图片上传, 但不发送. 不会保存临时文件</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><a href="../-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">.</span><span class="identifier">uploadImage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$uploadImage(net.mamoe.mirai.contact.Contact, java.awt.image.BufferedImage)/bufferedImage">bufferedImage</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/awt/image/BufferedImage.html"><span class="identifier">BufferedImage</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.message.data/-image/index.html"><span class="identifier">Image</span></a></code>
+<p>在 <a href="#">Dispatchers.IO</a> 中读取 <a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html">InputStream</a> 到临时文件并将其作为图片上传, 但不发送</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><a href="../-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">.</span><span class="identifier">uploadImage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$uploadImage(net.mamoe.mirai.contact.Contact, java.io.InputStream)/imageStream">imageStream</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html"><span class="identifier">InputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.message.data/-image/index.html"><span class="identifier">Image</span></a></code>
+<p>在 <a href="#">Dispatchers.IO</a> 中将文件作为图片上传, 但不发送</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><a href="../-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">.</span><span class="identifier">uploadImage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$uploadImage(net.mamoe.mirai.contact.Contact, java.io.File)/file">file</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.message.data/-image/index.html"><span class="identifier">Image</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

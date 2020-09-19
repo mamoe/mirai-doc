@@ -1,0 +1,69 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>CustomMessage.Factory - mirai-core</title>
+<link rel="stylesheet" href="../../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../../index.html">net.mamoe.mirai.message.data</a>&nbsp;/&nbsp;<a href="../index.html">CustomMessage</a>&nbsp;/&nbsp;<a href="./index.html">Factory</a><br/>
+<br/>
+<h1>Factory</h1>
+<code><span class="identifier">@MiraiExperimentalAPI</span> <span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">Factory</span><span class="symbol">&lt;</span><span class="identifier">M</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../index.html"><span class="identifier">CustomMessage</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Key</span><span class="symbol">&lt;</span><span class="identifier">M</span><span class="symbol">&gt;</span></code>
+<p>序列化和反序列化此消息的工厂, 将会自动注册.
+应实现为 <code>object</code>.</p>
+<p><strong>See Also</strong><br/>
+<p><a href="../-json-serializer-factory/index.html">JsonSerializerFactory</a></p>
+<p><a href="../-proto-buf-serializer-factory/index.html">ProtoBufSerializerFactory</a></p>
+</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<p>序列化和反序列化此消息的工厂, 将会自动注册.
+应实现为 <code>object</code>.</p>
+<code><span class="identifier">Factory</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.CustomMessage.Factory$<init>(kotlin.String)/typeName">typeName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="type-name.html">typeName</a></h4>
+</td>
+<td>
+<p>此类型消息的名称.
+在发往服务器时使用此名称.
+应确保唯一且不变.</p>
+<code><span class="keyword">val </span><span class="identifier">typeName</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="dump.html">dump</a></h4>
+</td>
+<td>
+<p>序列化此消息.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">dump</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.CustomMessage.Factory$dump(net.mamoe.mirai.message.data.CustomMessage.Factory.M)/message">message</span><span class="symbol">:</span>&nbsp;<span class="identifier">M</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="load.html">load</a></h4>
+</td>
+<td>
+<p>从 <a href="load.html#net.mamoe.mirai.message.data.CustomMessage.Factory$load(kotlin.ByteArray)/input">input</a> 读取此消息.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">load</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.CustomMessage.Factory$load(kotlin.ByteArray)/input">input</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">M</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

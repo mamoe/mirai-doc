@@ -1,0 +1,203 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Path - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">java.nio.file</a>&nbsp;/&nbsp;<a href="./index.html">Path</a><br/>
+<br/>
+<h1>Path</h1>
+<code><span class="keyword">interface </span><span class="identifier">Path</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><a href="./index.html"><span class="identifier">Path</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><span class="identifier">Iterable</span></a><span class="symbol">&lt;</span><a href="./index.html"><span class="identifier">Path</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="../-watchable.html"><span class="identifier">Watchable</span></a></code>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="compare-to.html">compareTo</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">compareTo</span><span class="symbol">(</span><span class="identifier" id="java.nio.file.Path$compareTo(java.nio.file.Path)/other">other</span><span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Path</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="ends-with.html">endsWith</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">endsWith</span><span class="symbol">(</span><span class="identifier" id="java.nio.file.Path$endsWith(java.nio.file.Path)/other">other</span><span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Path</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">endsWith</span><span class="symbol">(</span><span class="identifier" id="java.nio.file.Path$endsWith(kotlin.String)/other">other</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="equals.html">equals</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">equals</span><span class="symbol">(</span><span class="identifier" id="java.nio.file.Path$equals(kotlin.Any)/other">other</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-file-name.html">getFileName</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFileName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Path</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-file-system.html">getFileSystem</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFileSystem</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-file-system/index.html"><span class="identifier">FileSystem</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-name.html">getName</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="identifier" id="java.nio.file.Path$getName(kotlin.Int)/index">index</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Path</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-name-count.html">getNameCount</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getNameCount</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-parent.html">getParent</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getParent</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Path</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-root.html">getRoot</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRoot</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Path</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="hash-code.html">hashCode</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">hashCode</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="has-next.html">hasNext</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">hasNext</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="is-absolute.html">isAbsolute</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isAbsolute</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="iterator.html">iterator</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">iterator</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterator/index.html"><span class="identifier">Iterator</span></a><span class="symbol">&lt;</span><a href="./index.html"><span class="identifier">Path</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="next.html">next</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">next</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Path</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="normalize.html">normalize</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">normalize</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Path</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="relativize.html">relativize</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">relativize</span><span class="symbol">(</span><span class="identifier" id="java.nio.file.Path$relativize(java.nio.file.Path)/other">other</span><span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Path</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Path</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="resolve.html">resolve</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">resolve</span><span class="symbol">(</span><span class="identifier" id="java.nio.file.Path$resolve(java.nio.file.Path)/other">other</span><span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Path</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Path</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">resolve</span><span class="symbol">(</span><span class="identifier" id="java.nio.file.Path$resolve(kotlin.String)/other">other</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Path</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="resolve-sibling.html">resolveSibling</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">resolveSibling</span><span class="symbol">(</span><span class="identifier" id="java.nio.file.Path$resolveSibling(java.nio.file.Path)/other">other</span><span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Path</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Path</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">resolveSibling</span><span class="symbol">(</span><span class="identifier" id="java.nio.file.Path$resolveSibling(kotlin.String)/other">other</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Path</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="starts-with.html">startsWith</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">startsWith</span><span class="symbol">(</span><span class="identifier" id="java.nio.file.Path$startsWith(java.nio.file.Path)/other">other</span><span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Path</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">startsWith</span><span class="symbol">(</span><span class="identifier" id="java.nio.file.Path$startsWith(kotlin.String)/other">other</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="subpath.html">subpath</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">subpath</span><span class="symbol">(</span><span class="identifier" id="java.nio.file.Path$subpath(kotlin.Int, kotlin.Int)/beginIndex">beginIndex</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="java.nio.file.Path$subpath(kotlin.Int, kotlin.Int)/endIndex">endIndex</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Path</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="to-absolute-path.html">toAbsolutePath</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">toAbsolutePath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Path</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="to-file.html">toFile</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">toFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/io/File.html"><span class="identifier">File</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="to-string.html">toString</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">toString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="to-uri.html">toUri</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">toUri</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/net/URI.html"><span class="identifier">URI</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Companion Object Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="of.html">of</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">of</span><span class="symbol">(</span><span class="identifier" id="java.nio.file.Path.Companion$of(kotlin.String, kotlin.Array((kotlin.String)))/first">first</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="java.nio.file.Path.Companion$of(kotlin.String, kotlin.Array((kotlin.String)))/more">more</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Path</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">of</span><span class="symbol">(</span><span class="identifier" id="java.nio.file.Path.Companion$of(java.net.URI)/uri">uri</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/net/URI.html"><span class="identifier">URI</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Path</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

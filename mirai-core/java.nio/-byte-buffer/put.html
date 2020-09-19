@@ -1,0 +1,130 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ByteBuffer.put - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">java.nio</a>&nbsp;/&nbsp;<a href="index.html">ByteBuffer</a>&nbsp;/&nbsp;<a href="./put.html">put</a><br/>
+<br/>
+<h1>put</h1>
+<a name="java.nio.ByteBuffer$put(kotlin.Byte)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">put</span><span class="symbol">(</span><span class="identifier" id="java.nio.ByteBuffer$put(kotlin.Byte)/b">b</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/index.html"><span class="identifier">Byte</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html"><span class="identifier">ByteBuffer</span></a></code>
+<p>Relative <em>put</em> method&nbsp;&nbsp;<em>(optional operation)</em>.</p>
+<p>Writes the given byte into this buffer at the current
+position, and then increments the position.</p>
+<h3>Parameters</h3>
+<p><a name="b"></a>
+<code>b</code> - The byte to be written</p>
+<h3>Exceptions</h3>
+<p><a name="BufferOverflowException"></a>
+<code>BufferOverflowException</code> - If this buffer's current position is not smaller than its limit</p>
+<p><a name="ReadOnlyBufferException"></a>
+<code>ReadOnlyBufferException</code> - If this buffer is read-only</p>
+<p><strong>Return</strong><br/>
+This buffer</p>
+<a name="java.nio.ByteBuffer$put(kotlin.Int, kotlin.Byte)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">put</span><span class="symbol">(</span><span class="identifier" id="java.nio.ByteBuffer$put(kotlin.Int, kotlin.Byte)/index">index</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="java.nio.ByteBuffer$put(kotlin.Int, kotlin.Byte)/b">b</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/index.html"><span class="identifier">Byte</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html"><span class="identifier">ByteBuffer</span></a><span class="symbol">?</span></code>
+<p>Absolute <em>put</em> method&nbsp;&nbsp;<em>(optional operation)</em>.</p>
+<p>Writes the given byte into this buffer at the given
+index.</p>
+<h3>Parameters</h3>
+<p><a name="index"></a>
+<code>index</code> - The index at which the byte will be written</p>
+<p><a name="b"></a>
+<code>b</code> - The byte value to be written</p>
+<h3>Exceptions</h3>
+<p><a name="IndexOutOfBoundsException"></a>
+<code>IndexOutOfBoundsException</code> - If <code>index</code> is negative
+or not smaller than the buffer's limit</p>
+<p><a name="ReadOnlyBufferException"></a>
+<code>ReadOnlyBufferException</code> - If this buffer is read-only</p>
+<p><strong>Return</strong><br/>
+This buffer</p>
+<a name="java.nio.ByteBuffer$put(java.nio.ByteBuffer)"></a>
+<code><span class="keyword">fun </span><span class="identifier">put</span><span class="symbol">(</span><span class="identifier" id="java.nio.ByteBuffer$put(java.nio.ByteBuffer)/src">src</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html"><span class="identifier">ByteBuffer</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html"><span class="identifier">ByteBuffer</span></a></code>
+<p>Relative bulk <em>put</em> method&nbsp;&nbsp;<em>(optional operation)</em>.</p>
+<p>This method transfers the bytes remaining in the given source
+buffer into this buffer.  If there are more bytes remaining in the
+source buffer than in this buffer, that is, if
+<code>src.remaining()</code>&nbsp;<code>&gt;</code>&nbsp;<code>remaining()</code>,
+then no bytes are transferred and a [ ] is thrown.</p>
+<p>Otherwise, this method copies
+<em>n</em>&nbsp;=&nbsp;<code>src.remaining()</code> bytes from the given
+buffer into this buffer, starting at each buffer's current position.
+The positions of both buffers are then incremented by <em>n</em>.</p>
+<p>In other words, an invocation of this method of the form
+<code>dst.put(src)</code> has exactly the same effect as the loop</p>
+<p>except that it first checks that there is sufficient space in this
+buffer and it is potentially much more efficient.</p>
+<h3>Parameters</h3>
+<p><a name="src"></a>
+<code>src</code> - The source buffer from which bytes are to be read;
+must not be this buffer</p>
+<h3>Exceptions</h3>
+<p><a name="BufferOverflowException"></a>
+<code>BufferOverflowException</code> - If there is insufficient space in this buffer
+for the remaining bytes in the source buffer</p>
+<p><a name="IllegalArgumentException"></a>
+<code>IllegalArgumentException</code> - If the source buffer is this buffer</p>
+<p><a name="ReadOnlyBufferException"></a>
+<code>ReadOnlyBufferException</code> - If this buffer is read-only</p>
+<p><strong>Return</strong><br/>
+This buffer</p>
+<a name="java.nio.ByteBuffer$put(kotlin.ByteArray, kotlin.Int, kotlin.Int)"></a>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">put</span><span class="symbol">(</span><span class="identifier" id="java.nio.ByteBuffer$put(kotlin.ByteArray, kotlin.Int, kotlin.Int)/src">src</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">, </span><span class="identifier" id="java.nio.ByteBuffer$put(kotlin.ByteArray, kotlin.Int, kotlin.Int)/offset">offset</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="java.nio.ByteBuffer$put(kotlin.ByteArray, kotlin.Int, kotlin.Int)/length">length</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html"><span class="identifier">ByteBuffer</span></a></code>
+<p>Relative bulk <em>put</em> method&nbsp;&nbsp;<em>(optional operation)</em>.</p>
+<p>This method transfers bytes into this buffer from the given
+source array.  If there are more bytes to be copied from the array
+than remain in this buffer, that is, if
+<code>length</code>&nbsp;<code>&gt;</code>&nbsp;<code>remaining()</code>, then no
+bytes are transferred and a <a href="https://docs.oracle.com/javase/6/docs/api/java/nio/BufferOverflowException.html">BufferOverflowException</a> is
+thrown.</p>
+<p>Otherwise, this method copies <code>length</code> bytes from the
+given array into this buffer, starting at the given offset in the array
+and at the current position of this buffer.  The position of this buffer
+is then incremented by <code>length</code>.</p>
+<p>In other words, an invocation of this method of the form
+<code>dst.put(src,&amp;nbsp;off,&amp;nbsp;len)</code> has exactly the same effect as
+the loop</p>
+<p>except that it first checks that there is sufficient space in this
+buffer and it is potentially much more efficient.</p>
+<h3>Parameters</h3>
+<p><a name="src"></a>
+<code>src</code> - The array from which bytes are to be read</p>
+<p><a name="offset"></a>
+<code>offset</code> - The offset within the array of the first byte to be read;
+must be non-negative and no larger than <code>src.length</code></p>
+<p><a name="length"></a>
+<code>length</code> - The number of bytes to be read from the given array;
+must be non-negative and no larger than
+<code>src.length - offset</code></p>
+<h3>Exceptions</h3>
+<p><a name="BufferOverflowException"></a>
+<code>BufferOverflowException</code> - If there is insufficient space in this buffer</p>
+<p><a name="IndexOutOfBoundsException"></a>
+<code>IndexOutOfBoundsException</code> - If the preconditions on the <code>offset</code> and <code>length</code>
+parameters do not hold</p>
+<p><a name="ReadOnlyBufferException"></a>
+<code>ReadOnlyBufferException</code> - If this buffer is read-only</p>
+<p><strong>Return</strong><br/>
+This buffer</p>
+<a name="java.nio.ByteBuffer$put(kotlin.ByteArray)"></a>
+<code><span class="keyword">fun </span><span class="identifier">put</span><span class="symbol">(</span><span class="identifier" id="java.nio.ByteBuffer$put(kotlin.ByteArray)/src">src</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html"><span class="identifier">ByteBuffer</span></a></code>
+<p>Relative bulk <em>put</em> method&nbsp;&nbsp;<em>(optional operation)</em>.</p>
+<p>This method transfers the entire content of the given source
+byte array into this buffer.  An invocation of this method of the
+form <code>dst.put(a)</code> behaves in exactly the same way as the
+invocation</p>
+<h3>Parameters</h3>
+<p><a name="src"></a>
+<code>src</code> - The source array</p>
+<h3>Exceptions</h3>
+<p><a name="BufferOverflowException"></a>
+<code>BufferOverflowException</code> - If there is insufficient space in this buffer</p>
+<p><a name="ReadOnlyBufferException"></a>
+<code>ReadOnlyBufferException</code> - If this buffer is read-only</p>
+<p><strong>Return</strong><br/>
+This buffer</p>
+</BODY>
+</HTML>

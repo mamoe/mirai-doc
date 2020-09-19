@@ -1,0 +1,99 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>OnlineMessageSource.Outgoing - mirai-core</title>
+<link rel="stylesheet" href="../../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../../index.html">net.mamoe.mirai.message.data</a>&nbsp;/&nbsp;<a href="../index.html">OnlineMessageSource</a>&nbsp;/&nbsp;<a href="./index.html">Outgoing</a><br/>
+<br/>
+<h1>Outgoing</h1>
+<code><span class="keyword">sealed</span> <span class="keyword">class </span><span class="identifier">Outgoing</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../index.html"><span class="identifier">OnlineMessageSource</span></a></code>
+<p>由 <a href="../../../net.mamoe.mirai.contact/-contact/send-message.html">机器人主动发送消息</a> 产生的 <a href="../../-message-source/index.html">MessageSource</a>, 可通过 <a href="../../../net.mamoe.mirai.message/-message-receipt/index.html">MessageReceipt</a> 获得.</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-key/index.html">Key</a></h4>
+</td>
+<td>
+<code><span class="keyword">companion</span> <span class="keyword">object </span><span class="identifier">Key</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Key</span><span class="symbol">&lt;</span><span class="identifier">Outgoing</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-to-friend/index.html">ToFriend</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">ToFriend</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Outgoing</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-to-group/index.html">ToGroup</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">ToGroup</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Outgoing</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-to-temp/index.html">ToTemp</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">ToTemp</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Outgoing</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="from-id.html">fromId</a></h4>
+</td>
+<td>
+<p>发送人.</p>
+<code><span class="keyword">val </span><span class="identifier">fromId</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="sender.html">sender</a></h4>
+</td>
+<td>
+<p>消息发送人. 可能为 <a href="../../../net.mamoe.mirai/-bot/index.html">机器人</a> 或 <a href="../../../net.mamoe.mirai.contact/-friend/index.html">好友</a> 或 <a href="../../../net.mamoe.mirai.contact/-member/index.html">群员</a>.
+即类型必定为 <a href="../../../net.mamoe.mirai/-bot/index.html">Bot</a>, <a href="../../../net.mamoe.mirai.contact/-friend/index.html">Friend</a> 或 <a href="../../../net.mamoe.mirai.contact/-member/index.html">Member</a></p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">sender</span><span class="symbol">: </span><a href="../../../net.mamoe.mirai/-bot/index.html"><span class="identifier">Bot</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="target.html">target</a></h4>
+</td>
+<td>
+<p>消息发送目标. 可能为 <a href="../../../net.mamoe.mirai/-bot/index.html">机器人</a> 或 <a href="../../../net.mamoe.mirai.contact/-friend/index.html">好友</a> 或 <a href="../../../net.mamoe.mirai.contact/-group/index.html">群</a>.
+即类型必定为 <a href="../../../net.mamoe.mirai/-bot/index.html">Bot</a>, <a href="../../../net.mamoe.mirai.contact/-friend/index.html">Friend</a> 或 <a href="../../../net.mamoe.mirai.contact/-group/index.html">Group</a></p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">target</span><span class="symbol">: </span><a href="../../../net.mamoe.mirai.contact/-contact/index.html"><span class="identifier">Contact</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="target-id.html">targetId</a></h4>
+</td>
+<td>
+<p>消息发送目标.</p>
+<code><span class="keyword">val </span><span class="identifier">targetId</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Companion Object Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="type-name.html">typeName</a></h4>
+</td>
+<td>
+<p>此 <a href="../../-message/-key/index.html">Key</a> 指代的 <a href="../../-message/index.html">Message</a> 类型名. 一般为 <code>class.simpleName</code>, 如 "QuoteReply", "PlainText"</p>
+<code><span class="keyword">val </span><span class="identifier">typeName</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

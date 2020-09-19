@@ -1,0 +1,77 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BroadcastControllable - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.event</a>&nbsp;/&nbsp;<a href="./index.html">BroadcastControllable</a><br/>
+<br/>
+<h1>BroadcastControllable</h1>
+<code><span class="keyword">interface </span><span class="identifier">BroadcastControllable</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-event/index.html"><span class="identifier">Event</span></a></code>
+<p>可控制是否需要广播这个事件</p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="should-broadcast.html">shouldBroadcast</a></h4>
+</td>
+<td>
+<p>返回 <code>false</code> 时将不会广播这个事件.</p>
+<code><span class="keyword">open</span> <span class="keyword">val </span><span class="identifier">shouldBroadcast</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../__broadcast-java.html">__broadcastJava</a></h4>
+</td>
+<td>
+<p>在 Java 广播一个事件的唯一途径.</p>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">E</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-event/index.html"><span class="identifier">Event</span></a><span class="symbol">&gt;</span> <span class="identifier">E</span><span class="symbol">.</span><span class="identifier">__broadcastJava</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">E</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../broadcast.html">broadcast</a></h4>
+</td>
+<td>
+<p>广播一个事件的唯一途径.</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">E</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-event/index.html"><span class="identifier">Event</span></a><span class="symbol">&gt;</span> <span class="identifier">E</span><span class="symbol">.</span><span class="identifier">broadcast</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">E</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../../net.mamoe.mirai.message/-friend-message-event/index.html">FriendMessageEvent</a></h4>
+</td>
+<td>
+<p>机器人收到的好友消息的事件</p>
+<code><span class="keyword">class </span><span class="identifier">FriendMessageEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">FriendMessage</span><span class="symbol">, </span><a href="./index.html"><span class="identifier">BroadcastControllable</span></a><span class="symbol">, </span><a href="../../net.mamoe.mirai.event.events/-friend-event/index.html"><span class="identifier">FriendEvent</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../../net.mamoe.mirai.event.events/-group-setting-change-event/index.html">GroupSettingChangeEvent</a></h4>
+</td>
+<td>
+<p>群设置改变. 此事件广播前修改就已经完成.</p>
+<code><span class="keyword">interface </span><span class="identifier">GroupSettingChangeEvent</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.event.events/-group-event/index.html"><span class="identifier">GroupEvent</span></a><span class="symbol">, </span><a href="../../net.mamoe.mirai.event.events/-bot-passive-event.html"><span class="identifier">BotPassiveEvent</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">BroadcastControllable</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../../net.mamoe.mirai.message/-temp-message-event/index.html">TempMessageEvent</a></h4>
+</td>
+<td>
+<p>机器人收到的群临时会话消息的事件</p>
+<code><span class="keyword">class </span><span class="identifier">TempMessageEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">TempMessage</span><span class="symbol">, </span><a href="./index.html"><span class="identifier">BroadcastControllable</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

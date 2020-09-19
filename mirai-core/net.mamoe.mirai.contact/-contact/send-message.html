@@ -1,0 +1,33 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Contact.sendMessage - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.contact</a>&nbsp;/&nbsp;<a href="index.html">Contact</a>&nbsp;/&nbsp;<a href="./send-message.html">sendMessage</a><br/>
+<br/>
+<h1>sendMessage</h1>
+<a name="net.mamoe.mirai.contact.Contact$sendMessage(net.mamoe.mirai.message.data.Message)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">sendMessage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.contact.Contact$sendMessage(net.mamoe.mirai.message.data.Message)/message">message</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.message.data/-message/index.html"><span class="identifier">Message</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.message/-message-receipt/index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><a href="index.html"><span class="identifier">Contact</span></a><span class="symbol">&gt;</span></code>
+<p>向这个对象发送消息.</p>
+<p>单条消息最大可发送 4500 字符或 50 张图片.</p>
+<h3>Exceptions</h3>
+<p><a name="EventCancelledException"></a>
+<code>EventCancelledException</code> - 当发送消息事件被取消时抛出</p>
+<p><a name="BotIsBeingMutedException"></a>
+<code>BotIsBeingMutedException</code> - 发送群消息时若 <a href="../../net.mamoe.mirai/-bot/index.html">Bot</a> 被禁言抛出</p>
+<p><a name="MessageTooLargeException"></a>
+<code>MessageTooLargeException</code> - 当消息过长时抛出</p>
+<p><a name="IllegalArgumentException"></a>
+<code>IllegalArgumentException</code> - 当消息内容为空时抛出 (详见 <a href="../../net.mamoe.mirai.message.data/is-content-empty.html">Message.isContentEmpty</a>)</p>
+<p><strong>See Also</strong><br/>
+<p><a href="../../net.mamoe.mirai.event.events/-message-pre-send-event/index.html">MessagePreSendEvent</a></p>
+<p><a href="../../net.mamoe.mirai.event.events/-message-post-send-event/index.html">MessagePostSendEvent</a></p>
+</p>
+<p><strong>Return</strong><br/>
+消息回执. 可 <a href="../../net.mamoe.mirai.message/quote.html">引用回复</a>（仅群聊）或 <a href="../../net.mamoe.mirai.message/recall.html">撤回</a> 这条消息.</p>
+<a name="net.mamoe.mirai.contact.Contact$sendMessage(kotlin.String)"></a>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">sendMessage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.contact.Contact$sendMessage(kotlin.String)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.message/-message-receipt/index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><a href="index.html"><span class="identifier">Contact</span></a><span class="symbol">&gt;</span></code>
+</BODY>
+</HTML>

@@ -1,0 +1,30 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ByteBuffer.putLong - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">java.nio</a>&nbsp;/&nbsp;<a href="index.html">ByteBuffer</a>&nbsp;/&nbsp;<a href="./put-long.html">putLong</a><br/>
+<br/>
+<h1>putLong</h1>
+<a name="java.nio.ByteBuffer$putLong(kotlin.Long)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">putLong</span><span class="symbol">(</span><span class="identifier" id="java.nio.ByteBuffer$putLong(kotlin.Long)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html"><span class="identifier">ByteBuffer</span></a></code>
+<p>Relative <em>put</em> method for writing a long
+value&nbsp;&nbsp;<em>(optional operation)</em>.</p>
+<p>Writes eight bytes containing the given long value, in the
+current byte order, into this buffer at the current position, and then
+increments the position by eight.</p>
+<h3>Parameters</h3>
+<p><a name="value"></a>
+<code>value</code> - The long value to be written</p>
+<h3>Exceptions</h3>
+<p><a name="BufferOverflowException"></a>
+<code>BufferOverflowException</code> - If there are fewer than eight bytes
+remaining in this buffer</p>
+<p><a name="ReadOnlyBufferException"></a>
+<code>ReadOnlyBufferException</code> - If this buffer is read-only</p>
+<p><strong>Return</strong><br/>
+This buffer</p>
+</BODY>
+</HTML>

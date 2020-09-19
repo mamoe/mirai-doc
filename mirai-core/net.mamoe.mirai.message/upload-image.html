@@ -1,0 +1,30 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>uploadImage - mirai-core</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="index.html">net.mamoe.mirai.message</a>&nbsp;/&nbsp;<a href="./upload-image.html">uploadImage</a><br/>
+<br/>
+<h1>uploadImage</h1>
+<a name="net.mamoe.mirai.message$uploadImage(net.mamoe.mirai.contact.Contact, java.awt.image.BufferedImage)"></a>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><a href="../net.mamoe.mirai.contact/-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">.</span><span class="identifier">uploadImage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$uploadImage(net.mamoe.mirai.contact.Contact, java.awt.image.BufferedImage)/bufferedImage">bufferedImage</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/awt/image/BufferedImage.html"><span class="identifier">BufferedImage</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../net.mamoe.mirai.message.data/-image/index.html"><span class="identifier">Image</span></a></code>
+<p>在 <a href="#">Dispatchers.IO</a> 中将图片上传, 但不发送. 不会保存临时文件</p>
+<h3>Exceptions</h3>
+<p><a name="OverFileSizeMaxException"></a>
+<code>OverFileSizeMaxException</code> - </p>
+<a name="net.mamoe.mirai.message$uploadImage(net.mamoe.mirai.contact.Contact, java.io.InputStream)"></a>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><a href="../net.mamoe.mirai.contact/-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">.</span><span class="identifier">uploadImage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$uploadImage(net.mamoe.mirai.contact.Contact, java.io.InputStream)/imageStream">imageStream</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html"><span class="identifier">InputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../net.mamoe.mirai.message.data/-image/index.html"><span class="identifier">Image</span></a></code>
+<p>在 <a href="#">Dispatchers.IO</a> 中读取 <a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html">InputStream</a> 到临时文件并将其作为图片上传, 但不发送</p>
+<h3>Exceptions</h3>
+<p><a name="OverFileSizeMaxException"></a>
+<code>OverFileSizeMaxException</code> - </p>
+<a name="net.mamoe.mirai.message$uploadImage(net.mamoe.mirai.contact.Contact, java.io.File)"></a>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><a href="../net.mamoe.mirai.contact/-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">.</span><span class="identifier">uploadImage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$uploadImage(net.mamoe.mirai.contact.Contact, java.io.File)/file">file</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../net.mamoe.mirai.message.data/-image/index.html"><span class="identifier">Image</span></a></code>
+<p>在 <a href="#">Dispatchers.IO</a> 中将文件作为图片上传, 但不发送</p>
+<h3>Exceptions</h3>
+<p><a name="OverFileSizeMaxException"></a>
+<code>OverFileSizeMaxException</code> - </p>
+</BODY>
+</HTML>

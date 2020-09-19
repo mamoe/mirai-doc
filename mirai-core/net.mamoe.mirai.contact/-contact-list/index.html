@@ -1,0 +1,98 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ContactList - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.contact</a>&nbsp;/&nbsp;<a href="./index.html">ContactList</a><br/>
+<br/>
+<h1>ContactList</h1>
+<code><span class="keyword">class </span><span class="identifier">ContactList</span><span class="symbol">&lt;</span><span class="identifier">C</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/index.html"><span class="identifier">Collection</span></a><span class="symbol">&lt;</span><span class="identifier">C</span><span class="symbol">&gt;</span></code>
+<p>只读联系人列表, 无锁链表实现</p>
+<p><strong>See Also</strong><br/>
+<p><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/as-sequence.html">ContactList.asSequence</a></p>
+</p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="size.html">size</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">size</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="contains.html">contains</a></h4>
+</td>
+<td>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="identifier">contains</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.contact.ContactList$contains(net.mamoe.mirai.contact.ContactList.C)/element">element</span><span class="symbol">:</span>&nbsp;<span class="identifier">C</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code><br/>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="identifier">contains</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.contact.ContactList$contains(kotlin.Long)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="contains-all.html">containsAll</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">containsAll</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.contact.ContactList$containsAll(kotlin.collections.Collection((net.mamoe.mirai.contact.ContactList.C)))/elements">elements</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/index.html"><span class="identifier">Collection</span></a><span class="symbol">&lt;</span><span class="identifier">C</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get.html">get</a></h4>
+</td>
+<td>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.contact.ContactList$get(kotlin.Long)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">C</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-or-null.html">getOrNull</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getOrNull</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.contact.ContactList$getOrNull(kotlin.Long)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">C</span><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="is-empty.html">isEmpty</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">isEmpty</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="iterator.html">iterator</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">iterator</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterator/index.html"><span class="identifier">Iterator</span></a><span class="symbol">&lt;</span><span class="identifier">C</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="to-string.html">toString</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">toString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../id-content-string.html">idContentString</a></h4>
+</td>
+<td>
+<p>ID 列表的字符串表示.
+如:</p>
+<code><span class="keyword">val </span><a href="./index.html"><span class="identifier">ContactList</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">idContentString</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

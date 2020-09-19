@@ -1,0 +1,95 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BotOfflineEvent - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.event.events</a>&nbsp;/&nbsp;<a href="./index.html">BotOfflineEvent</a><br/>
+<br/>
+<h1>BotOfflineEvent</h1>
+<code><span class="keyword">sealed</span> <span class="keyword">class </span><span class="identifier">BotOfflineEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-bot-event/index.html"><span class="identifier">BotEvent</span></a><span class="symbol">, </span><a href="../../net.mamoe.mirai.event/-abstract-event/index.html"><span class="identifier">AbstractEvent</span></a></code>
+<p><a href="../../net.mamoe.mirai/-bot/index.html">Bot</a> 离线.</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-active/index.html">Active</a></h4>
+</td>
+<td>
+<p>主动离线. 主动广播这个事件也可以让 <a href="../../net.mamoe.mirai/-bot/index.html">Bot</a> 关闭.</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Active</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BotOfflineEvent</span></a><span class="symbol">, </span><a href="../-bot-active-event.html"><span class="identifier">BotActiveEvent</span></a><span class="symbol">, </span><span class="identifier">CauseAware</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-cause-aware/index.html">CauseAware</a></h4>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CauseAware</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-dropped/index.html">Dropped</a></h4>
+</td>
+<td>
+<p>因网络问题而掉线</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Dropped</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BotOfflineEvent</span></a><span class="symbol">, </span><span class="identifier">Packet</span><span class="symbol">, </span><a href="../-bot-passive-event.html"><span class="identifier">BotPassiveEvent</span></a><span class="symbol">, </span><span class="identifier">CauseAware</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-force/index.html">Force</a></h4>
+</td>
+<td>
+<p>被挤下线</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Force</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BotOfflineEvent</span></a><span class="symbol">, </span><span class="identifier">Packet</span><span class="symbol">, </span><a href="../-bot-passive-event.html"><span class="identifier">BotPassiveEvent</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-msf-offline/index.html">MsfOffline</a></h4>
+</td>
+<td>
+<p>被服务器断开</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">MsfOffline</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BotOfflineEvent</span></a><span class="symbol">, </span><span class="identifier">Packet</span><span class="symbol">, </span><a href="../-bot-passive-event.html"><span class="identifier">BotPassiveEvent</span></a><span class="symbol">, </span><span class="identifier">CauseAware</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-packet-factory10008/index.html">PacketFactory10008</a></h4>
+</td>
+<td>
+<p>因 returnCode = -10008 等原因掉线</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">PacketFactory10008</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BotOfflineEvent</span></a><span class="symbol">, </span><span class="identifier">Packet</span><span class="symbol">, </span><a href="../-bot-passive-event.html"><span class="identifier">BotPassiveEvent</span></a><span class="symbol">, </span><span class="identifier">CauseAware</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-require-reconnect/index.html">RequireReconnect</a></h4>
+</td>
+<td>
+<p>服务器主动要求更换另一个服务器</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">RequireReconnect</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BotOfflineEvent</span></a><span class="symbol">, </span><span class="identifier">Packet</span><span class="symbol">, </span><a href="../-bot-passive-event.html"><span class="identifier">BotPassiveEvent</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../../net.mamoe.mirai.event/__broadcast-java.html">__broadcastJava</a></h4>
+</td>
+<td>
+<p>在 Java 广播一个事件的唯一途径.</p>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">E</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.event/-event/index.html"><span class="identifier">Event</span></a><span class="symbol">&gt;</span> <span class="identifier">E</span><span class="symbol">.</span><span class="identifier">__broadcastJava</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">E</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../../net.mamoe.mirai.event/broadcast.html">broadcast</a></h4>
+</td>
+<td>
+<p>广播一个事件的唯一途径.</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">E</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.event/-event/index.html"><span class="identifier">Event</span></a><span class="symbol">&gt;</span> <span class="identifier">E</span><span class="symbol">.</span><span class="identifier">broadcast</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">E</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

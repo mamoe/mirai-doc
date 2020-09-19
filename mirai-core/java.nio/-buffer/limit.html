@@ -1,0 +1,31 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Buffer.limit - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">java.nio</a>&nbsp;/&nbsp;<a href="index.html">Buffer</a>&nbsp;/&nbsp;<a href="./limit.html">limit</a><br/>
+<br/>
+<h1>limit</h1>
+<a name="java.nio.Buffer$limit()"></a>
+<code><span class="keyword">fun </span><span class="identifier">limit</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>Returns this buffer's limit.</p>
+<p><strong>Return</strong><br/>
+The limit of this buffer</p>
+<a name="java.nio.Buffer$limit(kotlin.Int)"></a>
+<code><span class="keyword">fun </span><span class="identifier">limit</span><span class="symbol">(</span><span class="identifier" id="java.nio.Buffer$limit(kotlin.Int)/newLimit">newLimit</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/Buffer.html"><span class="identifier">Buffer</span></a></code>
+<p>Sets this buffer's limit.  If the position is larger than the new limit
+then it is set to the new limit.  If the mark is defined and larger than
+the new limit then it is discarded.</p>
+<h3>Parameters</h3>
+<p><a name="newLimit"></a>
+<code>newLimit</code> - The new limit value; must be non-negative
+and no larger than this buffer's capacity</p>
+<h3>Exceptions</h3>
+<p><a name="IllegalArgumentException"></a>
+<code>IllegalArgumentException</code> - If the preconditions on <code>newLimit</code> do not hold</p>
+<p><strong>Return</strong><br/>
+This buffer</p>
+</BODY>
+</HTML>

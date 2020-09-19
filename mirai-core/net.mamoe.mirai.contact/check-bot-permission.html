@@ -1,0 +1,20 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>checkBotPermission - mirai-core</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="index.html">net.mamoe.mirai.contact</a>&nbsp;/&nbsp;<a href="./check-bot-permission.html">checkBotPermission</a><br/>
+<br/>
+<h1>checkBotPermission</h1>
+<a name="net.mamoe.mirai.contact$checkBotPermission(net.mamoe.mirai.contact.Group, net.mamoe.mirai.contact.MemberPermission, kotlin.Function0((kotlin.String)))"></a>
+<code><span class="keyword">inline</span> <span class="keyword">fun </span><a href="-group/index.html"><span class="identifier">Group</span></a><span class="symbol">.</span><span class="identifier">checkBotPermission</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.contact$checkBotPermission(net.mamoe.mirai.contact.Group, net.mamoe.mirai.contact.MemberPermission, kotlin.Function0((kotlin.String)))/required">required</span><span class="symbol">:</span>&nbsp;<a href="-member-permission/index.html"><span class="identifier">MemberPermission</span></a><span class="symbol">, </span><span class="keyword">crossinline</span> <span class="identifier" id="net.mamoe.mirai.contact$checkBotPermission(net.mamoe.mirai.contact.Group, net.mamoe.mirai.contact.MemberPermission, kotlin.Function0((kotlin.String)))/lazyMessage">lazyMessage</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a>&nbsp;<span class="symbol">=</span>&nbsp;{
+        "Permission denied: required $required, got actual $botPermission for $bot in group $id"
+    }<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>要求 <a href="../net.mamoe.mirai/-bot/index.html">Bot</a> 在这个群里的权限至少为 <a href="check-bot-permission.html#net.mamoe.mirai.contact$checkBotPermission(net.mamoe.mirai.contact.Group, net.mamoe.mirai.contact.MemberPermission, kotlin.Function0((kotlin.String)))/required">required</a>, 否则抛出异常 <a href="-permission-denied-exception/index.html">PermissionDeniedException</a></p>
+<h3>Exceptions</h3>
+<p><a name="PermissionDeniedException"></a>
+<code>PermissionDeniedException</code> - </p>
+</BODY>
+</HTML>

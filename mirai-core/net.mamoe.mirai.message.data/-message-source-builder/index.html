@@ -1,0 +1,125 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MessageSourceBuilder - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.message.data</a>&nbsp;/&nbsp;<a href="./index.html">MessageSourceBuilder</a><br/>
+<br/>
+<h1>MessageSourceBuilder</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">MessageSourceBuilder</span></code>
+<p><strong>See Also</strong><br/>
+<p><a href="../build-message-source.html">buildMessageSource</a></p>
+</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<code><span class="identifier">MessageSourceBuilder</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="now.html">now</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">now</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="all-from.html">allFrom</a></h4>
+</td>
+<td>
+<p>从另一个 <a href="../-message-source/index.html">MessageSource</a> 复制所有信息, 包括消息内容. 不会清空已有消息.</p>
+<code><span class="keyword">fun </span><span class="identifier">allFrom</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageSourceBuilder$allFrom(net.mamoe.mirai.message.data.MessageSource)/source">source</span><span class="symbol">:</span>&nbsp;<a href="../-message-source/index.html"><span class="identifier">MessageSource</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MessageSourceBuilder</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="clear-messages.html">clearMessages</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">clearMessages</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MessageSourceBuilder</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="id.html">id</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">id</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageSourceBuilder$id(net.mamoe.mirai.message.data.MessageSource)/from">from</span><span class="symbol">:</span>&nbsp;<a href="../-message-source/index.html"><span class="identifier">MessageSource</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MessageSourceBuilder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">id</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageSourceBuilder$id(kotlin.Int)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MessageSourceBuilder</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="internal-id.html">internalId</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">internalId</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageSourceBuilder$internalId(net.mamoe.mirai.message.data.MessageSource)/from">from</span><span class="symbol">:</span>&nbsp;<a href="../-message-source/index.html"><span class="identifier">MessageSource</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MessageSourceBuilder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">internalId</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageSourceBuilder$internalId(kotlin.Int)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MessageSourceBuilder</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="messages.html">messages</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">messages</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageSourceBuilder$messages(kotlin.collections.Iterable((net.mamoe.mirai.message.data.Message)))/messages">messages</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><span class="identifier">Iterable</span></a><span class="symbol">&lt;</span><a href="../-message/index.html"><span class="identifier">Message</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MessageSourceBuilder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">messages</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="net.mamoe.mirai.message.data.MessageSourceBuilder$messages(kotlin.Array((net.mamoe.mirai.message.data.Message)))/message">message</span><span class="symbol">:</span>&nbsp;<a href="../-message/index.html"><span class="identifier">Message</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MessageSourceBuilder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">messages</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageSourceBuilder$messages(kotlin.Function1((net.mamoe.mirai.message.data.MessageChainBuilder, kotlin.Unit)))/block">block</span><span class="symbol">:</span>&nbsp;<a href="../-message-chain-builder/index.html"><span class="identifier">MessageChainBuilder</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MessageSourceBuilder</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="messages-from.html">messagesFrom</a></h4>
+</td>
+<td>
+<p>从另一个 <a href="../-message-source/index.html">MessageSource</a> 复制 <a href="../-message-source/original-message.html">消息内容</a>. 不会清空已有消息.</p>
+<code><span class="keyword">fun </span><span class="identifier">messagesFrom</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageSourceBuilder$messagesFrom(net.mamoe.mirai.message.data.MessageSource)/source">source</span><span class="symbol">:</span>&nbsp;<a href="../-message-source/index.html"><span class="identifier">MessageSource</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MessageSourceBuilder</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="metadata.html">metadata</a></h4>
+</td>
+<td>
+<p>从另一个 <a href="../-message-source/index.html">MessageSource</a> 复制 <a href="id.html">id</a>, <a href="time.html">time</a>, <a href="internal-id.html">internalId</a>.
+这三个数据决定官方客户端能 "定位" 到的原消息</p>
+<code><span class="keyword">fun </span><span class="identifier">metadata</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageSourceBuilder$metadata(net.mamoe.mirai.message.data.MessageSource)/from">from</span><span class="symbol">:</span>&nbsp;<a href="../-message-source/index.html"><span class="identifier">MessageSource</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MessageSourceBuilder</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="send-to.html">sendTo</a></h4>
+</td>
+<td>
+<p>设置 <a href="send-to/-this-.html">发送人</a> 和 <a href="send-to.html#net.mamoe.mirai.message.data.MessageSourceBuilder$sendTo(net.mamoe.mirai.contact.ContactOrBot, net.mamoe.mirai.contact.ContactOrBot)/target">发送目标</a>, 并自动判断 <a href="#">kind</a></p>
+<code><span class="keyword">abstract</span> <span class="keyword">infix</span> <span class="keyword">fun </span><a href="../../net.mamoe.mirai.contact/-contact-or-bot/index.html"><span class="identifier">ContactOrBot</span></a><span class="symbol">.</span><span class="identifier">sendTo</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageSourceBuilder$sendTo(net.mamoe.mirai.contact.ContactOrBot, net.mamoe.mirai.contact.ContactOrBot)/target">target</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.contact/-contact-or-bot/index.html"><span class="identifier">ContactOrBot</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MessageSourceBuilder</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="set-sender-and-target.html">setSenderAndTarget</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">setSenderAndTarget</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageSourceBuilder$setSenderAndTarget(net.mamoe.mirai.contact.ContactOrBot, net.mamoe.mirai.contact.ContactOrBot)/sender">sender</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.contact/-contact-or-bot/index.html"><span class="identifier">ContactOrBot</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.message.data.MessageSourceBuilder$setSenderAndTarget(net.mamoe.mirai.contact.ContactOrBot, net.mamoe.mirai.contact.ContactOrBot)/target">target</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.contact/-contact-or-bot/index.html"><span class="identifier">ContactOrBot</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MessageSourceBuilder</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="time.html">time</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">time</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageSourceBuilder$time(net.mamoe.mirai.message.data.MessageSource)/from">from</span><span class="symbol">:</span>&nbsp;<a href="../-message-source/index.html"><span class="identifier">MessageSource</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MessageSourceBuilder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">time</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageSourceBuilder$time(kotlin.Int)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MessageSourceBuilder</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

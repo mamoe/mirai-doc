@@ -1,0 +1,21 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>recallIn - mirai-core</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="index.html">net.mamoe.mirai.message</a>&nbsp;/&nbsp;<a href="./recall-in.html">recallIn</a><br/>
+<br/>
+<h1>recallIn</h1>
+<a name="net.mamoe.mirai.message$recallIn(net.mamoe.mirai.message.MessageReceipt((net.mamoe.mirai.contact.Contact)), kotlin.Long, kotlin.coroutines.CoroutineContext)"></a>
+<code><span class="keyword">fun </span><a href="-message-receipt/index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">recallIn</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$recallIn(net.mamoe.mirai.message.MessageReceipt((net.mamoe.mirai.contact.Contact)), kotlin.Long, kotlin.coroutines.CoroutineContext)/timeMillis">timeMillis</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.message$recallIn(net.mamoe.mirai.message.MessageReceipt((net.mamoe.mirai.contact.Contact)), kotlin.Long, kotlin.coroutines.CoroutineContext)/coroutineContext">coroutineContext</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.coroutines/-coroutine-context/index.html"><span class="identifier">CoroutineContext</span></a>&nbsp;<span class="symbol">=</span>&nbsp;EmptyCoroutineContext<span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Job</span></code>
+<p>在一段时间后撤回这条消息. <a href="recall.html">recall</a> 或 <a href="../net.mamoe.mirai/kotlinx.coroutines.-coroutine-scope/recall-in.html">recallIn</a> 只能被调用一次.</p>
+<h3>Parameters</h3>
+<p><a name="timeMillis"></a>
+<code>timeMillis</code> - 延迟时间, 单位为毫秒</p>
+<h3>Exceptions</h3>
+<p><a name="IllegalStateException"></a>
+<code>IllegalStateException</code> - 当此消息已经被撤回或正计划撤回时</p>
+</BODY>
+</HTML>

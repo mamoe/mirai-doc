@@ -1,0 +1,30 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>syncFromEventOrNull - mirai-core</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="index.html">net.mamoe.mirai.event</a>&nbsp;/&nbsp;<a href="./sync-from-event-or-null.html">syncFromEventOrNull</a><br/>
+<br/>
+<h1>syncFromEventOrNull</h1>
+<a name="net.mamoe.mirai.event$syncFromEventOrNull(kotlin.Long, net.mamoe.mirai.event.Listener.EventPriority, kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.event.syncFromEventOrNull.E, , net.mamoe.mirai.event.syncFromEventOrNull.R)))"></a>
+<code><span class="keyword">suspend</span> <span class="keyword">inline</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="keyword">reified</span>&nbsp;<span class="identifier">E</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-event/index.html"><span class="identifier">Event</span></a><span class="symbol">, </span><span class="identifier">R</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">syncFromEventOrNull</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.event$syncFromEventOrNull(kotlin.Long, net.mamoe.mirai.event.Listener.EventPriority, kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.event.syncFromEventOrNull.E, , net.mamoe.mirai.event.syncFromEventOrNull.R)))/timeoutMillis">timeoutMillis</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.event$syncFromEventOrNull(kotlin.Long, net.mamoe.mirai.event.Listener.EventPriority, kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.event.syncFromEventOrNull.E, , net.mamoe.mirai.event.syncFromEventOrNull.R)))/priority">priority</span><span class="symbol">:</span>&nbsp;<span class="identifier">EventPriority</span>&nbsp;<span class="symbol">=</span>&nbsp;EventPriority.MONITOR<span class="symbol">, </span><span class="keyword">crossinline</span> <span class="identifier" id="net.mamoe.mirai.event$syncFromEventOrNull(kotlin.Long, net.mamoe.mirai.event.Listener.EventPriority, kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.event.syncFromEventOrNull.E, , net.mamoe.mirai.event.syncFromEventOrNull.R)))/mapper">mapper</span><span class="symbol">:</span>&nbsp;<span class="keyword">suspend </span><span class="identifier">E</span><span class="symbol">.</span><span class="symbol">(</span><span class="identifier">E</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">R</span><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">R</span><span class="symbol">?</span></code>
+<p>挂起当前协程, 监听这个事件, 并尝试从这个事件中获取一个值, 在超时时返回 <code>null</code></p>
+<h3>Parameters</h3>
+<p><a name="timeoutMillis"></a>
+<code>timeoutMillis</code> - 超时. 单位为毫秒. <code>-1</code> 为不限制</p>
+<p><a name="mapper"></a>
+<code>mapper</code> - 过滤转换器. 返回非 null 则代表得到了需要的值.</p>
+<h3>Exceptions</h3>
+<p><a name="Throwable"></a>
+<code>Throwable</code> - 当 <a href="sync-from-event-or-null.html#net.mamoe.mirai.event$syncFromEventOrNull(kotlin.Long, net.mamoe.mirai.event.Listener.EventPriority, kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.event.syncFromEventOrNull.E, , net.mamoe.mirai.event.syncFromEventOrNull.R)))/mapper">mapper</a> 抛出任何异常时, 本函数会抛出该异常</p>
+<p><strong>Return</strong><br/>
+超时返回 <code>null</code>, 否则返回 <a href="sync-from-event-or-null.html#net.mamoe.mirai.event$syncFromEventOrNull(kotlin.Long, net.mamoe.mirai.event.Listener.EventPriority, kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.event.syncFromEventOrNull.E, , net.mamoe.mirai.event.syncFromEventOrNull.R)))/mapper">mapper</a> 返回的第一个非 <code>null</code> 值.</p>
+<p><strong>See Also</strong><br/>
+<p><a href="kotlinx.coroutines.-coroutine-scope/async-from-event.html">asyncFromEvent</a></p>
+<p><a href="kotlinx.coroutines.-coroutine-scope/subscribe.html">subscribe</a></p>
+<p><a href="next-event.html">nextEvent</a></p>
+</p>
+</BODY>
+</HTML>

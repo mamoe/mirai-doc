@@ -1,0 +1,143 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>GroupOperableEvent - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.event.events</a>&nbsp;/&nbsp;<a href="./index.html">GroupOperableEvent</a><br/>
+<br/>
+<h1>GroupOperableEvent</h1>
+<code><span class="keyword">interface </span><span class="identifier">GroupOperableEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-group-event/index.html"><span class="identifier">GroupEvent</span></a></code>
+<p>可由 <a href="../../net.mamoe.mirai.contact/-member/index.html">Member</a> 或 <a href="../../net.mamoe.mirai/-bot/index.html">Bot</a> 操作的事件</p>
+<p><strong>See Also</strong><br/>
+<p><a href="../is-by-bot.html">isByBot</a></p>
+<p><a href="../operator-or-bot.html">operatorOrBot</a></p>
+</p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="operator.html">operator</a></h4>
+</td>
+<td>
+<p>操作人, 为 <code>null</code> 时为 <a href="../../net.mamoe.mirai/-bot/index.html">Bot</a> 操作</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">operator</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.contact/-member/index.html"><span class="identifier">Member</span></a><span class="symbol">?</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../is-by-bot.html">isByBot</a></h4>
+</td>
+<td>
+<p>是否由 <a href="../../net.mamoe.mirai/-bot/index.html">Bot</a> 操作</p>
+<code><span class="keyword">val </span><a href="./index.html"><span class="identifier">GroupOperableEvent</span></a><span class="symbol">.</span><span class="identifier">isByBot</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../operator-or-bot.html">operatorOrBot</a></h4>
+</td>
+<td>
+<p>当操作人为 <a href="../../net.mamoe.mirai.contact/-member/index.html">Member</a> 时获取这个 <a href="../../net.mamoe.mirai.contact/-member/index.html">Member</a>,
+当操作人为 <a href="../../net.mamoe.mirai/-bot/index.html">Bot</a> 时获取 <a href="../../net.mamoe.mirai.contact/-group/bot-as-member.html">Group.botAsMember</a></p>
+<code><span class="keyword">val </span><a href="./index.html"><span class="identifier">GroupOperableEvent</span></a><span class="symbol">.</span><span class="identifier">operatorOrBot</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.contact/-member/index.html"><span class="identifier">Member</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../../net.mamoe.mirai.event/__broadcast-java.html">__broadcastJava</a></h4>
+</td>
+<td>
+<p>在 Java 广播一个事件的唯一途径.</p>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">E</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.event/-event/index.html"><span class="identifier">Event</span></a><span class="symbol">&gt;</span> <span class="identifier">E</span><span class="symbol">.</span><span class="identifier">__broadcastJava</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">E</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../../net.mamoe.mirai.event/broadcast.html">broadcast</a></h4>
+</td>
+<td>
+<p>广播一个事件的唯一途径.</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">E</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.event/-event/index.html"><span class="identifier">Event</span></a><span class="symbol">&gt;</span> <span class="identifier">E</span><span class="symbol">.</span><span class="identifier">broadcast</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">E</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../-group-allow-anonymous-chat-event/index.html">GroupAllowAnonymousChatEvent</a></h4>
+</td>
+<td>
+<p>群 "匿名聊天" 功能状态改变. 此事件广播前修改就已经完成.</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">GroupAllowAnonymousChatEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-group-setting-change-event/index.html"><span class="identifier">GroupSettingChangeEvent</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">Packet</span><span class="symbol">, </span><a href="./index.html"><span class="identifier">GroupOperableEvent</span></a><span class="symbol">, </span><a href="../../net.mamoe.mirai.event/-abstract-event/index.html"><span class="identifier">AbstractEvent</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../-group-allow-member-invite-event/index.html">GroupAllowMemberInviteEvent</a></h4>
+</td>
+<td>
+<p>群 "允许群员邀请好友加群" 功能状态改变. 此事件广播前修改就已经完成.</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">GroupAllowMemberInviteEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-group-setting-change-event/index.html"><span class="identifier">GroupSettingChangeEvent</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">Packet</span><span class="symbol">, </span><a href="./index.html"><span class="identifier">GroupOperableEvent</span></a><span class="symbol">, </span><a href="../../net.mamoe.mirai.event/-abstract-event/index.html"><span class="identifier">AbstractEvent</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../-group-entrance-announcement-change-event/index.html">GroupEntranceAnnouncementChangeEvent</a></h4>
+</td>
+<td>
+<p>入群公告改变. 此事件广播前修改就已经完成.</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">GroupEntranceAnnouncementChangeEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-group-setting-change-event/index.html"><span class="identifier">GroupSettingChangeEvent</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">Packet</span><span class="symbol">, </span><a href="./index.html"><span class="identifier">GroupOperableEvent</span></a><span class="symbol">, </span><a href="../../net.mamoe.mirai.event/-abstract-event/index.html"><span class="identifier">AbstractEvent</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../-group-mute-all-event/index.html">GroupMuteAllEvent</a></h4>
+</td>
+<td>
+<p>群 "全员禁言" 功能状态改变. 此事件广播前修改就已经完成.</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">GroupMuteAllEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-group-setting-change-event/index.html"><span class="identifier">GroupSettingChangeEvent</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">Packet</span><span class="symbol">, </span><a href="./index.html"><span class="identifier">GroupOperableEvent</span></a><span class="symbol">, </span><a href="../../net.mamoe.mirai.event/-abstract-event/index.html"><span class="identifier">AbstractEvent</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../-group-name-change-event/index.html">GroupNameChangeEvent</a></h4>
+</td>
+<td>
+<p>群名改变. 此事件广播前修改就已经完成.</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">GroupNameChangeEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-group-setting-change-event/index.html"><span class="identifier">GroupSettingChangeEvent</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">Packet</span><span class="symbol">, </span><a href="./index.html"><span class="identifier">GroupOperableEvent</span></a><span class="symbol">, </span><a href="../../net.mamoe.mirai.event/-abstract-event/index.html"><span class="identifier">AbstractEvent</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../-member-mute-event/index.html">MemberMuteEvent</a></h4>
+</td>
+<td>
+<p>群成员被禁言事件. 被禁言的成员都不可能是机器人本人</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">MemberMuteEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-group-member-event/index.html"><span class="identifier">GroupMemberEvent</span></a><span class="symbol">, </span><span class="identifier">Packet</span><span class="symbol">, </span><a href="./index.html"><span class="identifier">GroupOperableEvent</span></a><span class="symbol">, </span><a href="../../net.mamoe.mirai.event/-abstract-event/index.html"><span class="identifier">AbstractEvent</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../-member-special-title-change-event/index.html">MemberSpecialTitleChangeEvent</a></h4>
+</td>
+<td>
+<p>成员群头衔改动. 一定为群主操作</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">MemberSpecialTitleChangeEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-group-member-event/index.html"><span class="identifier">GroupMemberEvent</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">GroupOperableEvent</span></a><span class="symbol">, </span><a href="../../net.mamoe.mirai.event/-abstract-event/index.html"><span class="identifier">AbstractEvent</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../-member-unmute-event/index.html">MemberUnmuteEvent</a></h4>
+</td>
+<td>
+<p>群成员被取消禁言事件. 被禁言的成员都不可能是机器人本人</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">MemberUnmuteEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-group-member-event/index.html"><span class="identifier">GroupMemberEvent</span></a><span class="symbol">, </span><span class="identifier">Packet</span><span class="symbol">, </span><a href="./index.html"><span class="identifier">GroupOperableEvent</span></a><span class="symbol">, </span><a href="../../net.mamoe.mirai.event/-abstract-event/index.html"><span class="identifier">AbstractEvent</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

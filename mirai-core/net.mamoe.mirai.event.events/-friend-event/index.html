@@ -1,0 +1,115 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>FriendEvent - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.event.events</a>&nbsp;/&nbsp;<a href="./index.html">FriendEvent</a><br/>
+<br/>
+<h1>FriendEvent</h1>
+<code><span class="keyword">interface </span><span class="identifier">FriendEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-bot-event/index.html"><span class="identifier">BotEvent</span></a></code>
+<p>有关好友的事件</p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="bot.html">bot</a></h4>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">val </span><span class="identifier">bot</span><span class="symbol">: </span><a href="../../net.mamoe.mirai/-bot/index.html"><span class="identifier">Bot</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="friend.html">friend</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">friend</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.contact/-friend/index.html"><span class="identifier">Friend</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../../net.mamoe.mirai.event/__broadcast-java.html">__broadcastJava</a></h4>
+</td>
+<td>
+<p>在 Java 广播一个事件的唯一途径.</p>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">E</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.event/-event/index.html"><span class="identifier">Event</span></a><span class="symbol">&gt;</span> <span class="identifier">E</span><span class="symbol">.</span><span class="identifier">__broadcastJava</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">E</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../../net.mamoe.mirai.event/broadcast.html">broadcast</a></h4>
+</td>
+<td>
+<p>广播一个事件的唯一途径.</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">E</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.event/-event/index.html"><span class="identifier">Event</span></a><span class="symbol">&gt;</span> <span class="identifier">E</span><span class="symbol">.</span><span class="identifier">broadcast</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">E</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../-friend-add-event/index.html">FriendAddEvent</a></h4>
+</td>
+<td>
+<p>成功添加了一个新好友的事件</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">FriendAddEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">FriendEvent</span></a><span class="symbol">, </span><span class="identifier">Packet</span><span class="symbol">, </span><a href="../../net.mamoe.mirai.event/-abstract-event/index.html"><span class="identifier">AbstractEvent</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../-friend-avatar-changed-event/index.html">FriendAvatarChangedEvent</a></h4>
+</td>
+<td>
+<p><a href="../../net.mamoe.mirai.contact/-friend/index.html">Friend</a> 头像被修改. 在此事件广播前就已经修改完毕.</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">FriendAvatarChangedEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">FriendEvent</span></a><span class="symbol">, </span><span class="identifier">Packet</span><span class="symbol">, </span><a href="../../net.mamoe.mirai.event/-abstract-event/index.html"><span class="identifier">AbstractEvent</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../-friend-delete-event/index.html">FriendDeleteEvent</a></h4>
+</td>
+<td>
+<p>好友已被删除的事件.</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">FriendDeleteEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">FriendEvent</span></a><span class="symbol">, </span><span class="identifier">Packet</span><span class="symbol">, </span><a href="../../net.mamoe.mirai.event/-abstract-event/index.html"><span class="identifier">AbstractEvent</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../-friend-input-status-changed-event/index.html">FriendInputStatusChangedEvent</a></h4>
+</td>
+<td>
+<p>好友输入状态改变的事件，当开始输入文字、退出聊天窗口或清空输入框时会触发此事件</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">FriendInputStatusChangedEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">FriendEvent</span></a><span class="symbol">, </span><span class="identifier">Packet</span><span class="symbol">, </span><a href="../../net.mamoe.mirai.event/-abstract-event/index.html"><span class="identifier">AbstractEvent</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../../net.mamoe.mirai.message/-friend-message-event/index.html">FriendMessageEvent</a></h4>
+</td>
+<td>
+<p>机器人收到的好友消息的事件</p>
+<code><span class="keyword">class </span><span class="identifier">FriendMessageEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">FriendMessage</span><span class="symbol">, </span><a href="../../net.mamoe.mirai.event/-broadcast-controllable/index.html"><span class="identifier">BroadcastControllable</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">FriendEvent</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../-friend-nick-changed-event/index.html">FriendNickChangedEvent</a></h4>
+</td>
+<td>
+<p><a href="../../net.mamoe.mirai.contact/-friend/index.html">Friend</a> 昵称改变事件, 在此事件广播时好友已经完成改名</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">FriendNickChangedEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">FriendEvent</span></a><span class="symbol">, </span><span class="identifier">Packet</span><span class="symbol">, </span><a href="../../net.mamoe.mirai.event/-abstract-event/index.html"><span class="identifier">AbstractEvent</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../-friend-remark-change-event/index.html">FriendRemarkChangeEvent</a></h4>
+</td>
+<td>
+<p>好友昵称改变事件. 目前仅支持解析 (来自 PC 端的修改).</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">FriendRemarkChangeEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">FriendEvent</span></a><span class="symbol">, </span><span class="identifier">Packet</span><span class="symbol">, </span><a href="../../net.mamoe.mirai.event/-abstract-event/index.html"><span class="identifier">AbstractEvent</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,63 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>FileCacheStrategy.TempCache - mirai-core</title>
+<link rel="stylesheet" href="../../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../../index.html">net.mamoe.mirai.utils</a>&nbsp;/&nbsp;<a href="../index.html">FileCacheStrategy</a>&nbsp;/&nbsp;<a href="./index.html">TempCache</a><br/>
+<br/>
+<h1>TempCache</h1>
+<code><span class="identifier">@MiraiExperimentalAPI</span> <span class="keyword">class </span><span class="identifier">TempCache</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../index.html"><span class="identifier">FileCacheStrategy</span></a></code>
+<p>使用系统临时文件夹缓存图片文件. 在图片使用完毕后删除临时文件.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<p>使用系统临时文件夹缓存图片文件. 在图片使用完毕后删除临时文件.</p>
+<code><span class="identifier">TempCache</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.FileCacheStrategy.TempCache$<init>(java.io.File)/directory">directory</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="directory.html">directory</a></h4>
+</td>
+<td>
+<p>缓存图片存放位置. 为 <code>null</code> 时使用主机系统的临时文件夹</p>
+<code><span class="keyword">val </span><span class="identifier">directory</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">?</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="new-image-cache.html">newImageCache</a></h4>
+</td>
+<td>
+<p>将 <a href="../new-image-cache.html#net.mamoe.mirai.utils.FileCacheStrategy$newImageCache(kotlinx.io.core.Input)/input">input</a> 缓存为 <a href="../../-external-image/index.html">ExternalImage</a>.
+此函数应 close 这个 <a href="#">Input</a></p>
+<code><span class="keyword">fun </span><span class="identifier">newImageCache</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.FileCacheStrategy.TempCache$newImageCache(kotlinx.io.core.Input)/input">input</span><span class="symbol">:</span>&nbsp;<span class="identifier">Input</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../-external-image/index.html"><span class="identifier">ExternalImage</span></a></code>
+<p>将 <a href="../new-image-cache.html#net.mamoe.mirai.utils.FileCacheStrategy$newImageCache(java.io.InputStream)/input">input</a> 缓存为 <a href="../../-external-image/index.html">ExternalImage</a>.
+此函数应 close 这个 <a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html">InputStream</a></p>
+<code><span class="keyword">fun </span><span class="identifier">newImageCache</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.FileCacheStrategy.TempCache$newImageCache(java.io.InputStream)/input">input</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html"><span class="identifier">InputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../-external-image/index.html"><span class="identifier">ExternalImage</span></a></code>
+<p>将 <a href="../new-image-cache.html#net.mamoe.mirai.utils.FileCacheStrategy$newImageCache(kotlin.ByteArray)/input">input</a> 缓存为 <a href="../../-external-image/index.html">ExternalImage</a>.
+此 <a href="../new-image-cache.html#net.mamoe.mirai.utils.FileCacheStrategy$newImageCache(kotlin.ByteArray)/input">input</a> 的内容应是不变的.</p>
+<code><span class="keyword">fun </span><span class="identifier">newImageCache</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.FileCacheStrategy.TempCache$newImageCache(kotlin.ByteArray)/input">input</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../-external-image/index.html"><span class="identifier">ExternalImage</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">newImageCache</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.FileCacheStrategy.TempCache$newImageCache(java.awt.image.BufferedImage, kotlin.String)/input">input</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/awt/image/BufferedImage.html"><span class="identifier">BufferedImage</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils.FileCacheStrategy.TempCache$newImageCache(java.awt.image.BufferedImage, kotlin.String)/format">format</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../-external-image/index.html"><span class="identifier">ExternalImage</span></a></code>
+<p>将 <a href="../new-image-cache.html#net.mamoe.mirai.utils.FileCacheStrategy$newImageCache(java.net.URL)/input">input</a> 缓存为 <a href="../../-external-image/index.html">ExternalImage</a>.</p>
+<code><span class="keyword">fun </span><span class="identifier">newImageCache</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.FileCacheStrategy.TempCache$newImageCache(java.net.URL)/input">input</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/net/URL.html"><span class="identifier">URL</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../-external-image/index.html"><span class="identifier">ExternalImage</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

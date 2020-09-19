@@ -1,0 +1,22 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>flatten - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.message.data</a>&nbsp;/&nbsp;<a href="index.html">kotlin.sequences.Sequence</a>&nbsp;/&nbsp;<a href="./flatten.html">flatten</a><br/>
+<br/>
+<h1>flatten</h1>
+<a name="net.mamoe.mirai.message.data$flatten(kotlin.sequences.Sequence((net.mamoe.mirai.message.data.Message)))"></a>
+<code><span class="keyword">fun </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/-sequence/index.html"><span class="identifier">Sequence</span></a><span class="symbol">&lt;</span><a href="../-message/index.html"><span class="identifier">Message</span></a><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">flatten</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/-sequence/index.html"><span class="identifier">Sequence</span></a><span class="symbol">&lt;</span><a href="../-single-message.html"><span class="identifier">SingleMessage</span></a><span class="symbol">&gt;</span></code>
+<p>扁平化消息序列.</p>
+<p>原 <a href="flatten/-this-.html">this</a>:</p>
+<pre><code>A &lt;- CombinedMessage(B, C) &lt;- D &lt;- MessageChain(E, F, G)
+</code></pre>
+<p>结果 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/-sequence/index.html">Sequence</a>:</p>
+<pre><code>A &lt;- B &lt;- C &lt;- D &lt;- E &lt;- F &lt;- G
+</code></pre><a name="net.mamoe.mirai.message.data$flatten(kotlin.sequences.Sequence((net.mamoe.mirai.message.data.SingleMessage)))"></a>
+<code><span class="identifier">@JvmName</span><span class="symbol">(</span>"flatten1"<span class="symbol">)</span> <span class="keyword">fun </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/-sequence/index.html"><span class="identifier">Sequence</span></a><span class="symbol">&lt;</span><a href="../-single-message.html"><span class="identifier">SingleMessage</span></a><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">flatten</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/-sequence/index.html"><span class="identifier">Sequence</span></a><span class="symbol">&lt;</span><a href="../-single-message.html"><span class="identifier">SingleMessage</span></a><span class="symbol">&gt;</span></code>
+</BODY>
+</HTML>

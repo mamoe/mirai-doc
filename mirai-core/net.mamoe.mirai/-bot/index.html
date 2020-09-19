@@ -1,0 +1,318 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Bot - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai</a>&nbsp;/&nbsp;<a href="./index.html">Bot</a><br/>
+<br/>
+<h1>Bot</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">Bot</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">CoroutineScope</span><span class="symbol">, </span><a href="../-low-level-bot-a-p-i-accessor/index.html"><span class="identifier">LowLevelBotAPIAccessor</span></a><span class="symbol">, </span><span class="identifier">BotJavaFriendlyAPI</span><span class="symbol">, </span><a href="../../net.mamoe.mirai.contact/-contact-or-bot/index.html"><span class="identifier">ContactOrBot</span></a></code>
+<p>机器人对象. 一个机器人实例登录一个 QQ 账号.
+Mirai 为多账号设计, 可同时维护多个机器人.</p>
+<p>有关 <a href="./index.html">Bot</a> 生命管理, 请查看 <a href="../../net.mamoe.mirai.utils/-bot-configuration-base/inherit-coroutine-context.html">BotConfiguration.inheritCoroutineContext</a></p>
+<p><strong>See Also</strong><br/>
+<p><a href="../../net.mamoe.mirai.contact/-contact/index.html">Contact</a></p>
+<p><a href="#">isActive</a></p>
+<p><a href="../-bot-factory/index.html">BotFactory</a></p>
+</p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="configuration.html">configuration</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">configuration</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.utils/-bot-configuration/index.html"><span class="identifier">BotConfiguration</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="context.html">context</a></h4>
+</td>
+<td>
+<p><a href="./index.html">Bot</a> 运行的 <a href="../../net.mamoe.mirai.utils/-context/index.html">Context</a>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">context</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.utils/-context/index.html"><span class="identifier">Context</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="coroutine-context.html">coroutineContext</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">coroutineContext</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.coroutines/-coroutine-context/index.html"><span class="identifier">CoroutineContext</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="friends.html">friends</a></h4>
+</td>
+<td>
+<p>机器人的好友列表. 与服务器同步更新</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">friends</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.contact/-contact-list/index.html"><span class="identifier">ContactList</span></a><span class="symbol">&lt;</span><a href="../../net.mamoe.mirai.contact/-friend/index.html"><span class="identifier">Friend</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="groups.html">groups</a></h4>
+</td>
+<td>
+<p>机器人加入的群列表. 与服务器同步更新</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">groups</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.contact/-contact-list/index.html"><span class="identifier">ContactList</span></a><span class="symbol">&lt;</span><a href="../../net.mamoe.mirai.contact/-group/index.html"><span class="identifier">Group</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="id.html">id</a></h4>
+</td>
+<td>
+<p>QQ 号码. 实际类型为 uint</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">id</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="is-online.html">isOnline</a></h4>
+</td>
+<td>
+<p>判断 Bot 是否在线 (可正常收发消息)</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">isOnline</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="logger.html">logger</a></h4>
+</td>
+<td>
+<p>日志记录器</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">logger</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.utils/-mirai-logger/index.html"><span class="identifier">MiraiLogger</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="nick.html">nick</a></h4>
+</td>
+<td>
+<p>昵称</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">nick</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="self-q-q.html">selfQQ</a></h4>
+</td>
+<td>
+<p><a href="../../net.mamoe.mirai.contact/-user/id.html">User.id</a> 与 <a href="id.html">Bot.id</a> 相同的 <a href="../-low-level-bot-a-p-i-accessor/_low-level-new-friend.html">_lowLevelNewFriend</a> 实例</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">selfQQ</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.contact/-friend/index.html"><span class="identifier">Friend</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="close.html">close</a></h4>
+</td>
+<td>
+<p>关闭这个 <a href="./index.html">Bot</a>, 立即取消 <a href="./index.html">Bot</a> 的 <a href="#">SupervisorJob</a>.
+之后 <a href="#">isActive</a> 将会返回 <code>false</code>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">close</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.Bot$close(kotlin.Throwable)/cause">cause</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="construct-message-source.html">constructMessageSource</a></h4>
+</td>
+<td>
+<p>构造一个 <a href="../../net.mamoe.mirai.message.data/-offline-message-source/index.html">OfflineMessageSource</a></p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">constructMessageSource</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.Bot$constructMessageSource(net.mamoe.mirai.message.data.OfflineMessageSource.Kind, kotlin.Long, kotlin.Long, kotlin.Int, kotlin.Int, kotlin.Int, net.mamoe.mirai.message.data.MessageChain)/kind">kind</span><span class="symbol">:</span>&nbsp;<span class="identifier">Kind</span><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.Bot$constructMessageSource(net.mamoe.mirai.message.data.OfflineMessageSource.Kind, kotlin.Long, kotlin.Long, kotlin.Int, kotlin.Int, kotlin.Int, net.mamoe.mirai.message.data.MessageChain)/fromUin">fromUin</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.Bot$constructMessageSource(net.mamoe.mirai.message.data.OfflineMessageSource.Kind, kotlin.Long, kotlin.Long, kotlin.Int, kotlin.Int, kotlin.Int, net.mamoe.mirai.message.data.MessageChain)/targetUin">targetUin</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.Bot$constructMessageSource(net.mamoe.mirai.message.data.OfflineMessageSource.Kind, kotlin.Long, kotlin.Long, kotlin.Int, kotlin.Int, kotlin.Int, net.mamoe.mirai.message.data.MessageChain)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.Bot$constructMessageSource(net.mamoe.mirai.message.data.OfflineMessageSource.Kind, kotlin.Long, kotlin.Long, kotlin.Int, kotlin.Int, kotlin.Int, net.mamoe.mirai.message.data.MessageChain)/time">time</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.Bot$constructMessageSource(net.mamoe.mirai.message.data.OfflineMessageSource.Kind, kotlin.Long, kotlin.Long, kotlin.Int, kotlin.Int, kotlin.Int, net.mamoe.mirai.message.data.MessageChain)/internalId">internalId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.Bot$constructMessageSource(net.mamoe.mirai.message.data.OfflineMessageSource.Kind, kotlin.Long, kotlin.Long, kotlin.Int, kotlin.Int, kotlin.Int, net.mamoe.mirai.message.data.MessageChain)/originalMessage">originalMessage</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.message.data/-message-chain/index.html"><span class="identifier">MessageChain</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.message.data/-offline-message-source/index.html"><span class="identifier">OfflineMessageSource</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-friend.html">getFriend</a></h4>
+</td>
+<td>
+<p>获取一个好友对象.</p>
+<code><span class="keyword">fun </span><span class="identifier">getFriend</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.Bot$getFriend(kotlin.Long)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.contact/-friend/index.html"><span class="identifier">Friend</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-group.html">getGroup</a></h4>
+</td>
+<td>
+<p>获取一个机器人加入的群.</p>
+<code><span class="keyword">fun </span><span class="identifier">getGroup</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.Bot$getGroup(kotlin.Long)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.contact/-group/index.html"><span class="identifier">Group</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="login.html">login</a></h4>
+</td>
+<td>
+<p>登录, 或重新登录.
+这个函数总是关闭一切现有网路任务 (但不会关闭其他任务), 然后重新登录并重新缓存好友列表和群列表.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">login</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="nudge.html">nudge</a></h4>
+</td>
+<td>
+<p>创建一个 "戳一戳" 消息</p>
+<code><span class="keyword">fun </span><span class="identifier">nudge</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.message.action/-bot-nudge/index.html"><span class="identifier">BotNudge</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="recall.html">recall</a></h4>
+</td>
+<td>
+<p>撤回这条消息. 可撤回自己 2 分钟内发出的消息, 和任意时间的群成员的消息.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">recall</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.Bot$recall(net.mamoe.mirai.message.data.MessageSource)/source">source</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.message.data/-message-source/index.html"><span class="identifier">MessageSource</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="reject-member-join-request.html">rejectMemberJoinRequest</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">rejectMemberJoinRequest</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.Bot$rejectMemberJoinRequest(net.mamoe.mirai.event.events.MemberJoinRequestEvent, kotlin.Boolean, kotlin.String)/event">event</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.event.events/-member-join-request-event/index.html"><span class="identifier">MemberJoinRequestEvent</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.Bot$rejectMemberJoinRequest(net.mamoe.mirai.event.events.MemberJoinRequestEvent, kotlin.Boolean, kotlin.String)/blackList">blackList</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.Bot$rejectMemberJoinRequest(net.mamoe.mirai.event.events.MemberJoinRequestEvent, kotlin.Boolean, kotlin.String)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a>&nbsp;<span class="symbol">=</span>&nbsp;""<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="to-string.html">toString</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">toString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Companion Object Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="bot-instances.html">botInstances</a></h4>
+</td>
+<td>
+<p>复制一份此时的 <a href="./index.html">Bot</a> 实例列表.</p>
+<code><span class="keyword">val </span><span class="identifier">botInstances</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="./index.html"><span class="identifier">Bot</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="bot-instances-sequence.html">botInstancesSequence</a></h4>
+</td>
+<td>
+<p>复制一份此时的 <a href="./index.html">Bot</a> 实例列表.</p>
+<code><span class="keyword">val </span><span class="identifier">botInstancesSequence</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/-sequence/index.html"><span class="identifier">Sequence</span></a><span class="symbol">&lt;</span><a href="./index.html"><span class="identifier">Bot</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Companion Object Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="for-each-instance.html">forEachInstance</a></h4>
+</td>
+<td>
+<p>遍历每一个 <a href="./index.html">Bot</a> 实例</p>
+<code><span class="keyword">fun </span><span class="identifier">forEachInstance</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.Bot.Companion$forEachInstance(kotlin.Function1((net.mamoe.mirai.Bot, kotlin.Unit)))/block">block</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="./index.html"><span class="identifier">Bot</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-instance.html">getInstance</a></h4>
+</td>
+<td>
+<p>获取一个 <a href="./index.html">Bot</a> 实例, 无对应实例时抛出 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-no-such-element-exception/index.html">NoSuchElementException</a></p>
+<code><span class="keyword">fun </span><span class="identifier">getInstance</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.Bot.Companion$getInstance(kotlin.Long)/qq">qq</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Bot</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-instance-or-null.html">getInstanceOrNull</a></h4>
+</td>
+<td>
+<p>获取一个 <a href="./index.html">Bot</a> 实例, 无对应实例时返回 <code>null</code></p>
+<code><span class="keyword">fun </span><span class="identifier">getInstanceOrNull</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.Bot.Companion$getInstanceOrNull(kotlin.Long)/qq">qq</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Bot</span></a><span class="symbol">?</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../supervisor-job.html">supervisorJob</a></h4>
+</td>
+<td>
+<p>获取 <a href="#">Job</a> 的协程 <a href="#">Job</a>. 此 <a href="#">Job</a> 为一个 <a href="#">SupervisorJob</a></p>
+<code><span class="keyword">val </span><a href="./index.html"><span class="identifier">Bot</span></a><span class="symbol">.</span><span class="identifier">supervisorJob</span><span class="symbol">: </span><span class="identifier">CompletableJob</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../also-login.html">alsoLogin</a></h4>
+</td>
+<td>
+<p>登录, 返回 <a href="../also-login/-this-.html">this</a></p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">B</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Bot</span></a><span class="symbol">&gt;</span> <span class="identifier">B</span><span class="symbol">.</span><span class="identifier">alsoLogin</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">B</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../../net.mamoe.mirai.message.data/build-message-source.html">buildMessageSource</a></h4>
+</td>
+<td>
+<p>构建一个 <a href="../../net.mamoe.mirai.message.data/-offline-message-source/index.html">OfflineMessageSource</a></p>
+<code><span class="keyword">fun </span><a href="./index.html"><span class="identifier">Bot</span></a><span class="symbol">.</span><span class="identifier">buildMessageSource</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data$buildMessageSource(net.mamoe.mirai.Bot, kotlin.Function1((net.mamoe.mirai.message.data.MessageSourceBuilder, kotlin.Unit)))/block">block</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.message.data/-message-source-builder/index.html"><span class="identifier">MessageSourceBuilder</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.message.data/-message-source/index.html"><span class="identifier">MessageSource</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../close-and-join.html">closeAndJoin</a></h4>
+</td>
+<td>
+<p>关闭这个 <a href="./index.html">Bot</a>, 停止一切相关活动. 所有引用都会被释放.</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><a href="./index.html"><span class="identifier">Bot</span></a><span class="symbol">.</span><span class="identifier">closeAndJoin</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai$closeAndJoin(net.mamoe.mirai.Bot, kotlin.Throwable)/cause">cause</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../contains-friend.html">containsFriend</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="./index.html"><span class="identifier">Bot</span></a><span class="symbol">.</span><span class="identifier">containsFriend</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai$containsFriend(net.mamoe.mirai.Bot, kotlin.Long)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../contains-group.html">containsGroup</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="./index.html"><span class="identifier">Bot</span></a><span class="symbol">.</span><span class="identifier">containsGroup</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai$containsGroup(net.mamoe.mirai.Bot, kotlin.Long)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../get-friend-or-null.html">getFriendOrNull</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="./index.html"><span class="identifier">Bot</span></a><span class="symbol">.</span><span class="identifier">getFriendOrNull</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai$getFriendOrNull(net.mamoe.mirai.Bot, kotlin.Long)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.contact/-friend/index.html"><span class="identifier">Friend</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../get-group-or-null.html">getGroupOrNull</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="./index.html"><span class="identifier">Bot</span></a><span class="symbol">.</span><span class="identifier">getGroupOrNull</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai$getGroupOrNull(net.mamoe.mirai.Bot, kotlin.Long)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.contact/-group/index.html"><span class="identifier">Group</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../join.html">join</a></h4>
+</td>
+<td>
+<p>挂起协程直到 <a href="./index.html">Bot</a> 协程被关闭 (<a href="close.html">Bot.close</a>).
+即使 <a href="./index.html">Bot</a> 离线, 也会等待直到协程关闭.</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><a href="./index.html"><span class="identifier">Bot</span></a><span class="symbol">.</span><span class="identifier">join</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../recall.html">recall</a></h4>
+</td>
+<td>
+<p>撤回这条消息.</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><a href="./index.html"><span class="identifier">Bot</span></a><span class="symbol">.</span><span class="identifier">recall</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai$recall(net.mamoe.mirai.Bot, net.mamoe.mirai.message.data.MessageChain)/message">message</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.message.data/-message-chain/index.html"><span class="identifier">MessageChain</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

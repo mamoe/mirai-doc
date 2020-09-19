@@ -1,0 +1,104 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>UserMessagePostSendEvent - mirai-core</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="index.html">net.mamoe.mirai.event.events</a>&nbsp;/&nbsp;<a href="./-user-message-post-send-event.html">UserMessagePostSendEvent</a><br/>
+<br/>
+<h1>UserMessagePostSendEvent</h1>
+<code><span class="identifier">@SinceMirai</span><span class="symbol">(</span>"1.1.0"<span class="symbol">)</span> <span class="keyword">sealed</span> <span class="keyword">class </span><span class="identifier">UserMessagePostSendEvent</span><span class="symbol">&lt;</span><span class="identifier">C</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.contact/-user/index.html"><span class="identifier">User</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-message-post-send-event/index.html"><span class="identifier">MessagePostSendEvent</span></a><span class="symbol">&lt;</span><span class="identifier">C</span><span class="symbol">&gt;</span></code>
+<p>在好友或群临时会话消息发送后广播的事件.</p>
+<p><strong>See Also</strong><br/>
+<p><a href="-message-post-send-event/index.html">MessagePostSendEvent</a></p>
+</p>
+<h3>Extension Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="is-failure.html">isFailure</a></h4>
+</td>
+<td>
+<p>在此消息发送失败时返回 <code>true</code>.</p>
+<code><span class="keyword">val </span><a href="-message-post-send-event/index.html"><span class="identifier">MessagePostSendEvent</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">isFailure</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="is-success.html">isSuccess</a></h4>
+</td>
+<td>
+<p>在此消息发送成功时返回 <code>true</code>.</p>
+<code><span class="keyword">val </span><a href="-message-post-send-event/index.html"><span class="identifier">MessagePostSendEvent</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">isSuccess</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="result.html">result</a></h4>
+</td>
+<td>
+<p>将 <a href="-message-post-send-event/exception.html">MessagePostSendEvent.exception</a> 与 <a href="-message-post-send-event/receipt.html">MessagePostSendEvent.receipt</a> 表示为 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-result/index.html">Result</a></p>
+<code><span class="keyword">val </span><span class="symbol">&lt;</span><span class="identifier">C</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.contact/-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">&gt;</span> <a href="-message-post-send-event/index.html"><span class="identifier">MessagePostSendEvent</span></a><span class="symbol">&lt;</span><span class="identifier">C</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">result</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-result/index.html"><span class="identifier">Result</span></a><span class="symbol">&lt;</span><a href="../net.mamoe.mirai.message/-message-receipt/index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">C</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="source.html">source</a></h4>
+</td>
+<td>
+<p>获取指代这条已经发送的消息的 <a href="../net.mamoe.mirai.message.data/-message-source/index.html">MessageSource</a>. 若消息发送失败, 返回 <code>null</code></p>
+<code><span class="keyword">val </span><a href="-message-post-send-event/index.html"><span class="identifier">MessagePostSendEvent</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">source</span><span class="symbol">: </span><a href="../net.mamoe.mirai.message.data/-message-source/index.html"><span class="identifier">MessageSource</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="source-result.html">sourceResult</a></h4>
+</td>
+<td>
+<p>获取指代这条已经发送的消息的 <a href="../net.mamoe.mirai.message.data/-message-source/index.html">MessageSource</a>, 并包装为 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-result/index.html">kotlin.Result</a></p>
+<code><span class="keyword">val </span><a href="-message-post-send-event/index.html"><span class="identifier">MessagePostSendEvent</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">sourceResult</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-result/index.html"><span class="identifier">Result</span></a><span class="symbol">&lt;</span><a href="../net.mamoe.mirai.message.data/-message-source/index.html"><span class="identifier">MessageSource</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../net.mamoe.mirai.event/__broadcast-java.html">__broadcastJava</a></h4>
+</td>
+<td>
+<p>在 Java 广播一个事件的唯一途径.</p>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">E</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.event/-event/index.html"><span class="identifier">Event</span></a><span class="symbol">&gt;</span> <span class="identifier">E</span><span class="symbol">.</span><span class="identifier">__broadcastJava</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">E</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../net.mamoe.mirai.event/broadcast.html">broadcast</a></h4>
+</td>
+<td>
+<p>广播一个事件的唯一途径.</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">E</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.event/-event/index.html"><span class="identifier">Event</span></a><span class="symbol">&gt;</span> <span class="identifier">E</span><span class="symbol">.</span><span class="identifier">broadcast</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">E</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-friend-message-post-send-event/index.html">FriendMessagePostSendEvent</a></h4>
+</td>
+<td>
+<p>在好友消息发送后广播的事件.</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">FriendMessagePostSendEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./-user-message-post-send-event.html"><span class="identifier">UserMessagePostSendEvent</span></a><span class="symbol">&lt;</span><a href="../net.mamoe.mirai.contact/-friend/index.html"><span class="identifier">Friend</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-temp-message-post-send-event/index.html">TempMessagePostSendEvent</a></h4>
+</td>
+<td>
+<p>在群临时会话消息发送后广播的事件.</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">TempMessagePostSendEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./-user-message-post-send-event.html"><span class="identifier">UserMessagePostSendEvent</span></a><span class="symbol">&lt;</span><a href="../net.mamoe.mirai.contact/-member/index.html"><span class="identifier">Member</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

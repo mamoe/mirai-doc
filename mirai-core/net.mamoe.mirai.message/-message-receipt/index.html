@@ -1,0 +1,183 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MessageReceipt - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.message</a>&nbsp;/&nbsp;<a href="./index.html">MessageReceipt</a><br/>
+<br/>
+<h1>MessageReceipt</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">MessageReceipt</span><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">C</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.contact/-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">&gt;</span></code>
+<p>发送消息后得到的回执. 可用于撤回, 引用回复等.</p>
+<h3>Parameters</h3>
+<p><a name="source"></a>
+<code>source</code> - 指代发送出去的消息</p>
+<p><a name="target"></a>
+<code>target</code> - 消息发送对象</p>
+<p><strong>See Also</strong><br/>
+<p><a href="../quote.html">quote</a></p>
+<p><a href="../quote-reply.html">quoteReply</a></p>
+<p><a href="../recall.html">recall</a></p>
+<p><a href="../../net.mamoe.mirai.contact/-group/send-message.html">Group.sendMessage</a></p>
+<p><a href="../../net.mamoe.mirai.contact/-user/send-message.html">User.sendMessage</a></p>
+<p><a href="../../net.mamoe.mirai.contact/-member/send-message.html">Member.sendMessage</a></p>
+<p><a href="../source-id.html">MessageReceipt.sourceId</a></p>
+<p><a href="../source-time.html">MessageReceipt.sourceTime</a></p>
+</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<p>发送消息后得到的回执. 可用于撤回, 引用回复等.</p>
+<code><span class="identifier">MessageReceipt</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.MessageReceipt$<init>(net.mamoe.mirai.message.data.OnlineMessageSource.Outgoing, net.mamoe.mirai.message.MessageReceipt.C, net.mamoe.mirai.contact.Member)/source">source</span><span class="symbol">:</span>&nbsp;<span class="identifier">Outgoing</span><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.message.MessageReceipt$<init>(net.mamoe.mirai.message.data.OnlineMessageSource.Outgoing, net.mamoe.mirai.message.MessageReceipt.C, net.mamoe.mirai.contact.Member)/target">target</span><span class="symbol">:</span>&nbsp;<span class="identifier">C</span><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.message.MessageReceipt$<init>(net.mamoe.mirai.message.data.OnlineMessageSource.Outgoing, net.mamoe.mirai.message.MessageReceipt.C, net.mamoe.mirai.contact.Member)/botAsMember">botAsMember</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.contact/-member/index.html"><span class="identifier">Member</span></a><span class="symbol">?</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="bot-as-member.html">botAsMember</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">botAsMember</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.contact/-member/index.html"><span class="identifier">Member</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="is-to-group.html">isToGroup</a></h4>
+</td>
+<td>
+<p>是否为发送给群的消息的回执</p>
+<code><span class="keyword">val </span><span class="identifier">isToGroup</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="source.html">source</a></h4>
+</td>
+<td>
+<p>指代发送出去的消息.</p>
+<code><span class="keyword">val </span><span class="identifier">source</span><span class="symbol">: </span><span class="identifier">Outgoing</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="target.html">target</a></h4>
+</td>
+<td>
+<p>发送目标, 为 <a href="../../net.mamoe.mirai.contact/-group/index.html">Group</a> 或 <a href="../../net.mamoe.mirai.contact/-friend/index.html">Friend</a> 或 <a href="../../net.mamoe.mirai.contact/-member/index.html">Member</a></p>
+<code><span class="keyword">val </span><span class="identifier">target</span><span class="symbol">: </span><span class="identifier">C</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="__quote-blocking-for-java__.html">__quoteBlockingForJava__</a></h4>
+</td>
+<td>
+<p>引用这条消息.</p>
+<code><span class="keyword">fun </span><span class="identifier">__quoteBlockingForJava__</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.message.data/-quote-reply/index.html"><span class="identifier">QuoteReply</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="__quote-reply-blocking-for-java__.html">__quoteReplyBlockingForJava__</a></h4>
+</td>
+<td>
+<p>引用这条消息并回复.</p>
+<code><span class="keyword">fun </span><span class="identifier">__quoteReplyBlockingForJava__</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.MessageReceipt$__quoteReplyBlockingForJava__(net.mamoe.mirai.message.data.Message)/message">message</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.message.data/-message/index.html"><span class="identifier">Message</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">C</span><span class="symbol">&gt;</span></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">__quoteReplyBlockingForJava__</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.MessageReceipt$__quoteReplyBlockingForJava__(kotlin.String)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">C</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="__recall-blocking-for-java__.html">__recallBlockingForJava__</a></h4>
+</td>
+<td>
+<p>撤回这条消息. <a href="../recall.html">recall</a> 或 <a href="../../net.mamoe.mirai/kotlinx.coroutines.-coroutine-scope/recall-in.html">recallIn</a> 只能被调用一次.</p>
+<code><span class="keyword">fun </span><span class="identifier">__recallBlockingForJava__</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="__recall-in-blocking-for-java__.html">__recallInBlockingForJava__</a></h4>
+</td>
+<td>
+<p>撤回这条消息. <a href="../recall.html">recall</a> 或 <a href="../../net.mamoe.mirai/kotlinx.coroutines.-coroutine-scope/recall-in.html">recallIn</a> 只能被调用一次.</p>
+<code><span class="keyword">fun </span><span class="identifier">__recallInBlockingForJava__</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.MessageReceipt$__recallInBlockingForJava__(kotlin.Long)/timeMillis">timeMillis</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Job</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../source-id.html">sourceId</a></h4>
+</td>
+<td>
+<p>获取源消息 <a href="../../net.mamoe.mirai.message.data/-message-source/id.html">MessageSource.id</a></p>
+<code><span class="keyword">val </span><a href="./index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">sourceId</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../source-internal-id.html">sourceInternalId</a></h4>
+</td>
+<td>
+<p>获取源消息 <a href="../../net.mamoe.mirai.message.data/-message-source/internal-id.html">MessageSource.internalId</a></p>
+<code><span class="keyword">val </span><a href="./index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">sourceInternalId</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../source-time.html">sourceTime</a></h4>
+</td>
+<td>
+<p>获取源消息 <a href="../../net.mamoe.mirai.message.data/-message-source/time.html">MessageSource.time</a></p>
+<code><span class="keyword">val </span><a href="./index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">sourceTime</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../quote.html">quote</a></h4>
+</td>
+<td>
+<p>引用这条消息.</p>
+<code><span class="keyword">fun </span><a href="./index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">quote</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.message.data/-quote-reply/index.html"><span class="identifier">QuoteReply</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../quote-reply.html">quoteReply</a></h4>
+</td>
+<td>
+<p>引用这条消息并回复.</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">C</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.contact/-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">&gt;</span> <a href="./index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">C</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">quoteReply</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$quoteReply(net.mamoe.mirai.message.MessageReceipt((net.mamoe.mirai.message.quoteReply.C)), net.mamoe.mirai.message.data.Message)/message">message</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.message.data/-message/index.html"><span class="identifier">Message</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">C</span><span class="symbol">&gt;</span></code><br/>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">C</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.contact/-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">&gt;</span> <a href="./index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">C</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">quoteReply</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$quoteReply(net.mamoe.mirai.message.MessageReceipt((net.mamoe.mirai.message.quoteReply.C)), kotlin.String)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">C</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../recall.html">recall</a></h4>
+</td>
+<td>
+<p>撤回这条消息. <a href="../recall.html">recall</a> 或 <a href="../../net.mamoe.mirai/kotlinx.coroutines.-coroutine-scope/recall-in.html">recallIn</a> 只能被调用一次.</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><a href="./index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">recall</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../recall-in.html">recallIn</a></h4>
+</td>
+<td>
+<p>在一段时间后撤回这条消息. <a href="../recall.html">recall</a> 或 <a href="../../net.mamoe.mirai/kotlinx.coroutines.-coroutine-scope/recall-in.html">recallIn</a> 只能被调用一次.</p>
+<code><span class="keyword">fun </span><a href="./index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">recallIn</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$recallIn(net.mamoe.mirai.message.MessageReceipt((net.mamoe.mirai.contact.Contact)), kotlin.Long, kotlin.coroutines.CoroutineContext)/timeMillis">timeMillis</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.message$recallIn(net.mamoe.mirai.message.MessageReceipt((net.mamoe.mirai.contact.Contact)), kotlin.Long, kotlin.coroutines.CoroutineContext)/coroutineContext">coroutineContext</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.coroutines/-coroutine-context/index.html"><span class="identifier">CoroutineContext</span></a>&nbsp;<span class="symbol">=</span>&nbsp;EmptyCoroutineContext<span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Job</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

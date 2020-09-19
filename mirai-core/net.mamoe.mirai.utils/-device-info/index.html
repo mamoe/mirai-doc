@@ -1,0 +1,237 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>DeviceInfo - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.utils</a>&nbsp;/&nbsp;<a href="./index.html">DeviceInfo</a><br/>
+<br/>
+<h1>DeviceInfo</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">DeviceInfo</span></code>
+<p>设备信息. 可通过继承 <a href="../-system-device-info/index.html">SystemDeviceInfo</a> 来在默认的基础上修改</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-version/index.html">Version</a></h4>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Version</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<p>设备信息. 可通过继承 <a href="../-system-device-info/index.html">SystemDeviceInfo</a> 来在默认的基础上修改</p>
+<code><span class="identifier">DeviceInfo</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="android-id.html">androidId</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">androidId</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="apn.html">apn</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">apn</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="base-band.html">baseBand</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">baseBand</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="board.html">board</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">board</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="boot-id.html">bootId</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">bootId</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="bootloader.html">bootloader</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">bootloader</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="brand.html">brand</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">brand</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="context.html">context</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">context</span><span class="symbol">: </span><a href="../-context/index.html"><span class="identifier">Context</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="device.html">device</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">device</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="display.html">display</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">display</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="fingerprint.html">fingerprint</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">fingerprint</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="imei.html">imei</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">imei</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="imsi-md5.html">imsiMd5</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">imsiMd5</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="ip-address.html">ipAddress</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">ipAddress</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="mac-address.html">macAddress</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">macAddress</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="model.html">model</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">model</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="os-type.html">osType</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">osType</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="proc-version.html">procVersion</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">procVersion</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="product.html">product</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">product</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="sim-info.html">simInfo</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">simInfo</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="version.html">version</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">version</span><span class="symbol">: </span><span class="identifier">Version</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="wifi-b-s-s-i-d.html">wifiBSSID</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">wifiBSSID</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="wifi-s-s-i-d.html">wifiSSID</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">wifiSSID</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">?</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="generate-device-info-data.html">generateDeviceInfoData</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">generateDeviceInfoData</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../-device-info-data/index.html">DeviceInfoData</a></h4>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">DeviceInfoData</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DeviceInfo</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../-system-device-info/index.html">SystemDeviceInfo</a></h4>
+</td>
+<td>
+<p>通过本机信息来获取设备信息.</p>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">SystemDeviceInfo</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DeviceInfo</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

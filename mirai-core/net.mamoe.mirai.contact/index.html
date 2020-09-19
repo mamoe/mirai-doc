@@ -1,0 +1,263 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>net.mamoe.mirai.contact - mirai-core</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="./index.html">net.mamoe.mirai.contact</a><br/>
+<br/>
+<h2>Package net.mamoe.mirai.contact</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-contact/index.html">Contact</a></h4>
+</td>
+<td>
+<p>联系对象, 即可以与 <a href="../net.mamoe.mirai/-bot/index.html">Bot</a> 互动的对象. 包含 <a href="-user/index.html">用户</a>, 和 <a href="-group/index.html">群</a>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">Contact</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-contact-or-bot/index.html"><span class="identifier">ContactOrBot</span></a><span class="symbol">, </span><span class="identifier">CoroutineScope</span><span class="symbol">, </span><span class="identifier">ContactJavaFriendlyAPI</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-contact-list/index.html">ContactList</a></h4>
+</td>
+<td>
+<p>只读联系人列表, 无锁链表实现</p>
+<code><span class="keyword">class </span><span class="identifier">ContactList</span><span class="symbol">&lt;</span><span class="identifier">C</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/index.html"><span class="identifier">Collection</span></a><span class="symbol">&lt;</span><span class="identifier">C</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-contact-or-bot/index.html">ContactOrBot</a></h4>
+</td>
+<td>
+<p>拥有 <a href="-contact-or-bot/id.html">id</a> 的对象.
+此为 <a href="-contact/index.html">Contact</a> 与 <a href="../net.mamoe.mirai/-bot/index.html">Bot</a> 的唯一公共接口.</p>
+<code><span class="keyword">interface </span><span class="identifier">ContactOrBot</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">CoroutineScope</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-friend/index.html">Friend</a></h4>
+</td>
+<td>
+<p>代表一位好友.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">Friend</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-user/index.html"><span class="identifier">User</span></a><span class="symbol">, </span><span class="identifier">CoroutineScope</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-group/index.html">Group</a></h4>
+</td>
+<td>
+<p>群.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">Group</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">, </span><span class="identifier">CoroutineScope</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-group-settings/index.html">GroupSettings</a></h4>
+</td>
+<td>
+<p>群设置</p>
+<code><span class="keyword">interface </span><span class="identifier">GroupSettings</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-member/index.html">Member</a></h4>
+</td>
+<td>
+<p>代表一位群成员.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">Member</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">MemberJavaFriendlyAPI</span><span class="symbol">, </span><a href="-user/index.html"><span class="identifier">User</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-member-permission/index.html">MemberPermission</a></h4>
+</td>
+<td>
+<p>群成员的权限.</p>
+<code><span class="keyword">enum</span> <span class="keyword">class </span><span class="identifier">MemberPermission</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><a href="-member-permission/index.html"><span class="identifier">MemberPermission</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-user/index.html">User</a></h4>
+</td>
+<td>
+<p>代表一个 <strong>用户</strong>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">User</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">, </span><span class="identifier">CoroutineScope</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Exceptions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-bot-is-being-muted-exception/index.html">BotIsBeingMutedException</a></h4>
+</td>
+<td>
+<p>发送消息时 bot 正处于被禁言状态时抛出的异常.</p>
+<code><span class="keyword">class </span><span class="identifier">BotIsBeingMutedException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-runtime-exception/index.html"><span class="identifier">RuntimeException</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-message-too-large-exception/index.html">MessageTooLargeException</a></h4>
+</td>
+<td>
+<p>发送消息时消息过长抛出的异常.</p>
+<code><span class="keyword">class </span><span class="identifier">MessageTooLargeException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-runtime-exception/index.html"><span class="identifier">RuntimeException</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-permission-denied-exception/index.html">PermissionDeniedException</a></h4>
+</td>
+<td>
+<p>权限不足</p>
+<code><span class="keyword">class </span><span class="identifier">PermissionDeniedException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-illegal-state-exception/index.html"><span class="identifier">IllegalStateException</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="bot-mute-remaining.html">botMuteRemaining</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><a href="-bot-is-being-muted-exception/index.html"><span class="identifier">BotIsBeingMutedException</span></a><span class="symbol">.</span><span class="identifier">botMuteRemaining</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="id-content-string.html">idContentString</a></h4>
+</td>
+<td>
+<p>ID 列表的字符串表示.
+如:</p>
+<code><span class="keyword">val </span><a href="-contact-list/index.html"><span class="identifier">ContactList</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">idContentString</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="is-bot-muted.html">isBotMuted</a></h4>
+</td>
+<td>
+<p>返回机器人是否正在被禁言</p>
+<code><span class="keyword">val </span><a href="-group/index.html"><span class="identifier">Group</span></a><span class="symbol">.</span><span class="identifier">isBotMuted</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="is-friend.html">isFriend</a></h4>
+</td>
+<td>
+<p>判断此成员是否为好友</p>
+<code><span class="keyword">val </span><a href="-member/index.html"><span class="identifier">Member</span></a><span class="symbol">.</span><span class="identifier">isFriend</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="is-muted.html">isMuted</a></h4>
+</td>
+<td>
+<p>判断群成员是否处于禁言状态.</p>
+<code><span class="keyword">val </span><a href="-member/index.html"><span class="identifier">Member</span></a><span class="symbol">.</span><span class="identifier">isMuted</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="name-card-or-nick.html">nameCardOrNick</a></h4>
+</td>
+<td>
+<p>获取非空群名片或昵称.</p>
+<code><span class="keyword">val </span><a href="-member/index.html"><span class="identifier">Member</span></a><span class="symbol">.</span><span class="identifier">nameCardOrNick</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code><br/>
+<code><span class="keyword">val </span><a href="-user/index.html"><span class="identifier">User</span></a><span class="symbol">.</span><span class="identifier">nameCardOrNick</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="as-friend.html">asFriend</a></h4>
+</td>
+<td>
+<p>得到此成员作为好友的对象.</p>
+<code><span class="keyword">fun </span><a href="-member/index.html"><span class="identifier">Member</span></a><span class="symbol">.</span><span class="identifier">asFriend</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-friend/index.html"><span class="identifier">Friend</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="as-friend-or-null.html">asFriendOrNull</a></h4>
+</td>
+<td>
+<p>得到此成员作为好友的对象, 当此成员不是好友时返回 <code>null</code></p>
+<code><span class="keyword">fun </span><a href="-member/index.html"><span class="identifier">Member</span></a><span class="symbol">.</span><span class="identifier">asFriendOrNull</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-friend/index.html"><span class="identifier">Friend</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="check-bot-permission.html">checkBotPermission</a></h4>
+</td>
+<td>
+<p>要求 <a href="../net.mamoe.mirai/-bot/index.html">Bot</a> 在这个群里的权限至少为 <a href="check-bot-permission.html#net.mamoe.mirai.contact$checkBotPermission(net.mamoe.mirai.contact.Group, net.mamoe.mirai.contact.MemberPermission, kotlin.Function0((kotlin.String)))/required">required</a>, 否则抛出异常 <a href="-permission-denied-exception/index.html">PermissionDeniedException</a></p>
+<code><span class="keyword">fun </span><a href="-group/index.html"><span class="identifier">Group</span></a><span class="symbol">.</span><span class="identifier">checkBotPermission</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.contact$checkBotPermission(net.mamoe.mirai.contact.Group, net.mamoe.mirai.contact.MemberPermission, kotlin.Function0((kotlin.String)))/required">required</span><span class="symbol">:</span>&nbsp;<a href="-member-permission/index.html"><span class="identifier">MemberPermission</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.contact$checkBotPermission(net.mamoe.mirai.contact.Group, net.mamoe.mirai.contact.MemberPermission, kotlin.Function0((kotlin.String)))/lazyMessage">lazyMessage</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a>&nbsp;<span class="symbol">=</span>&nbsp;{
+        "Permission denied: required $required, got actual $botPermission for $bot in group $id"
+    }<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="is-administrator.html">isAdministrator</a></h4>
+</td>
+<td>
+<p>判断权限是否为管理员</p>
+<code><span class="keyword">fun </span><a href="-member-permission/index.html"><span class="identifier">MemberPermission</span></a><span class="symbol">.</span><span class="identifier">isAdministrator</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code><br/>
+<code><span class="keyword">fun </span><a href="-member/index.html"><span class="identifier">Member</span></a><span class="symbol">.</span><span class="identifier">isAdministrator</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="is-operator.html">isOperator</a></h4>
+</td>
+<td>
+<p>判断权限是否为管理员或群主</p>
+<code><span class="keyword">fun </span><a href="-member-permission/index.html"><span class="identifier">MemberPermission</span></a><span class="symbol">.</span><span class="identifier">isOperator</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code><br/>
+<code><span class="keyword">fun </span><a href="-member/index.html"><span class="identifier">Member</span></a><span class="symbol">.</span><span class="identifier">isOperator</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="is-owner.html">isOwner</a></h4>
+</td>
+<td>
+<p>判断权限是否为群主</p>
+<code><span class="keyword">fun </span><a href="-member-permission/index.html"><span class="identifier">MemberPermission</span></a><span class="symbol">.</span><span class="identifier">isOwner</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code><br/>
+<code><span class="keyword">fun </span><a href="-member/index.html"><span class="identifier">Member</span></a><span class="symbol">.</span><span class="identifier">isOwner</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="mute.html">mute</a></h4>
+</td>
+<td>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><a href="-member/index.html"><span class="identifier">Member</span></a><span class="symbol">.</span><span class="identifier">mute</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.contact$mute(net.mamoe.mirai.contact.Member, kotlin.time.Duration)/duration">duration</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-duration/index.html"><span class="identifier">Duration</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><a href="-member/index.html"><span class="identifier">Member</span></a><span class="symbol">.</span><span class="identifier">mute</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.contact$mute(net.mamoe.mirai.contact.Member, kotlin.Long)/durationSeconds">durationSeconds</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="recall.html">recall</a></h4>
+</td>
+<td>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><a href="-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">.</span><span class="identifier">recall</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.contact$recall(net.mamoe.mirai.contact.Contact, net.mamoe.mirai.message.data.MessageChain)/source">source</span><span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.message.data/-message-chain/index.html"><span class="identifier">MessageChain</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><a href="-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">.</span><span class="identifier">recall</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.contact$recall(net.mamoe.mirai.contact.Contact, net.mamoe.mirai.message.data.MessageSource)/source">source</span><span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.message.data/-message-source/index.html"><span class="identifier">MessageSource</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="recall-in.html">recallIn</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">.</span><span class="identifier">recallIn</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.contact$recallIn(net.mamoe.mirai.contact.Contact, net.mamoe.mirai.message.data.MessageChain, kotlin.Long, kotlin.coroutines.CoroutineContext)/message">message</span><span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.message.data/-message-chain/index.html"><span class="identifier">MessageChain</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.contact$recallIn(net.mamoe.mirai.contact.Contact, net.mamoe.mirai.message.data.MessageChain, kotlin.Long, kotlin.coroutines.CoroutineContext)/millis">millis</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.contact$recallIn(net.mamoe.mirai.contact.Contact, net.mamoe.mirai.message.data.MessageChain, kotlin.Long, kotlin.coroutines.CoroutineContext)/coroutineContext">coroutineContext</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.coroutines/-coroutine-context/index.html"><span class="identifier">CoroutineContext</span></a>&nbsp;<span class="symbol">=</span>&nbsp;EmptyCoroutineContext<span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Job</span></code><br/>
+<code><span class="keyword">fun </span><a href="-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">.</span><span class="identifier">recallIn</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.contact$recallIn(net.mamoe.mirai.contact.Contact, net.mamoe.mirai.message.data.MessageSource, kotlin.Long, kotlin.coroutines.CoroutineContext)/source">source</span><span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.message.data/-message-source/index.html"><span class="identifier">MessageSource</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.contact$recallIn(net.mamoe.mirai.contact.Contact, net.mamoe.mirai.message.data.MessageSource, kotlin.Long, kotlin.coroutines.CoroutineContext)/millis">millis</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.contact$recallIn(net.mamoe.mirai.contact.Contact, net.mamoe.mirai.message.data.MessageSource, kotlin.Long, kotlin.coroutines.CoroutineContext)/coroutineContext">coroutineContext</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.coroutines/-coroutine-context/index.html"><span class="identifier">CoroutineContext</span></a>&nbsp;<span class="symbol">=</span>&nbsp;EmptyCoroutineContext<span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Job</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="take-if-is-friend.html">takeIfIsFriend</a></h4>
+</td>
+<td>
+<p>如果此成员是好友, 则执行 <a href="take-if-is-friend.html#net.mamoe.mirai.contact$takeIfIsFriend(net.mamoe.mirai.contact.Member, kotlin.Function1((net.mamoe.mirai.contact.Friend, net.mamoe.mirai.contact.takeIfIsFriend.R)))/block">block</a> 并返回其返回值. 否则返回 <code>null</code></p>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">R</span><span class="symbol">&gt;</span> <a href="-member/index.html"><span class="identifier">Member</span></a><span class="symbol">.</span><span class="identifier">takeIfIsFriend</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.contact$takeIfIsFriend(net.mamoe.mirai.contact.Member, kotlin.Function1((net.mamoe.mirai.contact.Friend, net.mamoe.mirai.contact.takeIfIsFriend.R)))/block">block</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="-friend/index.html"><span class="identifier">Friend</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">R</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">R</span><span class="symbol">?</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

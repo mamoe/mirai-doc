@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BotConfigurationBase.inheritCoroutineContext - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.utils</a>&nbsp;/&nbsp;<a href="index.html">BotConfigurationBase</a>&nbsp;/&nbsp;<a href="./inherit-coroutine-context.html">inheritCoroutineContext</a><br/>
+<br/>
+<h1>inheritCoroutineContext</h1>
+<a name="net.mamoe.mirai.utils.BotConfigurationBase$inheritCoroutineContext()"></a>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">inheritCoroutineContext</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>使用当前协程的 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.coroutines/coroutine-context.html">coroutineContext</a> 作为 <a href="parent-coroutine-context.html">parentCoroutineContext</a>.</p>
+<p>Bot 将会使用一个 <a href="#">SupervisorJob</a> 覆盖 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.coroutines/coroutine-context.html">coroutineContext</a> 当前协程的 <a href="#">Job</a>, 并使用当前协程的 <a href="#">Job</a> 作为父 <a href="#">Job</a></p>
+<p>用例:</p>
+<pre><code>coroutineScope {
+  val bot = Bot(...) {
+    inheritCoroutineContext()
+  }
+  bot.login()
+} // coroutineScope 会等待 Bot 退出
+</code></pre>
+<p><strong>注意</strong>: <code>bot.cancel</code> 时将会让父 <a href="#">Job</a> 也被 cancel.</p>
+<pre><code>coroutineScope { // this: CoroutineScope
+  launch {
+    while(isActive) {
+      delay(500)
+      println("I'm alive")
+    }
+  }
+
+  val bot = Bot(...) {
+     inheritCoroutineContext() // 使用 `coroutineScope` 的 Job 作为父 Job
+  }
+  bot.login()
+  bot.cancel() // 取消了整个 `coroutineScope`, 因此上文不断打印 `"I'm alive"` 的协程也会被取消.
+}
+</code></pre>
+<p>因此, 此函数尤为适合在 <code>suspend fun main()</code> 中使用, 它能阻止主线程退出:</p>
+<pre><code>suspend fun main() {
+  val bot = Bot() {
+    inheritCoroutineContext()
+  }
+  bot.subscribe { ... }
+
+  // 主线程不会退出, 直到 Bot 离线.
+}
+</code></pre>
+<p>简言之,</p>
+<ul><li>若想让 <a href="../../net.mamoe.mirai/-bot/index.html">Bot</a> 作为 '守护进程' 运行, 则无需调用 <a href="./inherit-coroutine-context.html">inheritCoroutineContext</a>.</li>
+<li>若想让 <a href="../../net.mamoe.mirai/-bot/index.html">Bot</a> 依赖于当前协程, 让当前协程等待 <a href="../../net.mamoe.mirai/-bot/index.html">Bot</a> 运行, 则使用 <a href="./inherit-coroutine-context.html">inheritCoroutineContext</a></li>
+</ul>
+<p><strong>See Also</strong><br/>
+<p><a href="parent-coroutine-context.html">parentCoroutineContext</a></p>
+</p>
+</BODY>
+</HTML>

@@ -1,0 +1,23 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>queryUrl - mirai-core</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="index.html">net.mamoe.mirai.message.data</a>&nbsp;/&nbsp;<a href="./query-url.html">queryUrl</a><br/>
+<br/>
+<h1>queryUrl</h1>
+<a name="net.mamoe.mirai.message.data$queryUrl(net.mamoe.mirai.message.data.Image)"></a>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><a href="-image/index.html"><span class="identifier">Image</span></a><span class="symbol">.</span><span class="identifier">queryUrl</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>查询原图下载链接.</p>
+<ul><li>当图片为从服务器接收的消息中的图片时, 可以直接获取下载链接, 本函数不会挂起协程.</li>
+<li>其他情况下协程可能会挂起并向服务器查询下载链接, 或不挂起并拼接一个链接.</li>
+</ul>
+<h3>Exceptions</h3>
+<p><a name="IllegalStateException"></a>
+<code>IllegalStateException</code> - 当无任何 <a href="../net.mamoe.mirai/-bot/index.html">Bot</a> 在线时抛出 (因为无法获取相关协议)</p>
+<p><strong>Return</strong><br/>
+原图 HTTP 下载链接 (非 HTTPS)</p>
+</BODY>
+</HTML>

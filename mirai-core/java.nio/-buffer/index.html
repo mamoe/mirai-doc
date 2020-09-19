@@ -1,0 +1,275 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Buffer - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">java.nio</a>&nbsp;/&nbsp;<a href="./index.html">Buffer</a><br/>
+<br/>
+<h1>Buffer</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">Buffer</span></code>
+<p>A container for data of a specific primitive type.</p>
+<p>A buffer is a linear, finite sequence of elements of a specific
+primitive type.  Aside from its content, the essential properties of a
+buffer are its capacity, limit, and position:</p>
+<p>A buffer's <em>capacity</em> is the number of elements it contains.  The
+capacity of a buffer is never negative and never changes.</p>
+<p>A buffer's <em>limit</em> is the index of the first element that should
+not be read or written.  A buffer's limit is never negative and is never
+greater than its capacity.</p>
+<p>A buffer's <em>position</em> is the index of the next element to be
+read or written.  A buffer's position is never negative and is never
+greater than its limit.</p>
+<p>There is one subclass of this class for each non-boolean primitive type.</p>
+<p>Each subclass of this class defines two categories of <em>get</em> and
+<em>put</em> operations:</p>
+<p><em>Relative</em> operations read or write one or more elements starting
+at the current position and then increment the position by the number of
+elements transferred.  If the requested transfer exceeds the limit then a
+relative <em>get</em> operation throws a <a href="https://docs.oracle.com/javase/6/docs/api/java/nio/BufferUnderflowException.html">BufferUnderflowException</a>
+and a relative <em>put</em> operation throws a [   ]; in either case, no data is transferred.</p>
+<p><em>Absolute</em> operations take an explicit element index and do not
+affect the position.  Absolute <em>get</em> and <em>put</em> operations throw
+an <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-index-out-of-bounds-exception/index.html">IndexOutOfBoundsException</a> if the index argument exceeds the
+limit.</p>
+<p>Data may also, of course, be transferred in to or out of a buffer by the
+I/O operations of an appropriate channel, which are always relative to the
+current position.</p>
+<p>A buffer's <em>mark</em> is the index to which its position will be reset
+when the <a href="#">reset</a> method is invoked.  The mark is not always
+defined, but when it is defined it is never negative and is never greater
+than the position.  If the mark is defined then it is discarded when the
+position or the limit is adjusted to a value smaller than the mark.  If the
+mark is not defined then invoking the <a href="#">reset</a> method causes an
+<a href="https://docs.oracle.com/javase/6/docs/api/java/nio/InvalidMarkException.html">InvalidMarkException</a> to be thrown.</p>
+<p>The following invariant holds for the mark, position, limit, and
+capacity values:</p>
+<p>A newly-created buffer always has a position of zero and a mark that is
+undefined.  The initial limit may be zero, or it may be some other value
+that depends upon the type of the buffer and the manner in which it is
+constructed.  Each element of a newly-allocated buffer is initialized
+to zero.</p>
+<p>In addition to methods for accessing the position, limit, and capacity
+values and for marking and resetting, this class also defines the following
+operations upon buffers:</p>
+<ul><li></li>
+</ul>
+<p><a href="#">.clear</a> makes a buffer ready for a new sequence of
+channel-read or relative <em>put</em> operations: It sets the limit to the
+capacity and the position to zero.</p>
+<ul><li></li>
+</ul>
+<p><a href="#">.flip</a> makes a buffer ready for a new sequence of
+channel-write or relative <em>get</em> operations: It sets the limit to the
+current position and then sets the position to zero.</p>
+<ul><li></li>
+</ul>
+<p><a href="#">.rewind</a> makes a buffer ready for re-reading the data that
+it already contains: It leaves the limit unchanged and sets the position
+to zero.</p>
+<ul><li></li>
+</ul>
+<p>The <a href="#">.slice</a> and <a href="#">slice(index,length)</a>
+methods create a subsequence of a buffer: They leave the limit and the
+position unchanged.</p>
+<ul><li></li>
+</ul>
+<p><a href="#">.duplicate</a> creates a shallow copy of a buffer: It leaves
+the limit and the position unchanged.</p>
+<p>Every buffer is readable, but not every buffer is writable.  The
+mutation methods of each buffer class are specified as <em>optionaloperations</em> that will throw a <a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ReadOnlyBufferException.html">ReadOnlyBufferException</a> when
+invoked upon a read-only buffer.  A read-only buffer does not allow its
+content to be changed, but its mark, position, and limit values are mutable.
+Whether or not a buffer is read-only may be determined by invoking its
+<a href="#">isReadOnly</a> method.</p>
+<p>Buffers are not safe for use by multiple concurrent threads.  If a
+buffer is to be used by more than one thread then access to the buffer
+should be controlled by appropriate synchronization.</p>
+<p>Methods in this class that do not otherwise have a value to return are
+specified to return the buffer upon which they are invoked.  This allows
+method invocations to be chained; for example, the sequence of statements</p>
+<p>can be replaced by the single, more compact statement</p>
+<p><strong>Author</strong><br/>
+Mark Reinhold</p>
+<p><strong>Author</strong><br/>
+JSR-51 Expert Group</p>
+<p><strong>Since</strong><br/>
+1.4</p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="address.html">address</a></h4>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">address</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="is-direct.html">isDirect</a></h4>
+</td>
+<td>
+<p>Tells whether or not this buffer is
+<a href="ByteBuffer.html#direct"><em>direct</em></a>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">isDirect</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="is-read-only.html">isReadOnly</a></h4>
+</td>
+<td>
+<p>Tells whether or not this buffer is read-only.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">isReadOnly</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="array.html">array</a></h4>
+</td>
+<td>
+<p>Returns the array that backs this
+buffer&nbsp;&nbsp;<em>(optional operation)</em>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">array</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="array-offset.html">arrayOffset</a></h4>
+</td>
+<td>
+<p>Returns the offset within this buffer's backing array of the first
+element of the buffer&nbsp;&nbsp;<em>(optional operation)</em>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">arrayOffset</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="capacity.html">capacity</a></h4>
+</td>
+<td>
+<p>Returns this buffer's capacity.</p>
+<code><span class="keyword">fun </span><span class="identifier">capacity</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="clear.html">clear</a></h4>
+</td>
+<td>
+<p>Clears this buffer.  The position is set to zero, the limit is set to
+the capacity, and the mark is discarded.</p>
+<code><span class="keyword">fun </span><span class="identifier">clear</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/Buffer.html"><span class="identifier">Buffer</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="create-limit-exception.html">createLimitException</a></h4>
+</td>
+<td>
+<p>Verify that <code>0 &lt; newLimit &lt;= capacity</code></p>
+<code><span class="keyword">fun </span><span class="identifier">createLimitException</span><span class="symbol">(</span><span class="identifier" id="java.nio.Buffer$createLimitException(kotlin.Int)/newLimit">newLimit</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-illegal-argument-exception/index.html"><span class="identifier">IllegalArgumentException</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="flip.html">flip</a></h4>
+</td>
+<td>
+<p>Flips this buffer.  The limit is set to the current position and then
+the position is set to zero.  If the mark is defined then it is
+discarded.</p>
+<code><span class="keyword">fun </span><span class="identifier">flip</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/Buffer.html"><span class="identifier">Buffer</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="has-array.html">hasArray</a></h4>
+</td>
+<td>
+<p>Tells whether or not this buffer is backed by an accessible
+array.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">hasArray</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="has-remaining.html">hasRemaining</a></h4>
+</td>
+<td>
+<p>Tells whether there are any elements between the current position and
+the limit.</p>
+<code><span class="keyword">fun </span><span class="identifier">hasRemaining</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="limit.html">limit</a></h4>
+</td>
+<td>
+<p>Returns this buffer's limit.</p>
+<code><span class="keyword">fun </span><span class="identifier">limit</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>Sets this buffer's limit.  If the position is larger than the new limit
+then it is set to the new limit.  If the mark is defined and larger than
+the new limit then it is discarded.</p>
+<code><span class="keyword">fun </span><span class="identifier">limit</span><span class="symbol">(</span><span class="identifier" id="java.nio.Buffer$limit(kotlin.Int)/newLimit">newLimit</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/Buffer.html"><span class="identifier">Buffer</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="mark.html">mark</a></h4>
+</td>
+<td>
+<p>Sets this buffer's mark at its position.</p>
+<code><span class="keyword">fun </span><span class="identifier">mark</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/Buffer.html"><span class="identifier">Buffer</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="position.html">position</a></h4>
+</td>
+<td>
+<p>Returns this buffer's position.</p>
+<code><span class="keyword">fun </span><span class="identifier">position</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>Sets this buffer's position.  If the mark is defined and larger than the
+new position then it is discarded.</p>
+<code><span class="keyword">fun </span><span class="identifier">position</span><span class="symbol">(</span><span class="identifier" id="java.nio.Buffer$position(kotlin.Int)/newPosition">newPosition</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/Buffer.html"><span class="identifier">Buffer</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="remaining.html">remaining</a></h4>
+</td>
+<td>
+<p>Returns the number of elements between the current position and the
+limit.</p>
+<code><span class="keyword">fun </span><span class="identifier">remaining</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="reset.html">reset</a></h4>
+</td>
+<td>
+<p>Resets this buffer's position to the previously-marked position.</p>
+<code><span class="keyword">fun </span><span class="identifier">reset</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/Buffer.html"><span class="identifier">Buffer</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="rewind.html">rewind</a></h4>
+</td>
+<td>
+<p>Rewinds this buffer.  The position is set to zero and the mark is
+discarded.</p>
+<code><span class="keyword">fun </span><span class="identifier">rewind</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/Buffer.html"><span class="identifier">Buffer</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../-byte-buffer/index.html">ByteBuffer</a></h4>
+</td>
+<td>
+<p>A byte buffer.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">ByteBuffer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/nio/Buffer.html"><span class="identifier">Buffer</span></a><span class="symbol">, </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html"><span class="identifier">ByteBuffer</span></a><span class="symbol">?</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

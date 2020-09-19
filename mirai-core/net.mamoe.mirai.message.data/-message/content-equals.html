@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Message.contentEquals - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.message.data</a>&nbsp;/&nbsp;<a href="index.html">Message</a>&nbsp;/&nbsp;<a href="./content-equals.html">contentEquals</a><br/>
+<br/>
+<h1>contentEquals</h1>
+<a name="net.mamoe.mirai.message.data.Message$contentEquals(net.mamoe.mirai.message.data.Message, kotlin.Boolean)"></a>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">contentEquals</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.Message$contentEquals(net.mamoe.mirai.message.data.Message, kotlin.Boolean)/another">another</span><span class="symbol">:</span>&nbsp;<a href="index.html"><span class="identifier">Message</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.message.data.Message$contentEquals(net.mamoe.mirai.message.data.Message, kotlin.Boolean)/ignoreCase">ignoreCase</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>判断内容是否与 <a href="content-equals.html#net.mamoe.mirai.message.data.Message$contentEquals(net.mamoe.mirai.message.data.Message, kotlin.Boolean)/another">another</a> 相等.</p>
+<p>若本函数返回 <code>true</code>, 则表明:</p>
+<ul><li><code>this</code> 与 <a href="content-equals.html#net.mamoe.mirai.message.data.Message$contentEquals(net.mamoe.mirai.message.data.Message, kotlin.Boolean)/another">another</a> 的 <a href="content-to-string.html">contentToString</a> 相等</li>
+<li><code>this</code> 为 <a href="content-equals.html#net.mamoe.mirai.message.data.Message$contentEquals(net.mamoe.mirai.message.data.Message, kotlin.Boolean)/another">another</a> 的所有 <a href="../-message-content.html">MessageContent</a> 都 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/equals.html">相等</a> 且有同样的排列顺序.</li>
+</ul>
+<a name="net.mamoe.mirai.message.data.Message$contentEquals(kotlin.String, kotlin.Boolean)"></a>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">contentEquals</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.Message$contentEquals(kotlin.String, kotlin.Boolean)/another">another</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.message.data.Message$contentEquals(kotlin.String, kotlin.Boolean)/ignoreCase">ignoreCase</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>判断内容是否与 <a href="content-equals.html#net.mamoe.mirai.message.data.Message$contentEquals(kotlin.String, kotlin.Boolean)/another">another</a> 相等.</p>
+<p>若本函数返回 <code>true</code>, 则表明:</p>
+<ul><li><a href="content-to-string.html">contentToString</a> 与 <a href="content-equals.html#net.mamoe.mirai.message.data.Message$contentEquals(kotlin.String, kotlin.Boolean)/another">another</a> 相等</li>
+<li>若 <code>this</code> 为 <a href="../-message-chain/index.html">MessageChain</a>, 则只包含 <a href="../-message-metadata/index.html">MessageMetadata</a> 和 <a href="../-plain-text/index.html">PlainText</a></li>
+</ul>
+</BODY>
+</HTML>

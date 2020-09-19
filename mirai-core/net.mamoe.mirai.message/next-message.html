@@ -1,0 +1,24 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>nextMessage - mirai-core</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="index.html">net.mamoe.mirai.message</a>&nbsp;/&nbsp;<a href="./next-message.html">nextMessage</a><br/>
+<br/>
+<h1>nextMessage</h1>
+<a name="net.mamoe.mirai.message$nextMessage(net.mamoe.mirai.message.nextMessage.P, kotlin.Long, net.mamoe.mirai.event.Listener.EventPriority, kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.message.nextMessage.P, , kotlin.Boolean)))"></a>
+<code><span class="keyword">suspend</span> <span class="keyword">inline</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="keyword">reified</span>&nbsp;<span class="identifier">P</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-message-event/index.html"><span class="identifier">MessageEvent</span></a><span class="symbol">&gt;</span> <span class="identifier">P</span><span class="symbol">.</span><span class="identifier">nextMessage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$nextMessage(net.mamoe.mirai.message.nextMessage.P, kotlin.Long, net.mamoe.mirai.event.Listener.EventPriority, kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.message.nextMessage.P, , kotlin.Boolean)))/timeoutMillis">timeoutMillis</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a>&nbsp;<span class="symbol">=</span>&nbsp;-1<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.message$nextMessage(net.mamoe.mirai.message.nextMessage.P, kotlin.Long, net.mamoe.mirai.event.Listener.EventPriority, kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.message.nextMessage.P, , kotlin.Boolean)))/priority">priority</span><span class="symbol">:</span>&nbsp;<span class="identifier">EventPriority</span>&nbsp;<span class="symbol">=</span>&nbsp;EventPriority.MONITOR<span class="symbol">, </span><span class="keyword">noinline</span> <span class="identifier" id="net.mamoe.mirai.message$nextMessage(net.mamoe.mirai.message.nextMessage.P, kotlin.Long, net.mamoe.mirai.event.Listener.EventPriority, kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.message.nextMessage.P, , kotlin.Boolean)))/filter">filter</span><span class="symbol">:</span>&nbsp;<span class="keyword">suspend </span><span class="identifier">P</span><span class="symbol">.</span><span class="symbol">(</span><span class="identifier">P</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;{ true }<span class="symbol">)</span><span class="symbol">: </span><a href="../net.mamoe.mirai.message.data/-message-chain/index.html"><span class="identifier">MessageChain</span></a></code>
+<p>挂起当前协程, 等待下一条 <a href="-message-event/sender.html">MessageEvent.sender</a> 和 <a href="-message-event/subject.html">MessageEvent.subject</a> 与 <a href="next-message/-this-.html">this</a> 相同且通过 <a href="next-message.html#net.mamoe.mirai.message$nextMessage(net.mamoe.mirai.message.nextMessage.P, kotlin.Long, net.mamoe.mirai.event.Listener.EventPriority, kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.message.nextMessage.P, , kotlin.Boolean)))/filter">筛选</a> 的 <a href="-message-event/index.html">MessageEvent</a></p>
+<p>若 <a href="next-message.html#net.mamoe.mirai.message$nextMessage(net.mamoe.mirai.message.nextMessage.P, kotlin.Long, net.mamoe.mirai.event.Listener.EventPriority, kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.message.nextMessage.P, , kotlin.Boolean)))/filter">filter</a> 抛出了一个异常, 本函数会立即抛出这个异常.</p>
+<h3>Parameters</h3>
+<p><a name="timeoutMillis"></a>
+<code>timeoutMillis</code> - 超时. 单位为毫秒. <code>-1</code> 为不限制</p>
+<p><a name="filter"></a>
+<code>filter</code> - 过滤器. 返回非 null 则代表得到了需要的值. <a href="../net.mamoe.mirai.event/sync-from-event.html">syncFromEvent</a> 会返回这个值</p>
+<p><strong>See Also</strong><br/>
+<p><a href="../net.mamoe.mirai.event/sync-from-event.html">syncFromEvent</a></p>
+</p>
+</BODY>
+</HTML>

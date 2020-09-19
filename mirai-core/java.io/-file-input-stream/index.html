@@ -1,0 +1,106 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>FileInputStream - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">java.io</a>&nbsp;/&nbsp;<a href="./index.html">FileInputStream</a><br/>
+<br/>
+<h1>FileInputStream</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">FileInputStream</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html"><span class="identifier">InputStream</span></a></code>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<code><span class="identifier">FileInputStream</span><span class="symbol">(</span><span class="identifier" id="java.io.FileInputStream$<init>(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></code><br/>
+<code><span class="identifier">FileInputStream</span><span class="symbol">(</span><span class="identifier" id="java.io.FileInputStream$<init>(java.io.File)/file">file</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span></code><br/>
+<code><span class="identifier">FileInputStream</span><span class="symbol">(</span><span class="identifier" id="java.io.FileInputStream$<init>(java.io.FileDescriptor)/fdObj">fdObj</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/FileDescriptor.html"><span class="identifier">FileDescriptor</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="available.html">available</a></h4>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">available</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="close.html">close</a></h4>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">close</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="finalize.html">finalize</a></h4>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">finalize</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-f-d.html">getFD</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getFD</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/io/FileDescriptor.html"><span class="identifier">FileDescriptor</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="read.html">read</a></h4>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">read</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">read</span><span class="symbol">(</span><span class="identifier" id="java.io.FileInputStream$read(kotlin.ByteArray)/b">b</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">read</span><span class="symbol">(</span><span class="identifier" id="java.io.FileInputStream$read(kotlin.ByteArray, kotlin.Int, kotlin.Int)/b">b</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">, </span><span class="identifier" id="java.io.FileInputStream$read(kotlin.ByteArray, kotlin.Int, kotlin.Int)/off">off</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="java.io.FileInputStream$read(kotlin.ByteArray, kotlin.Int, kotlin.Int)/len">len</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="skip.html">skip</a></h4>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">skip</span><span class="symbol">(</span><span class="identifier" id="java.io.FileInputStream$skip(kotlin.Long)/n">n</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../../net.mamoe.mirai.message/send-as-image-to.html">sendAsImageTo</a></h4>
+</td>
+<td>
+<p>在 <a href="#">Dispatchers.IO</a> 中读取 <a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html">InputStream</a> 到临时文件并将其作为图片发送到指定联系人</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">C</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.contact/-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">&gt;</span> <a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html"><span class="identifier">InputStream</span></a><span class="symbol">.</span><span class="identifier">sendAsImageTo</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$sendAsImageTo(java.io.InputStream, net.mamoe.mirai.message.sendAsImageTo.C)/contact">contact</span><span class="symbol">:</span>&nbsp;<span class="identifier">C</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.message/-message-receipt/index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">C</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../../net.mamoe.mirai.utils/to-external-image.html">toExternalImage</a></h4>
+</td>
+<td>
+<p>将 <a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html">InputStream</a> 委托为 <a href="../../net.mamoe.mirai.utils/-external-image/index.html">ExternalImage</a>.
+只会在上传图片时才读取 <a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html">InputStream</a> 的内容. 具体行为取决于相关 <a href="../../net.mamoe.mirai/-bot/index.html">Bot</a> 的 <a href="../../net.mamoe.mirai.utils/-file-cache-strategy/index.html">FileCacheStrategy</a></p>
+<code><span class="keyword">fun </span><a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html"><span class="identifier">InputStream</span></a><span class="symbol">.</span><span class="identifier">toExternalImage</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.utils/-external-image/index.html"><span class="identifier">ExternalImage</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../../net.mamoe.mirai.message/upload-as-image.html">uploadAsImage</a></h4>
+</td>
+<td>
+<p>在 <a href="#">Dispatchers.IO</a> 中读取 <a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html">InputStream</a> 到临时文件并将其作为图片上传后构造 <a href="../../net.mamoe.mirai.message.data/-image/index.html">Image</a></p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html"><span class="identifier">InputStream</span></a><span class="symbol">.</span><span class="identifier">uploadAsImage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$uploadAsImage(java.io.InputStream, net.mamoe.mirai.contact.Contact)/contact">contact</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.contact/-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.message.data/-image/index.html"><span class="identifier">Image</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

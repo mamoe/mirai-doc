@@ -1,0 +1,237 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ByteBuffer - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">java.nio</a>&nbsp;/&nbsp;<a href="./index.html">ByteBuffer</a><br/>
+<br/>
+<h1>ByteBuffer</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">ByteBuffer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/nio/Buffer.html"><span class="identifier">Buffer</span></a><span class="symbol">, </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html"><span class="identifier">ByteBuffer</span></a><span class="symbol">?</span><span class="symbol">&gt;</span></code>
+<p>A byte buffer.</p>
+<p>This class defines six categories of operations upon
+byte buffers:</p>
+<ul><li></li>
+</ul>
+<p>Absolute and relative <a href="#">&amp;lt;i&amp;gt;get&amp;lt;/i&amp;gt;</a> and
+<a href="#">&amp;lt;i&amp;gt;put&amp;lt;/i&amp;gt;</a> methods that read and write
+single bytes;</p>
+<ul><li></li>
+</ul>
+<p>Absolute and relative <a href="#">&amp;lt;i&amp;gt;bulk get&amp;lt;/i&amp;gt;</a>
+methods that transfer contiguous sequences of bytes from this buffer
+into an array;</p>
+<ul><li></li>
+</ul>
+<p>Absolute and relative <a href="#">&amp;lt;i&amp;gt;bulk put&amp;lt;/i&amp;gt;</a>
+methods that transfer contiguous sequences of bytes from a
+byte array or some other byte
+buffer into this buffer;</p>
+<ul><li></li>
+</ul>
+<p>Absolute and relative <a href="#">&amp;lt;i&amp;gt;get&amp;lt;/i&amp;gt;</a>
+and <a href="#">&amp;lt;i&amp;gt;put&amp;lt;/i&amp;gt;</a> methods that read and
+write values of other primitive types, translating them to and from
+sequences of bytes in a particular byte order;</p>
+<ul><li></li>
+</ul>
+<p>Methods for creating <em><a href="#views">view buffers</a></em>,
+which allow a byte buffer to be viewed as a buffer containing values of
+some other primitive type; and</p>
+<ul><li></li>
+</ul>
+<p>A method for <a href="#">compacting</a>
+a byte buffer.</p>
+<p>Byte buffers can be created either by <a href="#"> &amp;lt;i&amp;gt;allocation&amp;lt;/i&amp;gt;</a>, which allocates space for the buffer's</p>
+<p>content, or by <a href="#">&amp;lt;i&amp;gt;wrapping&amp;lt;/i&amp;gt;</a> an
+existing byte array  into a buffer.</p>
+<p>
+ Direct <em>vs.</em> non-direct buffers </p>
+<p>A byte buffer is either <em>direct</em> or <em>non-direct</em>.  Given a
+direct byte buffer, the Java virtual machine will make a best effort to
+perform native I/O operations directly upon it.  That is, it will attempt to
+avoid copying the buffer's content to (or from) an intermediate buffer
+before (or after) each invocation of one of the underlying operating
+system's native I/O operations.</p>
+<p>A direct byte buffer may be created by invoking the <a href="#"> </a> factory method of this class.  The
+buffers returned by this method typically have somewhat higher allocation
+and deallocation costs than non-direct buffers.  The contents of direct
+buffers may reside outside of the normal garbage-collected heap, and so
+their impact upon the memory footprint of an application might not be
+obvious.  It is therefore recommended that direct buffers be allocated
+primarily for large, long-lived buffers that are subject to the underlying
+system's native I/O operations.  In general it is best to allocate direct
+buffers only when they yield a measureable gain in program performance.</p>
+<p>A direct byte buffer may also be created by <a href="https://docs.oracle.com/javase/6/docs/api/java/nio/channels/FileChannel.html#map(java.nio.channels.FileChannel.MapMode, long, long)"> </a> a region of a file
+directly into memory.  An implementation of the Java platform may optionally
+support the creation of direct byte buffers from native code via JNI.  If an
+instance of one of these kinds of buffers refers to an inaccessible region
+of memory then an attempt to access that region will not change the buffer's
+content and will cause an unspecified exception to be thrown either at the
+time of the access or at some later time.</p>
+<p>Whether a byte buffer is direct or non-direct may be determined by
+invoking its <a href="#">isDirect</a> method.  This method is provided so
+that explicit buffer management can be done in performance-critical code.</p>
+<p>
+ Access to binary data </p>
+<p>This class defines methods for reading and writing values of all other
+primitive types, except <code>boolean</code>.  Primitive values are translated
+to (or from) sequences of bytes according to the buffer's current byte
+order, which may be retrieved and modified via the <a href="#">order</a>
+methods.  Specific byte orders are represented by instances of the [ ] class.  The initial order of a byte buffer is always <a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteOrder.html#BIG_ENDIAN"> </a>.</p>
+<p>For access to heterogeneous binary data, that is, sequences of values of
+different types, this class defines a family of absolute and relative
+<em>get</em> and <em>put</em> methods for each type.  For 32-bit floating-point
+values, for example, this class defines:</p>
+<p>Corresponding methods are defined for the types <code>char,
+short, int, long</code>, and <code>double</code>.  The index
+parameters of the absolute <em>get</em> and <em>put</em> methods are in terms of
+bytes rather than of the type being read or written.</p>
+<p>For access to homogeneous binary data, that is, sequences of values of
+the same type, this class defines methods that can create <em>views</em> of a
+given byte buffer.  A <em>view buffer</em> is simply another buffer whose
+content is backed by the byte buffer.  Changes to the byte buffer's content
+will be visible in the view buffer, and vice versa; the two buffers'
+position, limit, and mark values are independent.  The <a href="#"> </a> method, for example, creates an instance of
+the <a href="https://docs.oracle.com/javase/6/docs/api/java/nio/FloatBuffer.html">FloatBuffer</a> class that is backed by the byte buffer upon which
+the method is invoked.  Corresponding view-creation methods are defined for
+the types <code>char, short, int, long</code>, and <code>double</code>.</p>
+<p>View buffers have three important advantages over the families of
+type-specific <em>get</em> and <em>put</em> methods described above:</p>
+<ul><li></li>
+</ul>
+<p>A view buffer is indexed not in terms of bytes but rather in terms
+of the type-specific size of its values;</p>
+<ul><li></li>
+</ul>
+<p>A view buffer provides relative bulk <em>get</em> and <em>put</em>
+methods that can transfer contiguous sequences of values between a buffer
+and an array or some other buffer of the same type; and</p>
+<ul><li></li>
+</ul>
+<p>A view buffer is potentially much more efficient because it will
+be direct if, and only if, its backing byte buffer is direct.</p>
+<p>The byte order of a view buffer is fixed to be that of its byte buffer
+at the time that the view is created.</p>
+<p>Methods in this class that do not otherwise have a value to return are
+specified to return the buffer upon which they are invoked.  This allows
+method invocations to be chained.</p>
+<p>The sequence of statements</p>
+<p>can, for example, be replaced by the single statement</p>
+<p><strong>Author</strong><br/>
+Mark Reinhold</p>
+<p><strong>Author</strong><br/>
+JSR-51 Expert Group</p>
+<p><strong>Since</strong><br/>
+1.4</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="as-read-only-buffer.html">asReadOnlyBuffer</a></h4>
+</td>
+<td>
+<p>Creates a new, read-only byte buffer that shares this buffer's
+content.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">asReadOnlyBuffer</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html"><span class="identifier">ByteBuffer</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get.html">get</a></h4>
+</td>
+<td>
+<p>Relative <em>get</em> method.  Reads the byte at this buffer's
+current position, and then increments the position.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/index.html"><span class="identifier">Byte</span></a></code>
+<p>Absolute <em>get</em> method.  Reads the byte at the given
+index.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">operator</span> <span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="java.nio.ByteBuffer$get(kotlin.Int)/index">index</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/index.html"><span class="identifier">Byte</span></a></code>
+<p>Relative bulk <em>get</em> method.</p>
+<code><span class="keyword">open</span> <span class="keyword">operator</span> <span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="java.nio.ByteBuffer$get(kotlin.ByteArray, kotlin.Int, kotlin.Int)/dst">dst</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">, </span><span class="identifier" id="java.nio.ByteBuffer$get(kotlin.ByteArray, kotlin.Int, kotlin.Int)/offset">offset</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="java.nio.ByteBuffer$get(kotlin.ByteArray, kotlin.Int, kotlin.Int)/length">length</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html"><span class="identifier">ByteBuffer</span></a></code><br/>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="java.nio.ByteBuffer$get(kotlin.ByteArray)/dst">dst</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html"><span class="identifier">ByteBuffer</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-long.html">getLong</a></h4>
+</td>
+<td>
+<p>Absolute <em>get</em> method for reading a long value.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLong</span><span class="symbol">(</span><span class="identifier" id="java.nio.ByteBuffer$getLong(kotlin.Int)/index">index</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="order.html">order</a></h4>
+</td>
+<td>
+<p>Modifies this buffer's byte order.</p>
+<code><span class="keyword">fun </span><span class="identifier">order</span><span class="symbol">(</span><span class="identifier" id="java.nio.ByteBuffer$order(java.nio.ByteOrder)/bo">bo</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteOrder.html"><span class="identifier">ByteOrder</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html"><span class="identifier">ByteBuffer</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="put.html">put</a></h4>
+</td>
+<td>
+<p>Relative <em>put</em> method&nbsp;&nbsp;<em>(optional operation)</em>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">put</span><span class="symbol">(</span><span class="identifier" id="java.nio.ByteBuffer$put(kotlin.Byte)/b">b</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/index.html"><span class="identifier">Byte</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html"><span class="identifier">ByteBuffer</span></a></code>
+<p>Absolute <em>put</em> method&nbsp;&nbsp;<em>(optional operation)</em>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">put</span><span class="symbol">(</span><span class="identifier" id="java.nio.ByteBuffer$put(kotlin.Int, kotlin.Byte)/index">index</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="java.nio.ByteBuffer$put(kotlin.Int, kotlin.Byte)/b">b</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/index.html"><span class="identifier">Byte</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html"><span class="identifier">ByteBuffer</span></a><span class="symbol">?</span></code>
+<p>Relative bulk <em>put</em> method&nbsp;&nbsp;<em>(optional operation)</em>.</p>
+<code><span class="keyword">fun </span><span class="identifier">put</span><span class="symbol">(</span><span class="identifier" id="java.nio.ByteBuffer$put(java.nio.ByteBuffer)/src">src</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html"><span class="identifier">ByteBuffer</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html"><span class="identifier">ByteBuffer</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">put</span><span class="symbol">(</span><span class="identifier" id="java.nio.ByteBuffer$put(kotlin.ByteArray, kotlin.Int, kotlin.Int)/src">src</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">, </span><span class="identifier" id="java.nio.ByteBuffer$put(kotlin.ByteArray, kotlin.Int, kotlin.Int)/offset">offset</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="java.nio.ByteBuffer$put(kotlin.ByteArray, kotlin.Int, kotlin.Int)/length">length</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html"><span class="identifier">ByteBuffer</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">put</span><span class="symbol">(</span><span class="identifier" id="java.nio.ByteBuffer$put(kotlin.ByteArray)/src">src</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html"><span class="identifier">ByteBuffer</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="put-double.html">putDouble</a></h4>
+</td>
+<td>
+<p>Relative <em>put</em> method for writing a double
+value&nbsp;&nbsp;<em>(optional operation)</em>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">putDouble</span><span class="symbol">(</span><span class="identifier" id="java.nio.ByteBuffer$putDouble(kotlin.Double)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html"><span class="identifier">ByteBuffer</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="put-float.html">putFloat</a></h4>
+</td>
+<td>
+<p>Relative <em>put</em> method for writing a float
+value&nbsp;&nbsp;<em>(optional operation)</em>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">putFloat</span><span class="symbol">(</span><span class="identifier" id="java.nio.ByteBuffer$putFloat(kotlin.Float)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html"><span class="identifier">ByteBuffer</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="put-int.html">putInt</a></h4>
+</td>
+<td>
+<p>Relative <em>put</em> method for writing an int
+value&nbsp;&nbsp;<em>(optional operation)</em>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">putInt</span><span class="symbol">(</span><span class="identifier" id="java.nio.ByteBuffer$putInt(kotlin.Int)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html"><span class="identifier">ByteBuffer</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="put-long.html">putLong</a></h4>
+</td>
+<td>
+<p>Relative <em>put</em> method for writing a long
+value&nbsp;&nbsp;<em>(optional operation)</em>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">putLong</span><span class="symbol">(</span><span class="identifier" id="java.nio.ByteBuffer$putLong(kotlin.Long)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html"><span class="identifier">ByteBuffer</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Companion Object Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="allocate.html">allocate</a></h4>
+</td>
+<td>
+<p>Allocates a new byte buffer.</p>
+<code><span class="keyword">fun </span><span class="identifier">allocate</span><span class="symbol">(</span><span class="identifier" id="java.nio.ByteBuffer.Companion$allocate(kotlin.Int)/capacity">capacity</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html"><span class="identifier">ByteBuffer</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

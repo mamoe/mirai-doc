@@ -1,0 +1,164 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>net.mamoe.mirai - mirai-core</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="./index.html">net.mamoe.mirai</a><br/>
+<br/>
+<h2>Package net.mamoe.mirai</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-bot/index.html">Bot</a></h4>
+</td>
+<td>
+<p>机器人对象. 一个机器人实例登录一个 QQ 账号.
+Mirai 为多账号设计, 可同时维护多个机器人.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">Bot</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">CoroutineScope</span><span class="symbol">, </span><a href="-low-level-bot-a-p-i-accessor/index.html"><span class="identifier">LowLevelBotAPIAccessor</span></a><span class="symbol">, </span><span class="identifier">BotJavaFriendlyAPI</span><span class="symbol">, </span><a href="../net.mamoe.mirai.contact/-contact-or-bot/index.html"><span class="identifier">ContactOrBot</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-bot-factory/index.html">BotFactory</a></h4>
+</td>
+<td>
+<p>构造 <a href="-bot-factory/-bot.html">Bot</a> 的工厂. 这是 <a href="-bot-factory/-bot.html">Bot</a> 唯一的构造方式.</p>
+<code><span class="keyword">interface </span><span class="identifier">BotFactory</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-low-level-bot-a-p-i-accessor/index.html">LowLevelBotAPIAccessor</a></h4>
+</td>
+<td>
+<p><a href="-bot/index.html">Bot</a> 相关协议层低级 API.</p>
+<code><span class="keyword">interface </span><span class="identifier">LowLevelBotAPIAccessor</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Annotations</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-low-level-a-p-i/index.html">LowLevelAPI</a></h4>
+</td>
+<td>
+<p>标示这个 API 是低级的 API.</p>
+<code><span class="keyword">annotation</span> <span class="keyword">class </span><span class="identifier">LowLevelAPI</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extensions for External Classes</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="kotlinx.coroutines.-coroutine-scope/index.html">kotlinx.coroutines.CoroutineScope</a></h4>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="supervisor-job.html">supervisorJob</a></h4>
+</td>
+<td>
+<p>获取 <a href="#">Job</a> 的协程 <a href="#">Job</a>. 此 <a href="#">Job</a> 为一个 <a href="#">SupervisorJob</a></p>
+<code><span class="keyword">val </span><a href="-bot/index.html"><span class="identifier">Bot</span></a><span class="symbol">.</span><span class="identifier">supervisorJob</span><span class="symbol">: </span><span class="identifier">CompletableJob</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="also-login.html">alsoLogin</a></h4>
+</td>
+<td>
+<p>登录, 返回 <a href="also-login/-this-.html">this</a></p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">B</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-bot/index.html"><span class="identifier">Bot</span></a><span class="symbol">&gt;</span> <span class="identifier">B</span><span class="symbol">.</span><span class="identifier">alsoLogin</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">B</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-bot.html">Bot</a></h4>
+</td>
+<td>
+<p>使用指定的 <a href="-bot.html#net.mamoe.mirai$Bot(net.mamoe.mirai.BotFactory, net.mamoe.mirai.utils.Context, kotlin.Long, kotlin.String, kotlin.Function1((net.mamoe.mirai.utils.BotConfiguration, kotlin.Unit)))/configuration">配置</a> 构造 <a href="-bot/index.html">Bot</a> 实例</p>
+<code><span class="keyword">fun </span><a href="-bot-factory/index.html"><span class="identifier">BotFactory</span></a><span class="symbol">.</span><span class="identifier">Bot</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai$Bot(net.mamoe.mirai.BotFactory, net.mamoe.mirai.utils.Context, kotlin.Long, kotlin.String, kotlin.Function1((net.mamoe.mirai.utils.BotConfiguration, kotlin.Unit)))/context">context</span><span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.utils/-context/index.html"><span class="identifier">Context</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai$Bot(net.mamoe.mirai.BotFactory, net.mamoe.mirai.utils.Context, kotlin.Long, kotlin.String, kotlin.Function1((net.mamoe.mirai.utils.BotConfiguration, kotlin.Unit)))/qq">qq</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai$Bot(net.mamoe.mirai.BotFactory, net.mamoe.mirai.utils.Context, kotlin.Long, kotlin.String, kotlin.Function1((net.mamoe.mirai.utils.BotConfiguration, kotlin.Unit)))/password">password</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai$Bot(net.mamoe.mirai.BotFactory, net.mamoe.mirai.utils.Context, kotlin.Long, kotlin.String, kotlin.Function1((net.mamoe.mirai.utils.BotConfiguration, kotlin.Unit)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.utils/-bot-configuration/index.html"><span class="identifier">BotConfiguration</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-bot/index.html"><span class="identifier">Bot</span></a></code><br/>
+<code><span class="keyword">fun </span><a href="-bot-factory/index.html"><span class="identifier">BotFactory</span></a><span class="symbol">.</span><span class="identifier">Bot</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai$Bot(net.mamoe.mirai.BotFactory, net.mamoe.mirai.utils.Context, kotlin.Long, kotlin.ByteArray, kotlin.Function1((net.mamoe.mirai.utils.BotConfiguration, kotlin.Unit)))/context">context</span><span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.utils/-context/index.html"><span class="identifier">Context</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai$Bot(net.mamoe.mirai.BotFactory, net.mamoe.mirai.utils.Context, kotlin.Long, kotlin.ByteArray, kotlin.Function1((net.mamoe.mirai.utils.BotConfiguration, kotlin.Unit)))/qq">qq</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai$Bot(net.mamoe.mirai.BotFactory, net.mamoe.mirai.utils.Context, kotlin.Long, kotlin.ByteArray, kotlin.Function1((net.mamoe.mirai.utils.BotConfiguration, kotlin.Unit)))/password">password</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai$Bot(net.mamoe.mirai.BotFactory, net.mamoe.mirai.utils.Context, kotlin.Long, kotlin.ByteArray, kotlin.Function1((net.mamoe.mirai.utils.BotConfiguration, kotlin.Unit)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.utils/-bot-configuration/index.html"><span class="identifier">BotConfiguration</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-bot/index.html"><span class="identifier">Bot</span></a></code>
+<p>自动加载现有协议的 <a href="-bot-factory/index.html">BotFactory</a>, 并使用指定的 <a href="-bot.html#net.mamoe.mirai$Bot(net.mamoe.mirai.utils.Context, kotlin.Long, kotlin.String, net.mamoe.mirai.utils.BotConfiguration)/configuration">配置</a> 构造 <a href="-bot/index.html">Bot</a> 实例</p>
+<code><span class="keyword">fun </span><span class="identifier">Bot</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai$Bot(net.mamoe.mirai.utils.Context, kotlin.Long, kotlin.String, net.mamoe.mirai.utils.BotConfiguration)/context">context</span><span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.utils/-context/index.html"><span class="identifier">Context</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai$Bot(net.mamoe.mirai.utils.Context, kotlin.Long, kotlin.String, net.mamoe.mirai.utils.BotConfiguration)/qq">qq</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai$Bot(net.mamoe.mirai.utils.Context, kotlin.Long, kotlin.String, net.mamoe.mirai.utils.BotConfiguration)/password">password</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai$Bot(net.mamoe.mirai.utils.Context, kotlin.Long, kotlin.String, net.mamoe.mirai.utils.BotConfiguration)/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.utils/-bot-configuration/index.html"><span class="identifier">BotConfiguration</span></a>&nbsp;<span class="symbol">=</span>&nbsp;BotConfiguration.Default<span class="symbol">)</span><span class="symbol">: </span><a href="-bot/index.html"><span class="identifier">Bot</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">Bot</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai$Bot(net.mamoe.mirai.utils.Context, kotlin.Long, kotlin.String, kotlin.Function1((net.mamoe.mirai.utils.BotConfiguration, kotlin.Unit)))/context">context</span><span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.utils/-context/index.html"><span class="identifier">Context</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai$Bot(net.mamoe.mirai.utils.Context, kotlin.Long, kotlin.String, kotlin.Function1((net.mamoe.mirai.utils.BotConfiguration, kotlin.Unit)))/qq">qq</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai$Bot(net.mamoe.mirai.utils.Context, kotlin.Long, kotlin.String, kotlin.Function1((net.mamoe.mirai.utils.BotConfiguration, kotlin.Unit)))/password">password</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai$Bot(net.mamoe.mirai.utils.Context, kotlin.Long, kotlin.String, kotlin.Function1((net.mamoe.mirai.utils.BotConfiguration, kotlin.Unit)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.utils/-bot-configuration/index.html"><span class="identifier">BotConfiguration</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-bot/index.html"><span class="identifier">Bot</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">Bot</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai$Bot(kotlin.Long, kotlin.String, net.mamoe.mirai.utils.BotConfiguration)/qq">qq</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai$Bot(kotlin.Long, kotlin.String, net.mamoe.mirai.utils.BotConfiguration)/password">password</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai$Bot(kotlin.Long, kotlin.String, net.mamoe.mirai.utils.BotConfiguration)/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.utils/-bot-configuration/index.html"><span class="identifier">BotConfiguration</span></a>&nbsp;<span class="symbol">=</span>&nbsp;BotConfiguration.Default<span class="symbol">)</span><span class="symbol">: </span><a href="-bot/index.html"><span class="identifier">Bot</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">Bot</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai$Bot(kotlin.Long, kotlin.String, kotlin.Function1((net.mamoe.mirai.utils.BotConfiguration, kotlin.Unit)))/qq">qq</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai$Bot(kotlin.Long, kotlin.String, kotlin.Function1((net.mamoe.mirai.utils.BotConfiguration, kotlin.Unit)))/password">password</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai$Bot(kotlin.Long, kotlin.String, kotlin.Function1((net.mamoe.mirai.utils.BotConfiguration, kotlin.Unit)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.utils/-bot-configuration/index.html"><span class="identifier">BotConfiguration</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-bot/index.html"><span class="identifier">Bot</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">Bot</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai$Bot(net.mamoe.mirai.utils.Context, kotlin.Long, kotlin.ByteArray, net.mamoe.mirai.utils.BotConfiguration)/context">context</span><span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.utils/-context/index.html"><span class="identifier">Context</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai$Bot(net.mamoe.mirai.utils.Context, kotlin.Long, kotlin.ByteArray, net.mamoe.mirai.utils.BotConfiguration)/qq">qq</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai$Bot(net.mamoe.mirai.utils.Context, kotlin.Long, kotlin.ByteArray, net.mamoe.mirai.utils.BotConfiguration)/passwordMd5">passwordMd5</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai$Bot(net.mamoe.mirai.utils.Context, kotlin.Long, kotlin.ByteArray, net.mamoe.mirai.utils.BotConfiguration)/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.utils/-bot-configuration/index.html"><span class="identifier">BotConfiguration</span></a>&nbsp;<span class="symbol">=</span>&nbsp;BotConfiguration.Default<span class="symbol">)</span><span class="symbol">: </span><a href="-bot/index.html"><span class="identifier">Bot</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">Bot</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai$Bot(net.mamoe.mirai.utils.Context, kotlin.Long, kotlin.ByteArray, kotlin.Function1((net.mamoe.mirai.utils.BotConfiguration, kotlin.Unit)))/context">context</span><span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.utils/-context/index.html"><span class="identifier">Context</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai$Bot(net.mamoe.mirai.utils.Context, kotlin.Long, kotlin.ByteArray, kotlin.Function1((net.mamoe.mirai.utils.BotConfiguration, kotlin.Unit)))/qq">qq</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai$Bot(net.mamoe.mirai.utils.Context, kotlin.Long, kotlin.ByteArray, kotlin.Function1((net.mamoe.mirai.utils.BotConfiguration, kotlin.Unit)))/passwordMd5">passwordMd5</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai$Bot(net.mamoe.mirai.utils.Context, kotlin.Long, kotlin.ByteArray, kotlin.Function1((net.mamoe.mirai.utils.BotConfiguration, kotlin.Unit)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.utils/-bot-configuration/index.html"><span class="identifier">BotConfiguration</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-bot/index.html"><span class="identifier">Bot</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">Bot</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai$Bot(kotlin.Long, kotlin.ByteArray, net.mamoe.mirai.utils.BotConfiguration)/qq">qq</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai$Bot(kotlin.Long, kotlin.ByteArray, net.mamoe.mirai.utils.BotConfiguration)/passwordMd5">passwordMd5</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai$Bot(kotlin.Long, kotlin.ByteArray, net.mamoe.mirai.utils.BotConfiguration)/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.utils/-bot-configuration/index.html"><span class="identifier">BotConfiguration</span></a>&nbsp;<span class="symbol">=</span>&nbsp;BotConfiguration.Default<span class="symbol">)</span><span class="symbol">: </span><a href="-bot/index.html"><span class="identifier">Bot</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">Bot</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai$Bot(kotlin.Long, kotlin.ByteArray, kotlin.Function1((net.mamoe.mirai.utils.BotConfiguration, kotlin.Unit)))/qq">qq</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai$Bot(kotlin.Long, kotlin.ByteArray, kotlin.Function1((net.mamoe.mirai.utils.BotConfiguration, kotlin.Unit)))/passwordMd5">passwordMd5</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai$Bot(kotlin.Long, kotlin.ByteArray, kotlin.Function1((net.mamoe.mirai.utils.BotConfiguration, kotlin.Unit)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.utils/-bot-configuration/index.html"><span class="identifier">BotConfiguration</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-bot/index.html"><span class="identifier">Bot</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="close-and-join.html">closeAndJoin</a></h4>
+</td>
+<td>
+<p>关闭这个 <a href="-bot/index.html">Bot</a>, 停止一切相关活动. 所有引用都会被释放.</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><a href="-bot/index.html"><span class="identifier">Bot</span></a><span class="symbol">.</span><span class="identifier">closeAndJoin</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai$closeAndJoin(net.mamoe.mirai.Bot, kotlin.Throwable)/cause">cause</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="contains-friend.html">containsFriend</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="-bot/index.html"><span class="identifier">Bot</span></a><span class="symbol">.</span><span class="identifier">containsFriend</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai$containsFriend(net.mamoe.mirai.Bot, kotlin.Long)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="contains-group.html">containsGroup</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="-bot/index.html"><span class="identifier">Bot</span></a><span class="symbol">.</span><span class="identifier">containsGroup</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai$containsGroup(net.mamoe.mirai.Bot, kotlin.Long)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-friend-or-null.html">getFriendOrNull</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="-bot/index.html"><span class="identifier">Bot</span></a><span class="symbol">.</span><span class="identifier">getFriendOrNull</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai$getFriendOrNull(net.mamoe.mirai.Bot, kotlin.Long)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../net.mamoe.mirai.contact/-friend/index.html"><span class="identifier">Friend</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-group-or-null.html">getGroupOrNull</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="-bot/index.html"><span class="identifier">Bot</span></a><span class="symbol">.</span><span class="identifier">getGroupOrNull</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai$getGroupOrNull(net.mamoe.mirai.Bot, kotlin.Long)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../net.mamoe.mirai.contact/-group/index.html"><span class="identifier">Group</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="join.html">join</a></h4>
+</td>
+<td>
+<p>挂起协程直到 <a href="-bot/index.html">Bot</a> 协程被关闭 (<a href="-bot/close.html">Bot.close</a>).
+即使 <a href="-bot/index.html">Bot</a> 离线, 也会等待直到协程关闭.</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><a href="-bot/index.html"><span class="identifier">Bot</span></a><span class="symbol">.</span><span class="identifier">join</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="recall.html">recall</a></h4>
+</td>
+<td>
+<p>撤回这条消息.</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><a href="-bot/index.html"><span class="identifier">Bot</span></a><span class="symbol">.</span><span class="identifier">recall</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai$recall(net.mamoe.mirai.Bot, net.mamoe.mirai.message.data.MessageChain)/message">message</span><span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.message.data/-message-chain/index.html"><span class="identifier">MessageChain</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

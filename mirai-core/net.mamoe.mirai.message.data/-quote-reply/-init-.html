@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>QuoteReply.<init> - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.message.data</a>&nbsp;/&nbsp;<a href="index.html">QuoteReply</a>&nbsp;/&nbsp;<a href="./-init-.html">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="net.mamoe.mirai.message.data.QuoteReply$&lt;init&gt;(net.mamoe.mirai.message.data.MessageSource)"></a>
+<code><span class="identifier">QuoteReply</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.QuoteReply$<init>(net.mamoe.mirai.message.data.MessageSource)/source">source</span><span class="symbol">:</span>&nbsp;<a href="../-message-source/index.html"><span class="identifier">MessageSource</span></a><span class="symbol">)</span></code>
+<p>引用回复.</p>
+<p>支持引用任何一条消息发送给任何人.</p>
+<h4>元数据</h4>
+<p><a href="index.html">QuoteReply</a> 被作为 <a href="../-message-metadata/index.html">MessageMetadata</a>, 因为它不包含实际的消息内容, 且只能在消息中单独存在.</p>
+<h4><a href="source.html">source</a> 的类型:</h4>
+<ul><li>在发送引用回复时, <a href="source.html">source</a> 类型为 <a href="../-online-message-source/index.html">OnlineMessageSource</a> 或 <a href="../-offline-message-source/index.html">OfflineMessageSource</a></li>
+<li>在接收引用回复时, <a href="source.html">source</a> 类型一定为 <a href="../-offline-message-source/index.html">OfflineMessageSource</a></li>
+</ul>
+<h4>原消息内容</h4>
+<p>引用回复的原消息内容完全由 <a href="source.html">source</a> 中 <a href="../-message-source/original-message.html">MessageSource.originalMessage</a> 控制, 客户端不会自行寻找原消息.</p>
+<h4>客户端内跳转</h4>
+<p>客户端在跳转原消息时, 会通过 <a href="../-message-source/id.html">MessageSource.id</a> 等 metadata</p>
+<p><strong>See Also</strong><br/>
+<p><a href="../-message-source/index.html">MessageSource</a></p>
+</p>
+</BODY>
+</HTML>

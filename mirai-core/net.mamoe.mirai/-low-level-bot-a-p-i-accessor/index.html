@@ -1,0 +1,150 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>LowLevelBotAPIAccessor - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai</a>&nbsp;/&nbsp;<a href="./index.html">LowLevelBotAPIAccessor</a><br/>
+<br/>
+<h1>LowLevelBotAPIAccessor</h1>
+<code><span class="identifier">@MiraiExperimentalAPI</span> <span class="keyword">interface </span><span class="identifier">LowLevelBotAPIAccessor</span></code>
+<p><a href="../-bot/index.html">Bot</a> 相关协议层低级 API.</p>
+<p><strong>注意</strong>: 不应该把这个类作为一个类型, 只应使用其中的方法</p>
+<p><strong>警告</strong>: 所有的低级 API 都可能在任意时刻不经过任何警告和迭代就被修改. 因此非常不建议在任何情况下使用这些 API.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="_low-level-delete-announcement.html">_lowLevelDeleteAnnouncement</a></h4>
+</td>
+<td>
+<p>删除群公告</p>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">_lowLevelDeleteAnnouncement</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelDeleteAnnouncement(kotlin.Long, kotlin.String)/groupId">groupId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelDeleteAnnouncement(kotlin.Long, kotlin.String)/fid">fid</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="_low-level-get-announcement.html">_lowLevelGetAnnouncement</a></h4>
+</td>
+<td>
+<p>获取一条群公告</p>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">_lowLevelGetAnnouncement</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelGetAnnouncement(kotlin.Long, kotlin.String)/groupId">groupId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelGetAnnouncement(kotlin.Long, kotlin.String)/fid">fid</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.data/-group-announcement/index.html"><span class="identifier">GroupAnnouncement</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="_low-level-get-announcements.html">_lowLevelGetAnnouncements</a></h4>
+</td>
+<td>
+<p>获取群公告列表</p>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">_lowLevelGetAnnouncements</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelGetAnnouncements(kotlin.Long, kotlin.Int, kotlin.Int)/groupId">groupId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelGetAnnouncements(kotlin.Long, kotlin.Int, kotlin.Int)/page">page</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;1<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelGetAnnouncements(kotlin.Long, kotlin.Int, kotlin.Int)/amount">amount</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;10<span class="symbol">)</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.data/-group-announcement-list/index.html"><span class="identifier">GroupAnnouncementList</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="_low-level-get-group-active-data.html">_lowLevelGetGroupActiveData</a></h4>
+</td>
+<td>
+<p>获取群活跃信息
+不传page可得到趋势图
+page从0开始传入可以得到发言列表</p>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">_lowLevelGetGroupActiveData</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelGetGroupActiveData(kotlin.Long, kotlin.Int)/groupId">groupId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelGetGroupActiveData(kotlin.Long, kotlin.Int)/page">page</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;-1<span class="symbol">)</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.data/-group-active-data/index.html"><span class="identifier">GroupActiveData</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="_low-level-get-group-honor-list-data.html">_lowLevelGetGroupHonorListData</a></h4>
+</td>
+<td>
+<p>获取群荣誉信息</p>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">_lowLevelGetGroupHonorListData</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelGetGroupHonorListData(kotlin.Long, net.mamoe.mirai.data.GroupHonorType)/groupId">groupId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelGetGroupHonorListData(kotlin.Long, net.mamoe.mirai.data.GroupHonorType)/type">type</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.data/-group-honor-type/index.html"><span class="identifier">GroupHonorType</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.data/-group-honor-list-data/index.html"><span class="identifier">GroupHonorListData</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="_low-level-new-friend.html">_lowLevelNewFriend</a></h4>
+</td>
+<td>
+<p>构造一个 <a href="../../net.mamoe.mirai.contact/-friend/index.html">Friend</a> 对象. 它持有对 <a href="../-bot/index.html">Bot</a> 的弱引用(<a href="../../net.mamoe.mirai.utils/-weak-ref/index.html">WeakRef</a>).</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">_lowLevelNewFriend</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelNewFriend(net.mamoe.mirai.data.FriendInfo)/friendInfo">friendInfo</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.data/-friend-info/index.html"><span class="identifier">FriendInfo</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.contact/-friend/index.html"><span class="identifier">Friend</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="_low-level-query-group-list.html">_lowLevelQueryGroupList</a></h4>
+</td>
+<td>
+<p>向服务器查询群列表. 返回值高 32 bits 为 uin, 低 32 bits 为 groupCode</p>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">_lowLevelQueryGroupList</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/-sequence/index.html"><span class="identifier">Sequence</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="_low-level-query-group-member-list.html">_lowLevelQueryGroupMemberList</a></h4>
+</td>
+<td>
+<p>向服务器查询群成员列表.
+请优先使用 <a href="../-bot/get-group.html">Bot.getGroup</a>, <a href="../../net.mamoe.mirai.contact/-group/members.html">Group.members</a> 查看群成员.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">_lowLevelQueryGroupMemberList</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelQueryGroupMemberList(kotlin.Long, kotlin.Long, kotlin.Long)/groupUin">groupUin</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelQueryGroupMemberList(kotlin.Long, kotlin.Long, kotlin.Long)/groupCode">groupCode</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelQueryGroupMemberList(kotlin.Long, kotlin.Long, kotlin.Long)/ownerId">ownerId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/-sequence/index.html"><span class="identifier">Sequence</span></a><span class="symbol">&lt;</span><a href="../../net.mamoe.mirai.data/-member-info/index.html"><span class="identifier">MemberInfo</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="_low-level-query-group-voice-download-url.html">_lowLevelQueryGroupVoiceDownloadUrl</a></h4>
+</td>
+<td>
+<p>查询语音的下载连接</p>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">_lowLevelQueryGroupVoiceDownloadUrl</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelQueryGroupVoiceDownloadUrl(kotlin.ByteArray, kotlin.Long, kotlin.Long)/md5">md5</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelQueryGroupVoiceDownloadUrl(kotlin.ByteArray, kotlin.Long, kotlin.Long)/groupId">groupId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelQueryGroupVoiceDownloadUrl(kotlin.ByteArray, kotlin.Long, kotlin.Long)/dstUin">dstUin</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="_low-level-send-announcement.html">_lowLevelSendAnnouncement</a></h4>
+</td>
+<td>
+<p>发送群公告</p>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">_lowLevelSendAnnouncement</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelSendAnnouncement(kotlin.Long, net.mamoe.mirai.data.GroupAnnouncement)/groupId">groupId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelSendAnnouncement(kotlin.Long, net.mamoe.mirai.data.GroupAnnouncement)/announcement">announcement</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.data/-group-announcement/index.html"><span class="identifier">GroupAnnouncement</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="_low-level-solve-bot-invited-join-group-request-event.html">_lowLevelSolveBotInvitedJoinGroupRequestEvent</a></h4>
+</td>
+<td>
+<p>处理被邀请加入一个群请求事件</p>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">_lowLevelSolveBotInvitedJoinGroupRequestEvent</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelSolveBotInvitedJoinGroupRequestEvent(kotlin.Long, kotlin.Long, kotlin.Long, kotlin.Boolean)/eventId">eventId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelSolveBotInvitedJoinGroupRequestEvent(kotlin.Long, kotlin.Long, kotlin.Long, kotlin.Boolean)/invitorId">invitorId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelSolveBotInvitedJoinGroupRequestEvent(kotlin.Long, kotlin.Long, kotlin.Long, kotlin.Boolean)/groupId">groupId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelSolveBotInvitedJoinGroupRequestEvent(kotlin.Long, kotlin.Long, kotlin.Long, kotlin.Boolean)/accept">accept</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="_low-level-solve-member-join-request-event.html">_lowLevelSolveMemberJoinRequestEvent</a></h4>
+</td>
+<td>
+<p>处理账号请求加入群事件</p>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">_lowLevelSolveMemberJoinRequestEvent</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelSolveMemberJoinRequestEvent(kotlin.Long, kotlin.Long, kotlin.String, kotlin.Long, kotlin.Boolean, kotlin.Boolean, kotlin.String)/eventId">eventId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelSolveMemberJoinRequestEvent(kotlin.Long, kotlin.Long, kotlin.String, kotlin.Long, kotlin.Boolean, kotlin.Boolean, kotlin.String)/fromId">fromId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelSolveMemberJoinRequestEvent(kotlin.Long, kotlin.Long, kotlin.String, kotlin.Long, kotlin.Boolean, kotlin.Boolean, kotlin.String)/fromNick">fromNick</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelSolveMemberJoinRequestEvent(kotlin.Long, kotlin.Long, kotlin.String, kotlin.Long, kotlin.Boolean, kotlin.Boolean, kotlin.String)/groupId">groupId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelSolveMemberJoinRequestEvent(kotlin.Long, kotlin.Long, kotlin.String, kotlin.Long, kotlin.Boolean, kotlin.Boolean, kotlin.String)/accept">accept</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelSolveMemberJoinRequestEvent(kotlin.Long, kotlin.Long, kotlin.String, kotlin.Long, kotlin.Boolean, kotlin.Boolean, kotlin.String)/blackList">blackList</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelSolveMemberJoinRequestEvent(kotlin.Long, kotlin.Long, kotlin.String, kotlin.Long, kotlin.Boolean, kotlin.Boolean, kotlin.String)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a>&nbsp;<span class="symbol">=</span>&nbsp;""<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="_low-level-solve-new-friend-request-event.html">_lowLevelSolveNewFriendRequestEvent</a></h4>
+</td>
+<td>
+<p>处理一个账号请求添加机器人为好友的事件</p>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">_lowLevelSolveNewFriendRequestEvent</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelSolveNewFriendRequestEvent(kotlin.Long, kotlin.Long, kotlin.String, kotlin.Boolean, kotlin.Boolean)/eventId">eventId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelSolveNewFriendRequestEvent(kotlin.Long, kotlin.Long, kotlin.String, kotlin.Boolean, kotlin.Boolean)/fromId">fromId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelSolveNewFriendRequestEvent(kotlin.Long, kotlin.Long, kotlin.String, kotlin.Boolean, kotlin.Boolean)/fromNick">fromNick</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelSolveNewFriendRequestEvent(kotlin.Long, kotlin.Long, kotlin.String, kotlin.Boolean, kotlin.Boolean)/accept">accept</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelSolveNewFriendRequestEvent(kotlin.Long, kotlin.Long, kotlin.String, kotlin.Boolean, kotlin.Boolean)/blackList">blackList</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="_low-level-upload-voice.html">_lowLevelUploadVoice</a></h4>
+</td>
+<td>
+<p>查询语音的上传连接</p>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">_lowLevelUploadVoice</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelUploadVoice(kotlin.ByteArray, kotlin.Long)/md5">md5</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelUploadVoice(kotlin.ByteArray, kotlin.Long)/groupId">groupId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../-bot/index.html">Bot</a></h4>
+</td>
+<td>
+<p>机器人对象. 一个机器人实例登录一个 QQ 账号.
+Mirai 为多账号设计, 可同时维护多个机器人.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">Bot</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">CoroutineScope</span><span class="symbol">, </span><a href="./index.html"><span class="identifier">LowLevelBotAPIAccessor</span></a><span class="symbol">, </span><span class="identifier">BotJavaFriendlyAPI</span><span class="symbol">, </span><a href="../../net.mamoe.mirai.contact/-contact-or-bot/index.html"><span class="identifier">ContactOrBot</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

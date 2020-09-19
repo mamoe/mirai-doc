@@ -1,0 +1,30 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ByteBuffer.putInt - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">java.nio</a>&nbsp;/&nbsp;<a href="index.html">ByteBuffer</a>&nbsp;/&nbsp;<a href="./put-int.html">putInt</a><br/>
+<br/>
+<h1>putInt</h1>
+<a name="java.nio.ByteBuffer$putInt(kotlin.Int)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">putInt</span><span class="symbol">(</span><span class="identifier" id="java.nio.ByteBuffer$putInt(kotlin.Int)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html"><span class="identifier">ByteBuffer</span></a></code>
+<p>Relative <em>put</em> method for writing an int
+value&nbsp;&nbsp;<em>(optional operation)</em>.</p>
+<p>Writes four bytes containing the given int value, in the
+current byte order, into this buffer at the current position, and then
+increments the position by four.</p>
+<h3>Parameters</h3>
+<p><a name="value"></a>
+<code>value</code> - The int value to be written</p>
+<h3>Exceptions</h3>
+<p><a name="BufferOverflowException"></a>
+<code>BufferOverflowException</code> - If there are fewer than four bytes
+remaining in this buffer</p>
+<p><a name="ReadOnlyBufferException"></a>
+<code>ReadOnlyBufferException</code> - If this buffer is read-only</p>
+<p><strong>Return</strong><br/>
+This buffer</p>
+</BODY>
+</HTML>

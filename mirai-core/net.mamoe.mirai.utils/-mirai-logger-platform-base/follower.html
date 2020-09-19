@@ -1,0 +1,20 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MiraiLoggerPlatformBase.follower - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.utils</a>&nbsp;/&nbsp;<a href="index.html">MiraiLoggerPlatformBase</a>&nbsp;/&nbsp;<a href="./follower.html">follower</a><br/>
+<br/>
+<h1>follower</h1>
+<a name="net.mamoe.mirai.utils.MiraiLoggerPlatformBase$follower"></a>
+<code><span class="keyword">var </span><span class="identifier">follower</span><span class="symbol">: </span><a href="../-mirai-logger/index.html"><span class="identifier">MiraiLogger</span></a><span class="symbol">?</span></code>
+<p>随从. 在 this 中调用所有方法后都应继续往 <a href="../-mirai-logger/follower.html">follower</a> 传递调用.
+<a href="../-mirai-logger/follower.html">follower</a> 的存在可以让一次日志被多个日志记录器记录.</p>
+<p>一般不建议直接修改这个属性. 请通过 <a href="../-mirai-logger/plus.html">plus</a> 来连接两个日志记录器.
+如: <code>val logger = bot.logger + MyLogger()</code>
+当调用 <code>logger.info()</code> 时, <code>bot.logger</code> 会首先记录, <code>MyLogger</code> 会随后记录.</p>
+<p>当然, 多个 logger 也可以加在一起: <code>val logger = bot.logger + MynLogger() + MyLogger2()</code></p>
+</BODY>
+</HTML>

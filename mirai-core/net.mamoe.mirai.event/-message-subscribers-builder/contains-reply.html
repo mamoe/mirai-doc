@@ -1,0 +1,22 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MessageSubscribersBuilder.containsReply - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.event</a>&nbsp;/&nbsp;<a href="index.html">MessageSubscribersBuilder</a>&nbsp;/&nbsp;<a href="./contains-reply.html">containsReply</a><br/>
+<br/>
+<h1>containsReply</h1>
+<a name="net.mamoe.mirai.event.MessageSubscribersBuilder$containsReply(kotlin.String, kotlin.String)"></a>
+<code><span class="keyword">open</span> <span class="keyword">infix</span> <span class="keyword">fun </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">.</span><span class="identifier">containsReply</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.event.MessageSubscribersBuilder$containsReply(kotlin.String, kotlin.String)/reply">reply</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Ret</span></code>
+<p><a href="../../net.mamoe.mirai.message.data/-message/content-to-string.html">消息内容</a>包含 <a href="contains-reply/-this-.html">this</a> 则回复 <a href="contains-reply.html#net.mamoe.mirai.event.MessageSubscribersBuilder$containsReply(kotlin.String, kotlin.String)/reply">reply</a></p>
+<a name="net.mamoe.mirai.event.MessageSubscribersBuilder$containsReply(kotlin.String, kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.event.MessageSubscribersBuilder.M, kotlin.String, kotlin.Any)))"></a>
+<code><span class="keyword">open</span> <span class="keyword">infix</span> <span class="keyword">fun </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">.</span><span class="identifier">containsReply</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.event.MessageSubscribersBuilder$containsReply(kotlin.String, kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.event.MessageSubscribersBuilder.M, kotlin.String, kotlin.Any)))/replier">replier</span><span class="symbol">:</span>&nbsp;<span class="keyword">suspend </span><span class="identifier">M</span><span class="symbol">.</span><span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Ret</span></code>
+<p><a href="../../net.mamoe.mirai.message.data/-message/content-to-string.html">消息内容</a>包含 <a href="contains-reply/-this-.html">this</a> 则执行 <a href="contains-reply.html#net.mamoe.mirai.event.MessageSubscribersBuilder$containsReply(kotlin.String, kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.event.MessageSubscribersBuilder.M, kotlin.String, kotlin.Any)))/replier">replier</a> 并将其返回值回复给发信对象.</p>
+<p><a href="contains-reply.html#net.mamoe.mirai.event.MessageSubscribersBuilder$containsReply(kotlin.String, kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.event.MessageSubscribersBuilder.M, kotlin.String, kotlin.Any)))/replier">replier</a> 的 <code>it</code> 将会是消息内容 string.</p>
+<h3>Parameters</h3>
+<p><a name="replier"></a>
+<code>replier</code> - 若返回 <a href="../../net.mamoe.mirai.message.data/-message/index.html">Message</a> 则直接发送; 若返回 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a> 则不回复; 其他情况则 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/to-string.html">Any.toString</a> 后回复</p>
+</BODY>
+</HTML>

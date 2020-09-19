@@ -1,0 +1,23 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Bot.close - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai</a>&nbsp;/&nbsp;<a href="index.html">Bot</a>&nbsp;/&nbsp;<a href="./close.html">close</a><br/>
+<br/>
+<h1>close</h1>
+<a name="net.mamoe.mirai.Bot$close(kotlin.Throwable)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">close</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.Bot$close(kotlin.Throwable)/cause">cause</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>关闭这个 <a href="index.html">Bot</a>, 立即取消 <a href="index.html">Bot</a> 的 <a href="#">SupervisorJob</a>.
+之后 <a href="#">isActive</a> 将会返回 <code>false</code>.</p>
+<p><strong>注意:</strong> 不可重新登录. 必须重新实例化一个 <a href="index.html">Bot</a>.</p>
+<h3>Parameters</h3>
+<p><a name="cause"></a>
+<code>cause</code> - 原因. 为 null 时视为正常关闭, 非 null 时视为异常关闭</p>
+<p><strong>See Also</strong><br/>
+<p><a href="../close-and-join.html">closeAndJoin</a></p>
+</p>
+</BODY>
+</HTML>

@@ -1,0 +1,20 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>FriendMessageEvent.subject - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.message</a>&nbsp;/&nbsp;<a href="index.html">FriendMessageEvent</a>&nbsp;/&nbsp;<a href="./subject.html">subject</a><br/>
+<br/>
+<h1>subject</h1>
+<a name="net.mamoe.mirai.message.FriendMessageEvent$subject"></a>
+<code><span class="keyword">val </span><span class="identifier">subject</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.contact/-friend/index.html"><span class="identifier">Friend</span></a></code>
+<p>消息事件主体.</p>
+<ul><li>对于好友消息, 这个属性为 <a href="../../net.mamoe.mirai.contact/-friend/index.html">Friend</a> 的实例, 与 <a href="../-message-event/sender.html">sender</a> 引用相同;</li>
+<li>对于临时会话消息, 这个属性为 <a href="../../net.mamoe.mirai.contact/-member/index.html">Member</a> 的实例, 与 <a href="../-message-event/sender.html">sender</a> 引用相同;</li>
+<li>对于群消息, 这个属性为 <a href="../../net.mamoe.mirai.contact/-group/index.html">Group</a> 的实例, 与 <a href="../-group-message-event/group.html">GroupMessageEvent.group</a> 引用相同</li>
+</ul>
+<p>在回复消息时, 可通过 <a href="../-message-event/subject.html">subject</a> 作为回复对象</p>
+</BODY>
+</HTML>

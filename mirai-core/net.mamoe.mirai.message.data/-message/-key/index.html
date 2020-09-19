@@ -1,0 +1,32 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Message.Key - mirai-core</title>
+<link rel="stylesheet" href="../../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../../index.html">net.mamoe.mirai.message.data</a>&nbsp;/&nbsp;<a href="../index.html">Message</a>&nbsp;/&nbsp;<a href="./index.html">Key</a><br/>
+<br/>
+<h1>Key</h1>
+<code><span class="keyword">interface </span><span class="identifier">Key</span><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">M</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../index.html"><span class="identifier">Message</span></a><span class="symbol">&gt;</span></code>
+<p>类型 Key. 由伴生对象实现, 表示一个 <a href="../index.html">Message</a> 对象的类型.</p>
+<p>除 <a href="../../-message-chain/index.html">MessageChain</a> 外, 每个 <a href="../index.html">Message</a> 类型都拥有一个<code>伴生对象</code>(companion object) 来持有一个 Key
+在 <a href="../../-message-chain/get.html">MessageChain.get</a> 时将会使用到这个 Key 进行判断类型.</p>
+<h4>用例</h4>
+<p><a href="../../-message-chain/get.html">MessageChain.get</a>: 允许使用数组访问操作符获取指定类型的消息元素 <code>val image: Image = chain[Image]</code></p>
+<p>@param M 指代持有这个 Key 的消息类型</p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="type-name.html">typeName</a></h4>
+</td>
+<td>
+<p>此 <a href="./index.html">Key</a> 指代的 <a href="../index.html">Message</a> 类型名. 一般为 <code>class.simpleName</code>, 如 "QuoteReply", "PlainText"</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">typeName</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

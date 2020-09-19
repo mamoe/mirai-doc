@@ -1,0 +1,69 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Listener.EventPriority - mirai-core</title>
+<link rel="stylesheet" href="../../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../../index.html">net.mamoe.mirai.event</a>&nbsp;/&nbsp;<a href="../index.html">Listener</a>&nbsp;/&nbsp;<a href="./index.html">EventPriority</a><br/>
+<br/>
+<h1>EventPriority</h1>
+<code><span class="keyword">enum</span> <span class="keyword">class </span><span class="identifier">EventPriority</span></code>
+<p>事件优先级.</p>
+<p>在广播时, 事件监听器的调用顺序为 (从左到右):
+<code>[HIGHEST]</code> -&gt; <code>[HIGH]</code> -&gt; <code>[NORMAL]</code> -&gt; <code>[LOW]</code> -&gt; <code>[LOWEST]</code> -&gt; <code>[MONITOR]</code></p>
+<ul><li>使用 <a href="-m-o-n-i-t-o-r.html">MONITOR</a> 优先级的监听器将会被<strong>并行</strong>调用.</li>
+<li>使用其他优先级的监听器都将会<strong>按顺序</strong>调用.
+因此一个监听器的挂起可以阻塞事件处理过程而导致低优先级的监听器较晚处理.</li>
+</ul>
+<p>当事件被 <a href="../../-event/intercept.html">拦截</a> 后, 优先级较低 (靠右) 的监听器将不会被调用.</p>
+<h3>Enum Values</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-h-i-g-h-e-s-t.html">HIGHEST</a></h4>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<h4><a href="-h-i-g-h.html">HIGH</a></h4>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<h4><a href="-n-o-r-m-a-l.html">NORMAL</a></h4>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<h4><a href="-l-o-w.html">LOW</a></h4>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<h4><a href="-l-o-w-e-s-t.html">LOWEST</a></h4>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<h4><a href="-m-o-n-i-t-o-r.html">MONITOR</a></h4>
+</td>
+<td>
+<p>最低的优先级.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

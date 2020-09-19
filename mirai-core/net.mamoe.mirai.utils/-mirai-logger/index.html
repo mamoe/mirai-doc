@@ -1,0 +1,199 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MiraiLogger - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.utils</a>&nbsp;/&nbsp;<a href="./index.html">MiraiLogger</a><br/>
+<br/>
+<h1>MiraiLogger</h1>
+<code><span class="keyword">interface </span><span class="identifier">MiraiLogger</span></code>
+<p>日志记录器. 所有的输出均依赖于它.
+不同的对象可拥有只属于自己的 logger. 通过 <a href="identity.html">identity</a> 来区分.</p>
+<p>注意: 如果你需要重新实现日志, 请不要直接实现这个接口, 请继承 <a href="../-mirai-logger-platform-base/index.html">MiraiLoggerPlatformBase</a></p>
+<p>在定义 logger 变量时, 请一直使用 <a href="./index.html">MiraiLogger</a> 或者 <a href="../-mirai-logger-with-switch/index.html">MiraiLoggerWithSwitch</a>.</p>
+<p>Mirai 内建三种日志实现, 分别是 <a href="../-simple-logger/index.html">SimpleLogger</a>, <a href="../-platform-logger/index.html">PlatformLogger</a>, <a href="../-silent-logger/index.html">SilentLogger</a></p>
+<p><strong>See Also</strong><br/>
+<p><a href="../-simple-logger/index.html">SimpleLogger</a></p>
+<p><a href="../-platform-logger/index.html">PlatformLogger</a></p>
+<p><a href="../-silent-logger/index.html">SilentLogger</a></p>
+<p><a href="../-mirai-logger-platform-base/index.html">MiraiLoggerPlatformBase</a></p>
+</p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="follower.html">follower</a></h4>
+</td>
+<td>
+<p>随从. 在 this 中调用所有方法后都应继续往 <a href="follower.html">follower</a> 传递调用.
+<a href="follower.html">follower</a> 的存在可以让一次日志被多个日志记录器记录.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">var </span><span class="identifier">follower</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MiraiLogger</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="identity.html">identity</a></h4>
+</td>
+<td>
+<p>日志的标记. 在 Mirai 中, identity 可为</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">identity</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="is-enabled.html">isEnabled</a></h4>
+</td>
+<td>
+<p>获取 <a href="./index.html">MiraiLogger</a> 是否已开启</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">isEnabled</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="call.html">call</a></h4>
+</td>
+<td>
+<p>根据优先级调用对应函数</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">call</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.MiraiLogger$call(net.mamoe.mirai.utils.SimpleLogger.LogPriority, kotlin.String, kotlin.Throwable)/priority">priority</span><span class="symbol">:</span>&nbsp;<span class="identifier">LogPriority</span><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils.MiraiLogger$call(net.mamoe.mirai.utils.SimpleLogger.LogPriority, kotlin.String, kotlin.Throwable)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils.MiraiLogger$call(net.mamoe.mirai.utils.SimpleLogger.LogPriority, kotlin.String, kotlin.Throwable)/e">e</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="debug.html">debug</a></h4>
+</td>
+<td>
+<p>记录一个 <em>调试</em> 级别的日志.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">debug</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.MiraiLogger$debug(kotlin.String)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">debug</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.MiraiLogger$debug(kotlin.Throwable)/e">e</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">debug</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.MiraiLogger$debug(kotlin.String, kotlin.Throwable)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils.MiraiLogger$debug(kotlin.String, kotlin.Throwable)/e">e</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="error.html">error</a></h4>
+</td>
+<td>
+<p>记录一个 <em>错误</em> 级别的日志.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">error</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.MiraiLogger$error(kotlin.String)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">error</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.MiraiLogger$error(kotlin.Throwable)/e">e</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">error</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.MiraiLogger$error(kotlin.String, kotlin.Throwable)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils.MiraiLogger$error(kotlin.String, kotlin.Throwable)/e">e</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="info.html">info</a></h4>
+</td>
+<td>
+<p>记录一个 <em>信息</em> 级别的日志.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">info</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.MiraiLogger$info(kotlin.String)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">info</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.MiraiLogger$info(kotlin.Throwable)/e">e</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">info</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.MiraiLogger$info(kotlin.String, kotlin.Throwable)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils.MiraiLogger$info(kotlin.String, kotlin.Throwable)/e">e</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="plus.html">plus</a></h4>
+</td>
+<td>
+<p>添加一个 <a href="plus.html#net.mamoe.mirai.utils.MiraiLogger$plus(net.mamoe.mirai.utils.MiraiLogger.plus.T)/follower">follower</a>, 返回 <a href="plus.html#net.mamoe.mirai.utils.MiraiLogger$plus(net.mamoe.mirai.utils.MiraiLogger.plus.T)/follower">follower</a>
+它只会把 <code>this</code> 的属性 <a href="follower.html">MiraiLogger.follower</a> 修改为这个函数的参数 <a href="plus.html#net.mamoe.mirai.utils.MiraiLogger$plus(net.mamoe.mirai.utils.MiraiLogger.plus.T)/follower">follower</a>, 然后返回这个参数.
+若 <a href="follower.html">MiraiLogger.follower</a> 已经有值, 则会替换掉这个值.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">MiraiLogger</span></a><span class="symbol">&gt;</span> <span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.MiraiLogger$plus(net.mamoe.mirai.utils.MiraiLogger.plus.T)/follower">follower</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="plus-assign.html">plusAssign</a></h4>
+</td>
+<td>
+<p>添加一个 <a href="plus-assign.html#net.mamoe.mirai.utils.MiraiLogger$plusAssign(net.mamoe.mirai.utils.MiraiLogger)/follower">follower</a>
+若 <a href="follower.html">MiraiLogger.follower</a> 已经有值, 则会对这个值调用 <a href="plus-assign.html">plusAssign</a>. 即会在日志记录器链的末尾添加这个参数 <a href="plus-assign.html#net.mamoe.mirai.utils.MiraiLogger$plusAssign(net.mamoe.mirai.utils.MiraiLogger)/follower">follower</a></p>
+<code><span class="keyword">abstract</span> <span class="keyword">operator</span> <span class="keyword">fun </span><span class="identifier">plusAssign</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.MiraiLogger$plusAssign(net.mamoe.mirai.utils.MiraiLogger)/follower">follower</span><span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">MiraiLogger</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="verbose.html">verbose</a></h4>
+</td>
+<td>
+<p>记录一个 <code>verbose</code> 级别的日志.
+无关紧要的, 经常大量输出的日志应使用它.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">verbose</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.MiraiLogger$verbose(kotlin.String)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">verbose</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.MiraiLogger$verbose(kotlin.Throwable)/e">e</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">verbose</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.MiraiLogger$verbose(kotlin.String, kotlin.Throwable)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils.MiraiLogger$verbose(kotlin.String, kotlin.Throwable)/e">e</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="warning.html">warning</a></h4>
+</td>
+<td>
+<p>记录一个 <em>警告</em> 级别的日志.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">warning</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.MiraiLogger$warning(kotlin.String)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">warning</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.MiraiLogger$warning(kotlin.Throwable)/e">e</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">warning</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.MiraiLogger$warning(kotlin.String, kotlin.Throwable)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils.MiraiLogger$warning(kotlin.String, kotlin.Throwable)/e">e</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../debug.html">debug</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="./index.html"><span class="identifier">MiraiLogger</span></a><span class="symbol">.</span><span class="identifier">debug</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$debug(net.mamoe.mirai.utils.MiraiLogger, kotlin.Function0((kotlin.String)))/lazyMessage">lazyMessage</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">fun </span><a href="./index.html"><span class="identifier">MiraiLogger</span></a><span class="symbol">.</span><span class="identifier">debug</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$debug(net.mamoe.mirai.utils.MiraiLogger, kotlin.Function0((kotlin.String)), kotlin.Throwable)/lazyMessage">lazyMessage</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils$debug(net.mamoe.mirai.utils.MiraiLogger, kotlin.Function0((kotlin.String)), kotlin.Throwable)/e">e</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../error.html">error</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="./index.html"><span class="identifier">MiraiLogger</span></a><span class="symbol">.</span><span class="identifier">error</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$error(net.mamoe.mirai.utils.MiraiLogger, kotlin.Function0((kotlin.String)))/lazyMessage">lazyMessage</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">fun </span><a href="./index.html"><span class="identifier">MiraiLogger</span></a><span class="symbol">.</span><span class="identifier">error</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$error(net.mamoe.mirai.utils.MiraiLogger, kotlin.Function0((kotlin.String)), kotlin.Throwable)/lazyMessage">lazyMessage</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils$error(net.mamoe.mirai.utils.MiraiLogger, kotlin.Function0((kotlin.String)), kotlin.Throwable)/e">e</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../info.html">info</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="./index.html"><span class="identifier">MiraiLogger</span></a><span class="symbol">.</span><span class="identifier">info</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$info(net.mamoe.mirai.utils.MiraiLogger, kotlin.Function0((kotlin.String)))/lazyMessage">lazyMessage</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">fun </span><a href="./index.html"><span class="identifier">MiraiLogger</span></a><span class="symbol">.</span><span class="identifier">info</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$info(net.mamoe.mirai.utils.MiraiLogger, kotlin.Function0((kotlin.String)), kotlin.Throwable)/lazyMessage">lazyMessage</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils$info(net.mamoe.mirai.utils.MiraiLogger, kotlin.Function0((kotlin.String)), kotlin.Throwable)/e">e</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../verbose.html">verbose</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="./index.html"><span class="identifier">MiraiLogger</span></a><span class="symbol">.</span><span class="identifier">verbose</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$verbose(net.mamoe.mirai.utils.MiraiLogger, kotlin.Function0((kotlin.String)))/lazyMessage">lazyMessage</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">fun </span><a href="./index.html"><span class="identifier">MiraiLogger</span></a><span class="symbol">.</span><span class="identifier">verbose</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$verbose(net.mamoe.mirai.utils.MiraiLogger, kotlin.Function0((kotlin.String)), kotlin.Throwable)/lazyMessage">lazyMessage</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils$verbose(net.mamoe.mirai.utils.MiraiLogger, kotlin.Function0((kotlin.String)), kotlin.Throwable)/e">e</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../warning.html">warning</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="./index.html"><span class="identifier">MiraiLogger</span></a><span class="symbol">.</span><span class="identifier">warning</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$warning(net.mamoe.mirai.utils.MiraiLogger, kotlin.Function0((kotlin.String)))/lazyMessage">lazyMessage</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">fun </span><a href="./index.html"><span class="identifier">MiraiLogger</span></a><span class="symbol">.</span><span class="identifier">warning</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$warning(net.mamoe.mirai.utils.MiraiLogger, kotlin.Function0((kotlin.String)), kotlin.Throwable)/lazyMessage">lazyMessage</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils$warning(net.mamoe.mirai.utils.MiraiLogger, kotlin.Function0((kotlin.String)), kotlin.Throwable)/e">e</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../with-switch.html">withSwitch</a></h4>
+</td>
+<td>
+<p>给这个 logger 添加一个开关, 用于控制是否记录 log</p>
+<code><span class="keyword">fun </span><a href="./index.html"><span class="identifier">MiraiLogger</span></a><span class="symbol">.</span><span class="identifier">withSwitch</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$withSwitch(net.mamoe.mirai.utils.MiraiLogger, kotlin.Boolean)/default">default</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;true<span class="symbol">)</span><span class="symbol">: </span><a href="../-mirai-logger-with-switch/index.html"><span class="identifier">MiraiLoggerWithSwitch</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../-mirai-logger-platform-base/index.html">MiraiLoggerPlatformBase</a></h4>
+</td>
+<td>
+<p>日志基类. 实现了 <a href="../-mirai-logger-platform-base/follower.html">follower</a> 的调用传递.
+若 Mirai 自带的日志系统无法满足需求, 请继承这个类或 <a href="../-platform-logger/index.html">PlatformLogger</a> 并实现其抽象函数.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">MiraiLoggerPlatformBase</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">MiraiLogger</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

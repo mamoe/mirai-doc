@@ -1,0 +1,227 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>net.mamoe.mirai.message - mirai-core</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="./index.html">net.mamoe.mirai.message</a><br/>
+<br/>
+<h2>Package net.mamoe.mirai.message</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-friend-message-event/index.html">FriendMessageEvent</a></h4>
+</td>
+<td>
+<p>机器人收到的好友消息的事件</p>
+<code><span class="keyword">class </span><span class="identifier">FriendMessageEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">FriendMessage</span><span class="symbol">, </span><a href="../net.mamoe.mirai.event/-broadcast-controllable/index.html"><span class="identifier">BroadcastControllable</span></a><span class="symbol">, </span><a href="../net.mamoe.mirai.event.events/-friend-event/index.html"><span class="identifier">FriendEvent</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-group-message-event/index.html">GroupMessageEvent</a></h4>
+</td>
+<td>
+<p>机器人收到的群消息的事件</p>
+<code><span class="keyword">class </span><span class="identifier">GroupMessageEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GroupMessage</span><span class="symbol">, </span><a href="../net.mamoe.mirai.event/-event/index.html"><span class="identifier">Event</span></a><span class="symbol">, </span><a href="../net.mamoe.mirai.event.events/-group-event/index.html"><span class="identifier">GroupEvent</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-message-event/index.html">MessageEvent</a></h4>
+</td>
+<td>
+<p>一个 (收到的) 消息事件.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">MessageEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ContactMessage</span><span class="symbol">, </span><a href="../net.mamoe.mirai.event.events/-bot-event/index.html"><span class="identifier">BotEvent</span></a><span class="symbol">, </span><a href="-message-event-extensions/index.html"><span class="identifier">MessageEventExtensions</span></a><span class="symbol">&lt;</span><a href="../net.mamoe.mirai.contact/-user/index.html"><span class="identifier">User</span></a><span class="symbol">,</span>&nbsp;<a href="../net.mamoe.mirai.contact/-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-message-event-extensions/index.html">MessageEventExtensions</a></h4>
+</td>
+<td>
+<p>消息事件的扩展函数</p>
+<code><span class="keyword">interface </span><span class="identifier">MessageEventExtensions</span><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">TSender</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.contact/-user/index.html"><span class="identifier">User</span></a><span class="symbol">, </span><span class="keyword">out</span>&nbsp;<span class="identifier">TSubject</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.contact/-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">MessageEventPlatformExtensions</span><span class="symbol">&lt;</span><span class="identifier">TSender</span><span class="symbol">,</span>&nbsp;<span class="identifier">TSubject</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-message-receipt/index.html">MessageReceipt</a></h4>
+</td>
+<td>
+<p>发送消息后得到的回执. 可用于撤回, 引用回复等.</p>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">MessageReceipt</span><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">C</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.contact/-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-temp-message-event/index.html">TempMessageEvent</a></h4>
+</td>
+<td>
+<p>机器人收到的群临时会话消息的事件</p>
+<code><span class="keyword">class </span><span class="identifier">TempMessageEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">TempMessage</span><span class="symbol">, </span><a href="../net.mamoe.mirai.event/-broadcast-controllable/index.html"><span class="identifier">BroadcastControllable</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extensions for External Classes</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="java.awt.image.-buffered-image/index.html">java.awt.image.BufferedImage</a></h4>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="source-id.html">sourceId</a></h4>
+</td>
+<td>
+<p>获取源消息 <a href="../net.mamoe.mirai.message.data/-message-source/id.html">MessageSource.id</a></p>
+<code><span class="keyword">val </span><a href="-message-receipt/index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">sourceId</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="source-internal-id.html">sourceInternalId</a></h4>
+</td>
+<td>
+<p>获取源消息 <a href="../net.mamoe.mirai.message.data/-message-source/internal-id.html">MessageSource.internalId</a></p>
+<code><span class="keyword">val </span><a href="-message-receipt/index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">sourceInternalId</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="source-time.html">sourceTime</a></h4>
+</td>
+<td>
+<p>获取源消息 <a href="../net.mamoe.mirai.message.data/-message-source/time.html">MessageSource.time</a></p>
+<code><span class="keyword">val </span><a href="-message-receipt/index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">sourceTime</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="is-context-identical-with.html">isContextIdenticalWith</a></h4>
+</td>
+<td>
+<p>判断两个 <a href="-message-event/index.html">MessageEvent</a> 的 <a href="-message-event/sender.html">MessageEvent.sender</a> 和 <a href="-message-event/subject.html">MessageEvent.subject</a> 是否相同</p>
+<code><span class="keyword">fun </span><a href="-message-event/index.html"><span class="identifier">MessageEvent</span></a><span class="symbol">.</span><span class="identifier">isContextIdenticalWith</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$isContextIdenticalWith(net.mamoe.mirai.message.MessageEvent, net.mamoe.mirai.message.MessageEvent)/another">another</span><span class="symbol">:</span>&nbsp;<a href="-message-event/index.html"><span class="identifier">MessageEvent</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="next-message.html">nextMessage</a></h4>
+</td>
+<td>
+<p>挂起当前协程, 等待下一条 <a href="-message-event/sender.html">MessageEvent.sender</a> 和 <a href="-message-event/subject.html">MessageEvent.subject</a> 与 <a href="next-message/-this-.html">this</a> 相同且通过 <a href="next-message.html#net.mamoe.mirai.message$nextMessage(net.mamoe.mirai.message.nextMessage.P, kotlin.Long, net.mamoe.mirai.event.Listener.EventPriority, kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.message.nextMessage.P, , kotlin.Boolean)))/filter">筛选</a> 的 <a href="-message-event/index.html">MessageEvent</a></p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">P</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-message-event/index.html"><span class="identifier">MessageEvent</span></a><span class="symbol">&gt;</span> <span class="identifier">P</span><span class="symbol">.</span><span class="identifier">nextMessage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$nextMessage(net.mamoe.mirai.message.nextMessage.P, kotlin.Long, net.mamoe.mirai.event.Listener.EventPriority, kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.message.nextMessage.P, , kotlin.Boolean)))/timeoutMillis">timeoutMillis</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a>&nbsp;<span class="symbol">=</span>&nbsp;-1<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.message$nextMessage(net.mamoe.mirai.message.nextMessage.P, kotlin.Long, net.mamoe.mirai.event.Listener.EventPriority, kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.message.nextMessage.P, , kotlin.Boolean)))/priority">priority</span><span class="symbol">:</span>&nbsp;<span class="identifier">EventPriority</span>&nbsp;<span class="symbol">=</span>&nbsp;EventPriority.MONITOR<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.message$nextMessage(net.mamoe.mirai.message.nextMessage.P, kotlin.Long, net.mamoe.mirai.event.Listener.EventPriority, kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.message.nextMessage.P, , kotlin.Boolean)))/filter">filter</span><span class="symbol">:</span>&nbsp;<span class="keyword">suspend </span><span class="identifier">P</span><span class="symbol">.</span><span class="symbol">(</span><span class="identifier">P</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;{ true }<span class="symbol">)</span><span class="symbol">: </span><a href="../net.mamoe.mirai.message.data/-message-chain/index.html"><span class="identifier">MessageChain</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="next-message-async.html">nextMessageAsync</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">P</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-message-event/index.html"><span class="identifier">MessageEvent</span></a><span class="symbol">&gt;</span> <span class="identifier">P</span><span class="symbol">.</span><span class="identifier">nextMessageAsync</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$nextMessageAsync(net.mamoe.mirai.message.nextMessageAsync.P, kotlin.Long, kotlin.coroutines.CoroutineContext, net.mamoe.mirai.event.Listener.EventPriority, kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.message.nextMessageAsync.P, , kotlin.Boolean)))/timeoutMillis">timeoutMillis</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a>&nbsp;<span class="symbol">=</span>&nbsp;-1<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.message$nextMessageAsync(net.mamoe.mirai.message.nextMessageAsync.P, kotlin.Long, kotlin.coroutines.CoroutineContext, net.mamoe.mirai.event.Listener.EventPriority, kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.message.nextMessageAsync.P, , kotlin.Boolean)))/coroutineContext">coroutineContext</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.coroutines/-coroutine-context/index.html"><span class="identifier">CoroutineContext</span></a>&nbsp;<span class="symbol">=</span>&nbsp;EmptyCoroutineContext<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.message$nextMessageAsync(net.mamoe.mirai.message.nextMessageAsync.P, kotlin.Long, kotlin.coroutines.CoroutineContext, net.mamoe.mirai.event.Listener.EventPriority, kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.message.nextMessageAsync.P, , kotlin.Boolean)))/priority">priority</span><span class="symbol">:</span>&nbsp;<span class="identifier">EventPriority</span>&nbsp;<span class="symbol">=</span>&nbsp;EventPriority.MONITOR<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.message$nextMessageAsync(net.mamoe.mirai.message.nextMessageAsync.P, kotlin.Long, kotlin.coroutines.CoroutineContext, net.mamoe.mirai.event.Listener.EventPriority, kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.message.nextMessageAsync.P, , kotlin.Boolean)))/filter">filter</span><span class="symbol">:</span>&nbsp;<span class="keyword">suspend </span><span class="identifier">P</span><span class="symbol">.</span><span class="symbol">(</span><span class="identifier">P</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;{ true }<span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Deferred</span><span class="symbol">&lt;</span><a href="../net.mamoe.mirai.message.data/-message-chain/index.html"><span class="identifier">MessageChain</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="next-message-or-null.html">nextMessageOrNull</a></h4>
+</td>
+<td>
+<p>挂起当前协程, 等待下一条 <a href="-message-event/sender.html">MessageEvent.sender</a> 和 <a href="-message-event/subject.html">MessageEvent.subject</a> 与 <a href="next-message-or-null/-this-.html">this</a> 相同且通过 <a href="next-message-or-null.html#net.mamoe.mirai.message$nextMessageOrNull(net.mamoe.mirai.message.nextMessageOrNull.P, kotlin.Long, net.mamoe.mirai.event.Listener.EventPriority, kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.message.nextMessageOrNull.P, , kotlin.Boolean)))/filter">筛选</a> 的 <a href="-message-event/index.html">MessageEvent</a></p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">P</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-message-event/index.html"><span class="identifier">MessageEvent</span></a><span class="symbol">&gt;</span> <span class="identifier">P</span><span class="symbol">.</span><span class="identifier">nextMessageOrNull</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$nextMessageOrNull(net.mamoe.mirai.message.nextMessageOrNull.P, kotlin.Long, net.mamoe.mirai.event.Listener.EventPriority, kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.message.nextMessageOrNull.P, , kotlin.Boolean)))/timeoutMillis">timeoutMillis</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.message$nextMessageOrNull(net.mamoe.mirai.message.nextMessageOrNull.P, kotlin.Long, net.mamoe.mirai.event.Listener.EventPriority, kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.message.nextMessageOrNull.P, , kotlin.Boolean)))/priority">priority</span><span class="symbol">:</span>&nbsp;<span class="identifier">EventPriority</span>&nbsp;<span class="symbol">=</span>&nbsp;EventPriority.MONITOR<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.message$nextMessageOrNull(net.mamoe.mirai.message.nextMessageOrNull.P, kotlin.Long, net.mamoe.mirai.event.Listener.EventPriority, kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.message.nextMessageOrNull.P, , kotlin.Boolean)))/filter">filter</span><span class="symbol">:</span>&nbsp;<span class="keyword">suspend </span><span class="identifier">P</span><span class="symbol">.</span><span class="symbol">(</span><span class="identifier">P</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;{ true }<span class="symbol">)</span><span class="symbol">: </span><a href="../net.mamoe.mirai.message.data/-message-chain/index.html"><span class="identifier">MessageChain</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="next-message-or-null-async.html">nextMessageOrNullAsync</a></h4>
+</td>
+<td>
+<p><a href="next-message-or-null.html">nextMessageOrNull</a> 的异步版本</p>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">P</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-message-event/index.html"><span class="identifier">MessageEvent</span></a><span class="symbol">&gt;</span> <span class="identifier">P</span><span class="symbol">.</span><span class="identifier">nextMessageOrNullAsync</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$nextMessageOrNullAsync(net.mamoe.mirai.message.nextMessageOrNullAsync.P, kotlin.Long, kotlin.coroutines.CoroutineContext, net.mamoe.mirai.event.Listener.EventPriority, kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.message.nextMessageOrNullAsync.P, , kotlin.Boolean)))/timeoutMillis">timeoutMillis</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.message$nextMessageOrNullAsync(net.mamoe.mirai.message.nextMessageOrNullAsync.P, kotlin.Long, kotlin.coroutines.CoroutineContext, net.mamoe.mirai.event.Listener.EventPriority, kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.message.nextMessageOrNullAsync.P, , kotlin.Boolean)))/coroutineContext">coroutineContext</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.coroutines/-coroutine-context/index.html"><span class="identifier">CoroutineContext</span></a>&nbsp;<span class="symbol">=</span>&nbsp;EmptyCoroutineContext<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.message$nextMessageOrNullAsync(net.mamoe.mirai.message.nextMessageOrNullAsync.P, kotlin.Long, kotlin.coroutines.CoroutineContext, net.mamoe.mirai.event.Listener.EventPriority, kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.message.nextMessageOrNullAsync.P, , kotlin.Boolean)))/priority">priority</span><span class="symbol">:</span>&nbsp;<span class="identifier">EventPriority</span>&nbsp;<span class="symbol">=</span>&nbsp;EventPriority.MONITOR<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.message$nextMessageOrNullAsync(net.mamoe.mirai.message.nextMessageOrNullAsync.P, kotlin.Long, kotlin.coroutines.CoroutineContext, net.mamoe.mirai.event.Listener.EventPriority, kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.message.nextMessageOrNullAsync.P, , kotlin.Boolean)))/filter">filter</span><span class="symbol">:</span>&nbsp;<span class="keyword">suspend </span><span class="identifier">P</span><span class="symbol">.</span><span class="symbol">(</span><span class="identifier">P</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;{ true }<span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Deferred</span><span class="symbol">&lt;</span><a href="../net.mamoe.mirai.message.data/-message-chain/index.html"><span class="identifier">MessageChain</span></a><span class="symbol">?</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="quote.html">quote</a></h4>
+</td>
+<td>
+<p>引用这条消息.</p>
+<code><span class="keyword">fun </span><a href="-message-receipt/index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">quote</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../net.mamoe.mirai.message.data/-quote-reply/index.html"><span class="identifier">QuoteReply</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="quote-reply.html">quoteReply</a></h4>
+</td>
+<td>
+<p>引用这条消息并回复.</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">C</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.contact/-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">&gt;</span> <a href="-message-receipt/index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">C</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">quoteReply</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$quoteReply(net.mamoe.mirai.message.MessageReceipt((net.mamoe.mirai.message.quoteReply.C)), net.mamoe.mirai.message.data.Message)/message">message</span><span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.message.data/-message/index.html"><span class="identifier">Message</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-message-receipt/index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">C</span><span class="symbol">&gt;</span></code><br/>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">C</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.contact/-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">&gt;</span> <a href="-message-receipt/index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">C</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">quoteReply</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$quoteReply(net.mamoe.mirai.message.MessageReceipt((net.mamoe.mirai.message.quoteReply.C)), kotlin.String)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-message-receipt/index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">C</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="recall.html">recall</a></h4>
+</td>
+<td>
+<p>撤回这条消息. <a href="recall.html">recall</a> 或 <a href="../net.mamoe.mirai/kotlinx.coroutines.-coroutine-scope/recall-in.html">recallIn</a> 只能被调用一次.</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><a href="-message-receipt/index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">recall</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="recall-in.html">recallIn</a></h4>
+</td>
+<td>
+<p>在一段时间后撤回这条消息. <a href="recall.html">recall</a> 或 <a href="../net.mamoe.mirai/kotlinx.coroutines.-coroutine-scope/recall-in.html">recallIn</a> 只能被调用一次.</p>
+<code><span class="keyword">fun </span><a href="-message-receipt/index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">recallIn</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$recallIn(net.mamoe.mirai.message.MessageReceipt((net.mamoe.mirai.contact.Contact)), kotlin.Long, kotlin.coroutines.CoroutineContext)/timeMillis">timeMillis</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.message$recallIn(net.mamoe.mirai.message.MessageReceipt((net.mamoe.mirai.contact.Contact)), kotlin.Long, kotlin.coroutines.CoroutineContext)/coroutineContext">coroutineContext</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.coroutines/-coroutine-context/index.html"><span class="identifier">CoroutineContext</span></a>&nbsp;<span class="symbol">=</span>&nbsp;EmptyCoroutineContext<span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Job</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="send-as-image-to.html">sendAsImageTo</a></h4>
+</td>
+<td>
+<p>在 <a href="#">Dispatchers.IO</a> 中读取 <a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html">InputStream</a> 到临时文件并将其作为图片发送到指定联系人</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">C</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.contact/-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">&gt;</span> <a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html"><span class="identifier">InputStream</span></a><span class="symbol">.</span><span class="identifier">sendAsImageTo</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$sendAsImageTo(java.io.InputStream, net.mamoe.mirai.message.sendAsImageTo.C)/contact">contact</span><span class="symbol">:</span>&nbsp;<span class="identifier">C</span><span class="symbol">)</span><span class="symbol">: </span><a href="-message-receipt/index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">C</span><span class="symbol">&gt;</span></code>
+<p>在 <a href="#">Dispatchers.IO</a> 中将文件作为图片发送到指定联系人</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">C</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.contact/-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">&gt;</span> <a href="https://docs.oracle.com/javase/6/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">.</span><span class="identifier">sendAsImageTo</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$sendAsImageTo(java.io.File, net.mamoe.mirai.message.sendAsImageTo.C)/contact">contact</span><span class="symbol">:</span>&nbsp;<span class="identifier">C</span><span class="symbol">)</span><span class="symbol">: </span><a href="-message-receipt/index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">C</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="send-image.html">sendImage</a></h4>
+</td>
+<td>
+<p>在 <a href="#">Dispatchers.IO</a> 中将图片发送到指定联系人. 不会保存临时文件</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">C</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.contact/-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">&gt;</span> <span class="identifier">C</span><span class="symbol">.</span><span class="identifier">sendImage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$sendImage(net.mamoe.mirai.message.sendImage.C, java.awt.image.BufferedImage)/bufferedImage">bufferedImage</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/awt/image/BufferedImage.html"><span class="identifier">BufferedImage</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-message-receipt/index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">C</span><span class="symbol">&gt;</span></code>
+<p>在 <a href="#">Dispatchers.IO</a> 中读取 <a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html">InputStream</a> 到临时文件并将其作为图片发送到指定联系人</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">C</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.contact/-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">&gt;</span> <span class="identifier">C</span><span class="symbol">.</span><span class="identifier">sendImage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$sendImage(net.mamoe.mirai.message.sendImage.C, java.io.InputStream)/imageStream">imageStream</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html"><span class="identifier">InputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-message-receipt/index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">C</span><span class="symbol">&gt;</span></code>
+<p>在 <a href="#">Dispatchers.IO</a> 中将文件作为图片发送到指定联系人</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">C</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.contact/-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">&gt;</span> <span class="identifier">C</span><span class="symbol">.</span><span class="identifier">sendImage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$sendImage(net.mamoe.mirai.message.sendImage.C, java.io.File)/file">file</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-message-receipt/index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">C</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="upload-as-image.html">uploadAsImage</a></h4>
+</td>
+<td>
+<p>在 <a href="#">Dispatchers.IO</a> 中读取 <a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html">InputStream</a> 到临时文件并将其作为图片上传后构造 <a href="../net.mamoe.mirai.message.data/-image/index.html">Image</a></p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html"><span class="identifier">InputStream</span></a><span class="symbol">.</span><span class="identifier">uploadAsImage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$uploadAsImage(java.io.InputStream, net.mamoe.mirai.contact.Contact)/contact">contact</span><span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.contact/-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../net.mamoe.mirai.message.data/-image/index.html"><span class="identifier">Image</span></a></code>
+<p>在 <a href="#">Dispatchers.IO</a> 中将文件作为图片上传后构造 <a href="../net.mamoe.mirai.message.data/-image/index.html">Image</a></p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><a href="https://docs.oracle.com/javase/6/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">.</span><span class="identifier">uploadAsImage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$uploadAsImage(java.io.File, net.mamoe.mirai.contact.Contact)/contact">contact</span><span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.contact/-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../net.mamoe.mirai.message.data/-image/index.html"><span class="identifier">Image</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="upload-image.html">uploadImage</a></h4>
+</td>
+<td>
+<p>在 <a href="#">Dispatchers.IO</a> 中将图片上传, 但不发送. 不会保存临时文件</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><a href="../net.mamoe.mirai.contact/-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">.</span><span class="identifier">uploadImage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$uploadImage(net.mamoe.mirai.contact.Contact, java.awt.image.BufferedImage)/bufferedImage">bufferedImage</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/awt/image/BufferedImage.html"><span class="identifier">BufferedImage</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../net.mamoe.mirai.message.data/-image/index.html"><span class="identifier">Image</span></a></code>
+<p>在 <a href="#">Dispatchers.IO</a> 中读取 <a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html">InputStream</a> 到临时文件并将其作为图片上传, 但不发送</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><a href="../net.mamoe.mirai.contact/-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">.</span><span class="identifier">uploadImage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$uploadImage(net.mamoe.mirai.contact.Contact, java.io.InputStream)/imageStream">imageStream</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html"><span class="identifier">InputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../net.mamoe.mirai.message.data/-image/index.html"><span class="identifier">Image</span></a></code>
+<p>在 <a href="#">Dispatchers.IO</a> 中将文件作为图片上传, 但不发送</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><a href="../net.mamoe.mirai.contact/-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">.</span><span class="identifier">uploadImage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message$uploadImage(net.mamoe.mirai.contact.Contact, java.io.File)/file">file</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../net.mamoe.mirai.message.data/-image/index.html"><span class="identifier">Image</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

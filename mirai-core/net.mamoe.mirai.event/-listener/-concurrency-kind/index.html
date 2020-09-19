@@ -1,0 +1,34 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Listener.ConcurrencyKind - mirai-core</title>
+<link rel="stylesheet" href="../../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../../index.html">net.mamoe.mirai.event</a>&nbsp;/&nbsp;<a href="../index.html">Listener</a>&nbsp;/&nbsp;<a href="./index.html">ConcurrencyKind</a><br/>
+<br/>
+<h1>ConcurrencyKind</h1>
+<code><span class="keyword">enum</span> <span class="keyword">class </span><span class="identifier">ConcurrencyKind</span></code>
+<h3>Enum Values</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-c-o-n-c-u-r-r-e-n-t.html">CONCURRENT</a></h4>
+</td>
+<td>
+<p>并发地同时处理多个事件, 但无法保证 <a href="../on-event.html">onEvent</a> 返回 <a href="../../-listening-status/-s-t-o-p-p-e-d.html">ListeningStatus.STOPPED</a> 后立即停止事件监听.</p>
+</td>
+</tr>
+<tr>
+<td>
+<h4><a href="-l-o-c-k-e-d.html">LOCKED</a></h4>
+</td>
+<td>
+<p>使用 <a href="#">Mutex</a> 保证同一时刻只处理一个事件.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

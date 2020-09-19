@@ -1,0 +1,30 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MessageChain.get - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.message.data</a>&nbsp;/&nbsp;<a href="index.html">MessageChain</a>&nbsp;/&nbsp;<a href="./get.html">get</a><br/>
+<br/>
+<h1>get</h1>
+<a name="net.mamoe.mirai.message.data.MessageChain$get(net.mamoe.mirai.message.data.Message.Key((net.mamoe.mirai.message.data.MessageChain.get.M)))"></a>
+<code><span class="identifier">@JvmName</span><span class="symbol">(</span>"first"<span class="symbol">)</span> <span class="keyword">open</span> <span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">M</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-message/index.html"><span class="identifier">Message</span></a><span class="symbol">&gt;</span> <span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageChain$get(net.mamoe.mirai.message.data.Message.Key((net.mamoe.mirai.message.data.MessageChain.get.M)))/key">key</span><span class="symbol">:</span>&nbsp;<span class="identifier">Key</span><span class="symbol">&lt;</span><span class="identifier">M</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">M</span><span class="symbol">?</span></code>
+<p>获取第一个类型为 <a href="get.html#net.mamoe.mirai.message.data.MessageChain$get(net.mamoe.mirai.message.data.Message.Key((net.mamoe.mirai.message.data.MessageChain.get.M)))/key">key</a> 的 <a href="../-message/index.html">Message</a> 实例. 若不存在此实例, 返回 <code>null</code></p>
+<h3>Kotlin 使用方法</h3>
+<pre><code>val chain: MessageChain = ...
+
+val at = Message[At] // At 为伴生对象
+</code></pre>
+<h3>Java 使用方法</h3>
+<pre><code class="lang-java">MessageChain chain = ...
+chain.first(At.Key)
+</code></pre>
+<h3>Parameters</h3>
+<p><a name="key"></a>
+<code>key</code> - 由各个类型消息的伴生对象持有. 如 <a href="../-plain-text/-key/index.html">PlainText.Key</a></p>
+<p><strong>See Also</strong><br/>
+<p><a href="../get-or-fail.html">MessageChain.getOrFail</a></p>
+</p>
+</BODY>
+</HTML>

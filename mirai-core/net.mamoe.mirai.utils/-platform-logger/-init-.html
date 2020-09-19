@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PlatformLogger.<init> - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.utils</a>&nbsp;/&nbsp;<a href="index.html">PlatformLogger</a>&nbsp;/&nbsp;<a href="./-init-.html">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="net.mamoe.mirai.utils.PlatformLogger$&lt;init&gt;(kotlin.String)"></a>
+<code><span class="identifier">PlatformLogger</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.PlatformLogger$<init>(kotlin.String)/identity">identity</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;"Mirai"<span class="symbol">)</span></code>
+<p>当前平台的默认的日志记录器.
+在 <em>JVM 控制台</em> 端的实现为 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/println.html">println</a>
+在 <em>Android</em> 端的实现为 <code>android.util.Log</code></p>
+<p>单条日志格式 (正则) 为:</p>
+<pre><code class="lang-regex">^([\w-]*\s[\w:]*)\s(\w)\/(.*?):\s(.+)$
+</code></pre>
+<p>其中 group 分别为: 日期与时间, 严重程度, <a href="#">identity</a>, 消息内容.</p>
+<p>示例:</p>
+<pre><code class="lang-log">2020-05-21 19:51:09 V/Bot 1994701021: Send: OidbSvc.0x88d_7
+</code></pre>
+<p>日期时间格式为 <code>yyyy-MM-dd HH:mm:ss</code>,</p>
+<p>严重程度为 V, I, W, E. 分别对应 verbose, info, warning, error</p>
+<p><strong>See Also</strong><br/>
+<p><a href="../-default-logger.html">DefaultLogger</a></p>
+</p>
+<a name="net.mamoe.mirai.utils.PlatformLogger$&lt;init&gt;(kotlin.String, kotlin.Function1((kotlin.String, kotlin.Unit)), kotlin.Boolean)"></a>
+<code><span class="identifier">PlatformLogger</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.PlatformLogger$<init>(kotlin.String, kotlin.Function1((kotlin.String, kotlin.Unit)), kotlin.Boolean)/identity">identity</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;"Mirai"<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils.PlatformLogger$<init>(kotlin.String, kotlin.Function1((kotlin.String, kotlin.Unit)), kotlin.Boolean)/output">output</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils.PlatformLogger$<init>(kotlin.String, kotlin.Function1((kotlin.String, kotlin.Unit)), kotlin.Boolean)/isColored">isColored</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;true<span class="symbol">)</span></code>
+<p>JVM 控制台日志实现</p>
+<p>单条日志格式 (正则) 为:</p>
+<pre><code class="lang-regex">^([\w-]*\s[\w:]*)\s(\w)\/(.*?):\s(.+)$
+</code></pre>
+<p>其中 group 分别为: 日期与时间, 严重程度, <a href="identity.html">identity</a>, 消息内容.</p>
+<p>示例:</p>
+<pre><code class="lang-log">2020-05-21 19:51:09 V/Bot 1994701021: Send: OidbSvc.0x88d_7
+</code></pre>
+<p>日期时间格式为 <code>yyyy-MM-dd HH:mm:ss</code>,</p>
+<p>严重程度为 V, I, W, E. 分别对应 verbose, info, warning, error</p>
+<h3>Parameters</h3>
+<p><a name="isColored"></a>
+<code>isColored</code> - 是否添加 ANSI 颜色</p>
+<p><strong>See Also</strong><br/>
+<p><a href="../-default-logger.html">DefaultLogger</a></p>
+<p><a href="../-single-file-logger/index.html">SingleFileLogger</a></p>
+<p><a href="../-directory-logger/index.html">DirectoryLogger</a></p>
+</p>
+</BODY>
+</HTML>

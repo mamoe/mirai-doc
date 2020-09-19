@@ -1,0 +1,23 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BotConfigurationBase.botLoggerSupplier - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.utils</a>&nbsp;/&nbsp;<a href="index.html">BotConfigurationBase</a>&nbsp;/&nbsp;<a href="./bot-logger-supplier.html">botLoggerSupplier</a><br/>
+<br/>
+<h1>botLoggerSupplier</h1>
+<a name="net.mamoe.mirai.utils.BotConfigurationBase$botLoggerSupplier"></a>
+<code><span class="keyword">var </span><span class="identifier">botLoggerSupplier</span><span class="symbol">: </span><span class="symbol">(</span><a href="../../net.mamoe.mirai/-bot/index.html"><span class="identifier">Bot</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="../-mirai-logger/index.html"><span class="identifier">MiraiLogger</span></a></code>
+<p>日志记录器</p>
+<ul><li>默认打印到标准输出, 通过 <a href="../-default-logger.html">DefaultLogger</a></li>
+<li>忽略所有日志: <a href="no-bot-log.html">noBotLog</a></li>
+<li>重定向到一个目录: <code>networkLoggerSupplier = { DirectoryLogger("Net ${it.id}") }</code></li>
+<li>重定向到一个文件: <code>networkLoggerSupplier = { SingleFileLogger("Net ${it.id}") }</code></li>
+</ul>
+<p><strong>See Also</strong><br/>
+<p><a href="../-mirai-logger/index.html">MiraiLogger</a></p>
+</p>
+</BODY>
+</HTML>

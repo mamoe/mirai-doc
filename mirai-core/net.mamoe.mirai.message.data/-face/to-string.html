@@ -1,0 +1,27 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Face.toString - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.message.data</a>&nbsp;/&nbsp;<a href="index.html">Face</a>&nbsp;/&nbsp;<a href="./to-string.html">toString</a><br/>
+<br/>
+<h1>toString</h1>
+<a name="net.mamoe.mirai.message.data.Face$toString()"></a>
+<code><span class="keyword">fun </span><span class="identifier">toString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>得到包含 mirai 消息元素代码的, 易读的字符串. 如 <code>At(member) + "test"</code> 将转为 <code>"[mirai:at:qqId]test"</code></p>
+<p>在使用消息相关 DSL 和扩展时, 一些内容比较的实现均使用的是 <a href="../-message/content-to-string.html">contentToString</a> 而不是 <a href="../-message/to-string.html">toString</a></p>
+<p>各个 <a href="../-single-message.html">SingleMessage</a> 的转换示例:</p>
+<ul><li><a href="../-plain-text/index.html">PlainText</a> : <code>"Hello"</code></li>
+<li><a href="../-group-image/index.html">GroupImage</a> : <code>"[mirai:image:{01E9451B-70ED-EAE3-B37C-101F1EEBF5B5}.mirai]"</code></li>
+<li><a href="../-friend-image/index.html">FriendImage</a> : <code>"[mirai:image:/f8f1ab55-bf8e-4236-b55e-955848d7069f]"</code></li>
+<li><a href="../-poke-message/index.html">PokeMessage</a> : <code>"[mirai:poke:1,-1]"</code></li>
+<li><a href="../-message-chain/index.html">MessageChain</a> : 无间隔地连接所有元素 (<code>joinToString("")</code>)</li>
+<li>...</li>
+</ul>
+<p><strong>See Also</strong><br/>
+<p><a href="../-message/content-to-string.html">contentToString</a></p>
+</p>
+</BODY>
+</HTML>

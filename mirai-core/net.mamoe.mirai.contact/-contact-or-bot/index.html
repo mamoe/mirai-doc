@@ -1,0 +1,54 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ContactOrBot - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.contact</a>&nbsp;/&nbsp;<a href="./index.html">ContactOrBot</a><br/>
+<br/>
+<h1>ContactOrBot</h1>
+<code><span class="keyword">interface </span><span class="identifier">ContactOrBot</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">CoroutineScope</span></code>
+<p>拥有 <a href="id.html">id</a> 的对象.
+此为 <a href="../-contact/index.html">Contact</a> 与 <a href="../../net.mamoe.mirai/-bot/index.html">Bot</a> 的唯一公共接口.</p>
+<p><strong>See Also</strong><br/>
+<p><a href="../-contact/index.html">Contact</a></p>
+<p><a href="../../net.mamoe.mirai/-bot/index.html">Bot</a></p>
+</p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="id.html">id</a></h4>
+</td>
+<td>
+<p>QQ 号或群号.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">id</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../../net.mamoe.mirai/-bot/index.html">Bot</a></h4>
+</td>
+<td>
+<p>机器人对象. 一个机器人实例登录一个 QQ 账号.
+Mirai 为多账号设计, 可同时维护多个机器人.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">Bot</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">CoroutineScope</span><span class="symbol">, </span><a href="../../net.mamoe.mirai/-low-level-bot-a-p-i-accessor/index.html"><span class="identifier">LowLevelBotAPIAccessor</span></a><span class="symbol">, </span><span class="identifier">BotJavaFriendlyAPI</span><span class="symbol">, </span><a href="./index.html"><span class="identifier">ContactOrBot</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../-contact/index.html">Contact</a></h4>
+</td>
+<td>
+<p>联系对象, 即可以与 <a href="../../net.mamoe.mirai/-bot/index.html">Bot</a> 互动的对象. 包含 <a href="../-user/index.html">用户</a>, 和 <a href="../-group/index.html">群</a>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">Contact</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ContactOrBot</span></a><span class="symbol">, </span><span class="identifier">CoroutineScope</span><span class="symbol">, </span><span class="identifier">ContactJavaFriendlyAPI</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

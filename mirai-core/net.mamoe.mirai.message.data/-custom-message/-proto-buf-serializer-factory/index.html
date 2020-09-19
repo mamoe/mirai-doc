@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>CustomMessage.ProtoBufSerializerFactory - mirai-core</title>
+<link rel="stylesheet" href="../../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../../index.html">net.mamoe.mirai.message.data</a>&nbsp;/&nbsp;<a href="../index.html">CustomMessage</a>&nbsp;/&nbsp;<a href="./index.html">ProtoBufSerializerFactory</a><br/>
+<br/>
+<h1>ProtoBufSerializerFactory</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">ProtoBufSerializerFactory</span><span class="symbol">&lt;</span><span class="identifier">M</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../index.html"><span class="identifier">CustomMessage</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Factory</span><span class="symbol">&lt;</span><span class="identifier">M</span><span class="symbol">&gt;</span></code>
+<p>使用 <a href="#">ProtoBuf</a> 作为序列模式的 <a href="../-factory/index.html">Factory</a>.
+推荐使用此工厂</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<p>使用 <a href="#">ProtoBuf</a> 作为序列模式的 <a href="../-factory/index.html">Factory</a>.
+推荐使用此工厂</p>
+<code><span class="identifier">ProtoBufSerializerFactory</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.CustomMessage.ProtoBufSerializerFactory$<init>(kotlin.String)/typeName">typeName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="dump.html">dump</a></h4>
+</td>
+<td>
+<p>序列化此消息.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">dump</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.CustomMessage.ProtoBufSerializerFactory$dump(net.mamoe.mirai.message.data.CustomMessage.ProtoBufSerializerFactory.M)/message">message</span><span class="symbol">:</span>&nbsp;<span class="identifier">M</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="load.html">load</a></h4>
+</td>
+<td>
+<p>从 <a href="../-factory/load.html#net.mamoe.mirai.message.data.CustomMessage.Factory$load(kotlin.ByteArray)/input">input</a> 读取此消息.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">load</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.CustomMessage.ProtoBufSerializerFactory$load(kotlin.ByteArray)/input">input</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">M</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="serializer.html">serializer</a></h4>
+</td>
+<td>
+<p>得到 <a href="index.html#M">M</a> 的 <a href="#">KSerializer</a>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">serializer</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">KSerializer</span><span class="symbol">&lt;</span><span class="identifier">M</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

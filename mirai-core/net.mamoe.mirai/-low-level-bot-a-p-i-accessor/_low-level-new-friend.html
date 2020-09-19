@@ -1,0 +1,17 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>LowLevelBotAPIAccessor._lowLevelNewFriend - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai</a>&nbsp;/&nbsp;<a href="index.html">LowLevelBotAPIAccessor</a>&nbsp;/&nbsp;<a href="./_low-level-new-friend.html">_lowLevelNewFriend</a><br/>
+<br/>
+<h1>_lowLevelNewFriend</h1>
+<a name="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelNewFriend(net.mamoe.mirai.data.FriendInfo)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">_lowLevelNewFriend</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.LowLevelBotAPIAccessor$_lowLevelNewFriend(net.mamoe.mirai.data.FriendInfo)/friendInfo">friendInfo</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.data/-friend-info/index.html"><span class="identifier">FriendInfo</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.contact/-friend/index.html"><span class="identifier">Friend</span></a></code>
+<p>构造一个 <a href="../../net.mamoe.mirai.contact/-friend/index.html">Friend</a> 对象. 它持有对 <a href="../-bot/index.html">Bot</a> 的弱引用(<a href="../../net.mamoe.mirai.utils/-weak-ref/index.html">WeakRef</a>).</p>
+<p><a href="../-bot/index.html">Bot</a> 无法管理这个对象, 但这个对象会以 <a href="../-bot/index.html">Bot</a> 的 <a href="#">Job</a> 作为父 Job.
+因此, 当 <a href="../-bot/index.html">Bot</a> 被关闭后, 这个对象也会被关闭.</p>
+</BODY>
+</HTML>

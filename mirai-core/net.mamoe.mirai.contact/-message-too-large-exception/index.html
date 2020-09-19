@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MessageTooLargeException - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.contact</a>&nbsp;/&nbsp;<a href="./index.html">MessageTooLargeException</a><br/>
+<br/>
+<h1>MessageTooLargeException</h1>
+<code><span class="keyword">class </span><span class="identifier">MessageTooLargeException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-runtime-exception/index.html"><span class="identifier">RuntimeException</span></a></code>
+<p>发送消息时消息过长抛出的异常.</p>
+<p><strong>See Also</strong><br/>
+<p><a href="../-contact/send-message.html">Contact.sendMessage</a></p>
+</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<p>发送消息时消息过长抛出的异常.</p>
+<code><span class="identifier">MessageTooLargeException</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.contact.MessageTooLargeException$<init>(net.mamoe.mirai.contact.Contact, net.mamoe.mirai.message.data.Message, net.mamoe.mirai.message.data.Message, kotlin.String)/target">target</span><span class="symbol">:</span>&nbsp;<a href="../-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.contact.MessageTooLargeException$<init>(net.mamoe.mirai.contact.Contact, net.mamoe.mirai.message.data.Message, net.mamoe.mirai.message.data.Message, kotlin.String)/originalMessage">originalMessage</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.message.data/-message/index.html"><span class="identifier">Message</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.contact.MessageTooLargeException$<init>(net.mamoe.mirai.contact.Contact, net.mamoe.mirai.message.data.Message, net.mamoe.mirai.message.data.Message, kotlin.String)/messageAfterEvent">messageAfterEvent</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.message.data/-message/index.html"><span class="identifier">Message</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.contact.MessageTooLargeException$<init>(net.mamoe.mirai.contact.Contact, net.mamoe.mirai.message.data.Message, net.mamoe.mirai.message.data.Message, kotlin.String)/exceptionMessage">exceptionMessage</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="message-after-event.html">messageAfterEvent</a></h4>
+</td>
+<td>
+<p>经过事件拦截处理后的消息</p>
+<code><span class="keyword">val </span><span class="identifier">messageAfterEvent</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.message.data/-message/index.html"><span class="identifier">Message</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="original-message.html">originalMessage</a></h4>
+</td>
+<td>
+<p>原发送消息</p>
+<code><span class="keyword">val </span><span class="identifier">originalMessage</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.message.data/-message/index.html"><span class="identifier">Message</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="target.html">target</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">target</span><span class="symbol">: </span><a href="../-contact/index.html"><span class="identifier">Contact</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

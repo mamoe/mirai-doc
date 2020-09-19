@@ -1,0 +1,83 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>CancellableEvent - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.event</a>&nbsp;/&nbsp;<a href="./index.html">CancellableEvent</a><br/>
+<br/>
+<h1>CancellableEvent</h1>
+<code><span class="keyword">interface </span><span class="identifier">CancellableEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-event/index.html"><span class="identifier">Event</span></a></code>
+<p>可被取消的事件</p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="is-cancelled.html">isCancelled</a></h4>
+</td>
+<td>
+<p>事件是否已被取消.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">isCancelled</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="cancel.html">cancel</a></h4>
+</td>
+<td>
+<p>取消这个事件.
+事件需实现 <a href="./index.html">CancellableEvent</a> 接口才可以被取消</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">cancel</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../__broadcast-java.html">__broadcastJava</a></h4>
+</td>
+<td>
+<p>在 Java 广播一个事件的唯一途径.</p>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">E</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-event/index.html"><span class="identifier">Event</span></a><span class="symbol">&gt;</span> <span class="identifier">E</span><span class="symbol">.</span><span class="identifier">__broadcastJava</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">E</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../broadcast.html">broadcast</a></h4>
+</td>
+<td>
+<p>广播一个事件的唯一途径.</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">E</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-event/index.html"><span class="identifier">Event</span></a><span class="symbol">&gt;</span> <span class="identifier">E</span><span class="symbol">.</span><span class="identifier">broadcast</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">E</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../../net.mamoe.mirai.event.events/-before-image-upload-event/index.html">BeforeImageUploadEvent</a></h4>
+</td>
+<td>
+<p>图片上传前. 可以阻止上传.</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">BeforeImageUploadEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.event.events/-bot-event/index.html"><span class="identifier">BotEvent</span></a><span class="symbol">, </span><a href="../../net.mamoe.mirai.event.events/-bot-active-event.html"><span class="identifier">BotActiveEvent</span></a><span class="symbol">, </span><a href="../-abstract-event/index.html"><span class="identifier">AbstractEvent</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">CancellableEvent</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../../net.mamoe.mirai.event.events/-message-pre-send-event/index.html">MessagePreSendEvent</a></h4>
+</td>
+<td>
+<p>在发送消息前广播的事件. 可被 <a href="cancel.html">取消</a>.</p>
+<code><span class="keyword">sealed</span> <span class="keyword">class </span><span class="identifier">MessagePreSendEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.event.events/-bot-event/index.html"><span class="identifier">BotEvent</span></a><span class="symbol">, </span><a href="../../net.mamoe.mirai.event.events/-bot-active-event.html"><span class="identifier">BotActiveEvent</span></a><span class="symbol">, </span><a href="../-abstract-event/index.html"><span class="identifier">AbstractEvent</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">CancellableEvent</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

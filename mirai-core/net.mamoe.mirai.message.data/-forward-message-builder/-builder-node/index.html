@@ -1,0 +1,136 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ForwardMessageBuilder.BuilderNode - mirai-core</title>
+<link rel="stylesheet" href="../../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../../index.html">net.mamoe.mirai.message.data</a>&nbsp;/&nbsp;<a href="../index.html">ForwardMessageBuilder</a>&nbsp;/&nbsp;<a href="./index.html">BuilderNode</a><br/>
+<br/>
+<h1>BuilderNode</h1>
+<code><span class="keyword">inner</span> <span class="keyword">class </span><span class="identifier">BuilderNode</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">INode</span></code>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<code><span class="identifier">BuilderNode</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="message.html">message</a></h4>
+</td>
+<td>
+<p>消息内容</p>
+<code><span class="keyword">lateinit</span> <span class="keyword">var </span><span class="identifier">message</span><span class="symbol">: </span><a href="../../-message/index.html"><span class="identifier">Message</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="sender-id.html">senderId</a></h4>
+</td>
+<td>
+<p>发送人 <a href="../../../net.mamoe.mirai.contact/-user/id.html">User.id</a></p>
+<code><span class="keyword">var </span><span class="identifier">senderId</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="sender-name.html">senderName</a></h4>
+</td>
+<td>
+<p>发送人名称</p>
+<code><span class="keyword">var </span><span class="identifier">senderName</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="time.html">time</a></h4>
+</td>
+<td>
+<p>时间戳秒</p>
+<code><span class="keyword">var </span><span class="identifier">time</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="at.html">at</a></h4>
+</td>
+<td>
+<p>指定时间.</p>
+<code><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">at</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.ForwardMessageBuilder.BuilderNode$at(kotlin.Int)/time">time</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">BuilderNode</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="message.html">message</a></h4>
+</td>
+<td>
+<p>指定消息内容</p>
+<code><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">message</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.ForwardMessageBuilder.BuilderNode$message(net.mamoe.mirai.message.data.Message)/message">message</span><span class="symbol">:</span>&nbsp;<a href="../../-message/index.html"><span class="identifier">Message</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">BuilderNode</span></code><br/>
+<code><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">message</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.ForwardMessageBuilder.BuilderNode$message(kotlin.String)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">BuilderNode</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="named.html">named</a></h4>
+</td>
+<td>
+<p>指定发送人名称.</p>
+<code><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">named</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.ForwardMessageBuilder.BuilderNode$named(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">BuilderNode</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="says.html">says</a></h4>
+</td>
+<td>
+<p>添加一条消息</p>
+<code><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">says</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.ForwardMessageBuilder.BuilderNode$says(net.mamoe.mirai.message.data.Message)/message">message</span><span class="symbol">:</span>&nbsp;<a href="../../-message/index.html"><span class="identifier">Message</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../index.html"><span class="identifier">ForwardMessageBuilder</span></a></code><br/>
+<code><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">says</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.ForwardMessageBuilder.BuilderNode$says(kotlin.String)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../index.html"><span class="identifier">ForwardMessageBuilder</span></a></code>
+<p>构造并添加一个 <a href="../../-message-chain/index.html">MessageChain</a></p>
+<code><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">says</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.ForwardMessageBuilder.BuilderNode$says(kotlin.Function1((net.mamoe.mirai.message.data.MessageChainBuilder, kotlin.Unit)))/chain">chain</span><span class="symbol">:</span>&nbsp;<a href="../../-message-chain-builder/index.html"><span class="identifier">MessageChainBuilder</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../index.html"><span class="identifier">ForwardMessageBuilder</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="sender.html">sender</a></h4>
+</td>
+<td>
+<p>指定发送人 id 和名称.</p>
+<code><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">sender</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.ForwardMessageBuilder.BuilderNode$sender(net.mamoe.mirai.contact.User)/user">user</span><span class="symbol">:</span>&nbsp;<a href="../../../net.mamoe.mirai.contact/-user/index.html"><span class="identifier">User</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">BuilderNode</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="sender-id.html">senderId</a></h4>
+</td>
+<td>
+<p>指定发送人 id.</p>
+<code><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">senderId</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.ForwardMessageBuilder.BuilderNode$senderId(kotlin.Int)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">BuilderNode</span></code><br/>
+<code><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">senderId</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.ForwardMessageBuilder.BuilderNode$senderId(kotlin.Long)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">BuilderNode</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="sender-name.html">senderName</a></h4>
+</td>
+<td>
+<p>指定发送人名称.</p>
+<code><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">senderName</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.ForwardMessageBuilder.BuilderNode$senderName(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">BuilderNode</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="time.html">time</a></h4>
+</td>
+<td>
+<p>指定时间.</p>
+<code><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">time</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.ForwardMessageBuilder.BuilderNode$time(kotlin.Int)/time">time</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">BuilderNode</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

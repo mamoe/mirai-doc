@@ -1,0 +1,67 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>FileCacheStrategy - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.utils</a>&nbsp;/&nbsp;<a href="./index.html">FileCacheStrategy</a><br/>
+<br/>
+<h1>FileCacheStrategy</h1>
+<code><span class="identifier">@MiraiExperimentalAPI</span> <span class="keyword">interface </span><span class="identifier">FileCacheStrategy</span></code>
+<p>缓存策略.</p>
+<p>图片上传时默认使用文件缓存.</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-memory-cache/index.html">MemoryCache</a></h4>
+</td>
+<td>
+<p>使用内存直接存储所有图片文件.</p>
+<code><span class="keyword">object </span><span class="identifier">MemoryCache</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">FileCacheStrategy</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-platform-default.html">PlatformDefault</a></h4>
+</td>
+<td>
+<p>默认的缓存方案. 在 JVM 平台使用系统临时文件.</p>
+<code><span class="keyword">object </span><span class="identifier">PlatformDefault</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">FileCacheStrategy</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-temp-cache/index.html">TempCache</a></h4>
+</td>
+<td>
+<p>使用系统临时文件夹缓存图片文件. 在图片使用完毕后删除临时文件.</p>
+<code><span class="keyword">class </span><span class="identifier">TempCache</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">FileCacheStrategy</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="new-image-cache.html">newImageCache</a></h4>
+</td>
+<td>
+<p>将 <a href="new-image-cache.html#net.mamoe.mirai.utils.FileCacheStrategy$newImageCache(kotlinx.io.core.Input)/input">input</a> 缓存为 <a href="../-external-image/index.html">ExternalImage</a>.
+此函数应 close 这个 <a href="#">Input</a></p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">newImageCache</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.FileCacheStrategy$newImageCache(kotlinx.io.core.Input)/input">input</span><span class="symbol">:</span>&nbsp;<span class="identifier">Input</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-external-image/index.html"><span class="identifier">ExternalImage</span></a></code>
+<p>将 <a href="new-image-cache.html#net.mamoe.mirai.utils.FileCacheStrategy$newImageCache(kotlin.ByteArray)/input">input</a> 缓存为 <a href="../-external-image/index.html">ExternalImage</a>.
+此 <a href="new-image-cache.html#net.mamoe.mirai.utils.FileCacheStrategy$newImageCache(kotlin.ByteArray)/input">input</a> 的内容应是不变的.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">newImageCache</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.FileCacheStrategy$newImageCache(kotlin.ByteArray)/input">input</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-external-image/index.html"><span class="identifier">ExternalImage</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">newImageCache</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.FileCacheStrategy$newImageCache(java.awt.image.BufferedImage, kotlin.String)/input">input</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/awt/image/BufferedImage.html"><span class="identifier">BufferedImage</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils.FileCacheStrategy$newImageCache(java.awt.image.BufferedImage, kotlin.String)/format">format</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a>&nbsp;<span class="symbol">=</span>&nbsp;"png"<span class="symbol">)</span><span class="symbol">: </span><a href="../-external-image/index.html"><span class="identifier">ExternalImage</span></a></code>
+<p>将 <a href="new-image-cache.html#net.mamoe.mirai.utils.FileCacheStrategy$newImageCache(java.io.InputStream)/input">input</a> 缓存为 <a href="../-external-image/index.html">ExternalImage</a>.
+此函数应 close 这个 <a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html">InputStream</a></p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">newImageCache</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.FileCacheStrategy$newImageCache(java.io.InputStream)/input">input</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html"><span class="identifier">InputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-external-image/index.html"><span class="identifier">ExternalImage</span></a></code>
+<p>将 <a href="new-image-cache.html#net.mamoe.mirai.utils.FileCacheStrategy$newImageCache(java.net.URL)/input">input</a> 缓存为 <a href="../-external-image/index.html">ExternalImage</a>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">newImageCache</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.FileCacheStrategy$newImageCache(java.net.URL)/input">input</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/net/URL.html"><span class="identifier">URL</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-external-image/index.html"><span class="identifier">ExternalImage</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

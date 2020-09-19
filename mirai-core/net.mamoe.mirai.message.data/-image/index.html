@@ -1,0 +1,185 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Image - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.message.data</a>&nbsp;/&nbsp;<a href="./index.html">Image</a><br/>
+<br/>
+<h1>Image</h1>
+<code><span class="keyword">interface </span><span class="identifier">Image</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-message/index.html"><span class="identifier">Message</span></a><span class="symbol">, </span><a href="../-message-content.html"><span class="identifier">MessageContent</span></a><span class="symbol">, </span><span class="identifier">CodableMessage</span></code>
+<p>自定义表情 (收藏的表情) 和普通图片.</p>
+<p>最推荐的存储方式是存储图片原文件, 每次发送图片时都使用文件上传.
+在上传时服务器会根据其缓存情况回复已有的图片 ID 或要求客户端上传. 详见 <a href="../../net.mamoe.mirai.contact/-contact/upload-image.html">Contact.uploadImage</a></p>
+<h3><a href="../-message/to-string.html">toString</a> 和 <a href="../-message/content-to-string.html">contentToString</a></h3>
+<ul><li><a href="../-message/to-string.html">toString</a> 固定返回 <code>[mirai:image:&lt;ID&gt;]</code> 格式字符串, 其中 <code>&lt;ID&gt;</code> 代表 <a href="image-id.html">imageId</a>.</li>
+<li><a href="../-message/content-to-string.html">contentToString</a> 固定返回 "\[图片]"</li>
+</ul>
+<h3>上传和发送图片</h3>
+<p><strong>See Also</strong><br/>
+<p><a href="../../net.mamoe.mirai.contact/-contact/upload-image.html">Contact.uploadImage</a></p>
+<p><a href="../../net.mamoe.mirai.utils/send-image.html">Contact.sendImage</a></p>
+<p><a href="../send-to.html">Image.sendTo</a></p>
+<p><a href="../query-url.html">Image.queryUrl</a></p>
+<p><a href="#">Bot.queryImageUrl</a></p>
+<p><a href="../-flash-image/index.html">FlashImage</a></p>
+<p><a href="../flash.html">Image.flash</a></p>
+</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-key/index.html">Key</a></h4>
+</td>
+<td>
+<code><span class="keyword">companion</span> <span class="keyword">object </span><span class="identifier">Key</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Key</span><span class="symbol">&lt;</span><a href="./index.html"><span class="identifier">Image</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="image-id.html">imageId</a></h4>
+</td>
+<td>
+<p>图片的 id.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">imageId</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Companion Object Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="type-name.html">typeName</a></h4>
+</td>
+<td>
+<p>此 <a href="../-message/-key/index.html">Key</a> 指代的 <a href="../-message/index.html">Message</a> 类型名. 一般为 <code>class.simpleName</code>, 如 "QuoteReply", "PlainText"</p>
+<code><span class="keyword">val </span><span class="identifier">typeName</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../content.html">content</a></h4>
+</td>
+<td>
+<p><a href="../-message/content-to-string.html">Message.contentToString</a> 的捷径</p>
+<code><span class="keyword">val </span><a href="../-message/index.html"><span class="identifier">Message</span></a><span class="symbol">.</span><span class="identifier">content</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../md5.html">md5</a></h4>
+</td>
+<td>
+<p>计算图片的 md5 校验值.</p>
+<code><span class="keyword">val </span><a href="./index.html"><span class="identifier">Image</span></a><span class="symbol">.</span><span class="identifier">md5</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../flash.html">flash</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="./index.html"><span class="identifier">Image</span></a><span class="symbol">.</span><span class="identifier">flash</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-flash-image/index.html"><span class="identifier">FlashImage</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../flatten.html">flatten</a></h4>
+</td>
+<td>
+<p>扁平化 <a href="../-message/index.html">Message</a></p>
+<code><span class="keyword">fun </span><a href="../-message/index.html"><span class="identifier">Message</span></a><span class="symbol">.</span><span class="identifier">flatten</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/-sequence/index.html"><span class="identifier">Sequence</span></a><span class="symbol">&lt;</span><a href="../-single-message.html"><span class="identifier">SingleMessage</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../is-content-empty.html">isContentEmpty</a></h4>
+</td>
+<td>
+<p>判断消息内容是否为空.</p>
+<code><span class="keyword">fun </span><a href="../-message/index.html"><span class="identifier">Message</span></a><span class="symbol">.</span><span class="identifier">isContentEmpty</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../is-content-not-empty.html">isContentNotEmpty</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="../-message/index.html"><span class="identifier">Message</span></a><span class="symbol">.</span><span class="identifier">isContentNotEmpty</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../is-not-plain.html">isNotPlain</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="../-message/index.html"><span class="identifier">Message</span></a><span class="symbol">.</span><span class="identifier">isNotPlain</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../is-plain.html">isPlain</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="../-message/index.html"><span class="identifier">Message</span></a><span class="symbol">.</span><span class="identifier">isPlain</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../plus.html">plus</a></h4>
+</td>
+<td>
+<code><span class="keyword">suspend</span> <span class="keyword">operator</span> <span class="keyword">fun </span><a href="../-message/index.html"><span class="identifier">Message</span></a><span class="symbol">.</span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data$plus(net.mamoe.mirai.message.data.Message, kotlinx.coroutines.flow.Flow((net.mamoe.mirai.message.data.Message)))/another">another</span><span class="symbol">:</span>&nbsp;<span class="identifier">Flow</span><span class="symbol">&lt;</span><a href="../-message/index.html"><span class="identifier">Message</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-message-chain/index.html"><span class="identifier">MessageChain</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../query-url.html">queryUrl</a></h4>
+</td>
+<td>
+<p>查询原图下载链接.</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><a href="./index.html"><span class="identifier">Image</span></a><span class="symbol">.</span><span class="identifier">queryUrl</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../repeat.html">repeat</a></h4>
+</td>
+<td>
+<p>将此消息元素按顺序重复 <a href="../repeat.html#net.mamoe.mirai.message.data$repeat(net.mamoe.mirai.message.data.Message, kotlin.Int)/count">count</a> 次.</p>
+<code><span class="keyword">fun </span><a href="../-message/index.html"><span class="identifier">Message</span></a><span class="symbol">.</span><span class="identifier">repeat</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data$repeat(net.mamoe.mirai.message.data.Message, kotlin.Int)/count">count</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-message-chain/index.html"><span class="identifier">MessageChain</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../send-to.html">sendTo</a></h4>
+</td>
+<td>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">C</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.contact/-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">&gt;</span> <a href="../-message/index.html"><span class="identifier">Message</span></a><span class="symbol">.</span><span class="identifier">sendTo</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data$sendTo(net.mamoe.mirai.message.data.Message, net.mamoe.mirai.message.data.sendTo.C)/contact">contact</span><span class="symbol">:</span>&nbsp;<span class="identifier">C</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.message/-message-receipt/index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">C</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../times.html">times</a></h4>
+</td>
+<td>
+<p>将此消息元素按顺序重复 <a href="../times.html#net.mamoe.mirai.message.data$times(net.mamoe.mirai.message.data.Message, kotlin.Int)/count">count</a> 次.</p>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><a href="../-message/index.html"><span class="identifier">Message</span></a><span class="symbol">.</span><span class="identifier">times</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data$times(net.mamoe.mirai.message.data.Message, kotlin.Int)/count">count</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-message-chain/index.html"><span class="identifier">MessageChain</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../to-forward-message.html">toForwardMessage</a></h4>
+</td>
+<td>
+<p>转换为 <a href="../-forward-message/index.html">ForwardMessage</a></p>
+<code><span class="keyword">fun </span><a href="../-message/index.html"><span class="identifier">Message</span></a><span class="symbol">.</span><span class="identifier">toForwardMessage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data$toForwardMessage(net.mamoe.mirai.message.data.Message, net.mamoe.mirai.contact.User, kotlin.Int, net.mamoe.mirai.message.data.ForwardMessage.DisplayStrategy)/sender">sender</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.contact/-user/index.html"><span class="identifier">User</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.message.data$toForwardMessage(net.mamoe.mirai.message.data.Message, net.mamoe.mirai.contact.User, kotlin.Int, net.mamoe.mirai.message.data.ForwardMessage.DisplayStrategy)/time">time</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;currentTimeSeconds.toInt()<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.message.data$toForwardMessage(net.mamoe.mirai.message.data.Message, net.mamoe.mirai.contact.User, kotlin.Int, net.mamoe.mirai.message.data.ForwardMessage.DisplayStrategy)/displayStrategy">displayStrategy</span><span class="symbol">:</span>&nbsp;<span class="identifier">DisplayStrategy</span>&nbsp;<span class="symbol">=</span>&nbsp;DisplayStrategy<span class="symbol">)</span><span class="symbol">: </span><a href="../-forward-message/index.html"><span class="identifier">ForwardMessage</span></a></code><br/>
+<code><span class="keyword">fun </span><a href="../-message/index.html"><span class="identifier">Message</span></a><span class="symbol">.</span><span class="identifier">toForwardMessage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data$toForwardMessage(net.mamoe.mirai.message.data.Message, kotlin.Long, kotlin.String, kotlin.Int, net.mamoe.mirai.message.data.ForwardMessage.DisplayStrategy)/senderId">senderId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.message.data$toForwardMessage(net.mamoe.mirai.message.data.Message, kotlin.Long, kotlin.String, kotlin.Int, net.mamoe.mirai.message.data.ForwardMessage.DisplayStrategy)/senderName">senderName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.message.data$toForwardMessage(net.mamoe.mirai.message.data.Message, kotlin.Long, kotlin.String, kotlin.Int, net.mamoe.mirai.message.data.ForwardMessage.DisplayStrategy)/time">time</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;currentTimeSeconds.toInt()<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.message.data$toForwardMessage(net.mamoe.mirai.message.data.Message, kotlin.Long, kotlin.String, kotlin.Int, net.mamoe.mirai.message.data.ForwardMessage.DisplayStrategy)/displayStrategy">displayStrategy</span><span class="symbol">:</span>&nbsp;<span class="identifier">DisplayStrategy</span>&nbsp;<span class="symbol">=</span>&nbsp;DisplayStrategy<span class="symbol">)</span><span class="symbol">: </span><a href="../-forward-message/index.html"><span class="identifier">ForwardMessage</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

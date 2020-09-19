@@ -1,0 +1,20 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>broadcast - mirai-core</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="index.html">net.mamoe.mirai.event</a>&nbsp;/&nbsp;<a href="./broadcast.html">broadcast</a><br/>
+<br/>
+<h1>broadcast</h1>
+<a name="net.mamoe.mirai.event$broadcast(net.mamoe.mirai.event.broadcast.E)"></a>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">E</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-event/index.html"><span class="identifier">Event</span></a><span class="symbol">&gt;</span> <span class="identifier">E</span><span class="symbol">.</span><span class="identifier">broadcast</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">E</span></code>
+<p>广播一个事件的唯一途径.</p>
+<p>当事件被实现为 Kotlin <code>object</code> 时, 同一时刻只能有一个 <a href="./broadcast.html">广播</a> 存在.
+较晚执行的 <a href="./broadcast.html">广播</a> 将会挂起协程并等待之前的广播任务结束.</p>
+<p><strong>See Also</strong><br/>
+<p><a href="__broadcast-java.html">__broadcastJava</a></p>
+</p>
+</BODY>
+</HTML>

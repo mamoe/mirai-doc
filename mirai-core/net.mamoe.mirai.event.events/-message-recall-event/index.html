@@ -1,0 +1,108 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MessageRecallEvent - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.event.events</a>&nbsp;/&nbsp;<a href="./index.html">MessageRecallEvent</a><br/>
+<br/>
+<h1>MessageRecallEvent</h1>
+<code><span class="keyword">sealed</span> <span class="keyword">class </span><span class="identifier">MessageRecallEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-bot-event/index.html"><span class="identifier">BotEvent</span></a><span class="symbol">, </span><a href="../../net.mamoe.mirai.event/-abstract-event/index.html"><span class="identifier">AbstractEvent</span></a></code>
+<p>消息撤回事件. 可是任意消息被任意人撤回.</p>
+<p><strong>See Also</strong><br/>
+<p><a href="../../net.mamoe.mirai.contact/recall.html">Contact.recall</a></p>
+</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-friend-recall/index.html">FriendRecall</a></h4>
+</td>
+<td>
+<p>好友消息撤回事件</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">FriendRecall</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">MessageRecallEvent</span></a><span class="symbol">, </span><span class="identifier">Packet</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-group-recall/index.html">GroupRecall</a></h4>
+</td>
+<td>
+<p>群消息撤回事件.</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">GroupRecall</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">MessageRecallEvent</span></a><span class="symbol">, </span><a href="../-group-operable-event/index.html"><span class="identifier">GroupOperableEvent</span></a><span class="symbol">, </span><span class="identifier">Packet</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="author-id.html">authorId</a></h4>
+</td>
+<td>
+<p>消息原发送人</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">authorId</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="message-id.html">messageId</a></h4>
+</td>
+<td>
+<p>消息 id.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">messageId</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="message-internal-id.html">messageInternalId</a></h4>
+</td>
+<td>
+<p>消息内部 id.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">messageInternalId</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="message-time.html">messageTime</a></h4>
+</td>
+<td>
+<p>原发送时间</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">messageTime</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../is-by-bot.html">isByBot</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><a href="./index.html"><span class="identifier">MessageRecallEvent</span></a><span class="symbol">.</span><span class="identifier">isByBot</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../../net.mamoe.mirai.event/__broadcast-java.html">__broadcastJava</a></h4>
+</td>
+<td>
+<p>在 Java 广播一个事件的唯一途径.</p>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">E</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.event/-event/index.html"><span class="identifier">Event</span></a><span class="symbol">&gt;</span> <span class="identifier">E</span><span class="symbol">.</span><span class="identifier">__broadcastJava</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">E</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../../net.mamoe.mirai.event/broadcast.html">broadcast</a></h4>
+</td>
+<td>
+<p>广播一个事件的唯一途径.</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">E</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.event/-event/index.html"><span class="identifier">Event</span></a><span class="symbol">&gt;</span> <span class="identifier">E</span><span class="symbol">.</span><span class="identifier">broadcast</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">E</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

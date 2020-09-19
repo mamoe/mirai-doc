@@ -1,0 +1,25 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>incoming - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.event</a>&nbsp;/&nbsp;<a href="index.html">kotlinx.coroutines.CoroutineScope</a>&nbsp;/&nbsp;<a href="./incoming.html">incoming</a><br/>
+<br/>
+<h1>incoming</h1>
+<a name="net.mamoe.mirai.event$incoming(kotlinx.coroutines.CoroutineScope, kotlin.coroutines.CoroutineContext, net.mamoe.mirai.event.Listener.ConcurrencyKind, net.mamoe.mirai.event.Listener.EventPriority, kotlin.Int)"></a>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="keyword">reified</span>&nbsp;<span class="identifier">E</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-event/index.html"><span class="identifier">Event</span></a><span class="symbol">&gt;</span> <span class="identifier">CoroutineScope</span><span class="symbol">.</span><span class="identifier">incoming</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.event$incoming(kotlinx.coroutines.CoroutineScope, kotlin.coroutines.CoroutineContext, net.mamoe.mirai.event.Listener.ConcurrencyKind, net.mamoe.mirai.event.Listener.EventPriority, kotlin.Int)/coroutineContext">coroutineContext</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.coroutines/-coroutine-context/index.html"><span class="identifier">CoroutineContext</span></a>&nbsp;<span class="symbol">=</span>&nbsp;EmptyCoroutineContext<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.event$incoming(kotlinx.coroutines.CoroutineScope, kotlin.coroutines.CoroutineContext, net.mamoe.mirai.event.Listener.ConcurrencyKind, net.mamoe.mirai.event.Listener.EventPriority, kotlin.Int)/concurrencyKind">concurrencyKind</span><span class="symbol">:</span>&nbsp;<span class="identifier">ConcurrencyKind</span>&nbsp;<span class="symbol">=</span>&nbsp;Listener.ConcurrencyKind.CONCURRENT<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.event$incoming(kotlinx.coroutines.CoroutineScope, kotlin.coroutines.CoroutineContext, net.mamoe.mirai.event.Listener.ConcurrencyKind, net.mamoe.mirai.event.Listener.EventPriority, kotlin.Int)/priority">priority</span><span class="symbol">:</span>&nbsp;<span class="identifier">EventPriority</span>&nbsp;<span class="symbol">=</span>&nbsp;EventPriority.MONITOR<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.event$incoming(kotlinx.coroutines.CoroutineScope, kotlin.coroutines.CoroutineContext, net.mamoe.mirai.event.Listener.ConcurrencyKind, net.mamoe.mirai.event.Listener.EventPriority, kotlin.Int)/capacity">capacity</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;Channel.UNLIMITED<span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ReceiveChannel</span><span class="symbol">&lt;</span><span class="identifier">E</span><span class="symbol">&gt;</span></code>
+<p>打开一个指定事件的接收通道</p>
+<h3>Parameters</h3>
+<p><a name="capacity"></a>
+<code>capacity</code> - 同 <a href="#">Channel</a> 的参数, 参见 <a href="#">Channel.Factory</a> 中的常量.</p>
+<p><strong>See Also</strong><br/>
+<p><a href="incoming.html#net.mamoe.mirai.event$incoming(kotlinx.coroutines.CoroutineScope, kotlin.coroutines.CoroutineContext, net.mamoe.mirai.event.Listener.ConcurrencyKind, net.mamoe.mirai.event.Listener.EventPriority, kotlin.Int)/capacity">capacity</a></p>
+<p><a href="subscribe.html">subscribe</a></p>
+<p><a href="#">subscribeFriendMessages</a></p>
+<p><a href="#">subscribeMessages</a></p>
+<p><a href="#">subscribeGroupMessages</a></p>
+</p>
+</BODY>
+</HTML>

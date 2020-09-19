@@ -1,0 +1,30 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>selectMessages - mirai-core</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="index.html">net.mamoe.mirai.event</a>&nbsp;/&nbsp;<a href="./select-messages.html">selectMessages</a><br/>
+<br/>
+<h1>selectMessages</h1>
+<a name="net.mamoe.mirai.event$selectMessages(net.mamoe.mirai.event.selectMessages.T, kotlin.Long, kotlin.Boolean, net.mamoe.mirai.event.Listener.EventPriority, kotlin.Function1((net.mamoe.mirai.event.MessageSelectBuilder((net.mamoe.mirai.event.selectMessages.T, net.mamoe.mirai.event.selectMessages.R)), kotlin.Unit)))"></a>
+<code><span class="keyword">suspend</span> <span class="keyword">inline</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="keyword">reified</span>&nbsp;<span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.message/-message-event/index.html"><span class="identifier">MessageEvent</span></a><span class="symbol">, </span><span class="identifier">R</span><span class="symbol">&gt;</span> <span class="identifier">T</span><span class="symbol">.</span><span class="identifier">selectMessages</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.event$selectMessages(net.mamoe.mirai.event.selectMessages.T, kotlin.Long, kotlin.Boolean, net.mamoe.mirai.event.Listener.EventPriority, kotlin.Function1((net.mamoe.mirai.event.MessageSelectBuilder((net.mamoe.mirai.event.selectMessages.T, net.mamoe.mirai.event.selectMessages.R)), kotlin.Unit)))/timeoutMillis">timeoutMillis</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a>&nbsp;<span class="symbol">=</span>&nbsp;-1<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.event$selectMessages(net.mamoe.mirai.event.selectMessages.T, kotlin.Long, kotlin.Boolean, net.mamoe.mirai.event.Listener.EventPriority, kotlin.Function1((net.mamoe.mirai.event.MessageSelectBuilder((net.mamoe.mirai.event.selectMessages.T, net.mamoe.mirai.event.selectMessages.R)), kotlin.Unit)))/filterContext">filterContext</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;true<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.event$selectMessages(net.mamoe.mirai.event.selectMessages.T, kotlin.Long, kotlin.Boolean, net.mamoe.mirai.event.Listener.EventPriority, kotlin.Function1((net.mamoe.mirai.event.MessageSelectBuilder((net.mamoe.mirai.event.selectMessages.T, net.mamoe.mirai.event.selectMessages.R)), kotlin.Unit)))/priority">priority</span><span class="symbol">:</span>&nbsp;<span class="identifier">EventPriority</span>&nbsp;<span class="symbol">=</span>&nbsp;EventPriority.MONITOR<span class="symbol">, </span><span class="keyword">crossinline</span> <span class="identifier" id="net.mamoe.mirai.event$selectMessages(net.mamoe.mirai.event.selectMessages.T, kotlin.Long, kotlin.Boolean, net.mamoe.mirai.event.Listener.EventPriority, kotlin.Function1((net.mamoe.mirai.event.MessageSelectBuilder((net.mamoe.mirai.event.selectMessages.T, net.mamoe.mirai.event.selectMessages.R)), kotlin.Unit)))/selectBuilder">selectBuilder</span><span class="symbol">:</span>&nbsp;<a href="-message-select-builder.html"><span class="identifier">MessageSelectBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">,</span>&nbsp;<span class="identifier">R</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">R</span></code>
+<p>挂起当前协程, 等待任意一个事件监听器触发后返回其返回值.</p>
+<p>创建的所有事件监听器都会判断发送人信息 (<a href="../net.mamoe.mirai.message/is-context-identical-with.html">isContextIdenticalWith</a>), 监听之后的所有消息.</p>
+<p><a href="select-messages.html#net.mamoe.mirai.event$selectMessages(net.mamoe.mirai.event.selectMessages.T, kotlin.Long, kotlin.Boolean, net.mamoe.mirai.event.Listener.EventPriority, kotlin.Function1((net.mamoe.mirai.event.MessageSelectBuilder((net.mamoe.mirai.event.selectMessages.T, net.mamoe.mirai.event.selectMessages.R)), kotlin.Unit)))/selectBuilder">selectBuilder</a> DSL 类似于 <a href="#">CoroutineScope.subscribeMessages</a> 的 DSL, 屏蔽了一些 <code>reply</code> DSL 以确保类型安全</p>
+<pre><code class="lang-kotlin">val value: String = selectMessages {
+  "hello" { "111" }
+  "hi" { "222" }
+  startsWith("/") { it }
+  default { "default" }
+}
+</code></pre>
+<h3>Parameters</h3>
+<p><a name="timeoutMillis"></a>
+<code>timeoutMillis</code> - 超时. 单位为毫秒. <code>-1</code> 为不限制</p>
+<p><strong>See Also</strong><br/>
+<p><a href="../net.mamoe.mirai.message/next-message.html">nextMessage</a></p>
+</p>
+</BODY>
+</HTML>

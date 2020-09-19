@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ForwardMessage.<init> - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.message.data</a>&nbsp;/&nbsp;<a href="index.html">ForwardMessage</a>&nbsp;/&nbsp;<a href="./-init-.html">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="net.mamoe.mirai.message.data.ForwardMessage$&lt;init&gt;(kotlin.collections.Collection((net.mamoe.mirai.message.data.ForwardMessage.INode)), net.mamoe.mirai.message.data.ForwardMessage.DisplayStrategy)"></a>
+<code><span class="identifier">ForwardMessage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.ForwardMessage$<init>(kotlin.collections.Collection((net.mamoe.mirai.message.data.ForwardMessage.INode)), net.mamoe.mirai.message.data.ForwardMessage.DisplayStrategy)/nodeList">nodeList</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/index.html"><span class="identifier">Collection</span></a><span class="symbol">&lt;</span><span class="identifier">INode</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.message.data.ForwardMessage$<init>(kotlin.collections.Collection((net.mamoe.mirai.message.data.ForwardMessage.INode)), net.mamoe.mirai.message.data.ForwardMessage.DisplayStrategy)/displayStrategy">displayStrategy</span><span class="symbol">:</span>&nbsp;<span class="identifier">DisplayStrategy</span>&nbsp;<span class="symbol">=</span>&nbsp;DisplayStrategy.Default<span class="symbol">)</span></code>
+<p>合并转发消息</p>
+<h2>显示方案</h2>
+<h3>移动端</h3>
+<p>在移动客户端将会显示为卡片</p>
+<p><code>&lt;title&gt;</code>: <a href="-display-strategy/generate-title.html">DisplayStrategy.generateTitle</a></p>
+<p><code>&lt;preview&gt;</code>: <a href="-display-strategy/generate-preview.html">DisplayStrategy.generatePreview</a></p>
+<p><code>&lt;summary&gt;</code>: <a href="-display-strategy/generate-summary.html">DisplayStrategy.generateSummary</a></p>
+<pre><code>|-------------------------|
+| &lt;title&gt;                 |
+| &lt;preview&gt;               |
+|-------------------------|
+| &lt;summary&gt;               |
+|-------------------------|
+</code></pre>
+<p>默认显示方案:</p>
+<pre><code>|-------------------------|
+| 群聊的聊天记录             |
+| &lt;消息 1&gt;                 |
+| &lt;消息 2&gt;                 |
+| &lt;消息 3&gt;                 |
+|-------------------------|
+| 查看 3 条转发消息          |
+|-------------------------|
+</code></pre>
+<h3>PC 端</h3>
+<p>在部分 PC 端显示为类似移动端的卡片, 在其他 PC 端显示为以下格式</p>
+<pre><code>鸽子 A 2020/04/23 11:27:54
+咕
+鸽子 B 2020/04/23 11:27:55
+咕
+鸽子 C 1970/01/01 08:00:00
+咕咕咕
+</code></pre>
+<h2>构造</h2>
+<ul><li>使用 <a href="../build-forward-message.html">DSL</a></li>
+<li>通过 <a href="../../net.mamoe.mirai.message/-message-event/index.html">MessageEvent</a> 集合转换: <a href="../kotlin.collections.-iterable/to-forward-message.html">toForwardMessage</a></li>
+</ul>
+<h3>Parameters</h3>
+<p><a name="displayStrategy"></a>
+<code>displayStrategy</code> - 卡片显示方案</p>
+<p><strong>See Also</strong><br/>
+<p><a href="../build-forward-message.html">buildForwardMessage</a></p>
+</p>
+</BODY>
+</HTML>

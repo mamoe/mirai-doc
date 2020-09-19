@@ -1,0 +1,102 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>LoginSolver - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.utils</a>&nbsp;/&nbsp;<a href="./index.html">LoginSolver</a><br/>
+<br/>
+<h1>LoginSolver</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">LoginSolver</span></code>
+<p>验证码, 设备锁解决器</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<p>验证码, 设备锁解决器</p>
+<code><span class="identifier">LoginSolver</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="on-solve-pic-captcha.html">onSolvePicCaptcha</a></h4>
+</td>
+<td>
+<p>处理图片验证码.
+返回 null 以表示无法处理验证码, 将会刷新验证码或重试登录.
+抛出一个 <a href="../../net.mamoe.mirai.network/-login-failed-exception/index.html">LoginFailedException</a> 以正常地终止登录, 抛出任意其他 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-exception/index.html">Exception</a> 将视为异常终止</p>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">onSolvePicCaptcha</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.LoginSolver$onSolvePicCaptcha(net.mamoe.mirai.Bot, kotlin.ByteArray)/bot">bot</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai/-bot/index.html"><span class="identifier">Bot</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils.LoginSolver$onSolvePicCaptcha(net.mamoe.mirai.Bot, kotlin.ByteArray)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="on-solve-slider-captcha.html">onSolveSliderCaptcha</a></h4>
+</td>
+<td>
+<p>处理滑动验证码.
+返回 null 以表示无法处理验证码, 将会刷新验证码或重试登录.
+抛出一个 <a href="../../net.mamoe.mirai.network/-login-failed-exception/index.html">LoginFailedException</a> 以正常地终止登录, 抛出任意其他 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-exception/index.html">Exception</a> 将视为异常终止</p>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">onSolveSliderCaptcha</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.LoginSolver$onSolveSliderCaptcha(net.mamoe.mirai.Bot, kotlin.String)/bot">bot</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai/-bot/index.html"><span class="identifier">Bot</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils.LoginSolver$onSolveSliderCaptcha(net.mamoe.mirai.Bot, kotlin.String)/url">url</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="on-solve-unsafe-device-login-verify.html">onSolveUnsafeDeviceLoginVerify</a></h4>
+</td>
+<td>
+<p>处理不安全设备验证.
+在处理完成后返回任意内容 (包含 <code>null</code>) 均视为处理成功.
+抛出一个 <a href="../../net.mamoe.mirai.network/-login-failed-exception/index.html">LoginFailedException</a> 以正常地终止登录, 抛出任意其他 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-exception/index.html">Exception</a> 将视为异常终止.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">onSolveUnsafeDeviceLoginVerify</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.LoginSolver$onSolveUnsafeDeviceLoginVerify(net.mamoe.mirai.Bot, kotlin.String)/bot">bot</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai/-bot/index.html"><span class="identifier">Bot</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils.LoginSolver$onSolveUnsafeDeviceLoginVerify(net.mamoe.mirai.Bot, kotlin.String)/url">url</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Companion Object Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-default.html">Default</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">Default</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">LoginSolver</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../-default-login-solver/index.html">DefaultLoginSolver</a></h4>
+</td>
+<td>
+<p>自动选择 <a href="../-swing-solver/index.html">SwingSolver</a> 或 <a href="../-standard-char-image-login-solver/index.html">StandardCharImageLoginSolver</a></p>
+<code><span class="keyword">class </span><span class="identifier">DefaultLoginSolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">LoginSolver</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../-standard-char-image-login-solver/index.html">StandardCharImageLoginSolver</a></h4>
+</td>
+<td>
+<p>使用字符图片展示验证码, 使用 <a href="#">input</a> 获取输入, 使用 <a href="#">overrideLogger</a> 输出</p>
+<code><span class="keyword">class </span><span class="identifier">StandardCharImageLoginSolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">LoginSolver</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../-swing-solver/index.html">SwingSolver</a></h4>
+</td>
+<td>
+<code><span class="keyword">object </span><span class="identifier">SwingSolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">LoginSolver</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,22 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>toExternalImage - mirai-core</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="index.html">net.mamoe.mirai.utils</a>&nbsp;/&nbsp;<a href="./to-external-image.html">toExternalImage</a><br/>
+<br/>
+<h1>toExternalImage</h1>
+<a name="net.mamoe.mirai.utils$toExternalImage(java.io.File, kotlin.Boolean)"></a>
+<code><span class="identifier">@JvmOverloads</span> <span class="keyword">fun </span><a href="https://docs.oracle.com/javase/6/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">.</span><span class="identifier">toExternalImage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$toExternalImage(java.io.File, kotlin.Boolean)/deleteOnClose">deleteOnClose</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span class="symbol">)</span><span class="symbol">: </span><a href="-external-image/index.html"><span class="identifier">ExternalImage</span></a></code>
+<p>将文件作为 <a href="-external-image/index.html">ExternalImage</a> 使用. 只会在需要的时候打开文件并读取数据.</p>
+<h3>Parameters</h3>
+<p><a name="deleteOnClose"></a>
+<code>deleteOnClose</code> - 若为 <code>true</code>, 图片发送后将会删除这个文件</p>
+<a name="net.mamoe.mirai.utils$toExternalImage(java.io.InputStream)"></a>
+<code><span class="keyword">fun </span><a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html"><span class="identifier">InputStream</span></a><span class="symbol">.</span><span class="identifier">toExternalImage</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-external-image/index.html"><span class="identifier">ExternalImage</span></a></code>
+<p>将 <a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html">InputStream</a> 委托为 <a href="-external-image/index.html">ExternalImage</a>.
+只会在上传图片时才读取 <a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html">InputStream</a> 的内容. 具体行为取决于相关 <a href="../net.mamoe.mirai/-bot/index.html">Bot</a> 的 <a href="-file-cache-strategy/index.html">FileCacheStrategy</a></p>
+</BODY>
+</HTML>

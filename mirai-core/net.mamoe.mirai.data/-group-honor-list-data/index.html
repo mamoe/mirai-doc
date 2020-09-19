@@ -1,0 +1,231 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>GroupHonorListData - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.data</a>&nbsp;/&nbsp;<a href="./index.html">GroupHonorListData</a><br/>
+<br/>
+<h1>GroupHonorListData</h1>
+<code><span class="identifier">@MiraiExperimentalAPI</span> <span class="identifier">@SinceMirai</span><span class="symbol">(</span>"1.3.0"<span class="symbol">)</span> <span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">GroupHonorListData</span></code>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-actor/index.html">Actor</a></h4>
+</td>
+<td>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Actor</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-current-talkative/index.html">CurrentTalkative</a></h4>
+</td>
+<td>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">CurrentTalkative</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-group-honor-type-serializer/index.html">GroupHonorTypeSerializer</a></h4>
+</td>
+<td>
+<code><span class="keyword">object </span><span class="identifier">GroupHonorTypeSerializer</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">KSerializer</span><span class="symbol">&lt;</span><a href="../-group-honor-type/index.html"><span class="identifier">GroupHonorType</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-language/index.html">Language</a></h4>
+</td>
+<td>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Language</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-level-name/index.html">LevelName</a></h4>
+</td>
+<td>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">LevelName</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-tag/index.html">Tag</a></h4>
+</td>
+<td>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Tag</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-talkative/index.html">Talkative</a></h4>
+</td>
+<td>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Talkative</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<code><span class="identifier">GroupHonorListData</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.data.GroupHonorListData$<init>(kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Language)), kotlin.String, net.mamoe.mirai.data.GroupHonorType, kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Talkative)), net.mamoe.mirai.data.GroupHonorListData.CurrentTalkative, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), net.mamoe.mirai.data.GroupHonorListData.LevelName, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.Map((kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)))), kotlin.collections.Map((kotlin.String, kotlin.Boolean)), kotlin.String, kotlin.Int, kotlin.String, kotlin.Boolean, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)))/acceptLanguages">acceptLanguages</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><span class="identifier">Language</span><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.data.GroupHonorListData$<init>(kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Language)), kotlin.String, net.mamoe.mirai.data.GroupHonorType, kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Talkative)), net.mamoe.mirai.data.GroupHonorListData.CurrentTalkative, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), net.mamoe.mirai.data.GroupHonorListData.LevelName, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.Map((kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)))), kotlin.collections.Map((kotlin.String, kotlin.Boolean)), kotlin.String, kotlin.Int, kotlin.String, kotlin.Boolean, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)))/gc">gc</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.data.GroupHonorListData$<init>(kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Language)), kotlin.String, net.mamoe.mirai.data.GroupHonorType, kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Talkative)), net.mamoe.mirai.data.GroupHonorListData.CurrentTalkative, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), net.mamoe.mirai.data.GroupHonorListData.LevelName, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.Map((kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)))), kotlin.collections.Map((kotlin.String, kotlin.Boolean)), kotlin.String, kotlin.Int, kotlin.String, kotlin.Boolean, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="../-group-honor-type/index.html"><span class="identifier">GroupHonorType</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.data.GroupHonorListData$<init>(kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Language)), kotlin.String, net.mamoe.mirai.data.GroupHonorType, kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Talkative)), net.mamoe.mirai.data.GroupHonorListData.CurrentTalkative, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), net.mamoe.mirai.data.GroupHonorListData.LevelName, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.Map((kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)))), kotlin.collections.Map((kotlin.String, kotlin.Boolean)), kotlin.String, kotlin.Int, kotlin.String, kotlin.Boolean, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)))/uin">uin</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.data.GroupHonorListData$<init>(kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Language)), kotlin.String, net.mamoe.mirai.data.GroupHonorType, kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Talkative)), net.mamoe.mirai.data.GroupHonorListData.CurrentTalkative, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), net.mamoe.mirai.data.GroupHonorListData.LevelName, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.Map((kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)))), kotlin.collections.Map((kotlin.String, kotlin.Boolean)), kotlin.String, kotlin.Int, kotlin.String, kotlin.Boolean, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)))/talkativeList">talkativeList</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><span class="identifier">Talkative</span><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.data.GroupHonorListData$<init>(kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Language)), kotlin.String, net.mamoe.mirai.data.GroupHonorType, kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Talkative)), net.mamoe.mirai.data.GroupHonorListData.CurrentTalkative, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), net.mamoe.mirai.data.GroupHonorListData.LevelName, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.Map((kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)))), kotlin.collections.Map((kotlin.String, kotlin.Boolean)), kotlin.String, kotlin.Int, kotlin.String, kotlin.Boolean, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)))/currentTalkative">currentTalkative</span><span class="symbol">:</span>&nbsp;<span class="identifier">CurrentTalkative</span><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.data.GroupHonorListData$<init>(kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Language)), kotlin.String, net.mamoe.mirai.data.GroupHonorType, kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Talkative)), net.mamoe.mirai.data.GroupHonorListData.CurrentTalkative, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), net.mamoe.mirai.data.GroupHonorListData.LevelName, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.Map((kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)))), kotlin.collections.Map((kotlin.String, kotlin.Boolean)), kotlin.String, kotlin.Int, kotlin.String, kotlin.Boolean, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)))/actorList">actorList</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><span class="identifier">Actor</span><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.data.GroupHonorListData$<init>(kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Language)), kotlin.String, net.mamoe.mirai.data.GroupHonorType, kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Talkative)), net.mamoe.mirai.data.GroupHonorListData.CurrentTalkative, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), net.mamoe.mirai.data.GroupHonorListData.LevelName, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.Map((kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)))), kotlin.collections.Map((kotlin.String, kotlin.Boolean)), kotlin.String, kotlin.Int, kotlin.String, kotlin.Boolean, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)))/legendList">legendList</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><span class="identifier">Actor</span><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.data.GroupHonorListData$<init>(kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Language)), kotlin.String, net.mamoe.mirai.data.GroupHonorType, kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Talkative)), net.mamoe.mirai.data.GroupHonorListData.CurrentTalkative, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), net.mamoe.mirai.data.GroupHonorListData.LevelName, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.Map((kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)))), kotlin.collections.Map((kotlin.String, kotlin.Boolean)), kotlin.String, kotlin.Int, kotlin.String, kotlin.Boolean, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)))/newbieList">newbieList</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><span class="identifier">Actor</span><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.data.GroupHonorListData$<init>(kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Language)), kotlin.String, net.mamoe.mirai.data.GroupHonorType, kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Talkative)), net.mamoe.mirai.data.GroupHonorListData.CurrentTalkative, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), net.mamoe.mirai.data.GroupHonorListData.LevelName, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.Map((kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)))), kotlin.collections.Map((kotlin.String, kotlin.Boolean)), kotlin.String, kotlin.Int, kotlin.String, kotlin.Boolean, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)))/strongNewbieList">strongNewbieList</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><span class="identifier">Actor</span><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.data.GroupHonorListData$<init>(kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Language)), kotlin.String, net.mamoe.mirai.data.GroupHonorType, kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Talkative)), net.mamoe.mirai.data.GroupHonorListData.CurrentTalkative, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), net.mamoe.mirai.data.GroupHonorListData.LevelName, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.Map((kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)))), kotlin.collections.Map((kotlin.String, kotlin.Boolean)), kotlin.String, kotlin.Int, kotlin.String, kotlin.Boolean, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)))/emotionList">emotionList</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><span class="identifier">Actor</span><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.data.GroupHonorListData$<init>(kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Language)), kotlin.String, net.mamoe.mirai.data.GroupHonorType, kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Talkative)), net.mamoe.mirai.data.GroupHonorListData.CurrentTalkative, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), net.mamoe.mirai.data.GroupHonorListData.LevelName, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.Map((kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)))), kotlin.collections.Map((kotlin.String, kotlin.Boolean)), kotlin.String, kotlin.Int, kotlin.String, kotlin.Boolean, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)))/levelName">levelName</span><span class="symbol">:</span>&nbsp;<span class="identifier">LevelName</span><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.data.GroupHonorListData$<init>(kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Language)), kotlin.String, net.mamoe.mirai.data.GroupHonorType, kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Talkative)), net.mamoe.mirai.data.GroupHonorListData.CurrentTalkative, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), net.mamoe.mirai.data.GroupHonorListData.LevelName, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.Map((kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)))), kotlin.collections.Map((kotlin.String, kotlin.Boolean)), kotlin.String, kotlin.Int, kotlin.String, kotlin.Boolean, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)))/manageList">manageList</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><span class="identifier">Tag</span><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.data.GroupHonorListData$<init>(kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Language)), kotlin.String, net.mamoe.mirai.data.GroupHonorType, kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Talkative)), net.mamoe.mirai.data.GroupHonorListData.CurrentTalkative, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), net.mamoe.mirai.data.GroupHonorListData.LevelName, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.Map((kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)))), kotlin.collections.Map((kotlin.String, kotlin.Boolean)), kotlin.String, kotlin.Int, kotlin.String, kotlin.Boolean, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)))/exclusiveList">exclusiveList</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><span class="identifier">Tag</span><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.data.GroupHonorListData$<init>(kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Language)), kotlin.String, net.mamoe.mirai.data.GroupHonorType, kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Talkative)), net.mamoe.mirai.data.GroupHonorListData.CurrentTalkative, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), net.mamoe.mirai.data.GroupHonorListData.LevelName, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.Map((kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)))), kotlin.collections.Map((kotlin.String, kotlin.Boolean)), kotlin.String, kotlin.Int, kotlin.String, kotlin.Boolean, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)))/activeObj">activeObj</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><span class="identifier">Tag</span><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.data.GroupHonorListData$<init>(kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Language)), kotlin.String, net.mamoe.mirai.data.GroupHonorType, kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Talkative)), net.mamoe.mirai.data.GroupHonorListData.CurrentTalkative, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), net.mamoe.mirai.data.GroupHonorListData.LevelName, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.Map((kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)))), kotlin.collections.Map((kotlin.String, kotlin.Boolean)), kotlin.String, kotlin.Int, kotlin.String, kotlin.Boolean, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)))/showActiveObj">showActiveObj</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.data.GroupHonorListData$<init>(kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Language)), kotlin.String, net.mamoe.mirai.data.GroupHonorType, kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Talkative)), net.mamoe.mirai.data.GroupHonorListData.CurrentTalkative, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), net.mamoe.mirai.data.GroupHonorListData.LevelName, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.Map((kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)))), kotlin.collections.Map((kotlin.String, kotlin.Boolean)), kotlin.String, kotlin.Int, kotlin.String, kotlin.Boolean, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)))/myTitle">myTitle</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.data.GroupHonorListData$<init>(kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Language)), kotlin.String, net.mamoe.mirai.data.GroupHonorType, kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Talkative)), net.mamoe.mirai.data.GroupHonorListData.CurrentTalkative, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), net.mamoe.mirai.data.GroupHonorListData.LevelName, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.Map((kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)))), kotlin.collections.Map((kotlin.String, kotlin.Boolean)), kotlin.String, kotlin.Int, kotlin.String, kotlin.Boolean, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)))/myIndex">myIndex</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;0<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.data.GroupHonorListData$<init>(kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Language)), kotlin.String, net.mamoe.mirai.data.GroupHonorType, kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Talkative)), net.mamoe.mirai.data.GroupHonorListData.CurrentTalkative, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), net.mamoe.mirai.data.GroupHonorListData.LevelName, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.Map((kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)))), kotlin.collections.Map((kotlin.String, kotlin.Boolean)), kotlin.String, kotlin.Int, kotlin.String, kotlin.Boolean, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)))/myAvatar">myAvatar</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.data.GroupHonorListData$<init>(kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Language)), kotlin.String, net.mamoe.mirai.data.GroupHonorType, kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Talkative)), net.mamoe.mirai.data.GroupHonorListData.CurrentTalkative, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), net.mamoe.mirai.data.GroupHonorListData.LevelName, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.Map((kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)))), kotlin.collections.Map((kotlin.String, kotlin.Boolean)), kotlin.String, kotlin.Int, kotlin.String, kotlin.Boolean, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)))/hasServerError">hasServerError</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.data.GroupHonorListData$<init>(kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Language)), kotlin.String, net.mamoe.mirai.data.GroupHonorType, kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Talkative)), net.mamoe.mirai.data.GroupHonorListData.CurrentTalkative, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)), net.mamoe.mirai.data.GroupHonorListData.LevelName, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)), kotlin.collections.Map((kotlin.String, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Tag)))), kotlin.collections.Map((kotlin.String, kotlin.Boolean)), kotlin.String, kotlin.Int, kotlin.String, kotlin.Boolean, kotlin.collections.List((net.mamoe.mirai.data.GroupHonorListData.Actor)))/hwExcellentList">hwExcellentList</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><span class="identifier">Actor</span><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="accept-languages.html">acceptLanguages</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">acceptLanguages</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><span class="identifier">Language</span><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="active-obj.html">activeObj</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">activeObj</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><span class="identifier">Tag</span><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="actor-list.html">actorList</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">actorList</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><span class="identifier">Actor</span><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="current-talkative.html">currentTalkative</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">currentTalkative</span><span class="symbol">: </span><span class="identifier">CurrentTalkative</span><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="emotion-list.html">emotionList</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">emotionList</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><span class="identifier">Actor</span><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="exclusive-list.html">exclusiveList</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">exclusiveList</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><span class="identifier">Tag</span><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="gc.html">gc</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">gc</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="has-server-error.html">hasServerError</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">hasServerError</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="hw-excellent-list.html">hwExcellentList</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">hwExcellentList</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><span class="identifier">Actor</span><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="legend-list.html">legendList</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">legendList</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><span class="identifier">Actor</span><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="level-name.html">levelName</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">levelName</span><span class="symbol">: </span><span class="identifier">LevelName</span><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="manage-list.html">manageList</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">manageList</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><span class="identifier">Tag</span><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="my-avatar.html">myAvatar</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">myAvatar</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="my-index.html">myIndex</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">myIndex</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="my-title.html">myTitle</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">myTitle</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="newbie-list.html">newbieList</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">newbieList</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><span class="identifier">Actor</span><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="show-active-obj.html">showActiveObj</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">showActiveObj</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="strong-newbie-list.html">strongNewbieList</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">strongNewbieList</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><span class="identifier">Actor</span><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="talkative-list.html">talkativeList</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">talkativeList</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><span class="identifier">Talkative</span><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="type.html">type</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">type</span><span class="symbol">: </span><a href="../-group-honor-type/index.html"><span class="identifier">GroupHonorType</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="uin.html">uin</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">uin</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

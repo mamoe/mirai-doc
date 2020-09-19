@@ -1,0 +1,24 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Buffer.flip - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">java.nio</a>&nbsp;/&nbsp;<a href="index.html">Buffer</a>&nbsp;/&nbsp;<a href="./flip.html">flip</a><br/>
+<br/>
+<h1>flip</h1>
+<a name="java.nio.Buffer$flip()"></a>
+<code><span class="keyword">fun </span><span class="identifier">flip</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/Buffer.html"><span class="identifier">Buffer</span></a></code>
+<p>Flips this buffer.  The limit is set to the current position and then
+the position is set to zero.  If the mark is defined then it is
+discarded.</p>
+<p>After a sequence of channel-read or <em>put</em> operations, invoke
+this method to prepare for a sequence of channel-write or relative
+<em>get</em> operations.  For example:</p>
+<p>This method is often used in conjunction with the <a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html#compact()"> </a> method when transferring data from
+one place to another.</p>
+<p><strong>Return</strong><br/>
+This buffer</p>
+</BODY>
+</HTML>

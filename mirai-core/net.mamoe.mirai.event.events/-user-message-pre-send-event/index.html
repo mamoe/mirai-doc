@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>UserMessagePreSendEvent - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.event.events</a>&nbsp;/&nbsp;<a href="./index.html">UserMessagePreSendEvent</a><br/>
+<br/>
+<h1>UserMessagePreSendEvent</h1>
+<code><span class="identifier">@SinceMirai</span><span class="symbol">(</span>"1.1.0"<span class="symbol">)</span> <span class="keyword">sealed</span> <span class="keyword">class </span><span class="identifier">UserMessagePreSendEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-message-pre-send-event/index.html"><span class="identifier">MessagePreSendEvent</span></a></code>
+<p>在发送好友或群临时会话消息前广播的事件.</p>
+<p><strong>See Also</strong><br/>
+<p><a href="../-message-pre-send-event/index.html">MessagePreSendEvent</a></p>
+</p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="target.html">target</a></h4>
+</td>
+<td>
+<p>发信目标.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">target</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.contact/-user/index.html"><span class="identifier">User</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../../net.mamoe.mirai.event/__broadcast-java.html">__broadcastJava</a></h4>
+</td>
+<td>
+<p>在 Java 广播一个事件的唯一途径.</p>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">E</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.event/-event/index.html"><span class="identifier">Event</span></a><span class="symbol">&gt;</span> <span class="identifier">E</span><span class="symbol">.</span><span class="identifier">__broadcastJava</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">E</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../../net.mamoe.mirai.event/broadcast.html">broadcast</a></h4>
+</td>
+<td>
+<p>广播一个事件的唯一途径.</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">E</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.event/-event/index.html"><span class="identifier">Event</span></a><span class="symbol">&gt;</span> <span class="identifier">E</span><span class="symbol">.</span><span class="identifier">broadcast</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">E</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../-friend-message-pre-send-event/index.html">FriendMessagePreSendEvent</a></h4>
+</td>
+<td>
+<p>在发送好友消息前广播的事件.</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">FriendMessagePreSendEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">UserMessagePreSendEvent</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../-temp-message-pre-send-event/index.html">TempMessagePreSendEvent</a></h4>
+</td>
+<td>
+<p>在发送群临时会话消息前广播的事件.</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">TempMessagePreSendEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">UserMessagePreSendEvent</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

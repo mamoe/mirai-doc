@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>WeakRef - mirai-core</title>
+<link rel="stylesheet" href="../../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../../index.html">net.mamoe.mirai.utils</a>&nbsp;/&nbsp;<a href="../index.html">WeakRef</a>&nbsp;/&nbsp;<a href="./index.html">WeakRef</a><br/>
+<br/>
+<h1>WeakRef</h1>
+<code><span class="keyword">class </span><span class="identifier">WeakRef</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Weak Reference.
+On JVM, it is implemented as a typealias referring to <code>WeakReference</code> from JDK.</p>
+<p>Details:
+On JVM, instances of objects are stored in the JVM Heap and are accessed via references.
+GC(garbage collection) can automatically collect and release the memory used by objects that are not directly referred by any other.
+<a href="../index.html">WeakRef</a> is not a direct reference, therefore it doesn't hinder GC.</p>
+<p><strong>See Also</strong><br/>
+<p><a href="../../weak-ref.html">weakRef</a></p>
+<p><a href="../../unsafe-weak-ref.html">unsafeWeakRef</a></p>
+</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<p>Weak Reference.
+On JVM, it is implemented as a typealias referring to <code>WeakReference</code> from JDK.</p>
+<code><span class="identifier">WeakRef</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.WeakRef$<init>(net.mamoe.mirai.utils.WeakRef.T)/referent">referent</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="clear.html">clear</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">clear</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get.html">get</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span><span class="symbol">?</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

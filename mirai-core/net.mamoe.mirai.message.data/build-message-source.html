@@ -1,0 +1,38 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>buildMessageSource - mirai-core</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="index.html">net.mamoe.mirai.message.data</a>&nbsp;/&nbsp;<a href="./build-message-source.html">buildMessageSource</a><br/>
+<br/>
+<h1>buildMessageSource</h1>
+<a name="net.mamoe.mirai.message.data$buildMessageSource(net.mamoe.mirai.Bot, kotlin.Function1((net.mamoe.mirai.message.data.MessageSourceBuilder, kotlin.Unit)))"></a>
+<code><span class="identifier">@MiraiExperimentalAPI</span> <span class="keyword">fun </span><a href="../net.mamoe.mirai/-bot/index.html"><span class="identifier">Bot</span></a><span class="symbol">.</span><span class="identifier">buildMessageSource</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data$buildMessageSource(net.mamoe.mirai.Bot, kotlin.Function1((net.mamoe.mirai.message.data.MessageSourceBuilder, kotlin.Unit)))/block">block</span><span class="symbol">:</span>&nbsp;<a href="-message-source-builder/index.html"><span class="identifier">MessageSourceBuilder</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-message-source/index.html"><span class="identifier">MessageSource</span></a></code>
+<p>构建一个 <a href="-offline-message-source/index.html">OfflineMessageSource</a></p>
+<h3>参数</h3>
+<p>一个 <a href="-offline-message-source/index.html">OfflineMessageSource</a> 须要以下参数:</p>
+<ul><li>发送人和发送目标: 通过 <a href="-message-source-builder/send-to.html">MessageSourceBuilder.sendTo</a> 设置</li>
+<li>消息元数据 (即 <a href="-message-source/id.html">MessageSource.id</a>, <a href="-message-source/internal-id.html">MessageSource.internalId</a>, <a href="-message-source/time.html">MessageSource.time</a>)
+元数据用于 <a href="recall.html">撤回</a>, <a href="quote.html">引用回复</a>, 和官方客户端定位原消息.
+可通过 <a href="-message-source-builder/id.html">MessageSourceBuilder.id</a>, <a href="-message-source-builder/time.html">MessageSourceBuilder.time</a>, <a href="-message-source-builder/internal-id.html">MessageSourceBuilder.internalId</a> 设置
+可通过 <a href="-message-source-builder/metadata.html">MessageSourceBuilder.metadata</a> 从另一个 <a href="-message-source/index.html">MessageSource</a> 复制</li>
+<li>消息内容: 通过 <a href="-message-source-builder/messages.html">MessageSourceBuilder.messages</a> 设置</li>
+</ul>
+<h3>性质</h3>
+<ul><li>当两个消息的元数据相同时, 他们在群中会是同一条消息. 可通过此特性决定官方客户端 "定位原消息" 的目标</li>
+<li>发送人的信息和消息内容会在官方客户端显示在引用回复中.</li>
+</ul>
+<h3>实例</h3>
+<pre><code>bot.buildMessageSource {
+    bot sendTo target // 指定发送人和发送目标
+    metadata(source) // 从另一个消息源复制 id, internalId, time
+
+    messages { // 指定消息内容
+        +"hi"
+    }
+}
+</code></pre>
+</BODY>
+</HTML>

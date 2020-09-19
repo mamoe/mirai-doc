@@ -1,0 +1,450 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>net.mamoe.mirai.utils - mirai-core</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="./index.html">net.mamoe.mirai.utils</a><br/>
+<br/>
+<h2>Package net.mamoe.mirai.utils</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-bot-configuration/index.html">BotConfiguration</a></h4>
+</td>
+<td>
+<p><a href="../net.mamoe.mirai/-bot/index.html">Bot</a> 配置.</p>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">BotConfiguration</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-bot-configuration-base/index.html"><span class="identifier">BotConfigurationBase</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-bot-configuration-base/index.html">BotConfigurationBase</a></h4>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">BotConfigurationBase</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-context/index.html">Context</a></h4>
+</td>
+<td>
+<p>On Android, typealias to <code>android.content.Context</code>
+On JVM, empty class.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">Context</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-context-impl/index.html">ContextImpl</a></h4>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ContextImpl</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-context/index.html"><span class="identifier">Context</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-default-login-solver/index.html">DefaultLoginSolver</a></h4>
+</td>
+<td>
+<p>自动选择 <a href="-swing-solver/index.html">SwingSolver</a> 或 <a href="-standard-char-image-login-solver/index.html">StandardCharImageLoginSolver</a></p>
+<code><span class="keyword">class </span><span class="identifier">DefaultLoginSolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-login-solver/index.html"><span class="identifier">LoginSolver</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-device-info/index.html">DeviceInfo</a></h4>
+</td>
+<td>
+<p>设备信息. 可通过继承 <a href="-system-device-info/index.html">SystemDeviceInfo</a> 来在默认的基础上修改</p>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">DeviceInfo</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-device-info-data/index.html">DeviceInfoData</a></h4>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">DeviceInfoData</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-device-info/index.html"><span class="identifier">DeviceInfo</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-directory-logger/index.html">DirectoryLogger</a></h4>
+</td>
+<td>
+<p>将日志写入('append')到特定文件夹中的文件. 每日日志独立保存.</p>
+<code><span class="keyword">class </span><span class="identifier">DirectoryLogger</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-simple-logger/index.html"><span class="identifier">SimpleLogger</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-external-image/index.html">ExternalImage</a></h4>
+</td>
+<td>
+<p>外部图片. 图片数据还没有读取到内存.</p>
+<code><span class="keyword">class </span><span class="identifier">ExternalImage</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-file-cache-strategy/index.html">FileCacheStrategy</a></h4>
+</td>
+<td>
+<p>缓存策略.</p>
+<code><span class="keyword">interface </span><span class="identifier">FileCacheStrategy</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-logger-adapters/index.html">LoggerAdapters</a></h4>
+</td>
+<td>
+<code><span class="keyword">object </span><span class="identifier">LoggerAdapters</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-login-solver/index.html">LoginSolver</a></h4>
+</td>
+<td>
+<p>验证码, 设备锁解决器</p>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">LoginSolver</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-mirai-logger/index.html">MiraiLogger</a></h4>
+</td>
+<td>
+<p>日志记录器. 所有的输出均依赖于它.
+不同的对象可拥有只属于自己的 logger. 通过 <a href="-mirai-logger/identity.html">identity</a> 来区分.</p>
+<code><span class="keyword">interface </span><span class="identifier">MiraiLogger</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-mirai-logger-platform-base/index.html">MiraiLoggerPlatformBase</a></h4>
+</td>
+<td>
+<p>日志基类. 实现了 <a href="-mirai-logger-platform-base/follower.html">follower</a> 的调用传递.
+若 Mirai 自带的日志系统无法满足需求, 请继承这个类或 <a href="-platform-logger/index.html">PlatformLogger</a> 并实现其抽象函数.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">MiraiLoggerPlatformBase</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-mirai-logger/index.html"><span class="identifier">MiraiLogger</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-mirai-logger-with-switch/index.html">MiraiLoggerWithSwitch</a></h4>
+</td>
+<td>
+<p>带有开关的 Logger. 仅能通过 <a href="with-switch.html">MiraiLogger.withSwitch</a> 构造</p>
+<code><span class="keyword">class </span><span class="identifier">MiraiLoggerWithSwitch</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-mirai-logger-platform-base/index.html"><span class="identifier">MiraiLoggerPlatformBase</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-platform-logger/index.html">PlatformLogger</a></h4>
+</td>
+<td>
+<p>当前平台的默认的日志记录器.
+在 <em>JVM 控制台</em> 端的实现为 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/println.html">println</a>
+在 <em>Android</em> 端的实现为 <code>android.util.Log</code></p>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PlatformLogger</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-mirai-logger-platform-base/index.html"><span class="identifier">MiraiLoggerPlatformBase</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-silent-logger/index.html">SilentLogger</a></h4>
+</td>
+<td>
+<p>不做任何事情的 logger, keep silent.</p>
+<code><span class="keyword">object </span><span class="identifier">SilentLogger</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-platform-logger/index.html"><span class="identifier">PlatformLogger</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-simple-logger/index.html">SimpleLogger</a></h4>
+</td>
+<td>
+<p>简易日志记录, 所有类型日志都会被重定向 <a href="-simple-logger/logger.html">logger</a></p>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">SimpleLogger</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-mirai-logger-platform-base/index.html"><span class="identifier">MiraiLoggerPlatformBase</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-single-file-logger/index.html">SingleFileLogger</a></h4>
+</td>
+<td>
+<p>将日志写入('append')到特定文件.</p>
+<code><span class="keyword">class </span><span class="identifier">SingleFileLogger</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-platform-logger/index.html"><span class="identifier">PlatformLogger</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-standard-char-image-login-solver/index.html">StandardCharImageLoginSolver</a></h4>
+</td>
+<td>
+<p>使用字符图片展示验证码, 使用 <a href="#">input</a> 获取输入, 使用 <a href="#">overrideLogger</a> 输出</p>
+<code><span class="keyword">class </span><span class="identifier">StandardCharImageLoginSolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-login-solver/index.html"><span class="identifier">LoginSolver</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-swing-solver/index.html">SwingSolver</a></h4>
+</td>
+<td>
+<code><span class="keyword">object </span><span class="identifier">SwingSolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-login-solver/index.html"><span class="identifier">LoginSolver</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-system-device-info/index.html">SystemDeviceInfo</a></h4>
+</td>
+<td>
+<p>通过本机信息来获取设备信息.</p>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">SystemDeviceInfo</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-device-info/index.html"><span class="identifier">DeviceInfo</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-unsafe-weak-ref/index.html">UnsafeWeakRef</a></h4>
+</td>
+<td>
+<p>WeakRef that <code>getValue</code> for delegation throws an <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-illegal-state-exception/index.html">IllegalStateException</a> if the referent is released by GC. Therefore it returns notnull value only</p>
+<code><span class="keyword">class </span><span class="identifier">UnsafeWeakRef</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Annotations</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-mirai-experimental-a-p-i/index.html">MiraiExperimentalAPI</a></h4>
+</td>
+<td>
+<p>标记这个类, 类型, 函数, 属性, 字段, 或构造器为实验性的 API.</p>
+<code><span class="keyword">annotation</span> <span class="keyword">class </span><span class="identifier">MiraiExperimentalAPI</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-mirai-internal-a-p-i/index.html">MiraiInternalAPI</a></h4>
+</td>
+<td>
+<p>标记为一个仅供 Mirai 内部使用的 API.</p>
+<code><span class="keyword">annotation</span> <span class="keyword">class </span><span class="identifier">MiraiInternalAPI</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-since-mirai/index.html">SinceMirai</a></h4>
+</td>
+<td>
+<p>标记一个自 Mirai 某个版本起才支持或在这个版本修改过的 API.</p>
+<code><span class="keyword">annotation</span> <span class="keyword">class </span><span class="identifier">SinceMirai</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-unstable-external-image/index.html">UnstableExternalImage</a></h4>
+</td>
+<td>
+<p>mirai 将在未来重构 <a href="-external-image/index.html">ExternalImage</a> 相关 API, 请尽量避免使用他们.</p>
+<code><span class="keyword">annotation</span> <span class="keyword">class </span><span class="identifier">UnstableExternalImage</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-weak-ref-property/index.html">WeakRefProperty</a></h4>
+</td>
+<td>
+<p>Indicates that the property is delegated by a <a href="-weak-ref/index.html">WeakRef</a></p>
+<code><span class="keyword">annotation</span> <span class="keyword">class </span><span class="identifier">WeakRefProperty</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Exceptions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-over-file-size-max-exception/index.html">OverFileSizeMaxException</a></h4>
+</td>
+<td>
+<p>图片文件过大</p>
+<code><span class="keyword">class </span><span class="identifier">OverFileSizeMaxException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-illegal-state-exception/index.html"><span class="identifier">IllegalStateException</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extensions for External Classes</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="java.awt.image.-buffered-image/index.html">java.awt.image.BufferedImage</a></h4>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<h4><a href="java.lang.ref.-weak-reference/index.html">java.lang.ref.WeakReference</a></h4>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<h4><a href="kotlin.-int/index.html">kotlin.Int</a></h4>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<h4><a href="kotlin.time.-duration/index.html">kotlin.time.Duration</a></h4>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<h4><a href="kotlinx.coroutines.io.-byte-read-channel/index.html">kotlinx.coroutines.io.ByteReadChannel</a></h4>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="current-time-millis.html">currentTimeMillis</a></h4>
+</td>
+<td>
+<p>时间戳</p>
+<code><span class="keyword">val </span><span class="identifier">currentTimeMillis</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="current-time-seconds.html">currentTimeSeconds</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">currentTimeSeconds</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-default-logger.html">DefaultLogger</a></h4>
+</td>
+<td>
+<p>用于创建默认的日志记录器. 在一些需要使用日志的 Mirai 的组件, 如 <a href="../net.mamoe.mirai/-bot/index.html">Bot</a>, 都会通过这个函数构造日志记录器.</p>
+<code><span class="keyword">var </span><span class="identifier">DefaultLogger</span><span class="symbol">: </span><span class="symbol">(</span><span class="identifier">identity</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="-mirai-logger/index.html"><span class="identifier">MiraiLogger</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="debug.html">debug</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="-mirai-logger/index.html"><span class="identifier">MiraiLogger</span></a><span class="symbol">.</span><span class="identifier">debug</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$debug(net.mamoe.mirai.utils.MiraiLogger, kotlin.Function0((kotlin.String)))/lazyMessage">lazyMessage</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">fun </span><a href="-mirai-logger/index.html"><span class="identifier">MiraiLogger</span></a><span class="symbol">.</span><span class="identifier">debug</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$debug(net.mamoe.mirai.utils.MiraiLogger, kotlin.Function0((kotlin.String)), kotlin.Throwable)/lazyMessage">lazyMessage</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils$debug(net.mamoe.mirai.utils.MiraiLogger, kotlin.Function0((kotlin.String)), kotlin.Throwable)/e">e</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="error.html">error</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="-mirai-logger/index.html"><span class="identifier">MiraiLogger</span></a><span class="symbol">.</span><span class="identifier">error</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$error(net.mamoe.mirai.utils.MiraiLogger, kotlin.Function0((kotlin.String)))/lazyMessage">lazyMessage</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">fun </span><a href="-mirai-logger/index.html"><span class="identifier">MiraiLogger</span></a><span class="symbol">.</span><span class="identifier">error</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$error(net.mamoe.mirai.utils.MiraiLogger, kotlin.Function0((kotlin.String)), kotlin.Throwable)/lazyMessage">lazyMessage</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils$error(net.mamoe.mirai.utils.MiraiLogger, kotlin.Function0((kotlin.String)), kotlin.Throwable)/e">e</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-value.html">getValue</a></h4>
+</td>
+<td>
+<p>Provides delegate value.</p>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <a href="-unsafe-weak-ref/index.html"><span class="identifier">UnsafeWeakRef</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">getValue</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$getValue(net.mamoe.mirai.utils.UnsafeWeakRef((net.mamoe.mirai.utils.getValue.T)), kotlin.Any, kotlin.reflect.KProperty((kotlin.Any)))/thisRef">thisRef</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils$getValue(net.mamoe.mirai.utils.UnsafeWeakRef((net.mamoe.mirai.utils.getValue.T)), kotlin.Any, kotlin.reflect.KProperty((kotlin.Any)))/property">property</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-property/index.html"><span class="identifier">KProperty</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="info.html">info</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="-mirai-logger/index.html"><span class="identifier">MiraiLogger</span></a><span class="symbol">.</span><span class="identifier">info</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$info(net.mamoe.mirai.utils.MiraiLogger, kotlin.Function0((kotlin.String)))/lazyMessage">lazyMessage</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">fun </span><a href="-mirai-logger/index.html"><span class="identifier">MiraiLogger</span></a><span class="symbol">.</span><span class="identifier">info</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$info(net.mamoe.mirai.utils.MiraiLogger, kotlin.Function0((kotlin.String)), kotlin.Throwable)/lazyMessage">lazyMessage</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils$info(net.mamoe.mirai.utils.MiraiLogger, kotlin.Function0((kotlin.String)), kotlin.Throwable)/e">e</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="load-as-device-info.html">loadAsDeviceInfo</a></h4>
+</td>
+<td>
+<p>加载一个设备信息. 若文件不存在或为空则随机并创建一个设备信息保存.</p>
+<code><span class="keyword">fun </span><a href="https://docs.oracle.com/javase/6/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">.</span><span class="identifier">loadAsDeviceInfo</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$loadAsDeviceInfo(java.io.File, kotlinx.serialization.json.Json, net.mamoe.mirai.utils.Context)/json">json</span><span class="symbol">:</span>&nbsp;<span class="identifier">Json</span><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils$loadAsDeviceInfo(java.io.File, kotlinx.serialization.json.Json, net.mamoe.mirai.utils.Context)/context">context</span><span class="symbol">:</span>&nbsp;<a href="-context/index.html"><span class="identifier">Context</span></a>&nbsp;<span class="symbol">=</span>&nbsp;ContextImpl()<span class="symbol">)</span><span class="symbol">: </span><a href="-device-info/index.html"><span class="identifier">DeviceInfo</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="send-image.html">sendImage</a></h4>
+</td>
+<td>
+<p>将图片作为单独的消息发送给 <a href="send-image/-this-.html">this</a></p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">C</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.contact/-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">&gt;</span> <span class="identifier">C</span><span class="symbol">.</span><span class="identifier">sendImage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$sendImage(net.mamoe.mirai.utils.sendImage.C, net.mamoe.mirai.utils.ExternalImage)/image">image</span><span class="symbol">:</span>&nbsp;<a href="-external-image/index.html"><span class="identifier">ExternalImage</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../net.mamoe.mirai.message/-message-receipt/index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">C</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="send-to.html">sendTo</a></h4>
+</td>
+<td>
+<p>将图片作为单独的消息发送给指定联系人.</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">C</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.contact/-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">&gt;</span> <a href="-external-image/index.html"><span class="identifier">ExternalImage</span></a><span class="symbol">.</span><span class="identifier">sendTo</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$sendTo(net.mamoe.mirai.utils.ExternalImage, net.mamoe.mirai.utils.sendTo.C)/contact">contact</span><span class="symbol">:</span>&nbsp;<span class="identifier">C</span><span class="symbol">)</span><span class="symbol">: </span><a href="../net.mamoe.mirai.message/-message-receipt/index.html"><span class="identifier">MessageReceipt</span></a><span class="symbol">&lt;</span><span class="identifier">C</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="to-external-image.html">toExternalImage</a></h4>
+</td>
+<td>
+<p>将文件作为 <a href="-external-image/index.html">ExternalImage</a> 使用. 只会在需要的时候打开文件并读取数据.</p>
+<code><span class="keyword">fun </span><a href="https://docs.oracle.com/javase/6/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">.</span><span class="identifier">toExternalImage</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$toExternalImage(java.io.File, kotlin.Boolean)/deleteOnClose">deleteOnClose</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span class="symbol">)</span><span class="symbol">: </span><a href="-external-image/index.html"><span class="identifier">ExternalImage</span></a></code>
+<p>将 <a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html">InputStream</a> 委托为 <a href="-external-image/index.html">ExternalImage</a>.
+只会在上传图片时才读取 <a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html">InputStream</a> 的内容. 具体行为取决于相关 <a href="../net.mamoe.mirai/-bot/index.html">Bot</a> 的 <a href="-file-cache-strategy/index.html">FileCacheStrategy</a></p>
+<code><span class="keyword">fun </span><a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html"><span class="identifier">InputStream</span></a><span class="symbol">.</span><span class="identifier">toExternalImage</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-external-image/index.html"><span class="identifier">ExternalImage</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="unsafe-weak-ref.html">unsafeWeakRef</a></h4>
+</td>
+<td>
+<p>Provides a weak reference to <a href="unsafe-weak-ref/-this-.html">this</a>.
+The <code>getValue</code> for delegation throws an <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-illegal-state-exception/index.html">IllegalStateException</a> if the referent is released by GC. Therefore it returns notnull value only</p>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">T</span><span class="symbol">.</span><span class="identifier">unsafeWeakRef</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-unsafe-weak-ref/index.html"><span class="identifier">UnsafeWeakRef</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="upload.html">upload</a></h4>
+</td>
+<td>
+<p>上传图片并构造 <a href="../net.mamoe.mirai.message.data/-image/index.html">Image</a>.
+这个函数可能需消耗一段时间.</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><a href="-external-image/index.html"><span class="identifier">ExternalImage</span></a><span class="symbol">.</span><span class="identifier">upload</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$upload(net.mamoe.mirai.utils.ExternalImage, net.mamoe.mirai.contact.Contact)/contact">contact</span><span class="symbol">:</span>&nbsp;<a href="../net.mamoe.mirai.contact/-contact/index.html"><span class="identifier">Contact</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../net.mamoe.mirai.message.data/-image/index.html"><span class="identifier">Image</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="verbose.html">verbose</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="-mirai-logger/index.html"><span class="identifier">MiraiLogger</span></a><span class="symbol">.</span><span class="identifier">verbose</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$verbose(net.mamoe.mirai.utils.MiraiLogger, kotlin.Function0((kotlin.String)))/lazyMessage">lazyMessage</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">fun </span><a href="-mirai-logger/index.html"><span class="identifier">MiraiLogger</span></a><span class="symbol">.</span><span class="identifier">verbose</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$verbose(net.mamoe.mirai.utils.MiraiLogger, kotlin.Function0((kotlin.String)), kotlin.Throwable)/lazyMessage">lazyMessage</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils$verbose(net.mamoe.mirai.utils.MiraiLogger, kotlin.Function0((kotlin.String)), kotlin.Throwable)/e">e</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="warning.html">warning</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="-mirai-logger/index.html"><span class="identifier">MiraiLogger</span></a><span class="symbol">.</span><span class="identifier">warning</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$warning(net.mamoe.mirai.utils.MiraiLogger, kotlin.Function0((kotlin.String)))/lazyMessage">lazyMessage</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">fun </span><a href="-mirai-logger/index.html"><span class="identifier">MiraiLogger</span></a><span class="symbol">.</span><span class="identifier">warning</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$warning(net.mamoe.mirai.utils.MiraiLogger, kotlin.Function0((kotlin.String)), kotlin.Throwable)/lazyMessage">lazyMessage</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils$warning(net.mamoe.mirai.utils.MiraiLogger, kotlin.Function0((kotlin.String)), kotlin.Throwable)/e">e</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="weak-ref.html">weakRef</a></h4>
+</td>
+<td>
+<p>Provides a weak reference to <a href="weak-ref/-this-.html">this</a>
+The <code>getValue</code> for delegation returns <a href="weak-ref/-this-.html">this</a> when <a href="weak-ref/-this-.html">this</a> is not released by GC</p>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">T</span><span class="symbol">.</span><span class="identifier">weakRef</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-weak-ref/index.html"><span class="identifier">WeakRef</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="with-switch.html">withSwitch</a></h4>
+</td>
+<td>
+<p>给这个 logger 添加一个开关, 用于控制是否记录 log</p>
+<code><span class="keyword">fun </span><a href="-mirai-logger/index.html"><span class="identifier">MiraiLogger</span></a><span class="symbol">.</span><span class="identifier">withSwitch</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$withSwitch(net.mamoe.mirai.utils.MiraiLogger, kotlin.Boolean)/default">default</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;true<span class="symbol">)</span><span class="symbol">: </span><a href="-mirai-logger-with-switch/index.html"><span class="identifier">MiraiLoggerWithSwitch</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

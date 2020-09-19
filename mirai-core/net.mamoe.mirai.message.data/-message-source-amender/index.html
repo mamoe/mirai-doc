@@ -1,0 +1,81 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MessageSourceAmender - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.message.data</a>&nbsp;/&nbsp;<a href="./index.html">MessageSourceAmender</a><br/>
+<br/>
+<h1>MessageSourceAmender</h1>
+<code><span class="keyword">interface </span><span class="identifier">MessageSourceAmender</span></code>
+<p>仅于 <a href="../copy-amend.html">copyAmend</a> 中修改 <a href="../-message-source/index.html">MessageSource</a></p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="from-uin.html">fromUin</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">var </span><span class="identifier">fromUin</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="id.html">id</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">var </span><span class="identifier">id</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="internal-id.html">internalId</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">var </span><span class="identifier">internalId</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="kind.html">kind</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">var </span><span class="identifier">kind</span><span class="symbol">: </span><span class="identifier">Kind</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="original-message.html">originalMessage</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">var </span><span class="identifier">originalMessage</span><span class="symbol">: </span><a href="../-message-chain/index.html"><span class="identifier">MessageChain</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="target-uin.html">targetUin</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">var </span><span class="identifier">targetUin</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="time.html">time</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">var </span><span class="identifier">time</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="metadata-from.html">metadataFrom</a></h4>
+</td>
+<td>
+<p>从另一个 <a href="../-message-source/index.html">MessageSource</a> 中复制 <a href="id.html">id</a>, <a href="internal-id.html">internalId</a>, <a href="time.html">time</a></p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">metadataFrom</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageSourceAmender$metadataFrom(net.mamoe.mirai.message.data.MessageSource)/another">another</span><span class="symbol">:</span>&nbsp;<a href="../-message-source/index.html"><span class="identifier">MessageSource</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

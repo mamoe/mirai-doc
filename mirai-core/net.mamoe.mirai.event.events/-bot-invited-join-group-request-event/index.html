@@ -1,0 +1,125 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BotInvitedJoinGroupRequestEvent - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.event.events</a>&nbsp;/&nbsp;<a href="./index.html">BotInvitedJoinGroupRequestEvent</a><br/>
+<br/>
+<h1>BotInvitedJoinGroupRequestEvent</h1>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">BotInvitedJoinGroupRequestEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-bot-event/index.html"><span class="identifier">BotEvent</span></a><span class="symbol">, </span><span class="identifier">Packet</span><span class="symbol">, </span><a href="../../net.mamoe.mirai.event/-abstract-event/index.html"><span class="identifier">AbstractEvent</span></a></code>
+<p><a href="../../net.mamoe.mirai/-bot/index.html">Bot</a> 被邀请加入一个群.</p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="bot.html">bot</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">bot</span><span class="symbol">: </span><a href="../../net.mamoe.mirai/-bot/index.html"><span class="identifier">Bot</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="event-id.html">eventId</a></h4>
+</td>
+<td>
+<p>事件唯一识别号</p>
+<code><span class="keyword">val </span><span class="identifier">eventId</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="group-id.html">groupId</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">groupId</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="group-name.html">groupName</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">groupName</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="invitor.html">invitor</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">invitor</span><span class="symbol">: </span><a href="../../net.mamoe.mirai.contact/-friend/index.html"><span class="identifier">Friend</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="invitor-id.html">invitorId</a></h4>
+</td>
+<td>
+<p>邀请入群的账号的 id</p>
+<code><span class="keyword">val </span><span class="identifier">invitorId</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="invitor-nick.html">invitorNick</a></h4>
+</td>
+<td>
+<p>邀请人昵称</p>
+<code><span class="keyword">val </span><span class="identifier">invitorNick</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="__accept-blocking-for-java__.html">__acceptBlockingForJava__</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">__acceptBlockingForJava__</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="__ignore-blocking-for-java__.html">__ignoreBlockingForJava__</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">__ignoreBlockingForJava__</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="accept.html">accept</a></h4>
+</td>
+<td>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">accept</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="ignore.html">ignore</a></h4>
+</td>
+<td>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">ignore</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../../net.mamoe.mirai.event/__broadcast-java.html">__broadcastJava</a></h4>
+</td>
+<td>
+<p>在 Java 广播一个事件的唯一途径.</p>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">E</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.event/-event/index.html"><span class="identifier">Event</span></a><span class="symbol">&gt;</span> <span class="identifier">E</span><span class="symbol">.</span><span class="identifier">__broadcastJava</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">E</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../../net.mamoe.mirai.event/broadcast.html">broadcast</a></h4>
+</td>
+<td>
+<p>广播一个事件的唯一途径.</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">E</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.event/-event/index.html"><span class="identifier">Event</span></a><span class="symbol">&gt;</span> <span class="identifier">E</span><span class="symbol">.</span><span class="identifier">broadcast</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">E</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

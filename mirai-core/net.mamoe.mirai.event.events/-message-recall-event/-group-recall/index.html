@@ -1,0 +1,73 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MessageRecallEvent.GroupRecall - mirai-core</title>
+<link rel="stylesheet" href="../../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../../index.html">net.mamoe.mirai.event.events</a>&nbsp;/&nbsp;<a href="../index.html">MessageRecallEvent</a>&nbsp;/&nbsp;<a href="./index.html">GroupRecall</a><br/>
+<br/>
+<h1>GroupRecall</h1>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">GroupRecall</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../index.html"><span class="identifier">MessageRecallEvent</span></a><span class="symbol">, </span><a href="../../-group-operable-event/index.html"><span class="identifier">GroupOperableEvent</span></a><span class="symbol">, </span><span class="identifier">Packet</span></code>
+<p>群消息撤回事件.</p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="author-id.html">authorId</a></h4>
+</td>
+<td>
+<p>消息原发送人</p>
+<code><span class="keyword">val </span><span class="identifier">authorId</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="bot.html">bot</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">bot</span><span class="symbol">: </span><a href="../../../net.mamoe.mirai/-bot/index.html"><span class="identifier">Bot</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="group.html">group</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">group</span><span class="symbol">: </span><a href="../../../net.mamoe.mirai.contact/-group/index.html"><span class="identifier">Group</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="message-id.html">messageId</a></h4>
+</td>
+<td>
+<p>消息 id.</p>
+<code><span class="keyword">val </span><span class="identifier">messageId</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="message-internal-id.html">messageInternalId</a></h4>
+</td>
+<td>
+<p>消息内部 id.</p>
+<code><span class="keyword">val </span><span class="identifier">messageInternalId</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="message-time.html">messageTime</a></h4>
+</td>
+<td>
+<p>原发送时间</p>
+<code><span class="keyword">val </span><span class="identifier">messageTime</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="operator.html">operator</a></h4>
+</td>
+<td>
+<p>操作人. 为 null 时则为 <a href="../../../net.mamoe.mirai/-bot/index.html">Bot</a> 操作.</p>
+<code><span class="keyword">val </span><span class="identifier">operator</span><span class="symbol">: </span><a href="../../../net.mamoe.mirai.contact/-member/index.html"><span class="identifier">Member</span></a><span class="symbol">?</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

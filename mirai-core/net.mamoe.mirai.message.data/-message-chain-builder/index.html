@@ -1,0 +1,143 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MessageChainBuilder - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.message.data</a>&nbsp;/&nbsp;<a href="./index.html">MessageChainBuilder</a><br/>
+<br/>
+<h1>MessageChainBuilder</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">MessageChainBuilder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-single-message.html"><span class="identifier">SingleMessage</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-appendable/index.html"><span class="identifier">Appendable</span></a></code>
+<p><a href="../-message-chain/index.html">MessageChain</a> 构建器.
+多个连续的 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a> 会被连接为单个 <a href="../-plain-text/index.html">PlainText</a> 以优化性能.</p>
+<p><strong>注意:</strong> 无并发安全性.</p>
+<p><strong>See Also</strong><br/>
+<p><a href="../build-message-chain.html">buildMessageChain</a></p>
+<p><a href="as-message-chain.html">asMessageChain</a></p>
+</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<code><span class="identifier">MessageChainBuilder</span><span class="symbol">(</span><span class="symbol">)</span></code><br/>
+<code><span class="identifier">MessageChainBuilder</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageChainBuilder$<init>(kotlin.Int)/initialSize">initialSize</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="add.html">add</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">add</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageChainBuilder$add(net.mamoe.mirai.message.data.SingleMessage)/element">element</span><span class="symbol">:</span>&nbsp;<a href="../-single-message.html"><span class="identifier">SingleMessage</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">add</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageChainBuilder$add(net.mamoe.mirai.message.data.Message)/element">element</span><span class="symbol">:</span>&nbsp;<a href="../-message/index.html"><span class="identifier">Message</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">add</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageChainBuilder$add(kotlin.String)/plain">plain</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="add-all.html">addAll</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">addAll</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageChainBuilder$addAll(kotlin.collections.Collection((net.mamoe.mirai.message.data.SingleMessage)))/elements">elements</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/index.html"><span class="identifier">Collection</span></a><span class="symbol">&lt;</span><a href="../-single-message.html"><span class="identifier">SingleMessage</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">addAll</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageChainBuilder$addAll(kotlin.collections.Iterable((net.mamoe.mirai.message.data.SingleMessage)))/elements">elements</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><span class="identifier">Iterable</span></a><span class="symbol">&lt;</span><a href="../-single-message.html"><span class="identifier">SingleMessage</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">addAll</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageChainBuilder$addAll(kotlin.collections.Iterable((net.mamoe.mirai.message.data.Message)))/elements">elements</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><span class="identifier">Iterable</span></a><span class="symbol">&lt;</span><a href="../-message/index.html"><span class="identifier">Message</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="append.html">append</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">append</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageChainBuilder$append(kotlin.Char)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char/index.html"><span class="identifier">Char</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MessageChainBuilder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">append</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageChainBuilder$append(kotlin.CharSequence)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MessageChainBuilder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">append</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageChainBuilder$append(kotlin.CharSequence, kotlin.Int, kotlin.Int)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.message.data.MessageChainBuilder$append(kotlin.CharSequence, kotlin.Int, kotlin.Int)/startIndex">startIndex</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.message.data.MessageChainBuilder$append(kotlin.CharSequence, kotlin.Int, kotlin.Int)/endIndex">endIndex</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MessageChainBuilder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">append</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageChainBuilder$append(net.mamoe.mirai.message.data.Message)/message">message</span><span class="symbol">:</span>&nbsp;<a href="../-message/index.html"><span class="identifier">Message</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MessageChainBuilder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">append</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageChainBuilder$append(net.mamoe.mirai.message.data.SingleMessage)/message">message</span><span class="symbol">:</span>&nbsp;<a href="../-single-message.html"><span class="identifier">SingleMessage</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MessageChainBuilder</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="as-message-chain.html">asMessageChain</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">asMessageChain</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-message-chain/index.html"><span class="identifier">MessageChain</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="build.html">build</a></h4>
+</td>
+<td>
+<p>同 <a href="as-message-chain.html">asMessageChain</a></p>
+<code><span class="keyword">fun </span><span class="identifier">build</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-message-chain/index.html"><span class="identifier">MessageChain</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="clear.html">clear</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">clear</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="copy.html">copy</a></h4>
+</td>
+<td>
+<p>将所有已有元素引用复制到一个新的 <a href="./index.html">MessageChainBuilder</a></p>
+<code><span class="keyword">fun </span><span class="identifier">copy</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MessageChainBuilder</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="plus-assign.html">plusAssign</a></h4>
+</td>
+<td>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="identifier">plusAssign</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageChainBuilder$plusAssign(kotlin.String)/plain">plain</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="identifier">plusAssign</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageChainBuilder$plusAssign(net.mamoe.mirai.message.data.Message)/message">message</span><span class="symbol">:</span>&nbsp;<a href="../-message/index.html"><span class="identifier">Message</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="identifier">plusAssign</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageChainBuilder$plusAssign(net.mamoe.mirai.message.data.SingleMessage)/message">message</span><span class="symbol">:</span>&nbsp;<a href="../-single-message.html"><span class="identifier">SingleMessage</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="identifier">plusAssign</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageChainBuilder$plusAssign(kotlin.CharSequence)/charSequence">charSequence</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="remove.html">remove</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">remove</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageChainBuilder$remove(net.mamoe.mirai.message.data.SingleMessage)/element">element</span><span class="symbol">:</span>&nbsp;<a href="../-single-message.html"><span class="identifier">SingleMessage</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="remove-all.html">removeAll</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">removeAll</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageChainBuilder$removeAll(kotlin.collections.Collection((net.mamoe.mirai.message.data.SingleMessage)))/elements">elements</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/index.html"><span class="identifier">Collection</span></a><span class="symbol">&lt;</span><a href="../-single-message.html"><span class="identifier">SingleMessage</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="remove-at.html">removeAt</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">removeAt</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageChainBuilder$removeAt(kotlin.Int)/index">index</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-single-message.html"><span class="identifier">SingleMessage</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="set.html">set</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">set</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.MessageChainBuilder$set(kotlin.Int, net.mamoe.mirai.message.data.SingleMessage)/index">index</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.message.data.MessageChainBuilder$set(kotlin.Int, net.mamoe.mirai.message.data.SingleMessage)/element">element</span><span class="symbol">:</span>&nbsp;<a href="../-single-message.html"><span class="identifier">SingleMessage</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-single-message.html"><span class="identifier">SingleMessage</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="unary-plus.html">unaryPlus</a></h4>
+</td>
+<td>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><a href="../-message/index.html"><span class="identifier">Message</span></a><span class="symbol">.</span><span class="identifier">unaryPlus</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">.</span><span class="identifier">unaryPlus</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

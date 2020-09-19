@@ -1,0 +1,126 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MessageSelectBuilderUnit - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.event</a>&nbsp;/&nbsp;<a href="./index.html">MessageSelectBuilderUnit</a><br/>
+<br/>
+<h1>MessageSelectBuilderUnit</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">MessageSelectBuilderUnit</span><span class="symbol">&lt;</span><span class="identifier">M</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.message/-message-event/index.html"><span class="identifier">MessageEvent</span></a><span class="symbol">, </span><span class="identifier">R</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-message-subscribers-builder/index.html"><span class="identifier">MessageSubscribersBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">M</span><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">R</span><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">&gt;</span></code>
+<p><a href="../select-messages-unit.html">selectMessagesUnit</a> 或 <a href="../select-messages.html">selectMessages</a> 时的 DSL 构建器.</p>
+<p>它是特殊化的消息监听 (<a href="#">CoroutineScope.subscribeMessages</a>) DSL</p>
+<p><strong>See Also</strong><br/>
+<p><a href="../-message-subscribers-builder/index.html">MessageSubscribersBuilder</a></p>
+</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="--.html">-&gt;</a></h4>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">infix</span> <span class="keyword">fun </span><a href="../-message-selection-timeout-checker/index.html"><span class="identifier">MessageSelectionTimeoutChecker</span></a><span class="symbol">.</span><span class="identifier">-&gt;</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.event.MessageSelectBuilderUnit$->(net.mamoe.mirai.event.MessageSelectionTimeoutChecker, net.mamoe.mirai.message.data.Message)/message">message</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.message.data/-message/index.html"><span class="identifier">Message</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">infix</span> <span class="keyword">fun </span><a href="../-message-selection-timeout-checker/index.html"><span class="identifier">MessageSelectionTimeoutChecker</span></a><span class="symbol">.</span><span class="identifier">-&gt;</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.event.MessageSelectBuilderUnit$->(net.mamoe.mirai.event.MessageSelectionTimeoutChecker, kotlin.String)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="default.html">default</a></h4>
+</td>
+<td>
+<p>当其他条件都不满足时的默认处理.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">default</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.event.MessageSelectBuilderUnit$default(kotlin.coroutines.SuspendFunction2((net.mamoe.mirai.event.MessageSelectBuilderUnit.M, kotlin.String, net.mamoe.mirai.event.MessageSelectBuilderUnit.R)))/onEvent">onEvent</span><span class="symbol">:</span>&nbsp;<a href="../-message-listener.html"><span class="identifier">MessageListener</span></a><span class="symbol">&lt;</span><span class="identifier">M</span><span class="symbol">,</span>&nbsp;<span class="identifier">R</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="default-quote-reply.html">defaultQuoteReply</a></h4>
+</td>
+<td>
+<p>当其他条件都不满足时引用回复原消息.</p>
+<code><span class="keyword">fun </span><span class="identifier">defaultQuoteReply</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.event.MessageSelectBuilderUnit$defaultQuoteReply(kotlin.coroutines.SuspendFunction0((kotlin.Any)))/block">block</span><span class="symbol">:</span>&nbsp;<span class="keyword">suspend </span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="default-reply.html">defaultReply</a></h4>
+</td>
+<td>
+<p>当其他条件都不满足时回复原消息.</p>
+<code><span class="keyword">fun </span><span class="identifier">defaultReply</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.event.MessageSelectBuilderUnit$defaultReply(kotlin.coroutines.SuspendFunction0((kotlin.Any)))/block">block</span><span class="symbol">:</span>&nbsp;<span class="keyword">suspend </span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="invoke.html">invoke</a></h4>
+</td>
+<td>
+<p>返回一个限制本次 select 的最长等待时间的 <a href="#">Deferred</a></p>
+<code><span class="keyword">fun </span><a href="../-message-selection-timeout-checker/index.html"><span class="identifier">MessageSelectionTimeoutChecker</span></a><span class="symbol">.</span><span class="identifier">invoke</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.event.MessageSelectBuilderUnit$invoke(net.mamoe.mirai.event.MessageSelectionTimeoutChecker, kotlin.coroutines.SuspendFunction0((net.mamoe.mirai.event.MessageSelectBuilderUnit.R)))/block">block</span><span class="symbol">:</span>&nbsp;<span class="keyword">suspend </span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">R</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="obtain-current-coroutine-scope.html">obtainCurrentCoroutineScope</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">obtainCurrentCoroutineScope</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">CoroutineScope</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="obtain-current-deferred.html">obtainCurrentDeferred</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">obtainCurrentDeferred</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">CompletableDeferred</span><span class="symbol">&lt;</span><span class="identifier">R</span><span class="symbol">&gt;</span><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="quote-reply.html">quoteReply</a></h4>
+</td>
+<td>
+<p>在超时后引用回复原消息</p>
+<code><span class="keyword">open</span> <span class="keyword">infix</span> <span class="keyword">fun </span><a href="../-message-selection-timeout-checker/index.html"><span class="identifier">MessageSelectionTimeoutChecker</span></a><span class="symbol">.</span><span class="identifier">quoteReply</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.event.MessageSelectBuilderUnit$quoteReply(net.mamoe.mirai.event.MessageSelectionTimeoutChecker, kotlin.coroutines.SuspendFunction0((kotlin.Any)))/block">block</span><span class="symbol">:</span>&nbsp;<span class="keyword">suspend </span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><code><span class="keyword">open</span> <span class="keyword">infix</span> <span class="keyword">fun </span><a href="../-message-selection-timeout-checker/index.html"><span class="identifier">MessageSelectionTimeoutChecker</span></a><span class="symbol">.</span><span class="identifier">quoteReply</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.event.MessageSelectBuilderUnit$quoteReply(net.mamoe.mirai.event.MessageSelectionTimeoutChecker, net.mamoe.mirai.message.data.Message)/message">message</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.message.data/-message/index.html"><span class="identifier">Message</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">infix</span> <span class="keyword">fun </span><a href="../-message-selection-timeout-checker/index.html"><span class="identifier">MessageSelectionTimeoutChecker</span></a><span class="symbol">.</span><span class="identifier">quoteReply</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.event.MessageSelectBuilderUnit$quoteReply(net.mamoe.mirai.event.MessageSelectionTimeoutChecker, kotlin.String)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="reply.html">reply</a></h4>
+</td>
+<td>
+<p>在超时后回复原消息</p>
+<code><span class="keyword">open</span> <span class="keyword">infix</span> <span class="keyword">fun </span><a href="../-message-selection-timeout-checker/index.html"><span class="identifier">MessageSelectionTimeoutChecker</span></a><span class="symbol">.</span><span class="identifier">reply</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.event.MessageSelectBuilderUnit$reply(net.mamoe.mirai.event.MessageSelectionTimeoutChecker, kotlin.coroutines.SuspendFunction0((kotlin.Any)))/block">block</span><span class="symbol">:</span>&nbsp;<span class="keyword">suspend </span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><code><span class="keyword">open</span> <span class="keyword">infix</span> <span class="keyword">fun </span><a href="../-message-selection-timeout-checker/index.html"><span class="identifier">MessageSelectionTimeoutChecker</span></a><span class="symbol">.</span><span class="identifier">reply</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.event.MessageSelectBuilderUnit$reply(net.mamoe.mirai.event.MessageSelectionTimeoutChecker, net.mamoe.mirai.message.data.Message)/message">message</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.message.data/-message/index.html"><span class="identifier">Message</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">infix</span> <span class="keyword">fun </span><a href="../-message-selection-timeout-checker/index.html"><span class="identifier">MessageSelectionTimeoutChecker</span></a><span class="symbol">.</span><span class="identifier">reply</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.event.MessageSelectBuilderUnit$reply(net.mamoe.mirai.event.MessageSelectionTimeoutChecker, kotlin.String)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="timeout.html">timeout</a></h4>
+</td>
+<td>
+<p>限制本次 select 的最长等待时间, 当超时后执行 <a href="timeout.html#net.mamoe.mirai.event.MessageSelectBuilderUnit$timeout(kotlin.Long, kotlin.coroutines.SuspendFunction0((net.mamoe.mirai.event.MessageSelectBuilderUnit.R)))/block">block</a> 以完成 select</p>
+<code><span class="keyword">fun </span><span class="identifier">timeout</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.event.MessageSelectBuilderUnit$timeout(kotlin.Long, kotlin.coroutines.SuspendFunction0((net.mamoe.mirai.event.MessageSelectBuilderUnit.R)))/timeoutMillis">timeoutMillis</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.event.MessageSelectBuilderUnit$timeout(kotlin.Long, kotlin.coroutines.SuspendFunction0((net.mamoe.mirai.event.MessageSelectBuilderUnit.R)))/block">block</span><span class="symbol">:</span>&nbsp;<span class="keyword">suspend </span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">R</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>返回一个限制本次 select 的最长等待时间的 <a href="#">Deferred</a></p>
+<code><span class="keyword">fun </span><span class="identifier">timeout</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.event.MessageSelectBuilderUnit$timeout(kotlin.Long)/timeoutMillis">timeoutMillis</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-message-selection-timeout-checker/index.html"><span class="identifier">MessageSelectionTimeoutChecker</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="timeout-exception.html">timeoutException</a></h4>
+</td>
+<td>
+<p>限制本次 select 的最长等待时间, 当超时后抛出 <a href="#">TimeoutCancellationException</a></p>
+<code><span class="keyword">fun </span><span class="identifier">timeoutException</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.event.MessageSelectBuilderUnit$timeoutException(kotlin.Long, kotlin.Function0((kotlin.Throwable)))/timeoutMillis">timeoutMillis</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.event.MessageSelectBuilderUnit$timeoutException(kotlin.Long, kotlin.Function0((kotlin.Throwable)))/exception">exception</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a>&nbsp;<span class="symbol">=</span>&nbsp;{ throw MessageSelectionTimeoutException() }<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../-message-select-builder.html">MessageSelectBuilder</a></h4>
+</td>
+<td>
+<p><a href="../select-messages.html">selectMessages</a> 时的 DSL 构建器.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">MessageSelectBuilder</span><span class="symbol">&lt;</span><span class="identifier">M</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.message/-message-event/index.html"><span class="identifier">MessageEvent</span></a><span class="symbol">, </span><span class="identifier">R</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">MessageSelectBuilderUnit</span></a><span class="symbol">&lt;</span><span class="identifier">M</span><span class="symbol">,</span>&nbsp;<span class="identifier">R</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

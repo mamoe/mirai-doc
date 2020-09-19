@@ -1,0 +1,64 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>SimpleListenerHost - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.event</a>&nbsp;/&nbsp;<a href="./index.html">SimpleListenerHost</a><br/>
+<br/>
+<h1>SimpleListenerHost</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">SimpleListenerHost</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-listener-host.html"><span class="identifier">ListenerHost</span></a><span class="symbol">, </span><span class="identifier">CoroutineScope</span></code>
+<p>携带一个异常处理器的 <a href="../-listener-host.html">ListenerHost</a>.</p>
+<p><strong>See Also</strong><br/>
+<p><a href="../-listener-host.html">ListenerHost</a></p>
+<p><a href="../-event-handler/index.html">EventHandler</a></p>
+</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<p>携带一个异常处理器的 <a href="../-listener-host.html">ListenerHost</a>.</p>
+<code><span class="identifier">SimpleListenerHost</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.event.SimpleListenerHost$<init>(kotlin.coroutines.CoroutineContext)/coroutineContext">coroutineContext</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.coroutines/-coroutine-context/index.html"><span class="identifier">CoroutineContext</span></a>&nbsp;<span class="symbol">=</span>&nbsp;EmptyCoroutineContext<span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="coroutine-context.html">coroutineContext</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">coroutineContext</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.coroutines/-coroutine-context/index.html"><span class="identifier">CoroutineContext</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="cancel-all.html">cancelAll</a></h4>
+</td>
+<td>
+<p>停止所有事件监听</p>
+<code><span class="keyword">fun </span><span class="identifier">cancelAll</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="handle-exception.html">handleException</a></h4>
+</td>
+<td>
+<p>处理事件处理中未捕获的异常. 在构造器中的 <a href="coroutine-context.html">coroutineContext</a> 未提供 <a href="#">CoroutineExceptionHandler</a> 情况下必须继承此函数.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">handleException</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.event.SimpleListenerHost$handleException(kotlin.coroutines.CoroutineContext, kotlin.Throwable)/context">context</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.coroutines/-coroutine-context/index.html"><span class="identifier">CoroutineContext</span></a><span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.event.SimpleListenerHost$handleException(kotlin.coroutines.CoroutineContext, kotlin.Throwable)/exception">exception</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

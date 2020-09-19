@@ -1,0 +1,93 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MemberPermission - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.contact</a>&nbsp;/&nbsp;<a href="./index.html">MemberPermission</a><br/>
+<br/>
+<h1>MemberPermission</h1>
+<code><span class="keyword">enum</span> <span class="keyword">class </span><span class="identifier">MemberPermission</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><a href="./index.html"><span class="identifier">MemberPermission</span></a><span class="symbol">&gt;</span></code>
+<p>群成员的权限.</p>
+<p>可通过 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/compare-to.html">compareTo</a> 判断是否有更高的权限.</p>
+<p><strong>See Also</strong><br/>
+<p><a href="../is-owner.html">isOwner</a></p>
+<p><a href="../is-operator.html">isOperator</a></p>
+<p><a href="../is-owner.html">Member.isOwner</a></p>
+<p><a href="../is-operator.html">Member.isOperator</a></p>
+<p><a href="../is-administrator.html">Member.isAdministrator</a></p>
+</p>
+<h3>Enum Values</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-m-e-m-b-e-r.html">MEMBER</a></h4>
+</td>
+<td>
+<p>一般群成员</p>
+</td>
+</tr>
+<tr>
+<td>
+<h4><a href="-a-d-m-i-n-i-s-t-r-a-t-o-r.html">ADMINISTRATOR</a></h4>
+</td>
+<td>
+<p>管理员</p>
+</td>
+</tr>
+<tr>
+<td>
+<h4><a href="-o-w-n-e-r.html">OWNER</a></h4>
+</td>
+<td>
+<p>群主</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="level.html">level</a></h4>
+</td>
+<td>
+<p>权限等级. <a href="-o-w-n-e-r.html">OWNER</a> 为 2, <a href="-a-d-m-i-n-i-s-t-r-a-t-o-r.html">ADMINISTRATOR</a> 为 1, <a href="-m-e-m-b-e-r.html">MEMBER</a> 为 0</p>
+<code><span class="keyword">val </span><span class="identifier">level</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../is-administrator.html">isAdministrator</a></h4>
+</td>
+<td>
+<p>判断权限是否为管理员</p>
+<code><span class="keyword">fun </span><a href="./index.html"><span class="identifier">MemberPermission</span></a><span class="symbol">.</span><span class="identifier">isAdministrator</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../is-operator.html">isOperator</a></h4>
+</td>
+<td>
+<p>判断权限是否为管理员或群主</p>
+<code><span class="keyword">fun </span><a href="./index.html"><span class="identifier">MemberPermission</span></a><span class="symbol">.</span><span class="identifier">isOperator</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../is-owner.html">isOwner</a></h4>
+</td>
+<td>
+<p>判断权限是否为群主</p>
+<code><span class="keyword">fun </span><a href="./index.html"><span class="identifier">MemberPermission</span></a><span class="symbol">.</span><span class="identifier">isOwner</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

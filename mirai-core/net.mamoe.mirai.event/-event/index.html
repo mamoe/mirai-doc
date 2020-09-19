@@ -1,0 +1,118 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Event - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.event</a>&nbsp;/&nbsp;<a href="./index.html">Event</a><br/>
+<br/>
+<h1>Event</h1>
+<code><span class="keyword">interface </span><span class="identifier">Event</span></code>
+<p>可被监听的类, 可以是任何 class 或 object.</p>
+<p>若监听这个类, 监听器将会接收所有事件的广播.</p>
+<p>所有 <a href="./index.html">Event</a> 都应继承 <a href="../-abstract-event/index.html">AbstractEvent</a> 而不要直接实现 <a href="./index.html">Event</a>. 否则将无法广播也无法监听.</p>
+<h3>广播</h3>
+<p>广播事件的唯一方式为 <a href="../broadcast.html">broadcast</a>.</p>
+<p><strong>See Also</strong><br/>
+<p><a href="../kotlinx.coroutines.-coroutine-scope/subscribe-always.html">subscribeAlways</a></p>
+<p><a href="../kotlinx.coroutines.-coroutine-scope/subscribe-once.html">subscribeOnce</a></p>
+<p><a href="#">subscribeMessages</a></p>
+<p><a href="../broadcast.html">broadcast</a></p>
+<p><a href="../kotlinx.coroutines.-coroutine-scope/subscribe.html">CoroutineScope.subscribe</a></p>
+<p><a href="../-cancellable-event/index.html">CancellableEvent</a></p>
+</p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="is-intercepted.html">isIntercepted</a></h4>
+</td>
+<td>
+<p>事件是否已被拦截.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">isIntercepted</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="intercept.html">intercept</a></h4>
+</td>
+<td>
+<p>拦截这个事件</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">intercept</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../__broadcast-java.html">__broadcastJava</a></h4>
+</td>
+<td>
+<p>在 Java 广播一个事件的唯一途径.</p>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">E</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Event</span></a><span class="symbol">&gt;</span> <span class="identifier">E</span><span class="symbol">.</span><span class="identifier">__broadcastJava</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">E</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../broadcast.html">broadcast</a></h4>
+</td>
+<td>
+<p>广播一个事件的唯一途径.</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">E</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Event</span></a><span class="symbol">&gt;</span> <span class="identifier">E</span><span class="symbol">.</span><span class="identifier">broadcast</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">E</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../-abstract-event/index.html">AbstractEvent</a></h4>
+</td>
+<td>
+<p>所有实现了 <a href="./index.html">Event</a> 接口的类都应该继承的父类.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Event</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../../net.mamoe.mirai.event.events/-bot-event/index.html">BotEvent</a></h4>
+</td>
+<td>
+<p>有关一个 <a href="../../net.mamoe.mirai/-bot/index.html">Bot</a> 的事件</p>
+<code><span class="keyword">interface </span><span class="identifier">BotEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Event</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../-broadcast-controllable/index.html">BroadcastControllable</a></h4>
+</td>
+<td>
+<p>可控制是否需要广播这个事件</p>
+<code><span class="keyword">interface </span><span class="identifier">BroadcastControllable</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Event</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../-cancellable-event/index.html">CancellableEvent</a></h4>
+</td>
+<td>
+<p>可被取消的事件</p>
+<code><span class="keyword">interface </span><span class="identifier">CancellableEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Event</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../../net.mamoe.mirai.message/-group-message-event/index.html">GroupMessageEvent</a></h4>
+</td>
+<td>
+<p>机器人收到的群消息的事件</p>
+<code><span class="keyword">class </span><span class="identifier">GroupMessageEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GroupMessage</span><span class="symbol">, </span><a href="./index.html"><span class="identifier">Event</span></a><span class="symbol">, </span><a href="../../net.mamoe.mirai.event.events/-group-event/index.html"><span class="identifier">GroupEvent</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

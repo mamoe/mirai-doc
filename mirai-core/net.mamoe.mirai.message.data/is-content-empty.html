@@ -1,0 +1,20 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>isContentEmpty - mirai-core</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="index.html">net.mamoe.mirai.message.data</a>&nbsp;/&nbsp;<a href="./is-content-empty.html">isContentEmpty</a><br/>
+<br/>
+<h1>isContentEmpty</h1>
+<a name="net.mamoe.mirai.message.data$isContentEmpty(net.mamoe.mirai.message.data.Message)"></a>
+<code><span class="keyword">fun </span><a href="-message/index.html"><span class="identifier">Message</span></a><span class="symbol">.</span><span class="identifier">isContentEmpty</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>判断消息内容是否为空.</p>
+<p>以下情况视为 "空消息":</p>
+<ul><li>是 <a href="-message-metadata/index.html">MessageMetadata</a> (因为 <a href="-message-metadata/content-to-string.html">MessageMetadata.contentToString</a> 都必须返回空字符串)</li>
+<li><a href="-plain-text/index.html">PlainText</a> 长度为 0</li>
+<li><a href="-message-chain/index.html">MessageChain</a> 所有元素都满足 <a href="./is-content-empty.html">isContentEmpty</a></li>
+</ul>
+</BODY>
+</HTML>

@@ -1,0 +1,21 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>DefaultLogger - mirai-core</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="index.html">net.mamoe.mirai.utils</a>&nbsp;/&nbsp;<a href="./-default-logger.html">DefaultLogger</a><br/>
+<br/>
+<h1>DefaultLogger</h1>
+<a name="net.mamoe.mirai.utils$DefaultLogger"></a>
+<code><span class="keyword">var </span><span class="identifier">DefaultLogger</span><span class="symbol">: </span><span class="symbol">(</span><span class="identifier">identity</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="-mirai-logger/index.html"><span class="identifier">MiraiLogger</span></a></code>
+<p>用于创建默认的日志记录器. 在一些需要使用日志的 Mirai 的组件, 如 <a href="../net.mamoe.mirai/-bot/index.html">Bot</a>, 都会通过这个函数构造日志记录器.</p>
+<p>可直接修改这个变量的值来重定向日志输出.</p>
+<p><strong>注意:</strong> 请务必将所有的输出定向到日志记录系统, 否则在某些情况下 (如 web 控制台中) 将无法接收到输出</p>
+<p><strong>注意:</strong> 请为日志做好分类, 即不同的模块使用不同的 <a href="-mirai-logger/index.html">MiraiLogger</a>.
+如, <a href="../net.mamoe.mirai/-bot/index.html">Bot</a> 中使用 <code>identity</code> 为 "Bot(qqId)" 的 <a href="-mirai-logger/index.html">MiraiLogger</a>
+而 <a href="../net.mamoe.mirai/-bot/index.html">Bot</a> 的网络处理中使用 <code>identity</code> 为 "BotNetworkHandler".</p>
+<p>Java 调用: <code>Utils.getDefaultLogger().invoke(identity)</code></p>
+</BODY>
+</HTML>

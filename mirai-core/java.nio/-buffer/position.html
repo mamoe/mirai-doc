@@ -1,0 +1,30 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Buffer.position - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">java.nio</a>&nbsp;/&nbsp;<a href="index.html">Buffer</a>&nbsp;/&nbsp;<a href="./position.html">position</a><br/>
+<br/>
+<h1>position</h1>
+<a name="java.nio.Buffer$position()"></a>
+<code><span class="keyword">fun </span><span class="identifier">position</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>Returns this buffer's position.</p>
+<p><strong>Return</strong><br/>
+The position of this buffer</p>
+<a name="java.nio.Buffer$position(kotlin.Int)"></a>
+<code><span class="keyword">fun </span><span class="identifier">position</span><span class="symbol">(</span><span class="identifier" id="java.nio.Buffer$position(kotlin.Int)/newPosition">newPosition</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/Buffer.html"><span class="identifier">Buffer</span></a></code>
+<p>Sets this buffer's position.  If the mark is defined and larger than the
+new position then it is discarded.</p>
+<h3>Parameters</h3>
+<p><a name="newPosition"></a>
+<code>newPosition</code> - The new position value; must be non-negative
+and no larger than the current limit</p>
+<h3>Exceptions</h3>
+<p><a name="IllegalArgumentException"></a>
+<code>IllegalArgumentException</code> - If the preconditions on <code>newPosition</code> do not hold</p>
+<p><strong>Return</strong><br/>
+This buffer</p>
+</BODY>
+</HTML>

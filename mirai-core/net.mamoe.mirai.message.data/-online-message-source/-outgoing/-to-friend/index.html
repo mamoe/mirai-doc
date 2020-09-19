@@ -1,0 +1,73 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>OnlineMessageSource.Outgoing.ToFriend - mirai-core</title>
+<link rel="stylesheet" href="../../../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../../../index.html">net.mamoe.mirai.message.data</a>&nbsp;/&nbsp;<a href="../../index.html">OnlineMessageSource</a>&nbsp;/&nbsp;<a href="../index.html">Outgoing</a>&nbsp;/&nbsp;<a href="./index.html">ToFriend</a><br/>
+<br/>
+<h1>ToFriend</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">ToFriend</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Outgoing</span></code>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-key/index.html">Key</a></h4>
+</td>
+<td>
+<code><span class="keyword">companion</span> <span class="keyword">object </span><span class="identifier">Key</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Key</span><span class="symbol">&lt;</span><span class="identifier">ToFriend</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<code><span class="identifier">ToFriend</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="subject.html">subject</a></h4>
+</td>
+<td>
+<p>消息主体. 群消息时为 <a href="../../../../net.mamoe.mirai.contact/-group/index.html">Group</a>. 好友消息时为 <a href="../../../../net.mamoe.mirai.contact/-friend/index.html">Friend</a>, 临时消息为 <a href="../../../../net.mamoe.mirai.contact/-member/index.html">Member</a>
+不论是机器人接收的消息还是发送的消息, 此属性都指向机器人能进行回复的目标.</p>
+<code><span class="keyword">val </span><span class="identifier">subject</span><span class="symbol">: </span><a href="../../../../net.mamoe.mirai.contact/-friend/index.html"><span class="identifier">Friend</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="target.html">target</a></h4>
+</td>
+<td>
+<p>消息发送目标. 可能为 <a href="../../../../net.mamoe.mirai/-bot/index.html">机器人</a> 或 <a href="../../../../net.mamoe.mirai.contact/-friend/index.html">好友</a> 或 <a href="../../../../net.mamoe.mirai.contact/-group/index.html">群</a>.
+即类型必定为 <a href="../../../../net.mamoe.mirai/-bot/index.html">Bot</a>, <a href="../../../../net.mamoe.mirai.contact/-friend/index.html">Friend</a> 或 <a href="../../../../net.mamoe.mirai.contact/-group/index.html">Group</a></p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">target</span><span class="symbol">: </span><a href="../../../../net.mamoe.mirai.contact/-friend/index.html"><span class="identifier">Friend</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Companion Object Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="type-name.html">typeName</a></h4>
+</td>
+<td>
+<p>此 <a href="../../../-message/-key/index.html">Key</a> 指代的 <a href="../../../-message/index.html">Message</a> 类型名. 一般为 <code>class.simpleName</code>, 如 "QuoteReply", "PlainText"</p>
+<code><span class="keyword">val </span><span class="identifier">typeName</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

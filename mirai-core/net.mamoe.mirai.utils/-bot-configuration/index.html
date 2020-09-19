@@ -1,0 +1,145 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BotConfiguration - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.utils</a>&nbsp;/&nbsp;<a href="./index.html">BotConfiguration</a><br/>
+<br/>
+<h1>BotConfiguration</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">BotConfiguration</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-bot-configuration-base/index.html"><span class="identifier">BotConfigurationBase</span></a></code>
+<p><a href="../../net.mamoe.mirai/-bot/index.html">Bot</a> 配置.</p>
+<p>Kotlin 使用方法:</p>
+<pre><code>val bot = Bot(...) {
+   // 在这里配置 Bot
+
+   bogLoggerSupplier = { bot -&gt; ... }
+   fileBasedDeviceInfo()
+   inheritCoroutineContext() // 使用 `coroutineScope` 的 Job 作为父 Job
+}
+</code></pre>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-mirai-protocol/index.html">MiraiProtocol</a></h4>
+</td>
+<td>
+<p>协议类型, 服务器仅允许使用不同协议同时登录.</p>
+<code><span class="keyword">enum</span> <span class="keyword">class </span><span class="identifier">MiraiProtocol</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<p><a href="../../net.mamoe.mirai/-bot/index.html">Bot</a> 配置.</p>
+<code><span class="identifier">BotConfiguration</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="device-info.html">deviceInfo</a></h4>
+</td>
+<td>
+<p>设备信息覆盖. 在没有手动指定时将会通过日志警告, 并使用随机设备信息.</p>
+<code><span class="keyword">var </span><span class="identifier">deviceInfo</span><span class="symbol">: </span><span class="symbol">(</span><span class="symbol">(</span><a href="../-context/index.html"><span class="identifier">Context</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="../-device-info/index.html"><span class="identifier">DeviceInfo</span></a><span class="symbol">)</span><span class="symbol">?</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="copy.html">copy</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">copy</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">BotConfiguration</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="file-based-device-info.html">fileBasedDeviceInfo</a></h4>
+</td>
+<td>
+<p>使用文件存储设备信息.</p>
+<code><span class="keyword">fun </span><span class="identifier">fileBasedDeviceInfo</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.BotConfiguration$fileBasedDeviceInfo(kotlin.String)/filepath">filepath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a>&nbsp;<span class="symbol">=</span>&nbsp;"device.json"<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="load-device-info-json.html">loadDeviceInfoJson</a></h4>
+</td>
+<td>
+<p>使用特定由 <a href="../-device-info-data/index.html">DeviceInfoData</a> 序列化产生的 JSON 的设备信息</p>
+<code><span class="keyword">fun </span><span class="identifier">loadDeviceInfoJson</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.BotConfiguration$loadDeviceInfoJson(kotlin.String)/json">json</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="random-device-info.html">randomDeviceInfo</a></h4>
+</td>
+<td>
+<p>使用随机设备信息.</p>
+<code><span class="keyword">fun </span><span class="identifier">randomDeviceInfo</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="redirect-bot-log-to-directory.html">redirectBotLogToDirectory</a></h4>
+</td>
+<td>
+<p>重定向 <a href="../-bot-configuration-base/bot-logger-supplier.html">Bot 日志</a> 到指定目录. 若目录不存在将会自动创建 (<a href="https://docs.oracle.com/javase/6/docs/api/java/io/File.html#mkdirs()">File.mkdirs</a>)</p>
+<code><span class="keyword">fun </span><span class="identifier">redirectBotLogToDirectory</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.BotConfiguration$redirectBotLogToDirectory(java.io.File, kotlin.Long, kotlin.Function1((net.mamoe.mirai.Bot, kotlin.String)))/dir">dir</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/File.html"><span class="identifier">File</span></a>&nbsp;<span class="symbol">=</span>&nbsp;File("logs")<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils.BotConfiguration$redirectBotLogToDirectory(java.io.File, kotlin.Long, kotlin.Function1((net.mamoe.mirai.Bot, kotlin.String)))/retain">retain</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a>&nbsp;<span class="symbol">=</span>&nbsp;1.weeksToMillis<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils.BotConfiguration$redirectBotLogToDirectory(java.io.File, kotlin.Long, kotlin.Function1((net.mamoe.mirai.Bot, kotlin.String)))/identity">identity</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">bot</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai/-bot/index.html"><span class="identifier">Bot</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a>&nbsp;<span class="symbol">=</span>&nbsp;{ "Net ${it.id}" }<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="redirect-bot-log-to-file.html">redirectBotLogToFile</a></h4>
+</td>
+<td>
+<p>重定向 <a href="../-bot-configuration-base/bot-logger-supplier.html">Bot 日志</a> 到指定文件.
+日志将会逐行追加到此文件. 若文件不存在将会自动创建 (<a href="https://docs.oracle.com/javase/6/docs/api/java/io/File.html#createNewFile()">File.createNewFile</a>)</p>
+<code><span class="keyword">fun </span><span class="identifier">redirectBotLogToFile</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.BotConfiguration$redirectBotLogToFile(java.io.File, kotlin.Function1((net.mamoe.mirai.Bot, kotlin.String)))/file">file</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/File.html"><span class="identifier">File</span></a>&nbsp;<span class="symbol">=</span>&nbsp;File("mirai.log")<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils.BotConfiguration$redirectBotLogToFile(java.io.File, kotlin.Function1((net.mamoe.mirai.Bot, kotlin.String)))/identity">identity</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">bot</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai/-bot/index.html"><span class="identifier">Bot</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a>&nbsp;<span class="symbol">=</span>&nbsp;{ "Net ${it.id}" }<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="redirect-network-log-to-directory.html">redirectNetworkLogToDirectory</a></h4>
+</td>
+<td>
+<p>重定向 <a href="../-bot-configuration-base/network-logger-supplier.html">网络日志</a> 到指定目录. 若目录不存在将会自动创建 (<a href="https://docs.oracle.com/javase/6/docs/api/java/io/File.html#mkdirs()">File.mkdirs</a>)</p>
+<code><span class="keyword">fun </span><span class="identifier">redirectNetworkLogToDirectory</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.BotConfiguration$redirectNetworkLogToDirectory(java.io.File, kotlin.Long, kotlin.Function1((net.mamoe.mirai.Bot, kotlin.String)))/dir">dir</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/File.html"><span class="identifier">File</span></a>&nbsp;<span class="symbol">=</span>&nbsp;File("logs")<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils.BotConfiguration$redirectNetworkLogToDirectory(java.io.File, kotlin.Long, kotlin.Function1((net.mamoe.mirai.Bot, kotlin.String)))/retain">retain</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a>&nbsp;<span class="symbol">=</span>&nbsp;1.weeksToMillis<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils.BotConfiguration$redirectNetworkLogToDirectory(java.io.File, kotlin.Long, kotlin.Function1((net.mamoe.mirai.Bot, kotlin.String)))/identity">identity</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">bot</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai/-bot/index.html"><span class="identifier">Bot</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a>&nbsp;<span class="symbol">=</span>&nbsp;{ "Net ${it.id}" }<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="redirect-network-log-to-file.html">redirectNetworkLogToFile</a></h4>
+</td>
+<td>
+<p>重定向 <a href="../-bot-configuration-base/network-logger-supplier.html">网络日志</a> 到指定文件.
+日志将会逐行追加到此文件. 若文件不存在将会自动创建 (<a href="https://docs.oracle.com/javase/6/docs/api/java/io/File.html#createNewFile()">File.createNewFile</a>)</p>
+<code><span class="keyword">fun </span><span class="identifier">redirectNetworkLogToFile</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils.BotConfiguration$redirectNetworkLogToFile(java.io.File, kotlin.Function1((net.mamoe.mirai.Bot, kotlin.String)))/file">file</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/File.html"><span class="identifier">File</span></a>&nbsp;<span class="symbol">=</span>&nbsp;File("mirai.log")<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.utils.BotConfiguration$redirectNetworkLogToFile(java.io.File, kotlin.Function1((net.mamoe.mirai.Bot, kotlin.String)))/identity">identity</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">bot</span><span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai/-bot/index.html"><span class="identifier">Bot</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a>&nbsp;<span class="symbol">=</span>&nbsp;{ "Net ${it.id}" }<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Companion Object Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-default.html">Default</a></h4>
+</td>
+<td>
+<p>默认的配置实例. 可以进行修改</p>
+<code><span class="keyword">val </span><span class="identifier">Default</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">BotConfiguration</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

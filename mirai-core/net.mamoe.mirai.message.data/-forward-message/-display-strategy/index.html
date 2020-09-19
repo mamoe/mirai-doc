@@ -1,0 +1,98 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ForwardMessage.DisplayStrategy - mirai-core</title>
+<link rel="stylesheet" href="../../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../../index.html">net.mamoe.mirai.message.data</a>&nbsp;/&nbsp;<a href="../index.html">ForwardMessage</a>&nbsp;/&nbsp;<a href="./index.html">DisplayStrategy</a><br/>
+<br/>
+<h1>DisplayStrategy</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">DisplayStrategy</span></code>
+<p><strong>See Also</strong><br/>
+<p><a href="../index.html">ForwardMessage</a></p>
+</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-default/index.html">Default</a></h4>
+</td>
+<td>
+<code><span class="keyword">companion</span> <span class="keyword">object </span><span class="identifier">Default</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DisplayStrategy</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<code><span class="identifier">DisplayStrategy</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="generate-brief.html">generateBrief</a></h4>
+</td>
+<td>
+<p>显示在消息列表中的预览.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">generateBrief</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.ForwardMessage.DisplayStrategy$generateBrief(net.mamoe.mirai.message.data.ForwardMessage)/forward">forward</span><span class="symbol">:</span>&nbsp;<a href="../index.html"><span class="identifier">ForwardMessage</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="generate-preview.html">generatePreview</a></h4>
+</td>
+<td>
+<p>显示在卡片 body 中, 只会显示 sequence 前四个元素.
+Java 用户: 使用 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/sequence-of.html">sequenceOf</a> (<code>SequenceKt.sequenceOf</code>) 或 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/as-sequence.html">asSequence</a> (<code>SequenceKt.asSequence</code>)</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">generatePreview</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.ForwardMessage.DisplayStrategy$generatePreview(net.mamoe.mirai.message.data.ForwardMessage)/forward">forward</span><span class="symbol">:</span>&nbsp;<a href="../index.html"><span class="identifier">ForwardMessage</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/-sequence/index.html"><span class="identifier">Sequence</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="generate-source.html">generateSource</a></h4>
+</td>
+<td>
+<p>目前未发现在哪能显示</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">generateSource</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.ForwardMessage.DisplayStrategy$generateSource(net.mamoe.mirai.message.data.ForwardMessage)/forward">forward</span><span class="symbol">:</span>&nbsp;<a href="../index.html"><span class="identifier">ForwardMessage</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="generate-summary.html">generateSummary</a></h4>
+</td>
+<td>
+<p>显示在卡片底部</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">generateSummary</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.ForwardMessage.DisplayStrategy$generateSummary(net.mamoe.mirai.message.data.ForwardMessage)/forward">forward</span><span class="symbol">:</span>&nbsp;<a href="../index.html"><span class="identifier">ForwardMessage</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="generate-title.html">generateTitle</a></h4>
+</td>
+<td>
+<p>修改后卡片标题会变为 "转发的聊天记录", 而此函数的返回值会显示在 preview 前</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">generateTitle</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.ForwardMessage.DisplayStrategy$generateTitle(net.mamoe.mirai.message.data.ForwardMessage)/forward">forward</span><span class="symbol">:</span>&nbsp;<a href="../index.html"><span class="identifier">ForwardMessage</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Companion Object Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="invoke.html">invoke</a></h4>
+</td>
+<td>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="identifier">invoke</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.message.data.ForwardMessage.DisplayStrategy.Default$invoke(kotlin.Function1((net.mamoe.mirai.message.data.ForwardMessage, kotlin.String)), kotlin.Function1((net.mamoe.mirai.message.data.ForwardMessage, kotlin.String)), kotlin.Function1((net.mamoe.mirai.message.data.ForwardMessage, kotlin.String)), kotlin.Function1((net.mamoe.mirai.message.data.ForwardMessage, kotlin.sequences.Sequence((kotlin.String)))), kotlin.Function1((net.mamoe.mirai.message.data.ForwardMessage, kotlin.String)))/generateTitle">generateTitle</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">forward</span><span class="symbol">:</span>&nbsp;<a href="../index.html"><span class="identifier">ForwardMessage</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a>&nbsp;<span class="symbol">=</span>&nbsp;Default::generateTitle<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.message.data.ForwardMessage.DisplayStrategy.Default$invoke(kotlin.Function1((net.mamoe.mirai.message.data.ForwardMessage, kotlin.String)), kotlin.Function1((net.mamoe.mirai.message.data.ForwardMessage, kotlin.String)), kotlin.Function1((net.mamoe.mirai.message.data.ForwardMessage, kotlin.String)), kotlin.Function1((net.mamoe.mirai.message.data.ForwardMessage, kotlin.sequences.Sequence((kotlin.String)))), kotlin.Function1((net.mamoe.mirai.message.data.ForwardMessage, kotlin.String)))/generateBrief">generateBrief</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">forward</span><span class="symbol">:</span>&nbsp;<a href="../index.html"><span class="identifier">ForwardMessage</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a>&nbsp;<span class="symbol">=</span>&nbsp;Default::generateBrief<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.message.data.ForwardMessage.DisplayStrategy.Default$invoke(kotlin.Function1((net.mamoe.mirai.message.data.ForwardMessage, kotlin.String)), kotlin.Function1((net.mamoe.mirai.message.data.ForwardMessage, kotlin.String)), kotlin.Function1((net.mamoe.mirai.message.data.ForwardMessage, kotlin.String)), kotlin.Function1((net.mamoe.mirai.message.data.ForwardMessage, kotlin.sequences.Sequence((kotlin.String)))), kotlin.Function1((net.mamoe.mirai.message.data.ForwardMessage, kotlin.String)))/generateSource">generateSource</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">forward</span><span class="symbol">:</span>&nbsp;<a href="../index.html"><span class="identifier">ForwardMessage</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a>&nbsp;<span class="symbol">=</span>&nbsp;Default::generateSource<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.message.data.ForwardMessage.DisplayStrategy.Default$invoke(kotlin.Function1((net.mamoe.mirai.message.data.ForwardMessage, kotlin.String)), kotlin.Function1((net.mamoe.mirai.message.data.ForwardMessage, kotlin.String)), kotlin.Function1((net.mamoe.mirai.message.data.ForwardMessage, kotlin.String)), kotlin.Function1((net.mamoe.mirai.message.data.ForwardMessage, kotlin.sequences.Sequence((kotlin.String)))), kotlin.Function1((net.mamoe.mirai.message.data.ForwardMessage, kotlin.String)))/generatePreview">generatePreview</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">forward</span><span class="symbol">:</span>&nbsp;<a href="../index.html"><span class="identifier">ForwardMessage</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/-sequence/index.html"><span class="identifier">Sequence</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">=</span>&nbsp;Default::generatePreview<span class="symbol">, </span><span class="identifier" id="net.mamoe.mirai.message.data.ForwardMessage.DisplayStrategy.Default$invoke(kotlin.Function1((net.mamoe.mirai.message.data.ForwardMessage, kotlin.String)), kotlin.Function1((net.mamoe.mirai.message.data.ForwardMessage, kotlin.String)), kotlin.Function1((net.mamoe.mirai.message.data.ForwardMessage, kotlin.String)), kotlin.Function1((net.mamoe.mirai.message.data.ForwardMessage, kotlin.sequences.Sequence((kotlin.String)))), kotlin.Function1((net.mamoe.mirai.message.data.ForwardMessage, kotlin.String)))/generateSummary">generateSummary</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">forward</span><span class="symbol">:</span>&nbsp;<a href="../index.html"><span class="identifier">ForwardMessage</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a>&nbsp;<span class="symbol">=</span>&nbsp;Default::generateSummary<span class="symbol">)</span><span class="symbol">: </span><span class="identifier">DisplayStrategy</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,37 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>net.mamoe.mirai.utils.kotlinx.coroutines.io.ByteReadChannel - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.utils</a>&nbsp;/&nbsp;<a href="./index.html">kotlinx.coroutines.io.ByteReadChannel</a><br/>
+<br/>
+<h3>Extensions for kotlinx.coroutines.io.ByteReadChannel</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="copy-and-close.html">copyAndClose</a></h4>
+</td>
+<td>
+<p>从接收者管道读取所有数据并写入 <a href="copy-and-close.html#net.mamoe.mirai.utils$copyAndClose(kotlinx.coroutines.io.ByteReadChannel, java.io.OutputStream)/dst">dst</a>, 最终关闭 <a href="copy-and-close.html#net.mamoe.mirai.utils$copyAndClose(kotlinx.coroutines.io.ByteReadChannel, java.io.OutputStream)/dst">dst</a></p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">ByteReadChannel</span><span class="symbol">.</span><span class="identifier">copyAndClose</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$copyAndClose(kotlinx.coroutines.io.ByteReadChannel, java.io.OutputStream)/dst">dst</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/OutputStream.html"><span class="identifier">OutputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">ByteReadChannel</span><span class="symbol">.</span><span class="identifier">copyAndClose</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$copyAndClose(kotlinx.coroutines.io.ByteReadChannel, kotlinx.io.core.Output)/dst">dst</span><span class="symbol">:</span>&nbsp;<span class="identifier">Output</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">ByteReadChannel</span><span class="symbol">.</span><span class="identifier">copyAndClose</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$copyAndClose(kotlinx.coroutines.io.ByteReadChannel, kotlinx.coroutines.io.ByteWriteChannel)/dst">dst</span><span class="symbol">:</span>&nbsp;<span class="identifier">ByteWriteChannel</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">ByteReadChannel</span><span class="symbol">.</span><span class="identifier">copyAndClose</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$copyAndClose(kotlinx.coroutines.io.ByteReadChannel, io.ktor.utils.io.ByteWriteChannel)/dst">dst</span><span class="symbol">:</span>&nbsp;<span class="identifier">ByteWriteChannel</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="copy-to.html">copyTo</a></h4>
+</td>
+<td>
+<p>从接收者管道读取所有数据并写入 <a href="copy-to.html#net.mamoe.mirai.utils$copyTo(kotlinx.coroutines.io.ByteReadChannel, java.io.OutputStream)/dst">dst</a>. 不会关闭 <a href="copy-to.html#net.mamoe.mirai.utils$copyTo(kotlinx.coroutines.io.ByteReadChannel, java.io.OutputStream)/dst">dst</a></p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">ByteReadChannel</span><span class="symbol">.</span><span class="identifier">copyTo</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$copyTo(kotlinx.coroutines.io.ByteReadChannel, java.io.OutputStream)/dst">dst</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/OutputStream.html"><span class="identifier">OutputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">ByteReadChannel</span><span class="symbol">.</span><span class="identifier">copyTo</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$copyTo(kotlinx.coroutines.io.ByteReadChannel, kotlinx.io.core.Output)/dst">dst</span><span class="symbol">:</span>&nbsp;<span class="identifier">Output</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">ByteReadChannel</span><span class="symbol">.</span><span class="identifier">copyTo</span><span class="symbol">(</span><span class="identifier" id="net.mamoe.mirai.utils$copyTo(kotlinx.coroutines.io.ByteReadChannel, kotlinx.coroutines.io.ByteWriteChannel)/dst">dst</span><span class="symbol">:</span>&nbsp;<span class="identifier">ByteWriteChannel</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

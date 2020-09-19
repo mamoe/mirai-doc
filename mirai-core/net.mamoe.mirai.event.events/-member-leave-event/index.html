@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MemberLeaveEvent - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.event.events</a>&nbsp;/&nbsp;<a href="./index.html">MemberLeaveEvent</a><br/>
+<br/>
+<h1>MemberLeaveEvent</h1>
+<code><span class="keyword">sealed</span> <span class="keyword">class </span><span class="identifier">MemberLeaveEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-group-member-event/index.html"><span class="identifier">GroupMemberEvent</span></a><span class="symbol">, </span><a href="../../net.mamoe.mirai.event/-abstract-event/index.html"><span class="identifier">AbstractEvent</span></a></code>
+<p>成员已经离开群的事件. 在事件广播前成员就已经从 <a href="../../net.mamoe.mirai.contact/-group/members.html">Group.members</a> 中删除</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-kick/index.html">Kick</a></h4>
+</td>
+<td>
+<p>成员被踢出群. 成员不可能是机器人自己.</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Kick</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">MemberLeaveEvent</span></a><span class="symbol">, </span><span class="identifier">Packet</span><span class="symbol">, </span><a href="../-group-operable-event/index.html"><span class="identifier">GroupOperableEvent</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-quit/index.html">Quit</a></h4>
+</td>
+<td>
+<p>成员主动离开</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Quit</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">MemberLeaveEvent</span></a><span class="symbol">, </span><span class="identifier">Packet</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../../net.mamoe.mirai.event/__broadcast-java.html">__broadcastJava</a></h4>
+</td>
+<td>
+<p>在 Java 广播一个事件的唯一途径.</p>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">E</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.event/-event/index.html"><span class="identifier">Event</span></a><span class="symbol">&gt;</span> <span class="identifier">E</span><span class="symbol">.</span><span class="identifier">__broadcastJava</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">E</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="../../net.mamoe.mirai.event/broadcast.html">broadcast</a></h4>
+</td>
+<td>
+<p>广播一个事件的唯一途径.</p>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">E</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../net.mamoe.mirai.event/-event/index.html"><span class="identifier">Event</span></a><span class="symbol">&gt;</span> <span class="identifier">E</span><span class="symbol">.</span><span class="identifier">broadcast</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">E</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

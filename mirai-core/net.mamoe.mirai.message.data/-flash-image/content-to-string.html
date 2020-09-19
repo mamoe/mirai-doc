@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>FlashImage.contentToString - mirai-core</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mirai-core</a>&nbsp;/&nbsp;<a href="../index.html">net.mamoe.mirai.message.data</a>&nbsp;/&nbsp;<a href="index.html">FlashImage</a>&nbsp;/&nbsp;<a href="./content-to-string.html">contentToString</a><br/>
+<br/>
+<h1>contentToString</h1>
+<a name="net.mamoe.mirai.message.data.FlashImage$contentToString()"></a>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">contentToString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>转为最接近官方格式的字符串. 如 <code>At(member) + "test"</code> 将转为 <code>"@群名片 test"</code>.</p>
+<p>在使用消息相关 DSL 和扩展时, 一些内容比较的实现均使用 <a href="../-message/content-to-string.html">contentToString</a> 而不是 <a href="../-message/to-string.html">toString</a></p>
+<p>各个 <a href="../-single-message.html">SingleMessage</a> 的转换示例:</p>
+<ul><li><a href="../-plain-text/index.html">PlainText</a> : <code>"Hello"</code></li>
+<li><a href="../-image/index.html">Image</a> : <code>"[图片]"</code></li>
+<li><a href="../-poke-message/index.html">PokeMessage</a> : <code>"[戳一戳]"</code></li>
+<li><a href="../-message-chain/index.html">MessageChain</a> : 无间隔地连接所有元素 (<code>joinToString("", transformer=Message::contentToString)</code>)</li>
+<li>...</li>
+</ul>
+<p><strong>See Also</strong><br/>
+<p><a href="../-message/to-string.html">toString</a></p>
+</p>
+</BODY>
+</HTML>
