@@ -1,3 +1,3 @@
 # mirai-doc
 
-- mirai-core: https://project-mirai.github.io/mirai-doc/mirai-core/
+- mirai-core-api: https://project-mirai.github.io/mirai-doc/mirai-core-api/
