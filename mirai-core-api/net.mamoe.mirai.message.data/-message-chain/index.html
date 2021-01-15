@@ -1,0 +1,1038 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>MessageChain</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+    <link href="../../../styles/style.css" rel="Stylesheet">
+    <link href="../../../styles/logo-styles.css" rel="Stylesheet">
+    <link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+    <link href="../../../styles/main.css" rel="Stylesheet">
+    <script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+    <script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+    <script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+    <script type="text/javascript" src="../../../scripts/main.js" async="async"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="leftColumn">
+        <div id="logo"></div>
+        <div id="paneSearch"></div>
+        <div id="sideMenu"></div>
+      </div>
+      <div id="main">
+        <div id="leftToggler"><span class="icon-toggler"></span></div>
+        <script type="text/javascript" src="../../../scripts/pages.js"></script>
+        <script type="text/javascript" src="../../../scripts/main.js"></script>
+        <div class="main-content" id="content" pageIds="net.mamoe.mirai.message.data/MessageChain///PointingToDeclaration//1806516870">
+          <div class="navigation-wrapper" id="navigation-wrapper">
+            <div class="breadcrumbs"><a href="../../index.html">mirai-core-api</a>/<a href="../index.html">net.mamoe.mirai.message.data</a>/<a href="index.html">MessageChain</a></div>
+            <div class="pull-right d-flex">
+              <div class="filter-section" id="filter-section"><button class="platform-tag platform-selector common-like" data-active="" data-filter=":mirai-core-api:dokkaHtml/commonMain">common</button></div>
+              <div id="searchBar"></div>
+            </div>
+          </div>
+          <div class="cover ">
+            <h1 class="cover"><span>Message</span><wbr></wbr><span>Chain</span></h1>
+            <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">interface <a href="index.html">MessageChain</a> : <a href="../-message/index.html">Message</a>, <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a>&lt;<a href="../-single-message/index.html">SingleMessage</a>&gt; , <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-random-access/index.html">RandomAccess</a>, <a href="../../net.mamoe.mirai.message.code/-codable-message/index.html">CodableMessage</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">消息链, <code>List&lt;SingleMessage&gt;</code>, 即 <a href="../-single-message/index.html">单个消息元素</a> 的有序集合.</p><p class="paragraph"><a href="index.html">MessageChain</a> 代表一条完整的聊天中的消息, 可包含 <a href="../-message-content/index.html">带内容的消息 <code>MessageContent</code></a> 和 <a href="../-message-metadata/index.html">不带内容的元数据 <code>MessageMetadata</code></a>.</p><h1 class=""> 元素类型</h1><p class="paragraph"><a href="../-message-content/index.html">MessageContent</a> 如 <a href="../-plain-text/index.html">纯文字</a>, <a href="../-image/index.html">图片</a>, <a href="../-voice/index.html">语音</a>, 是能被用户看到的内容.</p><p class="paragraph"><a href="../-message-metadata/index.html">MessageMetadata</a> 是用来形容这条消息的状态的数据, 因此称为 元数据 (metadata). 元数据目前只分为 <a href="../-message-source/index.html">消息来源 <code>MessageSource</code></a> 和 <a href="../-quote-reply/index.html">引用回复 <code>QuoteReply</code></a>.</p><p class="paragraph"><a href="../-message-source/index.html">MessageSource</a> 存储这条消息的发送人, 接收人, 识别 ID (服务器提供), 发送时间等信息. <a href="../-message-source/index.html">MessageSource</a> 是精确的. 凭 <a href="../-message-source/index.html">MessageSource</a> 就可以在服务器上定位一条消息, 因此可以用来 <a href="../-message-source/-key/recall.html">撤回消息</a>.</p><p class="paragraph"><a href="../-quote-reply/index.html">QuoteReply</a> 是一个标记, 表示这条消息引用了另一条消息 (在官方客户端中可通过 &quot;回复&quot; 功能发起引用). <a href="../-quote-reply/source.html">QuoteReply.source</a> 则指代那条被引用的消息. 由于 <a href="../-message-source/index.html">MessageSource</a> 是精确的, 如果对 <a href="../-quote-reply/source.html">QuoteReply.source</a> 使用 <a href="../-message-source/-key/recall.html">MessageSource.recall</a>, 则可以撤回那条被引用的消息.</p><h1 class=""> 获得消息链</h1><p class="paragraph">在消息事件中可以获得消息内容作为 <a href="index.html">MessageChain</a>: <a href="../../net.mamoe.mirai.event.events/-message-event/message.html">MessageEvent.message</a></p><p class="paragraph">在主动发送消息时, 可使用如下方案.</p><h2 class=""> 在 Kotlin 构造消息链</h2><ul><li><p class="paragraph">获取不包含任何元素的消息链: <a href="../-empty-message-chain/index.html">EmptyMessageChain</a></p></li><li><p class="paragraph"><a href="../message-chain-of.html">messageChainOf</a>: 类似 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/index.html">listOf</a>, 将多个 <a href="../-message/index.html">Message</a> 构造为 <a href="index.html">MessageChain</a>:</p></li></ul><div class="sample-container"><code class="" theme="idea"><pre>val chain = messageChainOf(PlainText(&quot;...&quot;), Image(&quot;...&quot;), ...)</pre></code></div><ul><li><p class="paragraph"><a href="../build-message-chain.html">buildMessageChain</a>: 使用 DSL 构建器.</p></li></ul><div class="sample-container"><code class="" theme="idea"><pre>val chain = buildMessageChain {<br>   +&quot;你想要的图片是:&quot;<br>   +Image(&quot;...&quot;)<br>}</pre></code></div><ul><li><p class="paragraph"><a href="../-message/plus.html">Message.plus</a>: 将两个消息相连成为一个消息链:</p></li></ul><div class="sample-container"><code class="" theme="idea"><pre>val chain = PlainText(&quot;Hello &quot;) + PlainText(&quot;Mirai!&quot;) // chain: MessageChain</pre></code></div><ul><li><p class="paragraph"><a href="../to-message-chain.html">toMessageChain</a> 将 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html">Iterable</a>, <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a>, <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/-sequence/index.html">Sequence</a>, <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterator/index.html">Iterator</a>, <span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span>, Stream 转换为 <a href="index.html">MessageChain</a>. 相关定义为:</p></li></ul><div class="sample-container"><code class="" theme="idea"><pre>public fun Sequence&lt;Message&gt;.toMessageChain(): MessageChain<br>public fun Iterable&lt;Message&gt;.toMessageChain(): MessageChain<br>public fun Iterator&lt;Message&gt;.toMessageChain(): MessageChain<br>public fun Stream&lt;Message&gt;.toMessageChain(): MessageChain<br>public fun Flow&lt;Message&gt;.toMessageChain(): MessageChain<br>public fun Array&lt;Message&gt;.toMessageChain(): MessageChain</pre></code></div><ul><li><p class="paragraph"><a href="../to-message-chain.html">Message.toMessageChain</a> 将单个 <a href="../-message/index.html">Message</a> 包装成一个单元素的 <a href="index.html">MessageChain</a></p></li></ul><h2 class=""> 在 Java 构造消息链</h2><ul><li><p class="paragraph"><code>MessageUtils.newChain</code>: 有多个重载, 相关定义如下:</p></li></ul><div class="sample-container"><code class="" theme="idea"><pre>public static MessageChain newChain(Message messages...)<br>public static MessageChain newChain(Iterable&lt;Message&gt; iterable)<br>public static MessageChain newChain(Iterator&lt;Message&gt; iterator)<br>public static MessageChain newChain(Stream&lt;Message&gt; stream)<br>public static MessageChain newChain(Message[] array)</pre></code></div><ul><li><p class="paragraph"><a href="../-message/plus.html">Message.plus</a>: 将两个消息相连成为一个消息链:</p></li></ul><div class="sample-container"><code class="" theme="idea"><pre>MessageChain chain = new PlainText(&quot;Hello &quot;).plus(new PlainText(&quot;Mirai!&quot;))</pre></code></div><ul><li><p class="paragraph"><a href="../-message-chain-builder/index.html">MessageChainBuilder</a>:</p></li></ul><div class="sample-container"><code class="" theme="idea"><pre>MessageChainBuilder builder = MessageChainBuilder.create();<br>builder.append(new PlainText(&quot;Hello &quot;));<br>builder.append(new PlainText(&quot; Mirai!&quot;));<br>MessageChain chain = builder.build();</pre></code></div><h1 class=""> 元素唯一性</h1><p class="paragraph">部分消息类型如 <a href="../-voice/index.html">语音</a>, <a href="../-light-app/index.html">小程序</a> 在官方客户端限制中只允许单独存在于一条消息. 在创建 <a href="index.html">MessageChain</a> 时这种限制会被体现.</p><p class="paragraph">当添加只允许单独存在的消息元素到一个消息链时, 已有的元素可能会被删除或替换. 详见 <a href="../-abstract-polymorphic-message-key/index.html">AbstractPolymorphicMessageKey</a> 和 <a href="../-constrain-single/index.html">ConstrainSingle</a>.</p><h1 class=""> 操作消息链</h1><p class="paragraph"><a href="index.html">MessageChain</a> 继承 <code>List&lt;SingleMessage&gt;</code>. 可以以 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a> 的方式处理 <a href="index.html">MessageChain</a>.</p><p class="paragraph">额外地, 若要获取一个 <a href="../-constrain-single/index.html">ConstrainSingle</a> 的元素, 可以通过 <a href="../-constrain-single/key.html">ConstrainSingle.key</a>:</p><div class="sample-container"><code class="" theme="idea"><pre>val quote = chain[QuoteReply] // Kotlin<br><br>QuoteReply quote = chain.get(QuoteReply.Key) // Java</pre></code></div><p class="paragraph">相关地还可以使用 <a href="contains.html">MessageChain.contains</a> 和 <a href="../get-or-fail.html">MessageChain.getOrFail</a></p><h2 class=""> 撤回和引用</h2><ul><li><p class="paragraph"><a href="../-message-source/-key/quote.html">MessageSource.quote</a></p></li><li><p class="paragraph"><a href="../-message-source/-key/recall.html">MessageSource.recall</a></p></li><li><p class="paragraph"><a href="../-message-source/-key/recall-in.html">MessageSource.recallIn</a></p></li><li><p class="paragraph"><code>MessageChain.quote</code></p></li><li><p class="paragraph"><code>MessageChain.recall</code></p></li><li><p class="paragraph"><code>MessageChain.recallIn</code></p></li></ul><h2 class=""> Kotlin 扩展</h2><h3 class=""> 属性委托</h3><div class="sample-container"><code class="" theme="idea"><pre>val at: At? by chain.orNull()<br>val at: At by chain.orElse { /* 返回一个 At */}<br>val at: At by chain</pre></code></div><h3 class=""> 筛选得到 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/-sequence/index.html">Sequence</a> 与 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a></h3><ul><li><p class="paragraph"><a href="../contents-sequence.html">MessageChain.contentsSequence</a></p></li><li><p class="paragraph"><a href="../metadata-sequence.html">MessageChain.metadataSequence</a></p></li><li><p class="paragraph"><a href="../contents-list.html">MessageChain.contentsList</a></p></li><li><p class="paragraph"><a href="../metadata-list.html">MessageChain.metadataList</a></p></li></ul><h1 class=""> 序列化</h1><h2 class=""> kotlinx-serialization 序列化</h2><ul><li><p class="paragraph">使用 <a href="-companion/serialize-to-json-string.html">MessageChain.serializeToJsonString</a> 将 <a href="index.html">MessageChain</a> 序列化为 JSON <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>.</p></li><li><p class="paragraph">使用 <a href="-companion/deserialize-from-json-string.html">MessageChain.deserializeFromJsonString</a> 将 JSON <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a> 反序列化为 <a href="index.html">MessageChain</a>.</p></li></ul><h2 class=""> Mirai Code 序列化</h2><p class="paragraph">详见 <a href="../../net.mamoe.mirai.message.code/-mirai-code/index.html">MiraiCode</a></p><ul><li><p class="paragraph">使用 <span data-unresolved-link="net.mamoe.mirai.message.data/MessageChain/serializeToMiraiCode/#/PointingToDeclaration/">MessageChain.serializeToMiraiCode</span> 将 <a href="index.html">MessageChain</a> 序列化为 Mirai Code <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>.</p></li><li><p class="paragraph">使用 <a href="-companion/deserialize-from-mirai-code.html">MessageChain.deserializeFromMiraiCode</a> 将 Mirai Code <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a> 反序列化为 <a href="index.html">MessageChain</a>.</p></li></ul></div></div>
+          </div>
+          <div class="tabbedcontent">
+            <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Types">Types</button><button class="section-tab" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Properties">Properties</button><button class="section-tab" data-togglable="Extensions">Extensions</button><button class="section-tab" data-togglable="Inheritors">Inheritors</button></div>
+            <div class="tabs-section-body">
+              <h2 class="">Types</h2>
+              <div class="table" data-togglable="Types"><a data-name="%5Bnet.mamoe.mirai.message.data%2FMessageChain.Companion%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F1806516870" anchor-label="Companion" id="%5Bnet.mamoe.mirai.message.data%2FMessageChain.Companion%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="-companion/index.html">Companion</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2FMessageChain.Companion%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">object <a href="-companion/index.html">Companion</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessageChain.Serializer%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F1806516870" anchor-label="Serializer" id="%5Bnet.mamoe.mirai.message.data%2FMessageChain.Serializer%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="-serializer/index.html">Serializer</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2FMessageChain.Serializer%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">object <a href="-serializer/index.html">Serializer</a> : <span data-unresolved-link="kotlinx.serialization/KSerializer///PointingToDeclaration/">KSerializer</span>&lt;<a href="index.html">MessageChain</a>&gt; <span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessageChain.Serializer%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F1806516870" anchor-label="Serializer" id="%5Bnet.mamoe.mirai.message.data%2FMessageChain.Serializer%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2FMessageChain.Serializer%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F1806516870" anchor-label="Serializer" id="%5Bnet.mamoe.mirai.message.data%2FMessageChain.Serializer%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>将 <a href="index.html">MessageChain</a> 作为 <code>List&lt;SingleMessage&gt;</code> 序列化.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h2 class="">Functions</h2>
+              <div class="table" data-togglable="Functions"><a data-name="%5Bnet.mamoe.mirai.message.data%2FMessageChain%2FappendMiraiCodeTo%2F%23kotlin.text.StringBuilder%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="appendMiraiCodeTo" id="%5Bnet.mamoe.mirai.message.data%2FMessageChain%2FappendMiraiCodeTo%2F%23kotlin.text.StringBuilder%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="append-mirai-code-to.html">appendMiraiCodeTo</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2FMessageChain%2FappendMiraiCodeTo%2F%23kotlin.text.StringBuilder%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace"><div class="block"><div class="block">@<a href="../../net.mamoe.mirai.utils/-mirai-experimental-api/index.html">MiraiExperimentalApi</a>()</div></div>open override fun <a href="append-mirai-code-to.html">appendMiraiCodeTo</a>(builder: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string-builder/index.html">StringBuilder</a>)<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bkotlin.collections%2FList%2Fcontains%2F%23net.mamoe.mirai.message.data.SingleMessage%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessageChain%2Fcontains%2F%23net.mamoe.mirai.message.data.MessageKey%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%29%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="contains" id="%5Bkotlin.collections%2FList%2Fcontains%2F%23net.mamoe.mirai.message.data.SingleMessage%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessageChain%2Fcontains%2F%23net.mamoe.mirai.message.data.MessageKey%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%29%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../-message-chain-builder/index.html#%5Bkotlin.collections%2FList%2Fcontains%2F%23net.mamoe.mirai.message.data.SingleMessage%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870">contains</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bkotlin.collections%2FList%2Fcontains%2F%23net.mamoe.mirai.message.data.SingleMessage%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessageChain%2Fcontains%2F%23net.mamoe.mirai.message.data.MessageKey%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%29%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">abstract operator override fun <a href="../-message-chain-builder/index.html#%5Bkotlin.collections%2FList%2Fcontains%2F%23net.mamoe.mirai.message.data.SingleMessage%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870">contains</a>(element: <a href="../-single-message/index.html">SingleMessage</a>): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+<div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">open operator fun &lt;<a href="contains.html">M</a> : <a href="../-single-message/index.html">SingleMessage</a>&gt; <a href="contains.html">contains</a>(key: <a href="../-message-key/index.html">MessageKey</a>&lt;<a href="contains.html">M</a>&gt;): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessageChain%2Fcontains%2F%23net.mamoe.mirai.message.data.MessageKey%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%29%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="contains" id="%5Bnet.mamoe.mirai.message.data%2FMessageChain%2Fcontains%2F%23net.mamoe.mirai.message.data.MessageKey%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%29%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2FMessageChain%2Fcontains%2F%23net.mamoe.mirai.message.data.MessageKey%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%29%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="contains" id="%5Bnet.mamoe.mirai.message.data%2FMessageChain%2Fcontains%2F%23net.mamoe.mirai.message.data.MessageKey%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%29%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>当存在 <a href="../-constrain-single/key.html">ConstrainSingle.key</a> 为 <span data-unresolved-link="net.mamoe.mirai.message.data/MessageChain/key/#/PointingToCallableParameters(-1)/">key</span> 的 <a href="../-single-message/index.html">SingleMessage</a> 实例时返回 <code>true</code>.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bkotlin.collections%2FList%2FcontainsAll%2F%23kotlin.collections.Collection%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="containsAll" id="%5Bkotlin.collections%2FList%2FcontainsAll%2F%23kotlin.collections.Collection%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../-message-chain-builder/index.html#%5Bkotlin.collections%2FList%2FcontainsAll%2F%23kotlin.collections.Collection%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870">containsAll</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bkotlin.collections%2FList%2FcontainsAll%2F%23kotlin.collections.Collection%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">abstract override fun <a href="../-message-chain-builder/index.html#%5Bkotlin.collections%2FList%2FcontainsAll%2F%23kotlin.collections.Collection%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870">containsAll</a>(elements: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/index.html">Collection</a>&lt;<a href="../-single-message/index.html">SingleMessage</a>&gt;): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2FcontentEquals%2F%23kotlin.String%23kotlin.Boolean%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessage%2FcontentEquals%2F%23net.mamoe.mirai.message.data.Message%23kotlin.Boolean%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessage%2FcontentEquals%2F%23net.mamoe.mirai.message.data.Message%23kotlin.Boolean%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="contentEquals" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2FcontentEquals%2F%23kotlin.String%23kotlin.Boolean%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessage%2FcontentEquals%2F%23net.mamoe.mirai.message.data.Message%23kotlin.Boolean%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessage%2FcontentEquals%2F%23net.mamoe.mirai.message.data.Message%23kotlin.Boolean%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../-message/content-equals.html">contentEquals</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2FMessage%2FcontentEquals%2F%23kotlin.String%23kotlin.Boolean%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessage%2FcontentEquals%2F%23net.mamoe.mirai.message.data.Message%23kotlin.Boolean%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessage%2FcontentEquals%2F%23net.mamoe.mirai.message.data.Message%23kotlin.Boolean%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">open fun <a href="../-message/content-equals.html">contentEquals</a>(another: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>, ignoreCase: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a> = false): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2FcontentEquals%2F%23kotlin.String%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="contentEquals" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2FcontentEquals%2F%23kotlin.String%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2FcontentEquals%2F%23kotlin.String%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="contentEquals" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2FcontentEquals%2F%23kotlin.String%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>判断内容是否与 <span data-unresolved-link="net.mamoe.mirai.message.data/Message/another/#/PointingToCallableParameters(-1)/">another</span> 相等.</div></div>
+<div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">open fun <a href="../-message/content-equals.html">contentEquals</a>(another: <a href="../-message/index.html">Message</a>, ignoreCase: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a> = false): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2FcontentEquals%2F%23net.mamoe.mirai.message.data.Message%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="contentEquals" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2FcontentEquals%2F%23net.mamoe.mirai.message.data.Message%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2FcontentEquals%2F%23net.mamoe.mirai.message.data.Message%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="contentEquals" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2FcontentEquals%2F%23net.mamoe.mirai.message.data.Message%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>判断内容是否与 <span data-unresolved-link="net.mamoe.mirai.message.data/Message/another/#/PointingToCallableParameters(-1)/">another</span> 相等即 <code>this</code> 与 <span data-unresolved-link="net.mamoe.mirai.message.data/Message/another/#/PointingToCallableParameters(-1)/">another</span> 的 <a href="../-message/content-to-string.html">contentToString</a> 相等.</div></div>
+<div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">open fun <a href="../-message/content-equals.html">contentEquals</a>(another: <a href="../-message/index.html">Message</a>, ignoreCase: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a> = false, strict: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a> = false): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2FcontentEquals%2F%23net.mamoe.mirai.message.data.Message%23kotlin.Boolean%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="contentEquals" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2FcontentEquals%2F%23net.mamoe.mirai.message.data.Message%23kotlin.Boolean%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2FcontentEquals%2F%23net.mamoe.mirai.message.data.Message%23kotlin.Boolean%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="contentEquals" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2FcontentEquals%2F%23net.mamoe.mirai.message.data.Message%23kotlin.Boolean%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>判断内容是否与 <span data-unresolved-link="net.mamoe.mirai.message.data/Message/another/#/PointingToCallableParameters(-1)/">another</span> 相等即 <code>this</code> 与 <span data-unresolved-link="net.mamoe.mirai.message.data/Message/another/#/PointingToCallableParameters(-1)/">another</span> 的 <a href="../-message/content-to-string.html">contentToString</a> 相等.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2FcontentToString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="contentToString" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2FcontentToString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../-message/content-to-string.html">contentToString</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2FMessage%2FcontentToString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">abstract fun <a href="../-message/content-to-string.html">contentToString</a>(): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2FcontentToString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="contentToString" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2FcontentToString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2FcontentToString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="contentToString" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2FcontentToString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>转为最接近官方格式的字符串.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="equals" id="%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../../net.mamoe.mirai.utils/-platform-logger/index.html#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870">equals</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">open operator fun <a href="../../net.mamoe.mirai.utils/-platform-logger/index.html#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870">equals</a>(other: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a>?): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2FfollowedBy%2F%23net.mamoe.mirai.message.data.Message%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="followedBy" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2FfollowedBy%2F%23net.mamoe.mirai.message.data.Message%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../-message/followed-by.html">followedBy</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2FMessage%2FfollowedBy%2F%23net.mamoe.mirai.message.data.Message%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">open fun <a href="../-message/followed-by.html">followedBy</a>(tail: <a href="../-message/index.html">Message</a>): <a href="index.html">MessageChain</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2FfollowedBy%2F%23net.mamoe.mirai.message.data.Message%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="followedBy" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2FfollowedBy%2F%23net.mamoe.mirai.message.data.Message%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2FfollowedBy%2F%23net.mamoe.mirai.message.data.Message%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="followedBy" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2FfollowedBy%2F%23net.mamoe.mirai.message.data.Message%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>将 <code>this</code> 和 <span data-unresolved-link="net.mamoe.mirai.message.data/Message/tail/#/PointingToCallableParameters(-1)/">tail</span> 连接.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bkotlin.collections%2FList%2Fget%2F%23kotlin.Int%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessageChain%2Fget%2F%23net.mamoe.mirai.message.data.MessageKey%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%29%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="get" id="%5Bkotlin.collections%2FList%2Fget%2F%23kotlin.Int%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessageChain%2Fget%2F%23net.mamoe.mirai.message.data.MessageKey%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%29%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../-message-chain-builder/index.html#%5Bkotlin.collections%2FList%2Fget%2F%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870">get</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bkotlin.collections%2FList%2Fget%2F%23kotlin.Int%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessageChain%2Fget%2F%23net.mamoe.mirai.message.data.MessageKey%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%29%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">abstract operator fun <a href="../-message-chain-builder/index.html#%5Bkotlin.collections%2FList%2Fget%2F%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870">get</a>(index: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>): <a href="../-single-message/index.html">SingleMessage</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+<div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">open operator fun &lt;<a href="get.html">M</a> : <a href="../-single-message/index.html">SingleMessage</a>&gt; <a href="get.html">get</a>(key: <a href="../-message-key/index.html">MessageKey</a>&lt;<a href="get.html">M</a>&gt;): <a href="get.html">M</a>?<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessageChain%2Fget%2F%23net.mamoe.mirai.message.data.MessageKey%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%29%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="get" id="%5Bnet.mamoe.mirai.message.data%2FMessageChain%2Fget%2F%23net.mamoe.mirai.message.data.MessageKey%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%29%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2FMessageChain%2Fget%2F%23net.mamoe.mirai.message.data.MessageKey%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%29%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="get" id="%5Bnet.mamoe.mirai.message.data%2FMessageChain%2Fget%2F%23net.mamoe.mirai.message.data.MessageKey%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%29%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>获取第一个类型为 <span data-unresolved-link="net.mamoe.mirai.message.data/MessageChain/key/#/PointingToCallableParameters(-1)/">key</span> 的 <a href="../-message/index.html">Message</a> 实例.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="hashCode" id="%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../../net.mamoe.mirai.utils/-platform-logger/index.html#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870">hashCode</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">open fun <a href="../../net.mamoe.mirai.utils/-platform-logger/index.html#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870">hashCode</a>(): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bkotlin.collections%2FList%2FindexOf%2F%23net.mamoe.mirai.message.data.SingleMessage%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="indexOf" id="%5Bkotlin.collections%2FList%2FindexOf%2F%23net.mamoe.mirai.message.data.SingleMessage%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../-message-chain-builder/index.html#%5Bkotlin.collections%2FList%2FindexOf%2F%23net.mamoe.mirai.message.data.SingleMessage%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870">indexOf</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bkotlin.collections%2FList%2FindexOf%2F%23net.mamoe.mirai.message.data.SingleMessage%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">abstract fun <a href="../-message-chain-builder/index.html#%5Bkotlin.collections%2FList%2FindexOf%2F%23net.mamoe.mirai.message.data.SingleMessage%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870">indexOf</a>(element: <a href="../-single-message/index.html">SingleMessage</a>): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bkotlin.collections%2FList%2FisEmpty%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="isEmpty" id="%5Bkotlin.collections%2FList%2FisEmpty%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../-message-chain-builder/index.html#%5Bkotlin.collections%2FList%2FisEmpty%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870">isEmpty</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bkotlin.collections%2FList%2FisEmpty%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">abstract override fun <a href="../-message-chain-builder/index.html#%5Bkotlin.collections%2FList%2FisEmpty%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870">isEmpty</a>(): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bkotlin.collections%2FList%2Fiterator%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="iterator" id="%5Bkotlin.collections%2FList%2Fiterator%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../-message-chain-builder/index.html#%5Bkotlin.collections%2FList%2Fiterator%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870">iterator</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bkotlin.collections%2FList%2Fiterator%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">abstract operator override fun <a href="../-message-chain-builder/index.html#%5Bkotlin.collections%2FList%2Fiterator%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870">iterator</a>(): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterator/index.html">Iterator</a>&lt;<a href="../-single-message/index.html">SingleMessage</a>&gt;<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bkotlin.collections%2FList%2FlastIndexOf%2F%23net.mamoe.mirai.message.data.SingleMessage%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="lastIndexOf" id="%5Bkotlin.collections%2FList%2FlastIndexOf%2F%23net.mamoe.mirai.message.data.SingleMessage%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../-message-chain-builder/index.html#%5Bkotlin.collections%2FList%2FlastIndexOf%2F%23net.mamoe.mirai.message.data.SingleMessage%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870">lastIndexOf</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bkotlin.collections%2FList%2FlastIndexOf%2F%23net.mamoe.mirai.message.data.SingleMessage%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">abstract fun <a href="../-message-chain-builder/index.html#%5Bkotlin.collections%2FList%2FlastIndexOf%2F%23net.mamoe.mirai.message.data.SingleMessage%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870">lastIndexOf</a>(element: <a href="../-single-message/index.html">SingleMessage</a>): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bkotlin.collections%2FList%2FlistIterator%2F%23%2FPointingToDeclaration%2F%2C+kotlin.collections%2FList%2FlistIterator%2F%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="listIterator" id="%5Bkotlin.collections%2FList%2FlistIterator%2F%23%2FPointingToDeclaration%2F%2C+kotlin.collections%2FList%2FlistIterator%2F%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../-empty-message-chain/index.html#%5Bkotlin.collections%2FList%2FlistIterator%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870">listIterator</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bkotlin.collections%2FList%2FlistIterator%2F%23%2FPointingToDeclaration%2F%2C+kotlin.collections%2FList%2FlistIterator%2F%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">abstract fun <a href="../-empty-message-chain/index.html#%5Bkotlin.collections%2FList%2FlistIterator%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870">listIterator</a>(): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list-iterator/index.html">ListIterator</a>&lt;<a href="../-single-message/index.html">SingleMessage</a>&gt;<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="symbol monospace">abstract fun <a href="../-empty-message-chain/index.html#%5Bkotlin.collections%2FList%2FlistIterator%2F%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870">listIterator</a>(index: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list-iterator/index.html">ListIterator</a>&lt;<a href="../-single-message/index.html">SingleMessage</a>&gt;<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.Array%5Bnet.mamoe.mirai.message.data.Message%5D%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.CharSequence%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.String%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.collections.Iterable%5Bkotlin.String%5D%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.collections.Iterable%5Bnet.mamoe.mirai.message.data.Message%5D%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.sequences.Sequence%5Bnet.mamoe.mirai.message.data.Message%5D%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23net.mamoe.mirai.message.data.Message%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23net.mamoe.mirai.message.data.MessageChain%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23net.mamoe.mirai.message.data.SingleMessage%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="plus" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.Array%5Bnet.mamoe.mirai.message.data.Message%5D%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.CharSequence%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.String%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.collections.Iterable%5Bkotlin.String%5D%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.collections.Iterable%5Bnet.mamoe.mirai.message.data.Message%5D%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.sequences.Sequence%5Bnet.mamoe.mirai.message.data.Message%5D%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23net.mamoe.mirai.message.data.Message%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23net.mamoe.mirai.message.data.MessageChain%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23net.mamoe.mirai.message.data.SingleMessage%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../-message/plus.html">plus</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.Array%5Bnet.mamoe.mirai.message.data.Message%5D%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.CharSequence%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.String%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.collections.Iterable%5Bkotlin.String%5D%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.collections.Iterable%5Bnet.mamoe.mirai.message.data.Message%5D%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.sequences.Sequence%5Bnet.mamoe.mirai.message.data.Message%5D%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23net.mamoe.mirai.message.data.Message%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23net.mamoe.mirai.message.data.MessageChain%2FPointingToDeclaration%2F%2C+net.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23net.mamoe.mirai.message.data.SingleMessage%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">open operator fun <a href="../-message/plus.html">plus</a>(another: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a>&lt;out <a href="../-message/index.html">Message</a>&gt;): <a href="index.html">MessageChain</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.Array%5Bnet.mamoe.mirai.message.data.Message%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="plus" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.Array%5Bnet.mamoe.mirai.message.data.Message%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.Array%5Bnet.mamoe.mirai.message.data.Message%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="plus" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.Array%5Bnet.mamoe.mirai.message.data.Message%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>将 <span data-unresolved-link="net.mamoe.mirai.message.data/Message/another/#/PointingToCallableParameters(-1)/">another</span> 按顺序连接到这个消息的尾部.</div></div>
+<div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">open operator fun <a href="../-message/plus.html">plus</a>(another: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html">CharSequence</a>): <a href="index.html">MessageChain</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.CharSequence%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="plus" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.CharSequence%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.CharSequence%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="plus" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.CharSequence%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>将 <span data-unresolved-link="net.mamoe.mirai.message.data/Message/another/#/PointingToCallableParameters(-1)/">another</span> 作为 <a href="../-plain-text/index.html">PlainText</a> 连接到这个消息的尾部.</div></div>
+<div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">open operator fun <a href="../-message/plus.html">plus</a>(another: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>): <a href="index.html">MessageChain</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.String%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="plus" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.String%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.String%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="plus" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.String%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>将 <span data-unresolved-link="net.mamoe.mirai.message.data/Message/another/#/PointingToCallableParameters(-1)/">another</span> 作为 <a href="../-plain-text/index.html">PlainText</a> 连接到这个消息的尾部.</div></div>
+<div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">open operator fun <a href="../-message/plus.html">plus</a>(another: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html">Iterable</a>&lt;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>&gt;): <a href="index.html">MessageChain</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.collections.Iterable%5Bkotlin.String%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="plus" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.collections.Iterable%5Bkotlin.String%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.collections.Iterable%5Bkotlin.String%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="plus" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.collections.Iterable%5Bkotlin.String%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>将 <span data-unresolved-link="net.mamoe.mirai.message.data/Message/another/#/PointingToCallableParameters(-1)/">another</span> 按顺序连接到这个消息的尾部.</div></div>
+<div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">open operator fun <a href="../-message/plus.html">plus</a>(another: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html">Iterable</a>&lt;<a href="../-message/index.html">Message</a>&gt;): <a href="index.html">MessageChain</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.collections.Iterable%5Bnet.mamoe.mirai.message.data.Message%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="plus" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.collections.Iterable%5Bnet.mamoe.mirai.message.data.Message%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.collections.Iterable%5Bnet.mamoe.mirai.message.data.Message%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="plus" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.collections.Iterable%5Bnet.mamoe.mirai.message.data.Message%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>将 <span data-unresolved-link="net.mamoe.mirai.message.data/Message/another/#/PointingToCallableParameters(-1)/">another</span> 按顺序连接到这个消息的尾部.</div></div>
+<div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">open operator fun <a href="../-message/plus.html">plus</a>(another: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/-sequence/index.html">Sequence</a>&lt;<a href="../-message/index.html">Message</a>&gt;): <a href="index.html">MessageChain</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.sequences.Sequence%5Bnet.mamoe.mirai.message.data.Message%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="plus" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.sequences.Sequence%5Bnet.mamoe.mirai.message.data.Message%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.sequences.Sequence%5Bnet.mamoe.mirai.message.data.Message%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="plus" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23kotlin.sequences.Sequence%5Bnet.mamoe.mirai.message.data.Message%5D%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>将 <span data-unresolved-link="net.mamoe.mirai.message.data/Message/another/#/PointingToCallableParameters(-1)/">another</span> 按顺序连接到这个消息的尾部.</div></div>
+<div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">open operator fun <a href="../-message/plus.html">plus</a>(another: <a href="../-message/index.html">Message</a>): <a href="index.html">MessageChain</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23net.mamoe.mirai.message.data.Message%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="plus" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23net.mamoe.mirai.message.data.Message%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23net.mamoe.mirai.message.data.Message%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="plus" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23net.mamoe.mirai.message.data.Message%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>将 <span data-unresolved-link="net.mamoe.mirai.message.data/Message/another/#/PointingToCallableParameters(-1)/">another</span> 按顺序连接到这个消息的尾部.</div></div>
+<div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">open operator fun <a href="../-message/plus.html">plus</a>(another: <a href="index.html">MessageChain</a>): <a href="index.html">MessageChain</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23net.mamoe.mirai.message.data.MessageChain%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="plus" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23net.mamoe.mirai.message.data.MessageChain%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23net.mamoe.mirai.message.data.MessageChain%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="plus" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23net.mamoe.mirai.message.data.MessageChain%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>将 <span data-unresolved-link="net.mamoe.mirai.message.data/Message/another/#/PointingToCallableParameters(-1)/">another</span> 按顺序连接到这个消息的尾部.</div></div>
+<div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">open operator fun <a href="../-message/plus.html">plus</a>(another: <a href="../-single-message/index.html">SingleMessage</a>): <a href="index.html">MessageChain</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23net.mamoe.mirai.message.data.SingleMessage%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="plus" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23net.mamoe.mirai.message.data.SingleMessage%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23net.mamoe.mirai.message.data.SingleMessage%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="plus" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2Fplus%2F%23net.mamoe.mirai.message.data.SingleMessage%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>将 <span data-unresolved-link="net.mamoe.mirai.message.data/Message/another/#/PointingToCallableParameters(-1)/">another</span> 连接到这个消息的尾部.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bnet.mamoe.mirai.message.code%2FCodableMessage%2FserializeToMiraiCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="serializeToMiraiCode" id="%5Bnet.mamoe.mirai.message.code%2FCodableMessage%2FserializeToMiraiCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../../net.mamoe.mirai.message.code/-codable-message/serialize-to-mirai-code.html">serializeToMiraiCode</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.code%2FCodableMessage%2FserializeToMiraiCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">open fun <a href="../../net.mamoe.mirai.message.code/-codable-message/serialize-to-mirai-code.html">serializeToMiraiCode</a>(): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.code%2FCodableMessage%2FserializeToMiraiCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="serializeToMiraiCode" id="%5Bnet.mamoe.mirai.message.code%2FCodableMessage%2FserializeToMiraiCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.code%2FCodableMessage%2FserializeToMiraiCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="serializeToMiraiCode" id="%5Bnet.mamoe.mirai.message.code%2FCodableMessage%2FserializeToMiraiCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>转换为 mirai 码.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bkotlin.collections%2FList%2FsubList%2F%23kotlin.Int%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="subList" id="%5Bkotlin.collections%2FList%2FsubList%2F%23kotlin.Int%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../-empty-message-chain/index.html#%5Bkotlin.collections%2FList%2FsubList%2F%23kotlin.Int%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870">subList</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bkotlin.collections%2FList%2FsubList%2F%23kotlin.Int%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">abstract fun <a href="../-empty-message-chain/index.html#%5Bkotlin.collections%2FList%2FsubList%2F%23kotlin.Int%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870">subList</a>(fromIndex: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>, toIndex: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a>&lt;<a href="../-single-message/index.html">SingleMessage</a>&gt;<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="toString" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../-message/to-string.html">toString</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2FMessage%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">abstract override fun <a href="../-message/to-string.html">toString</a>(): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="toString" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2FMessage%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" anchor-label="toString" id="%5Bnet.mamoe.mirai.message.data%2FMessage%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>得到包含 mirai 消息元素代码的, 易读的字符串.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h2 class="">Properties</h2>
+              <div class="table" data-togglable="Properties"><a data-name="%5Bnet.mamoe.mirai.message.data%2FMessageChain%2Fsize%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1806516870" anchor-label="size" id="%5Bnet.mamoe.mirai.message.data%2FMessageChain%2Fsize%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="index.html#%5Bnet.mamoe.mirai.message.data%2FMessageChain%2Fsize%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1806516870">size</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2FMessageChain%2Fsize%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><a data-name="%5Bnet.mamoe.mirai.message.data%2FMessageChain%2Fsize%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1806516870" anchor-label="size" id="%5Bnet.mamoe.mirai.message.data%2FMessageChain%2Fsize%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="symbol monospace">abstract override val <a href="index.html#%5Bnet.mamoe.mirai.message.data%2FMessageChain%2Fsize%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1806516870">size</a>: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h2 class="">Inheritors</h2>
+              <div class="table" data-togglable="Inheritors"><a data-name="%5Bnet.mamoe.mirai.message.data%2FEmptyMessageChain%2F%2F%2FPointingToDeclaration%2F%5D%2FInheritors%2F1806516870" anchor-label="EmptyMessageChain" id="%5Bnet.mamoe.mirai.message.data%2FEmptyMessageChain%2F%2F%2FPointingToDeclaration%2F%5D%2FInheritors%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../-empty-message-chain/index.html">EmptyMessageChain</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2FEmptyMessageChain%2F%2F%2FPointingToDeclaration%2F%5D%2FInheritors%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div></div>
+                  </div>
+                </div>
+              </div>
+              <h2 class="tabbedcontent">Extensions</h2>
+              <div class="table" data-togglable="Extensions"><a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FanyIsInstance%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="anyIsInstance" id="%5Bnet.mamoe.mirai.message.data%2F%2FanyIsInstance%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../any-is-instance.html">anyIsInstance</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2F%2FanyIsInstance%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">inline fun &lt;<a href="../any-is-instance.html">M</a> : <a href="../-single-message/index.html">SingleMessage</a>&gt; <a href="index.html">MessageChain</a>.<a href="../any-is-instance.html">anyIsInstance</a>(): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FanyIsInstance%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="anyIsInstance" id="%5Bnet.mamoe.mirai.message.data%2F%2FanyIsInstance%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FanyIsInstance%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="anyIsInstance" id="%5Bnet.mamoe.mirai.message.data%2F%2FanyIsInstance%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>当 <span data-unresolved-link="net.mamoe.mirai.message.data//&amp;lt;this&amp;gt;/#/PointingToCallableParameters(-1)/">this</span> 中存在 <a href="../any-is-instance.html">M</a> 的实例时返回 <code>true</code>.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2Fbot%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="bot" id="%5Bnet.mamoe.mirai.message.data%2F%2Fbot%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../bot.html">bot</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2F%2Fbot%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">val <a href="index.html">MessageChain</a>.<a href="../bot.html">bot</a>: <a href="../../net.mamoe.mirai/-bot/index.html">Bot</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2Fbot%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="bot" id="%5Bnet.mamoe.mirai.message.data%2F%2Fbot%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2F%2Fbot%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="bot" id="%5Bnet.mamoe.mirai.message.data%2F%2Fbot%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>消息内部 ids.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FcontentsList%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="contentsList" id="%5Bnet.mamoe.mirai.message.data%2F%2FcontentsList%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../contents-list.html">contentsList</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2F%2FcontentsList%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">fun <a href="index.html">MessageChain</a>.<a href="../contents-list.html">contentsList</a>(): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a>&lt;<a href="../-message-content/index.html">MessageContent</a>&gt;<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FcontentsList%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="contentsList" id="%5Bnet.mamoe.mirai.message.data%2F%2FcontentsList%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FcontentsList%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="contentsList" id="%5Bnet.mamoe.mirai.message.data%2F%2FcontentsList%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>筛选 <a href="../-message-content/index.html">MessageContent</a></div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FcontentsSequence%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="contentsSequence" id="%5Bnet.mamoe.mirai.message.data%2F%2FcontentsSequence%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../contents-sequence.html">contentsSequence</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2F%2FcontentsSequence%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">fun <a href="index.html">MessageChain</a>.<a href="../contents-sequence.html">contentsSequence</a>(): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/-sequence/index.html">Sequence</a>&lt;<a href="../-message-content/index.html">MessageContent</a>&gt;<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FcontentsSequence%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="contentsSequence" id="%5Bnet.mamoe.mirai.message.data%2F%2FcontentsSequence%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FcontentsSequence%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="contentsSequence" id="%5Bnet.mamoe.mirai.message.data%2F%2FcontentsSequence%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>获取 <code>Sequence&lt;MessageContent&gt;</code> 相当于 <code>this.asSequence().filterIsInstance&lt;MessageContent&gt;()</code></div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessageChain.Companion%2FdeserializeFromMiraiCode%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlin.String%23net.mamoe.mirai.contact.Contact%3F%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="deserializeFromMiraiCode" id="%5Bnet.mamoe.mirai.message.data%2FMessageChain.Companion%2FdeserializeFromMiraiCode%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlin.String%23net.mamoe.mirai.contact.Contact%3F%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="-companion/deserialize-from-mirai-code.html">deserializeFromMiraiCode</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2FMessageChain.Companion%2FdeserializeFromMiraiCode%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlin.String%23net.mamoe.mirai.contact.Contact%3F%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">fun <a href="index.html">MessageChain</a>.<a href="-companion/deserialize-from-mirai-code.html">deserializeFromMiraiCode</a>(miraiCode: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>, contact: <a href="../../net.mamoe.mirai.contact/-contact/index.html">Contact</a>? = null): <a href="index.html">MessageChain</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessageChain.Companion%2FdeserializeFromMiraiCode%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlin.String%23net.mamoe.mirai.contact.Contact%3F%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="deserializeFromMiraiCode" id="%5Bnet.mamoe.mirai.message.data%2FMessageChain.Companion%2FdeserializeFromMiraiCode%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlin.String%23net.mamoe.mirai.contact.Contact%3F%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2FMessageChain.Companion%2FdeserializeFromMiraiCode%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlin.String%23net.mamoe.mirai.contact.Contact%3F%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="deserializeFromMiraiCode" id="%5Bnet.mamoe.mirai.message.data%2FMessageChain.Companion%2FdeserializeFromMiraiCode%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlin.String%23net.mamoe.mirai.contact.Contact%3F%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>解析形如 &quot;mirai:&quot; 的 mirai 码, 即 <a href="../../net.mamoe.mirai.message.code/-codable-message/serialize-to-mirai-code.html">CodableMessage.serializeToMiraiCode</a> 返回的内容.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FfindIsInstance%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="findIsInstance" id="%5Bnet.mamoe.mirai.message.data%2F%2FfindIsInstance%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../find-is-instance.html">findIsInstance</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2F%2FfindIsInstance%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">inline fun &lt;<a href="../find-is-instance.html">M</a> : <a href="../-single-message/index.html">SingleMessage</a>?&gt; <a href="index.html">MessageChain</a>.<a href="../find-is-instance.html">findIsInstance</a>(): <a href="../find-is-instance.html">M</a>?<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FfindIsInstance%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="findIsInstance" id="%5Bnet.mamoe.mirai.message.data%2F%2FfindIsInstance%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FfindIsInstance%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="findIsInstance" id="%5Bnet.mamoe.mirai.message.data%2F%2FfindIsInstance%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>获取第一个 <a href="../find-is-instance.html">M</a> 实例.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FfirstIsInstance%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="firstIsInstance" id="%5Bnet.mamoe.mirai.message.data%2F%2FfirstIsInstance%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../first-is-instance.html">firstIsInstance</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2F%2FfirstIsInstance%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">inline fun &lt;<a href="../first-is-instance.html">M</a> : <a href="../-single-message/index.html">SingleMessage</a>&gt; <a href="index.html">MessageChain</a>.<a href="../first-is-instance.html">firstIsInstance</a>(): <a href="../first-is-instance.html">M</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FfirstIsInstance%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="firstIsInstance" id="%5Bnet.mamoe.mirai.message.data%2F%2FfirstIsInstance%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FfirstIsInstance%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="firstIsInstance" id="%5Bnet.mamoe.mirai.message.data%2F%2FfirstIsInstance%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>获取第一个 <a href="../first-is-instance.html">M</a> 实例.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FfirstIsInstanceOrNull%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="firstIsInstanceOrNull" id="%5Bnet.mamoe.mirai.message.data%2F%2FfirstIsInstanceOrNull%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../first-is-instance-or-null.html">firstIsInstanceOrNull</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2F%2FfirstIsInstanceOrNull%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">inline fun &lt;<a href="../first-is-instance-or-null.html">M</a> : <a href="../-single-message/index.html">SingleMessage</a>?&gt; <a href="index.html">MessageChain</a>.<a href="../first-is-instance-or-null.html">firstIsInstanceOrNull</a>(): <a href="../first-is-instance-or-null.html">M</a>?<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FfirstIsInstanceOrNull%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="firstIsInstanceOrNull" id="%5Bnet.mamoe.mirai.message.data%2F%2FfirstIsInstanceOrNull%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FfirstIsInstanceOrNull%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="firstIsInstanceOrNull" id="%5Bnet.mamoe.mirai.message.data%2F%2FfirstIsInstanceOrNull%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>获取第一个 <a href="../first-is-instance-or-null.html">M</a> 实例.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FgetOrFail%2Fnet.mamoe.mirai.message.data.MessageChain%23net.mamoe.mirai.message.data.MessageKey%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%29%5D%23kotlin.Function1%5Bnet.mamoe.mirai.message.data.MessageKey%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%29%5D%2Ckotlin.String%5D%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="getOrFail" id="%5Bnet.mamoe.mirai.message.data%2F%2FgetOrFail%2Fnet.mamoe.mirai.message.data.MessageChain%23net.mamoe.mirai.message.data.MessageKey%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%29%5D%23kotlin.Function1%5Bnet.mamoe.mirai.message.data.MessageKey%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%29%5D%2Ckotlin.String%5D%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../get-or-fail.html">getOrFail</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2F%2FgetOrFail%2Fnet.mamoe.mirai.message.data.MessageChain%23net.mamoe.mirai.message.data.MessageKey%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%29%5D%23kotlin.Function1%5Bnet.mamoe.mirai.message.data.MessageKey%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%29%5D%2Ckotlin.String%5D%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">inline fun &lt;<a href="../get-or-fail.html">M</a> : <a href="../-single-message/index.html">SingleMessage</a>&gt; <a href="index.html">MessageChain</a>.<a href="../get-or-fail.html">getOrFail</a>(key: <a href="../-message-key/index.html">MessageKey</a>&lt;<a href="../get-or-fail.html">M</a>&gt;, crossinline lazyMessage: (key: <a href="../-message-key/index.html">MessageKey</a>&lt;<a href="../get-or-fail.html">M</a>&gt;) -&gt; <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a> = { key.toString() }): <a href="../get-or-fail.html">M</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FgetOrFail%2Fnet.mamoe.mirai.message.data.MessageChain%23net.mamoe.mirai.message.data.MessageKey%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%29%5D%23kotlin.Function1%5Bnet.mamoe.mirai.message.data.MessageKey%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%29%5D%2Ckotlin.String%5D%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="getOrFail" id="%5Bnet.mamoe.mirai.message.data%2F%2FgetOrFail%2Fnet.mamoe.mirai.message.data.MessageChain%23net.mamoe.mirai.message.data.MessageKey%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%29%5D%23kotlin.Function1%5Bnet.mamoe.mirai.message.data.MessageKey%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%29%5D%2Ckotlin.String%5D%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FgetOrFail%2Fnet.mamoe.mirai.message.data.MessageChain%23net.mamoe.mirai.message.data.MessageKey%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%29%5D%23kotlin.Function1%5Bnet.mamoe.mirai.message.data.MessageKey%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%29%5D%2Ckotlin.String%5D%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="getOrFail" id="%5Bnet.mamoe.mirai.message.data%2F%2FgetOrFail%2Fnet.mamoe.mirai.message.data.MessageChain%23net.mamoe.mirai.message.data.MessageKey%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%29%5D%23kotlin.Function1%5Bnet.mamoe.mirai.message.data.MessageKey%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%5D%29%5D%2Ckotlin.String%5D%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>获取第一个类型为 <span data-unresolved-link="net.mamoe.mirai.message.data//key/#/PointingToCallableParameters(-1)/">key</span> 的 <a href="../-message/index.html">Message</a> 实例, 在找不到此类型的元素时抛出 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-no-such-element-exception/index.html">NoSuchElementException</a></div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FgetValue%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlin.Any%3F%23kotlin.reflect.KProperty%5B*%5D%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="getValue" id="%5Bnet.mamoe.mirai.message.data%2F%2FgetValue%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlin.Any%3F%23kotlin.reflect.KProperty%5B*%5D%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../get-value.html">getValue</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2F%2FgetValue%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlin.Any%3F%23kotlin.reflect.KProperty%5B*%5D%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">inline operator fun &lt;<a href="../get-value.html">T</a> : <a href="../-single-message/index.html">SingleMessage</a>&gt; <a href="index.html">MessageChain</a>.<a href="../get-value.html">getValue</a>(thisRef: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a>?, property: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-property/index.html">KProperty</a>&lt;*&gt;): <a href="../get-value.html">T</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FgetValue%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlin.Any%3F%23kotlin.reflect.KProperty%5B*%5D%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="getValue" id="%5Bnet.mamoe.mirai.message.data%2F%2FgetValue%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlin.Any%3F%23kotlin.reflect.KProperty%5B*%5D%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FgetValue%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlin.Any%3F%23kotlin.reflect.KProperty%5B*%5D%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="getValue" id="%5Bnet.mamoe.mirai.message.data%2F%2FgetValue%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlin.Any%3F%23kotlin.reflect.KProperty%5B*%5D%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>提供一个类型的值的委托.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2Fids%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="ids" id="%5Bnet.mamoe.mirai.message.data%2F%2Fids%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../ids.html">ids</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2F%2Fids%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">val <a href="index.html">MessageChain</a>.<a href="../ids.html">ids</a>: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int-array/index.html">IntArray</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2Fids%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="ids" id="%5Bnet.mamoe.mirai.message.data%2F%2Fids%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2F%2Fids%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="ids" id="%5Bnet.mamoe.mirai.message.data%2F%2Fids%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>消息 ids.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FinternalId%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="internalId" id="%5Bnet.mamoe.mirai.message.data%2F%2FinternalId%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../internal-id.html">internalId</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2F%2FinternalId%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">val <a href="index.html">MessageChain</a>.<a href="../internal-id.html">internalId</a>: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int-array/index.html">IntArray</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FinternalId%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="internalId" id="%5Bnet.mamoe.mirai.message.data%2F%2FinternalId%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FinternalId%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="internalId" id="%5Bnet.mamoe.mirai.message.data%2F%2FinternalId%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>消息内部 ids.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FmetadataList%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="metadataList" id="%5Bnet.mamoe.mirai.message.data%2F%2FmetadataList%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../metadata-list.html">metadataList</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2F%2FmetadataList%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">fun <a href="index.html">MessageChain</a>.<a href="../metadata-list.html">metadataList</a>(): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a>&lt;<a href="../-message-metadata/index.html">MessageMetadata</a>&gt;<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FmetadataList%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="metadataList" id="%5Bnet.mamoe.mirai.message.data%2F%2FmetadataList%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FmetadataList%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="metadataList" id="%5Bnet.mamoe.mirai.message.data%2F%2FmetadataList%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>筛选 <a href="../-message-metadata/index.html">MessageMetadata</a></div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FmetadataSequence%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="metadataSequence" id="%5Bnet.mamoe.mirai.message.data%2F%2FmetadataSequence%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../metadata-sequence.html">metadataSequence</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2F%2FmetadataSequence%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">fun <a href="index.html">MessageChain</a>.<a href="../metadata-sequence.html">metadataSequence</a>(): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/-sequence/index.html">Sequence</a>&lt;<a href="../-message-metadata/index.html">MessageMetadata</a>&gt;<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FmetadataSequence%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="metadataSequence" id="%5Bnet.mamoe.mirai.message.data%2F%2FmetadataSequence%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FmetadataSequence%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="metadataSequence" id="%5Bnet.mamoe.mirai.message.data%2F%2FmetadataSequence%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>获取 <code>Sequence&lt;MessageMetadata&gt;</code> 相当于 <code>this.asSequence().filterIsInstance&lt;MessageMetadata&gt;()</code></div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2ForElse%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlin.Function0%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%3F%5D%29%5D%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="orElse" id="%5Bnet.mamoe.mirai.message.data%2F%2ForElse%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlin.Function0%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%3F%5D%29%5D%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../or-else.html">orElse</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2F%2ForElse%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlin.Function0%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%3F%5D%29%5D%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">inline fun &lt;<a href="../or-else.html">T</a> : <a href="../or-else.html">R</a>, <a href="../or-else.html">R</a> : <a href="../-single-message/index.html">SingleMessage</a>?&gt; <a href="index.html">MessageChain</a>.<a href="../or-else.html">orElse</a>(lazyDefault: () -&gt; <a href="../or-else.html">R</a>): <a href="../-or-null-delegate/index.html">OrNullDelegate</a>&lt;<a href="../or-else.html">R</a>&gt;<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2ForElse%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlin.Function0%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%3F%5D%29%5D%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="orElse" id="%5Bnet.mamoe.mirai.message.data%2F%2ForElse%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlin.Function0%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%3F%5D%29%5D%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2F%2ForElse%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlin.Function0%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%3F%5D%29%5D%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="orElse" id="%5Bnet.mamoe.mirai.message.data%2F%2ForElse%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlin.Function0%5BTypeParam%28bounds%3D%5Bnet.mamoe.mirai.message.data.SingleMessage%3F%5D%29%5D%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>提供一个类型的 <a href="../-message/index.html">Message</a> 的委托, 若不存在这个类型的 <a href="../-message/index.html">Message</a> 则委托会提供 <code>null</code>用法:<div class="sample-container"><code class="" theme="idea"><pre>val message: MessageChain<br><br>val at: At by message.orElse { /* 返回一个 At */ }<br>val atNullable: At? by message.orElse { /* 返回一个 At? */}</pre></code></div></div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2ForNull%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="orNull" id="%5Bnet.mamoe.mirai.message.data%2F%2ForNull%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../or-null.html">orNull</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2F%2ForNull%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">inline fun &lt;<a href="../or-null.html">T</a> : <a href="../-single-message/index.html">SingleMessage</a>&gt; <a href="index.html">MessageChain</a>.<a href="../or-null.html">orNull</a>(): <a href="../-or-null-delegate/index.html">OrNullDelegate</a>&lt;<a href="../or-null.html">T</a>?&gt;<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2ForNull%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="orNull" id="%5Bnet.mamoe.mirai.message.data%2F%2ForNull%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2F%2ForNull%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="orNull" id="%5Bnet.mamoe.mirai.message.data%2F%2ForNull%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>提供一个类型的 <a href="../-message/index.html">Message</a> 的委托, 若不存在这个类型的 <a href="../-message/index.html">Message</a> 则委托会提供 <code>null</code>用法:<div class="sample-container"><code class="" theme="idea"><pre>val message: MessageChain<br><br>val at: At? by message.orNull()</pre></code></div></div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessageSource.Key%2Fquote%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="quote" id="%5Bnet.mamoe.mirai.message.data%2FMessageSource.Key%2Fquote%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../-message-source/-key/quote.html">quote</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2FMessageSource.Key%2Fquote%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">fun <a href="index.html">MessageChain</a>.<a href="../-message-source/-key/quote.html">quote</a>(): <a href="../-quote-reply/index.html">QuoteReply</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessageSource.Key%2Fquote%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="quote" id="%5Bnet.mamoe.mirai.message.data%2FMessageSource.Key%2Fquote%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2FMessageSource.Key%2Fquote%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="quote" id="%5Bnet.mamoe.mirai.message.data%2FMessageSource.Key%2Fquote%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>引用这条消息.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessageSource.Key%2Frecall%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="recall" id="%5Bnet.mamoe.mirai.message.data%2FMessageSource.Key%2Frecall%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../-message-source/-key/recall.html">recall</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2FMessageSource.Key%2Frecall%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">inline suspend fun <a href="index.html">MessageChain</a>.<a href="../-message-source/-key/recall.html">recall</a>()<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessageSource.Key%2Frecall%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="recall" id="%5Bnet.mamoe.mirai.message.data%2FMessageSource.Key%2Frecall%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2FMessageSource.Key%2Frecall%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="recall" id="%5Bnet.mamoe.mirai.message.data%2FMessageSource.Key%2Frecall%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>撤回这条消息.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessageSource.Key%2FrecallIn%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlin.Long%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="recallIn" id="%5Bnet.mamoe.mirai.message.data%2FMessageSource.Key%2FrecallIn%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlin.Long%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../-message-source/-key/recall-in.html">recallIn</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2FMessageSource.Key%2FrecallIn%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlin.Long%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">fun <a href="index.html">MessageChain</a>.<a href="../-message-source/-key/recall-in.html">recallIn</a>(millis: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a>): <a href="../../net.mamoe.mirai.message.action/-async-recall-result/index.html">AsyncRecallResult</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessageSource.Key%2FrecallIn%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlin.Long%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="recallIn" id="%5Bnet.mamoe.mirai.message.data%2FMessageSource.Key%2FrecallIn%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlin.Long%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2FMessageSource.Key%2FrecallIn%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlin.Long%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="recallIn" id="%5Bnet.mamoe.mirai.message.data%2FMessageSource.Key%2FrecallIn%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlin.Long%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>在一段时间后撤回这条消息.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessageChain.Companion%2FserializeToJsonString%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlinx.serialization.json.Json%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="serializeToJsonString" id="%5Bnet.mamoe.mirai.message.data%2FMessageChain.Companion%2FserializeToJsonString%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlinx.serialization.json.Json%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="-companion/serialize-to-json-string.html">serializeToJsonString</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2FMessageChain.Companion%2FserializeToJsonString%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlinx.serialization.json.Json%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">fun <a href="index.html">MessageChain</a>.<a href="-companion/serialize-to-json-string.html">serializeToJsonString</a>(json: <span data-unresolved-link="kotlinx.serialization.json/Json///PointingToDeclaration/">Json</span> = getDefaultJson()): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessageChain.Companion%2FserializeToJsonString%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlinx.serialization.json.Json%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="serializeToJsonString" id="%5Bnet.mamoe.mirai.message.data%2FMessageChain.Companion%2FserializeToJsonString%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlinx.serialization.json.Json%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2FMessageChain.Companion%2FserializeToJsonString%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlinx.serialization.json.Json%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="serializeToJsonString" id="%5Bnet.mamoe.mirai.message.data%2FMessageChain.Companion%2FserializeToJsonString%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlinx.serialization.json.Json%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>将 <a href="index.html">MessageChain</a> 序列化为 JSON 字符串.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessageChain.Companion%2FserializeToString%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlinx.serialization.StringFormat%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="serializeToString" id="%5Bnet.mamoe.mirai.message.data%2FMessageChain.Companion%2FserializeToString%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlinx.serialization.StringFormat%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="-companion/serialize-to-string.html">serializeToString</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2FMessageChain.Companion%2FserializeToString%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlinx.serialization.StringFormat%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">fun <a href="index.html">MessageChain</a>.<a href="-companion/serialize-to-string.html">serializeToString</a>(format: <span data-unresolved-link="kotlinx.serialization/StringFormat///PointingToDeclaration/">StringFormat</span>): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2FMessageChain.Companion%2FserializeToString%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlinx.serialization.StringFormat%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="serializeToString" id="%5Bnet.mamoe.mirai.message.data%2FMessageChain.Companion%2FserializeToString%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlinx.serialization.StringFormat%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2FMessageChain.Companion%2FserializeToString%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlinx.serialization.StringFormat%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="serializeToString" id="%5Bnet.mamoe.mirai.message.data%2FMessageChain.Companion%2FserializeToString%2Fnet.mamoe.mirai.message.data.MessageChain%23kotlinx.serialization.StringFormat%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>将 <a href="index.html">MessageChain</a> 序列化为指定格式的字符串.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2Fsource%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="source" id="%5Bnet.mamoe.mirai.message.data%2F%2Fsource%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../source.html">source</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2F%2Fsource%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">val <a href="index.html">MessageChain</a>.<a href="../source.html">source</a>: <a href="../-message-source/index.html">MessageSource</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2Fsource%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="source" id="%5Bnet.mamoe.mirai.message.data%2F%2Fsource%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2F%2Fsource%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="source" id="%5Bnet.mamoe.mirai.message.data%2F%2Fsource%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>获取这条消息的 <a href="../-message-source/index.html">消息源</a>.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FsourceOrNull%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="sourceOrNull" id="%5Bnet.mamoe.mirai.message.data%2F%2FsourceOrNull%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../source-or-null.html">sourceOrNull</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2F%2FsourceOrNull%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">val <a href="index.html">MessageChain</a>.<a href="../source-or-null.html">sourceOrNull</a>: <a href="../-message-source/index.html">MessageSource</a>?<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FsourceOrNull%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="sourceOrNull" id="%5Bnet.mamoe.mirai.message.data%2F%2FsourceOrNull%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2F%2FsourceOrNull%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="sourceOrNull" id="%5Bnet.mamoe.mirai.message.data%2F%2FsourceOrNull%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>获取这条消息的 <a href="../-message-source/index.html">消息源</a>.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2Ftime%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="time" id="%5Bnet.mamoe.mirai.message.data%2F%2Ftime%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>
+                <div class="table-row" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../time.html">time</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bnet.mamoe.mirai.message.data%2F%2Ftime%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="platform-tags ">
+                        <div class="platform-tag common-like">common</div>
+                      </div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":mirai-core-api:dokkaHtml/commonMain" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":mirai-core-api:dokkaHtml/commonMain"><div class="symbol monospace">val <a href="index.html">MessageChain</a>.<a href="../time.html">time</a>: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bnet.mamoe.mirai.message.data%2F%2Ftime%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="time" id="%5Bnet.mamoe.mirai.message.data%2F%2Ftime%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a><div class="brief "><a data-name="%5Bnet.mamoe.mirai.message.data%2F%2Ftime%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" anchor-label="time" id="%5Bnet.mamoe.mirai.message.data%2F%2Ftime%2Fnet.mamoe.mirai.message.data.MessageChain%23%2FPointingToDeclaration%2F%5D%2FExtensions%2F1806516870" data-filterable-set=":mirai-core-api:dokkaHtml/commonMain"></a>消息时间.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer"><span class="go-to-top-icon"><a href="#content"></a></span><span>© 2020 Copyright</span><span class="pull-right"><span>Sponsored and developed by dokka</span><a href="https://github.com/Kotlin/dokka"><span class="padded-icon"></span></a></span></div>
+      </div>
+    </div>
+  </body>
+</html>
+

@@ -1,0 +1,15 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+
+net.mamoe.mirai
+net.mamoe.mirai.contact
+net.mamoe.mirai.data
+net.mamoe.mirai.event
+net.mamoe.mirai.event.events
+net.mamoe.mirai.message
+net.mamoe.mirai.message.action
+net.mamoe.mirai.message.code
+net.mamoe.mirai.message.data
+net.mamoe.mirai.network
+net.mamoe.mirai.utils
+
